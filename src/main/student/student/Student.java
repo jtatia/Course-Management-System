@@ -1,6 +1,6 @@
 package main.student.student;
 
-class Student {
+public class Student {
 
 	private int id;
 	
