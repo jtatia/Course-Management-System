@@ -43,3 +43,6 @@ INSERT INTO `cms`.`student` (`s.no.`, `roll_no.`, `first_name`, `last_name`, `se
 UPDATE `cms`.`student` SET `subject3`=NULL WHERE `s.no.`='7' and`roll_no.`='1501CH03';
 UPDATE `cms`.`student` SET `last_name`='Tiwari' WHERE `s.no.`='9' and`roll_no.`='1501CS52';
 UPDATE `cms`.`student` SET `answer`='Harry Potter', `subject3`='CS110' WHERE `s.no.`='1' and`roll_no.`='1501CS12';
+
+ALTER TABLE `cms`.`student` 
+CHANGE COLUMN `password` `password` VARCHAR(200) NOT NULL ;
