@@ -72,12 +72,17 @@ public class LoginPortal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try
 				{
+					//creating a default student object
 					Student student = new Student();
+					// obtaining the roll number 
 					String rollno=textField.getText();
+					// obtaining the password
 					String password=passwordField.getText();
 					student.setRollno(rollno);
 					student.setPassword(password);
+					// creating studentDAO instance
 					StudentDAO dao=new StudentDAO();
+					// checking password
 					int value=dao.passwordChecker(student);
 					switch(value)
 					{
@@ -99,6 +104,7 @@ public class LoginPortal extends JFrame {
 				}
 				catch(Exception ex)
 				{
+					// In case of Execptions
 					JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -109,6 +115,7 @@ public class LoginPortal extends JFrame {
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				// if cancel button is pressed
 				currentObject.setVisible(false);
 				currentObject.dispose();
 			}
