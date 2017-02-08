@@ -44,6 +44,11 @@ public class Student {
 	
 	private String subject10;
 	
+	public Student()
+	{
+		
+	}
+	
 	public Student(int id, String rollno, String firstname, String middlename, String lastname, char sex, int age,
 			String email, String password, String securityques, String answer, String subject1, String subject2,
 			String subject3, String subject4, String subject5, String subject6, String subject7, String subject8,
