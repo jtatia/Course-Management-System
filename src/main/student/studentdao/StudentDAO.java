@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 import main.student.student.*;
-class UserDAO{
+public class StudentDAO{
 	private Connection myCon;
 	
 	private String dbname;
@@ -17,13 +17,13 @@ class UserDAO{
 	
 	private String user;
 	
-	public UserDAO()throws Exception {
+	public StudentDAO()throws Exception {
 		Properties prop=new Properties();
 		/*
 		 * Change File Location in the Properties File. This is only a test/temp.location
 		 */
-		prop.load(new FileInputStream("E://Swami vivekanada/Lab_Innovation/lib/details.properties"));
-		dbname=prop.getProperty("dbname");
+		prop.load(new FileInputStream("Files//details.properties"));
+		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
 		try{
@@ -50,7 +50,7 @@ class UserDAO{
 			/*
 			 * Roll No. set to be user Name and a primary Key
 			 */
-			pstmt=myCon.prepareStatement("Select * from student where roll_no.= ?");
+			pstmt=myCon.prepareStatement("Select * from Student where roll_no.= ?");
 			pstmt.setString(1, student.getRollno());
 			ResultSet rs=pstmt.executeQuery();
 			if(rs!=null){
