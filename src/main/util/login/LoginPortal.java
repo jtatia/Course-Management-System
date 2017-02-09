@@ -85,6 +85,7 @@ public class LoginPortal extends JFrame {
 					StudentDAO dao=new StudentDAO();
 					// checking password
 					int value=dao.passwordChecker(student);
+					System.out.println("value"+value);
 					switch(value)
 					{
 						case 0:
