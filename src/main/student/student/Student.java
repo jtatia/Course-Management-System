@@ -4,6 +4,8 @@ public class Student {
 
 	private int id;
 	
+	private String batch;
+	
 	private String rollno;
 	
 	private String firstname;
@@ -21,7 +23,7 @@ public class Student {
 	private String password;
 	
 	private String securityques;
-	
+
 	private String answer;
 	
 	private String subject1;
@@ -49,12 +51,13 @@ public class Student {
 		
 	}
 	
-	public Student(int id, String rollno, String firstname, String middlename, String lastname, char sex, int age,
-			String email, String password, String securityques, String answer, String subject1, String subject2,
+	public Student(int id,  String rollno, String firstname, String middlename, String lastname, char sex, int age,
+			String email, String batch,String password, String securityques, String answer, String subject1, String subject2,
 			String subject3, String subject4, String subject5, String subject6, String subject7, String subject8,
 			String subject9, String subject10) {
 		super();
 		this.id = id;
+		this.batch=batch;
 		this.rollno = rollno;
 		this.firstname = firstname;
 		this.middlename = middlename;
@@ -369,6 +372,24 @@ public class Student {
 	 */
 	public void setSubject10(String subject10) {
 		this.subject10 = subject10;
+	}
+	
+	/**
+	 * @return the batch
+	 */
+	public String getBatch() {
+		return batch;
+	}
+
+	/**
+	 * @param batch the batch to set
+	 */
+	public void setBatch(String batch) {
+		this.batch = batch;
+	}
+	
+	public String toString() {
+		return firstname+" "+middlename+" "+lastname;
 	}
 	
 }
