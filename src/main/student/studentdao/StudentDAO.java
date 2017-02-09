@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 import main.student.student.*;
 public class StudentDAO{
+	
 	private Connection myCon;
 	
 	private String dbname;
@@ -54,10 +55,10 @@ public class StudentDAO{
 
 			pstmt.setString(1, student.getRollno());
 			ResultSet rs = pstmt.executeQuery();
-			if(rs!=null){
-				while(rs.next()){
-					encryptedPassword=rs.getString("password");
-				}
+			if(rs.next()){
+				
+				encryptedPassword=rs.getString("password");
+				
 				if(encryptor.checkPassword(student.getPassword(), encryptedPassword)){
 					return 2;
 				}
@@ -85,5 +86,40 @@ public class StudentDAO{
 		 * Error Shown If this is not added
 		 */
 		return 0;
+	}
+	/*
+	 * Returns null if rollno is not found in the table
+	 */
+	public Student getStudentByRollno(String rollno) {
+		
+		PreparedStatement pstmt=null;
+		Student student=null;
+		
+		try {
+			pstmt=myCon.prepareStatement("select * from student where roll_no = ?");
+
+			pstmt.setString(1, rollno);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				student=new Student(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6).charAt(0),
+						rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),
+						rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17),rs.getString(18),
+						rs.getString(19),rs.getString(20),rs.getString(21),rs.getString(22));
+			}
+			
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}
+		}
+		
+		
+		return student;
 	}
 }
