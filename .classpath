@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/jasypt-1.9.2-sources.jar"/>
 	<classpathentry kind="lib" path="lib/jasypt-1.9.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Swing_JDBC/miglayout15-swing.jar" sourcepath="/Swing_JDBC/miglayout-src.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

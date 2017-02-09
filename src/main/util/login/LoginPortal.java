@@ -3,6 +3,7 @@
 package main.util.login;
 
 import main.student.student.*;
+import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.*;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -99,7 +100,10 @@ public class LoginPortal extends JFrame {
 							// everything is fine. Login successful
 							currentObject.setVisible(false);
 							currentObject.dispose();
-							
+							// obtaining student by roll no
+							Student stud=dao.getStudentByRollno(student.getRollno());
+							StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+							studentCourseOutline.setVisible(true);
 							// Student GUI to be added here 
 					}
 				}
@@ -127,7 +131,6 @@ public class LoginPortal extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
 			}
 		});
 		btnCancel.setBounds(266, 160, 74, 23);
