@@ -15,7 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+import main.util.home.*;
 public class LoginPortal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -77,7 +77,8 @@ public class LoginPortal extends JFrame {
 					// obtaining the roll number 
 					String rollno=textField.getText();
 					// obtaining the password
-					String password=passwordField.getText();
+					char[] pass=passwordField.getPassword();
+					String password = new String(pass);
 					student.setRollno(rollno);
 					student.setPassword(password);
 					// creating studentDAO instance
@@ -118,6 +119,15 @@ public class LoginPortal extends JFrame {
 				// if cancel button is pressed
 				currentObject.setVisible(false);
 				currentObject.dispose();
+				Home home;
+				try {
+					home = new Home();
+					home.setVisible(true);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
 			}
 		});
 		btnCancel.setBounds(266, 160, 74, 23);

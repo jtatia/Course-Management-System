@@ -1,4 +1,4 @@
-package main.util;
+package main.util.home;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,9 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.io.File;
 import java.awt.Color;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import main.util.login.*;
 public class Home extends JFrame {
 
 	/**
@@ -58,6 +60,14 @@ public class Home extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		
 		JButton btnStudent = new JButton("Student");
+		btnStudent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LoginPortal loginPortal = new LoginPortal();
+				loginPortal.setVisible(true);
+				setVisible(false);
+				dispose();
+			}
+		});
 		btnStudent.setForeground(Color.BLACK);
 		btnStudent.setFont(new Font("Comic Sans MS", Font.BOLD, 19));
 		panel.add(btnStudent);
