@@ -119,8 +119,6 @@ public class StudentDAO{
 				exc.printStackTrace();
 			}
 		}
-		
-		
 		return student;
 	}
 }
