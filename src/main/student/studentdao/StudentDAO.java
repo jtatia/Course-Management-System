@@ -50,12 +50,13 @@ public class StudentDAO{
 			/*
 			 * Roll No. set to be user Name and a primary Key
 			 */
-			pstmt=myCon.prepareStatement("Select * from student where roll_no.= ?");
+			pstmt=myCon.prepareStatement("select * from student where roll_no = ?");
+
 			pstmt.setString(1, student.getRollno());
 			ResultSet rs = pstmt.executeQuery();
 			if(rs!=null){
 				while(rs.next()){
-					encryptedPassword=rs.getString("roll_no.");
+					encryptedPassword=rs.getString("password");
 				}
 				if(encryptor.checkPassword(student.getPassword(), encryptedPassword)){
 					return 2;
