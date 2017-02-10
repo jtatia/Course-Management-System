@@ -24,6 +24,11 @@ public class Admin {
 	
 	private String answer;
 
+	public Admin()
+	{
+		
+	}
+	
 	public Admin(int sno, String username, String password, String firstname, String middlename, String lastname,
 			int age, char sex, String email, String securityques, String answer) {
 		super();

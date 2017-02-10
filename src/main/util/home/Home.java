@@ -62,7 +62,7 @@ public class Home extends JFrame {
 		JButton btnStudent = new JButton("Student");
 		btnStudent.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LoginPortal loginPortal = new LoginPortal();
+				LoginPortal loginPortal = new LoginPortal("Student");
 				loginPortal.setVisible(true);
 				setVisible(false);
 				dispose();
@@ -77,6 +77,14 @@ public class Home extends JFrame {
 		panel.add(btnProfesssor);
 		
 		JButton btnAdmin = new JButton("Admin");
+		btnAdmin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LoginPortal loginPortal = new LoginPortal("Admin");
+				loginPortal.setVisible(true);
+				setVisible(false);
+				dispose();
+			}
+		});
 		btnAdmin.setFont(new Font("Comic Sans MS", Font.BOLD, 19));
 		panel.add(btnAdmin);
 	}

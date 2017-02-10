@@ -2,6 +2,8 @@
 /*import the required packages*/
 package main.util.login;
 
+import main.admin.admin.Admin;
+import main.admin.admindao.AdminDAO;
 import main.student.student.*;
 import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.*;
@@ -29,21 +31,10 @@ public class LoginPortal extends JFrame {
 	
 	private JFrame currentObject;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginPortal frame = new LoginPortal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	public LoginPortal() {
+	
+	public LoginPortal(String str) {
 		currentObject=this;
-		setTitle("Login Portal");
+		setTitle(str+" Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -71,47 +62,104 @@ public class LoginPortal extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try
-				{
-					//creating a default student object
-					Student student = new Student();
-					// obtaining the roll number 
-					String rollno=textField.getText();
-					// obtaining the password
-					char[] pass=passwordField.getPassword();
-					String password = new String(pass);
-					student.setRollno(rollno);
-					student.setPassword(password);
-					// creating studentDAO instance
-					StudentDAO dao=new StudentDAO();
-					// checking password
-					int value=dao.passwordChecker(student);
-					System.out.println("value"+value);
-					switch(value)
+				if(str.equals("Student"))
+					
+				{	
+					
+					try
 					{
-						case 0:
-							// invalid user name
-							JOptionPane.showMessageDialog(LoginPortal.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
-							break;
-						case 1:
-							// invalid password
-							JOptionPane.showMessageDialog(LoginPortal.this,"Invalid Password","Error",JOptionPane.ERROR_MESSAGE);
-							break;
-						case 2:
-							// everything is fine. Login successful
-							currentObject.setVisible(false);
-							currentObject.dispose();
-							// obtaining student by roll no
-							Student stud=dao.getStudentByRollno(student.getRollno());
-							StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
-							studentCourseOutline.setVisible(true);
-							// Student GUI to be added here 
+						//creating a default student object
+						Student student = new Student();
+						// obtaining the roll number 
+						String rollno=textField.getText();
+						// obtaining the password
+						char[] pass=passwordField.getPassword();
+						String password = new String(pass);
+						student.setRollno(rollno);
+						student.setPassword(password);
+						// creating studentDAO instance
+						StudentDAO dao=new StudentDAO();
+						// checking password
+						int value=dao.passwordChecker(student);
+						switch(value)
+						{
+							case 0:
+								// invalid user name
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							case 1:
+								// invalid password
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid Password","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							case 2:
+								// everything is fine. Login successful
+								currentObject.setVisible(false);
+								currentObject.dispose();
+								// obtaining student by roll no
+								Student stud=dao.getStudentByRollno(student.getRollno());
+								StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+								studentCourseOutline.setVisible(true);
+								// Student GUI to be added here 
+						}	
+					}
+					catch(Exception ex)
+					{
+						// In case of Execptions
+						JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 					}
 				}
-				catch(Exception ex)
+				
+				else if(str.equals("Admin"))
 				{
-					// In case of Execptions
-					JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+					
+					try
+					{
+						//creating a default admin object
+						Admin admin = new Admin();
+						// obtaining the username 
+						String username=textField.getText();
+						// obtaining the password
+						char[] pass=passwordField.getPassword();
+						String password = new String(pass);
+						admin.setUsername(username);
+						admin.setPassword(password);
+						// creating AdminDAO instance
+						AdminDAO dao=new AdminDAO();
+						// checking password
+						int value=dao.passwordChecker(admin);
+						switch(value)
+						{
+							case 0:
+								// invalid user name
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							case 1:
+								// invalid password
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid Password","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							
+							/*
+							 * Add case 2 according to needs and also create the getAdminByUsername() method in 
+							 * AdminDAO if needed
+							 * 
+							 * case 2:
+								// everything is fine. Login successful
+								currentObject.setVisible(false);
+								currentObject.dispose();
+								// obtaining student by roll no
+								Student stud=dao.getStudentByRollno(student.getRollno());
+								StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+								studentCourseOutline.setVisible(true);
+								// Student GUI to be added here
+								 *  
+								 */
+						}	
+					}
+					catch(Exception ex)
+					{
+						// In case of Execptions
+						JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+					}
 				}
 			}
 		});
