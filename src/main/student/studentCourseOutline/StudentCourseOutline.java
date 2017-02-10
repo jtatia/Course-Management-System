@@ -3,17 +3,30 @@ package main.student.studentCourseOutline;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Label;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import main.student.coursepanel.CoursePanel;
 import main.student.student.Student;
+import main.student.studentcourseoutlinedao.StudentCourseOutlineDAO;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.ListSelectionModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StudentCourseOutline extends JFrame {
 
@@ -41,8 +54,9 @@ public class StudentCourseOutline extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @throws Exception 
 	 */
-	public StudentCourseOutline(Student student) {
+	public StudentCourseOutline(Student student) throws Exception {
 		setTitle("Student Course Outline");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -59,6 +73,14 @@ public class StudentCourseOutline extends JFrame {
 		settingsPanel.add(settingsButton);
 		
 		JButton logoutButton = new JButton("Logout");
+		logoutButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			int response = JOptionPane.showConfirmDialog(StudentCourseOutline.this, "Are U Sure U Want to Logout?","Confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+				if(response == JOptionPane.YES_OPTION){
+					System.exit(0);
+				}
+			}
+		});
 		settingsPanel.add(logoutButton);
 		
 		JPanel studentInfoPanel = new JPanel();
@@ -99,7 +121,24 @@ public class StudentCourseOutline extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		coursePanel.add(scrollPane, "cell 0 1,grow");
 		
-		JList list = new JList();
+		StudentCourseOutlineDAO sctodao = new StudentCourseOutlineDAO(student);
+		ArrayList<String> course = sctodao.Coursedata(student);
+        DefaultListModel<String> model = new DefaultListModel<>();
+		int size = course.size();
+		for(int i=0; i<size; i++){
+	    	model.addElement(course.get(i));
+		}
+		JList<String> list = new JList<String>(model);
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent arg0) {
+				coursePanel.setVisible(false);
+				CoursePanel cp=new CoursePanel();
+				contentPane.add(cp,BorderLayout.CENTER);
+				//cp.setVisible(true);
+			}
+		});
+
 		scrollPane.setViewportView(list);
 	}
 
