@@ -1,7 +1,6 @@
 package test.student.studentdaotest;
 
 import static org.junit.Assert.*;
-
 import main.student.student.Student;
 import main.student.studentdao.*;
 import org.junit.Test;
@@ -16,7 +15,6 @@ public class test {
 			student.setPassword("fight");
 	        assertNotNull(student);
 			assertEquals(studentdao.passwordChecker(student),1);
-		
 	}
 	@Test
 	public void studentdao_usernamecheck()throws Exception {
