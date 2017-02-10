@@ -54,7 +54,6 @@ public class StudentDAO{
 			pstmt=myCon.prepareStatement("select * from student where roll_no = ?");
 
 			pstmt.setString(1, student.getRollno());
-			System.out.println("The roll no.is "+student.getRollno());
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
 				

@@ -3,6 +3,8 @@ package main.student.studentCourseOutline;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Label;
+import java.awt.event.ItemListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,8 +14,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import main.student.coursepanel.CoursePanel;
 import main.student.student.Student;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.AbstractListModel;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.ListSelectionModel;
 
 public class StudentCourseOutline extends JFrame {
 
@@ -100,6 +107,24 @@ public class StudentCourseOutline extends JFrame {
 		coursePanel.add(scrollPane, "cell 0 1,grow");
 		
 		JList list = new JList();
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		list.addListSelectionListener(new ListSelectionListener() {
+			public void valueChanged(ListSelectionEvent arg0) {
+				coursePanel.setVisible(false);
+				CoursePanel cp=new CoursePanel();
+				contentPane.add(cp,BorderLayout.CENTER);
+				//cp.setVisible(true);
+			}
+		});
+		list.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Demo Course"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
 		scrollPane.setViewportView(list);
 	}
 
