@@ -16,8 +16,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import main.util.forgotpassword.ForgotPasswordDialog;
 import main.util.home.*;
 public class LoginPortal extends JFrame {
 
@@ -163,7 +167,7 @@ public class LoginPortal extends JFrame {
 				}
 			}
 		});
-		btnLogin.setBounds(172, 160, 74, 23);
+		btnLogin.setBounds(216, 160, 74, 23);
 		contentPane.add(btnLogin);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -182,7 +186,18 @@ public class LoginPortal extends JFrame {
 				}
 			}
 		});
-		btnCancel.setBounds(266, 160, 74, 23);
+		btnCancel.setBounds(300, 160, 74, 23);
 		contentPane.add(btnCancel);
+		
+		JButton btnForgotPassword = new JButton("Forgot Password");
+		btnForgotPassword.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			ForgotPasswordDialog dialog=new ForgotPasswordDialog();	
+			dialog.setVisible(true);
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			}
+		});
+		btnForgotPassword.setBounds(71, 160, 135, 23);
+		contentPane.add(btnForgotPassword);
 	}
 }
