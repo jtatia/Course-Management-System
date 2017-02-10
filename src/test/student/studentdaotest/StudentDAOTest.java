@@ -1,7 +1,6 @@
 package test.student.studentdaotest;
 
 import static org.junit.Assert.*;
-
 import main.student.student.Student;
 import main.student.studentdao.*;
 import org.junit.Test;
