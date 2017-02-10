@@ -32,9 +32,17 @@ public class test {
 	public void studentdao_correctcheck()throws Exception {
 		StudentDAO studentdao = new StudentDAO();
 		Student student = new Student();
-		student.setRollno("1501CS23");
+		student.setRollno("1501CS26");
 		student.setPassword("satakshi");
 		assertNotNull(student);
 		assertEquals(studentdao.passwordChecker(student),2);
 	}
+	
+	@Test
+	public void student_byroll()throws Exception {
+		StudentDAO studentdao = new StudentDAO();
+		assertNotNull(studentdao.getStudentByRollno("1501CS23"));
+		assertNull(studentdao.getStudentByRollno("1501EE252"));
+	}
 }
+
