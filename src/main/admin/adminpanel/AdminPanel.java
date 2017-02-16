@@ -41,28 +41,14 @@ public class AdminPanel extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminPanel frame = new AdminPanel();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public AdminPanel(String user_name) throws Exception{
-		this();
-		dao=new AdminDAO();
-		ad=dao.getAdminByUsername(user_name);
-	}
-	public AdminPanel() {
+	
+	public AdminPanel(Admin admin) {
+		ad=admin;
 		setTitle("Welcome To Admin Frame");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0, 0, 1366, 730);
@@ -82,7 +68,7 @@ public class AdminPanel extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		topPanel.add(lblNewLabel_2, "cell 1 0");
-		lblNewLabel_2.setText(ad.getFirstname()+ad.getMiddlename()+ad.getLastname());
+		lblNewLabel_2.setText(ad.toString());
 		
 		JLabel lblNewLabel = new JLabel("Username:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));

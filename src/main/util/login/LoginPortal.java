@@ -4,6 +4,7 @@ package main.util.login;
 
 import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
+import main.admin.adminpanel.AdminPanel;
 import main.student.student.*;
 import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.*;
@@ -145,22 +146,23 @@ public class LoginPortal extends JFrame {
 							/*
 							 * Add case 2 according to needs and also create the getAdminByUsername() method in 
 							 * AdminDAO if needed
-							 * 
-							 * case 2:
+							 * */
+							 case 2:
 								// everything is fine. Login successful
 								currentObject.setVisible(false);
 								currentObject.dispose();
 								// obtaining student by roll no
-								Student stud=dao.getStudentByRollno(student.getRollno());
-								StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
-								studentCourseOutline.setVisible(true);
+								Admin ad=dao.getAdminByUsername(username);
+								AdminPanel adminpanel=new AdminPanel(ad);
+								adminpanel.setVisible(true);
 								// Student GUI to be added here
-								 *  
-								 */
+								   
+								 
 						}	
 					}
 					catch(Exception ex)
 					{
+						ex.printStackTrace();
 						// In case of Execptions
 						JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 					}
