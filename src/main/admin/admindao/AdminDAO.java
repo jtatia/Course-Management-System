@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
-
+import main.admin.admin.*;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import main.admin.admin.Admin;
@@ -86,7 +86,30 @@ public class AdminDAO {
 				exc.printStackTrace();
 			}
 		}
-		
 		return 0;
+	}
+	public Admin getAdminByUsername(String user_name){
+		PreparedStatement pstmt=null;
+		Admin ad=null;
+		try{
+			pstmt=myCon.prepareStatement("select * from admin where username=?");
+			pstmt.setString(1, user_name);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				ad=new Admin(rs.getInt("s.no"),user_name,rs.getString("password"),rs.getString("first_name"),rs.getString("middle_name"),rs.getString("last_name"),rs.getInt("age"),rs.getString("sex").charAt(0),rs.getString("email"),rs.getString("security_ques"),rs.getString("answer"));
+			}
+			return ad;
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+		return ad;
 	}
 }
