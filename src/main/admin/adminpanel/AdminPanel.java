@@ -91,9 +91,12 @@ public class AdminPanel extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
 		tabbedPane.add("Faculty",new profButtonPanel());
-		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		adminButtonPanel adminButton = new adminButtonPanel();
+		tabbedPane.add("Admin",adminButton);
 		studentButtonPanel studentButtonPanel_ = new studentButtonPanel();
 		tabbedPane.add("Student",studentButtonPanel_);
+		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.SOUTH);
