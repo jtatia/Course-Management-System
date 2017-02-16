@@ -30,10 +30,14 @@ import com.jgoodies.forms.layout.FormSpecs;
 import java.awt.Dimension;
 import java.awt.Insets;
 
+import main.admin.admin.*;
+import main.admin.admindao.*;
+
 public class AdminPanel extends JFrame {
 
 	private JPanel contentPane;
-
+	Admin ad=null;
+	AdminDAO dao;
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +57,11 @@ public class AdminPanel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public AdminPanel(String user_name) throws Exception{
+		this();
+		dao=new AdminDAO();
+		ad=dao.getAdminByUsername(user_name);
+	}
 	public AdminPanel() {
 		setTitle("Welcome To Admin Frame");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,16 +76,31 @@ public class AdminPanel extends JFrame {
 		topPanel.setLayout(new MigLayout("", "[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]", "[]"));
 		
 		JLabel lblName = new JLabel("Name:");
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblName.setFont(new Font("Sitka Subheading", Font.BOLD, 20));
 		topPanel.add(lblName, "cell 0 0");
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		topPanel.add(lblNewLabel_2, "cell 1 0");
+		lblNewLabel_2.setText(ad.getFirstname()+ad.getMiddlename()+ad.getLastname());
 		
 		JLabel lblNewLabel = new JLabel("Username:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		topPanel.add(lblNewLabel, "cell 14 0");
 		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		topPanel.add(lblNewLabel_3, "cell 15 0");
+		lblNewLabel_3.setText(ad.getUsername());
+		
 		JLabel lblNewLabel_1 = new JLabel("Email:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		topPanel.add(lblNewLabel_1, "cell 26 0");
+		
+		JLabel lblNewLabel_4 = new JLabel("New label");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		topPanel.add(lblNewLabel_4, "cell 27 0");
+		lblNewLabel_4.setText(ad.getEmail());
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 20));
