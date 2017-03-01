@@ -4,9 +4,14 @@ import javax.swing.JPanel;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
+
+import main.admin.adminpanel.addAdmin.addAdmin;
+
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 @SuppressWarnings("serial")
 public class adminButtonPanel extends JPanel {
@@ -101,6 +106,12 @@ public class adminButtonPanel extends JPanel {
 				FormSpecs.DEFAULT_ROWSPEC,}));
 		
 		JButton btnNewButton = new JButton("Add Admin");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				addAdmin add = new addAdmin();
+				add.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
 		add(btnNewButton, "50, 6");
 		

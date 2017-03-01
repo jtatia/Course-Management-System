@@ -22,7 +22,7 @@ public class StudentDbHandler {
 	
 	public StudentDbHandler() throws IOException {
 		Properties prop=new Properties();
-		prop.load(new FileInputStream("File//details.properties"));
+		prop.load(new FileInputStream("Files//details.properties"));
 		dbName=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
@@ -53,7 +53,7 @@ public class StudentDbHandler {
 			PreparedStatement pstmt=null;
 			try{
 				this.sex=""+sex;
-				pstmt=myCon.prepareStatement("INSERT INTO student(`roll_no.`,`first_name`,`middle_name`,`last_name`,`sex`,`age`,`email`,`batch_code`,`password`,`security_ques`,`answer`,`subject1`,`subject2`,`subject3`,`subject4`,`subject5`,`subject6`,`subject7`,`subject8`,`subject9`,`subject10`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+				pstmt=myCon.prepareStatement("INSERT INTO student(`roll_no`,`first_name`,`middle_name`,`last_name`,`sex`,`age`,`email`,`batch_code`,`password`,`security_ques`,`answer`,`subject1`,`subject2`,`subject3`,`subject4`,`subject5`,`subject6`,`subject7`,`subject8`,`subject9`,`subject10`)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				pstmt.setString(1, rollno);
 				pstmt.setString(2, firstname);
 				pstmt.setString(3, middlename);

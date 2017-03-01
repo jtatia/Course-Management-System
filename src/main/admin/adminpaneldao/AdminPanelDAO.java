@@ -54,10 +54,10 @@ public class AdminPanelDAO {
 			stmt.setString(4, admin.getMiddlename());
 			stmt.setString(5, admin.getLastname());
 			stmt.setInt(6, admin.getAge());
-			stmt.setLong(7, admin.getSex());
+			stmt.setString(7, Character.toString(admin.getSex()));
 			stmt.setString(8, admin.getEmail());
 			stmt.setString(9, admin.getSecurityques());
-			stmt.setString(10, admin.getAnswer());
+			stmt.setString(10,admin.getAnswer());
 			stmt.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();

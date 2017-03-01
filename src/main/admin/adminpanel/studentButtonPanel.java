@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
 @SuppressWarnings("serial")
 public class studentButtonPanel extends JPanel {
 
@@ -137,6 +136,11 @@ public class studentButtonPanel extends JPanel {
 				FormSpecs.DEFAULT_ROWSPEC,}));
 		
 		JButton btnNewButton = new JButton("Add Student");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new AddStudentForm();
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 20));
 		add(btnNewButton, "50, 8");
 		
