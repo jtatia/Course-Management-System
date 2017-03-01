@@ -6,7 +6,7 @@ import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
 import main.admin.adminpanel.AdminPanel;
 import main.student.student.*;
-import main.student.studentCourseOutline.StudentCourseOutline;
+import main.student.studentCourseOutline.CourseOutline;
 import main.student.studentdao.*;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -102,7 +102,9 @@ public class LoginPortal extends JFrame {
 								currentObject.dispose();
 								// obtaining student by roll no
 								Student stud=dao.getStudentByRollno(student.getRollno());
-								StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+								/*StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+								studentCourseOutline.setVisible(true);*/
+								CourseOutline studentCourseOutline=new CourseOutline(stud);
 								studentCourseOutline.setVisible(true);
 								// Student GUI to be added here 
 						}	
