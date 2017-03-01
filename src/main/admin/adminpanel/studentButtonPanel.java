@@ -111,6 +111,11 @@ public class studentButtonPanel extends JPanel {
 		add(btnNewButton, "50, 6");
 		
 		JButton btnNewButton_1 = new JButton("Remove Student");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new RemoveStudentDialog();
+			}
+		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		add(btnNewButton_1, "50, 18");
 		
