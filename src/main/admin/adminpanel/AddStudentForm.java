@@ -69,7 +69,7 @@ public class AddStudentForm extends JFrame {
 	 */
 	public AddStudentForm() {
 		setTitle("Add Student");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		setSize(800,550);
 		setVisible(true);
@@ -184,13 +184,16 @@ public class AddStudentForm extends JFrame {
 							if(f==0)
 							{
 								studentDbHandler.addStudent(rollno, firstName, middleName, lastName, sex, age, email, batch, password, securityQuestion, securityAnswer, sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9, sub10);
+								// show message dialog that the student has been successfully added
 								JOptionPane.showMessageDialog(AddStudentForm.this,"New Student has been added","Info : ",JOptionPane.INFORMATION_MESSAGE);
+								// once the student has been added set the visibility to false and dispose off the JFrame
 								AddStudentForm.this.setVisible(false);
 								AddStudentForm.this.dispose();
 							}	
 						}
 						else
 						{
+							// display suitable message if invalid sex character is given
 							JOptionPane.showMessageDialog(AddStudentForm.this,"Invalid Sex Character","Alert : ",JOptionPane.ERROR_MESSAGE);
 						}	
 					}
@@ -209,6 +212,7 @@ public class AddStudentForm extends JFrame {
 		});
 		JPanel panel = new JPanel();
 		
+		// using MigLayout
 		scrollPane.setViewportView(panel);
 		panel.setLayout(new MigLayout("", "[][grow][][][][][][][][][]", "[][][][][][][][][][][][][][][][][][][][][][][grow][][][][][][][][]"));
 		
