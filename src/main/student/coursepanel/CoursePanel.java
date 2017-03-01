@@ -13,7 +13,6 @@ public class CoursePanel extends JPanel {
 	 */
 	public CoursePanel() {
 		JTabbedPane jtp = new JTabbedPane(JTabbedPane.RIGHT);
-		
 		CourseAssignmentPanel cap=new CourseAssignmentPanel();
 		
 		CourseMaterialPanel cmp=new CourseMaterialPanel();
@@ -30,8 +29,6 @@ public class CoursePanel extends JPanel {
 		jtp.add("Discussion Forum", cdfp);
 		jtp.add("Info", cip);
 		add(jtp);
-		
-
 	}
 
 }
