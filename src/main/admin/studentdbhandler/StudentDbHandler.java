@@ -83,7 +83,7 @@ public class StudentDbHandler {
 	public void removeStudent(String id){
 		PreparedStatement pstmt=null;
 		try{
-			pstmt=myCon.prepareStatement("delete * from student where roll_no = ?");
+			pstmt=myCon.prepareStatement("delete from student where roll_no = ?;");
 			pstmt.setString(1, id);
 			pstmt.executeUpdate();
 		}catch(Exception exc){
