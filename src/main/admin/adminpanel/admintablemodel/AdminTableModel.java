@@ -1,6 +1,8 @@
 package main.admin.adminpanel.admintablemodel;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.table.AbstractTableModel;
 
 import main.admin.admin.Admin;
@@ -18,9 +20,9 @@ public class AdminTableModel extends AbstractTableModel{
 	
 	
 	private String[] columnNames = {"S.No.", "Username", "First Name", "Middle Name", "Last Name", "Age", "Sex", "Email"};
-	private ArrayList<Admin> list;
+	private List<Admin> list;
 	
-	public AdminTableModel(ArrayList<Admin> list)
+	public AdminTableModel(List<Admin> list)
 	{
 		this.list=list;
 	}
