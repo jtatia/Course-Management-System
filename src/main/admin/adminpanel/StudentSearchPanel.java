@@ -39,10 +39,11 @@ public class StudentSearchPanel extends JPanel {
 		setLayout(null);
 		setVisible(true);
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 430, 40);
+		panel.setBounds(10, 11, 1320, 40);
+		//panel.setBounds(10, 11, 830, 400);
 		add(panel);
 		panel.setLayout(null);
-		
+		table=new JTable();
 		list=new ArrayList<Student>();
 		sdbh=new StudentDbHandler();
 		list=sdbh.getAllStudent();
@@ -50,7 +51,7 @@ public class StudentSearchPanel extends JPanel {
 		table.setModel(model);
 		
 		textField = new JTextField();
-		textField.setBounds(0, 11, 226, 20);
+		textField.setBounds(0, 11, 1080, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		
@@ -81,7 +82,7 @@ public class StudentSearchPanel extends JPanel {
 			}
 		});
 		btnSearch.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSearch.setBounds(236, 9, 77, 23);
+		btnSearch.setBounds(1100, 9, 104, 23);
 		panel.add(btnSearch);
 		
 		JButton btnNewButton = new JButton("Refresh");
@@ -104,11 +105,11 @@ public class StudentSearchPanel extends JPanel {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNewButton.setBounds(323, 10, 97, 23);
+		btnNewButton.setBounds(1220, 10, 97, 23);
 		panel.add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 57, 430, 190);
+		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
 		
 		table = new JTable();
@@ -116,7 +117,7 @@ public class StudentSearchPanel extends JPanel {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10, 249, 430, 40);
+		panel_1.setBounds(10,530, 1280,40);
 		add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		JButton btnAdd = new JButton("Add ");

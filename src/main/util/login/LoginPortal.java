@@ -4,7 +4,7 @@ package main.util.login;
 
 import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
-import main.admin.adminpanel.AdminPanel;
+import main.admin.adminpanel.MainAdminPanel;
 import main.student.student.*;
 import main.student.studentCourseOutline.CourseOutline;
 import main.student.studentdao.*;
@@ -155,7 +155,7 @@ public class LoginPortal extends JFrame {
 								currentObject.dispose();
 								// obtaining student by roll no
 								Admin ad=dao.getAdminByUsername(username);
-								AdminPanel adminpanel=new AdminPanel(ad);
+								MainAdminPanel adminpanel=new MainAdminPanel(ad);
 								adminpanel.setVisible(true);
 								// Student GUI to be added here
 								   

@@ -35,12 +35,12 @@ public class adminSearchPanel extends JPanel {
 		setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 430, 38);
+		panel.setBounds(10, 11, 1320, 38);
 		add(panel);
 		panel.setLayout(null);
-		
+		table=new JTable();
 		textField = new JTextField();
-		textField.setBounds(10, 11, 212, 20);
+		textField.setBounds(10, 11, 1090, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		AdminPanelDAO adminPanelDAO = new AdminPanelDAO();
@@ -61,7 +61,7 @@ public class adminSearchPanel extends JPanel {
 				}
 		});
 		btnSearch.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSearch.setBounds(232, 10, 89, 23);
+		btnSearch.setBounds(1120, 10, 89, 23);
 		panel.add(btnSearch);
 		
 		JButton btnRefresh = new JButton("Refresh");
@@ -78,11 +78,11 @@ public class adminSearchPanel extends JPanel {
 			}
 		});
 		btnRefresh.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnRefresh.setBounds(331, 10, 89, 23);
+		btnRefresh.setBounds(1230, 10, 89, 23);
 		panel.add(btnRefresh);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(10, 258, 430, 42);
+		panel_2.setBounds(10, 530, 1320, 42);
 		add(panel_2);
 		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -121,7 +121,7 @@ public class adminSearchPanel extends JPanel {
 		panel_2.add(btnDelete);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 57, 430, 190);
+		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
 		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
