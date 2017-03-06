@@ -1,6 +1,7 @@
 package main.student.studentCourseOutline;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -21,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import main.student.coursepanel.*;
+import main.student.settings.SettingsFrame;
 public class CourseOutline extends JFrame {
 
 	private JPanel contentPane;
@@ -141,6 +143,14 @@ public class CourseOutline extends JFrame {
 		JButton btnSettings = new JButton("Settings");
 		btnSettings.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try
+				{
+				new SettingsFrame(student.getRollno());
+				}
+				catch(Exception err)
+				{
+					JOptionPane.showMessageDialog(CourseOutline.this,err.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		

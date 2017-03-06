@@ -55,7 +55,7 @@ public class Student {
 			String email, String batch,String password, String securityques, String answer, String subject1, String subject2,
 			String subject3, String subject4, String subject5, String subject6, String subject7, String subject8,
 			String subject9, String subject10) {
-		super();
+		this();
 		this.id = id;
 		this.batch=batch;
 		this.rollno = rollno;
