@@ -1,0 +1,17 @@
+CREATE TABLE `cms`.`professor` (
+  `s.no` INT NOT NULL AUTO_INCREMENT,
+  `user_name` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NOT NULL,
+  `middle_name` VARCHAR(45) NOT NULL,
+  `last_name` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `sex` VARCHAR(1) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `security_ques` VARCHAR(45) NOT NULL,
+  `answer` VARCHAR(45) NOT NULL,
+  `course_id1` VARCHAR(45) NOT NULL,
+  `course_id2` VARCHAR(45) NOT NULL,
+  `course_id3` VARCHAR(45) NOT NULL,
+  `course_id4` VARCHAR(45) NOT NULL,
+  `course_id5` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`s.no`, `user_name`));
