@@ -355,17 +355,20 @@ public class StudentUpdateForm extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						try{
-							if(!prev.equals(password_text.getText())){
+							/*
+							 * Have to find a way around This stuff of modifying password by ADMIN(ROADBLOCK)
+							 */
+							/*if(!prev.equals(password_text.getText())){
 									flag=1;
 									System.out.println("Changed");
 							}
-							else flag=0;
+							else flag=0;*/
 							StudentDbHandler stdb=new StudentDbHandler();
 							stdb.modifyStudent(roll_text.getText(),first_text.getText(),
 									middle_text.getText(),last_text.getText(),sex_text.getText(),new Integer(age_text.getText()),
 									email_text.getText(),batch_text.getText(),password_text.getText(),security_text.getText(),ans_text.getText(),
 									s1_text.getText(),s2_text.getText(),s3_text.getText(),s4_text.getText(),s5_text.getText(),s6_text.getText(),
-									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText(),flag);
+									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText());
 							dispose();
 						}catch(Exception exc){
 							exc.printStackTrace();

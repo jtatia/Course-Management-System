@@ -188,13 +188,13 @@ public class SettingsFrame extends JFrame {
 		
 			StudentDbHandler sdbh=new StudentDbHandler();
 			
-			char sex=' ';
+			String sex="";
 			if(rdbtnNewRadioButton.isSelected())
-				sex='M';
+				sex="M";
 			if(rdbtnFemale.isSelected())
-				sex='F';
+				sex="F";
 			
-			sdbh.modifyStudent(rollno, textField.getText(), textField_1.getText(), textField_2.getText(), sex, Integer.parseInt(textField_3.getText()), textField_4.getText(), stud.getBatch(), passwordField.getText(), (String)comboBox.getSelectedItem(), textField_5.getText(), stud.getSubject1(), stud.getSubject2(), stud.getSubject3(), stud.getSubject4(), stud.getSubject5(), stud.getSubject6(), stud.getSubject7(), stud.getSubject8(), stud.getSubject9(), stud.getSubject10());
+			sdbh.modifyStudent(rollno, textField.getText(), textField_1.getText(), textField_2.getText(), sex, Integer.parseInt(textField_3.getText()), textField_4.getText(), stud.getBatch(), new String(passwordField.getPassword()), (String)comboBox.getSelectedItem(), textField_5.getText(), stud.getSubject1(), stud.getSubject2(), stud.getSubject3(), stud.getSubject4(), stud.getSubject5(), stud.getSubject6(), stud.getSubject7(), stud.getSubject8(), stud.getSubject9(), stud.getSubject10());
 			
 			// showing a message of success in case of successful submission 
 			
