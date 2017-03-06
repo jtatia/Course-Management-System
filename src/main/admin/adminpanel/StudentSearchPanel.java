@@ -150,9 +150,19 @@ public class StudentSearchPanel extends JPanel {
 		
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			new StudentUpdateForm();
-			}
-		});
+				int row=table.getSelectedRow();
+				if(row<0){
+					JOptionPane.showMessageDialog(StudentSearchPanel.this, "Select a Student","Error",JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				Student tempEmp=(Student)table.getValueAt(row,StudentTableModel.OBJECT_COL);
+				try{
+				StudentUpdateForm dialog=new StudentUpdateForm(tempEmp);
+				dialog.setVisible(true);
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+		}});
 		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_1.add(btnUpdate);
 		
