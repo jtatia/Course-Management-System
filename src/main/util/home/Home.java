@@ -72,7 +72,15 @@ public class Home extends JFrame {
 		btnStudent.setFont(new Font("Comic Sans MS", Font.BOLD, 19));
 		panel.add(btnStudent);
 		
-		JButton btnProfesssor = new JButton("Professsor");
+		JButton btnProfesssor = new JButton("Professor");
+		btnProfesssor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LoginPortal loginPortal = new LoginPortal("Professor");
+				loginPortal.setVisible(true);
+				setVisible(false);
+				dispose();
+			}
+		});
 		btnProfesssor.setFont(new Font("Comic Sans MS", Font.BOLD, 19));
 		panel.add(btnProfesssor);
 		
