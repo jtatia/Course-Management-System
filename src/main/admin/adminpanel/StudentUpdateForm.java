@@ -13,34 +13,43 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.LineBorder;
+
+import main.admin.studentdbhandler.StudentDbHandler;
+import main.student.student.Student;
+import main.student.studentdao.StudentDAO;
+
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class StudentUpdateForm extends JDialog {
 
-	private final JPanel contentPanel = new JPanel();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_21;
-
+	private final JPanel form_panel = new JPanel();
+	private JTextField id_text;
+	private JTextField batch_text;
+	private JTextField roll_text;
+	private JTextField first_text;
+	private JTextField middle_text;
+	private JTextField last_text;
+	private JTextField sex_text;
+	private JTextField age_text;
+	private JTextField email_text;
+	private JTextField password_text;
+	private JTextField security_text;
+	private JTextField ans_text;
+	private JTextField s1_text;
+	private JTextField s2_text;
+	private JTextField s3_text;
+	private JTextField s5_text;
+	private JTextField s7_text;
+	private JTextField s9_text;
+	private JTextField s4_text;
+	private JTextField s6_text;
+	private JTextField s8_text;
+	private JTextField s10_text;
+	private Student tempStu=null;
+	private String prev;
+	private int flag=0;
 	/**
 	 * Launch the application.
 	 */
@@ -57,41 +66,48 @@ public class StudentUpdateForm extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
+	public StudentUpdateForm(Student student) throws Exception{
+		this();
+		StudentDAO dao=new StudentDAO();
+		tempStu=dao.getStudentByRollno(student.getRollno());
+		prev=tempStu.getPassword();
+		populateForm();
+	}
 	public StudentUpdateForm() {
 		setBounds(400,50,600, 640);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		form_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		getContentPane().add(form_panel, BorderLayout.CENTER);
 		
 		JLabel lblNewLabel = new JLabel("Indetification Number :");
 		
-		textField = new JTextField();
-		textField.setColumns(30);
+		id_text = new JTextField();
+		id_text.setColumns(30);
 		
 		JLabel lblNewLabel_1 = new JLabel("Batch :");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(30);
+		batch_text = new JTextField();
+		batch_text.setColumns(30);
 		
 		JLabel lblRollNo = new JLabel("Roll No :");
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(30);
+		roll_text = new JTextField();
+		roll_text.setColumns(30);
 		
 		JLabel lblNewLabel_2 = new JLabel("First Name :");
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(30);
+		first_text = new JTextField();
+		first_text.setColumns(30);
 		
 		JLabel lblNewLabel_3 = new JLabel("Middle Name :");
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(30);
+		middle_text = new JTextField();
+		middle_text.setColumns(30);
 		
 		JLabel lblLastName = new JLabel("Last Name :");
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(30);
+		last_text = new JTextField();
+		last_text.setColumns(30);
 		
 		JLabel lblNewLabel_4 = new JLabel("Sex :");
 		
@@ -99,59 +115,59 @@ public class StudentUpdateForm extends JDialog {
 		
 		JLabel lblNewLabel_6 = new JLabel("Email :");
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(30);
+		sex_text = new JTextField();
+		sex_text.setColumns(30);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(30);
+		age_text = new JTextField();
+		age_text.setColumns(30);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(30);
+		email_text = new JTextField();
+		email_text.setColumns(30);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(30);
+		password_text = new JTextField();
+		password_text.setColumns(30);
 		
 		JLabel lblNewLabel_7 = new JLabel("Security Question :");
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(30);
+		security_text = new JTextField();
+		security_text.setColumns(30);
 		
 		JLabel lblAnswer = new JLabel("Answer:");
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(30);
+		ans_text = new JTextField();
+		ans_text.setColumns(30);
 		
 		JLabel lblSubject = new JLabel("Subject 1 :");
 		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
+		s1_text = new JTextField();
+		s1_text.setColumns(10);
 		
 		JLabel lblSubject_1 = new JLabel("Subject 2 :");
 		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
+		s2_text = new JTextField();
+		s2_text.setColumns(10);
 		
 		JLabel lblSubject_2 = new JLabel("Subject 3 :");
 		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
+		s3_text = new JTextField();
+		s3_text.setColumns(10);
 		
 		JLabel lblSubject_3 = new JLabel("Subject 5 :");
 		
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
+		s5_text = new JTextField();
+		s5_text.setColumns(10);
 		
 		JLabel lblNewLabel_8 = new JLabel("Subject 7 :");
 		
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
+		s7_text = new JTextField();
+		s7_text.setColumns(10);
 		
 		JLabel lblSubject_4 = new JLabel("Subject 9 :");
 		
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
+		s9_text = new JTextField();
+		s9_text.setColumns(10);
 		
 		JLabel lblSubject_5 = new JLabel("Subject 4 :");
 		
@@ -161,23 +177,23 @@ public class StudentUpdateForm extends JDialog {
 		
 		JLabel lblSubject_8 = new JLabel("Subject 10:");
 		
-		textField_18 = new JTextField();
-		textField_18.setColumns(10);
+		s4_text = new JTextField();
+		s4_text.setColumns(10);
 		
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
+		s6_text = new JTextField();
+		s6_text.setColumns(10);
 		
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
+		s8_text = new JTextField();
+		s8_text.setColumns(10);
 		
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		GroupLayout gl_contentPanel = new GroupLayout(contentPanel);
-		gl_contentPanel.setHorizontalGroup(
-			gl_contentPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPanel.createSequentialGroup()
+		s10_text = new JTextField();
+		s10_text.setColumns(10);
+		GroupLayout gl_form_panel = new GroupLayout(form_panel);
+		gl_form_panel.setHorizontalGroup(
+			gl_form_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_form_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.TRAILING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblSubject_4)
 						.addComponent(lblAnswer)
 						.addComponent(lblNewLabel_7)
@@ -196,139 +212,139 @@ public class StudentUpdateForm extends JDialog {
 						.addComponent(lblSubject_2)
 						.addComponent(lblNewLabel_8))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addComponent(textField_15, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
+						.addComponent(id_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(batch_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(roll_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(first_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(middle_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(last_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(sex_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(age_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(email_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(password_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(security_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(ans_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_form_panel.createSequentialGroup()
+							.addComponent(s5_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addComponent(lblSubject_6)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_19, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addComponent(textField_16, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(s6_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_form_panel.createSequentialGroup()
+							.addComponent(s7_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(18)
 							.addComponent(lblSubject_7)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_20, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addComponent(textField_17, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(s8_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_form_panel.createSequentialGroup()
+							.addComponent(s9_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addGap(16)
 							.addComponent(lblSubject_8)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(textField_21, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPanel.createSequentialGroup()
-									.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(s10_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_form_panel.createSequentialGroup()
+							.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_form_panel.createSequentialGroup()
+									.addComponent(s3_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 									.addGap(16)
 									.addComponent(lblSubject_5))
-								.addGroup(gl_contentPanel.createSequentialGroup()
-									.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_form_panel.createSequentialGroup()
+									.addComponent(s1_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 									.addGap(18)
 									.addComponent(lblSubject_1)))
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
-								.addComponent(textField_13, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textField_18, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+							.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
+								.addComponent(s2_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(s4_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
 					.addContainerGap(197, Short.MAX_VALUE))
 		);
-		gl_contentPanel.setVerticalGroup(
-			gl_contentPanel.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPanel.createSequentialGroup()
+		gl_form_panel.setVerticalGroup(
+			gl_form_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_form_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(id_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_1)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(batch_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(roll_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblRollNo))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(first_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_2))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(middle_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_3))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblLastName)
-						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(last_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_4)
-						.addGroup(gl_contentPanel.createSequentialGroup()
-							.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_form_panel.createSequentialGroup()
+							.addComponent(sex_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-								.addComponent(textField_7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+								.addComponent(age_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 								.addComponent(lblNewLabel_5))))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_6)
-						.addComponent(textField_8, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(email_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblPassword)
-						.addComponent(textField_9, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(password_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblNewLabel_7)
-						.addComponent(textField_10, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(security_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblAnswer)
-						.addComponent(textField_11, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(ans_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_12, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(s1_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblSubject)
 						.addComponent(lblSubject_1)
-						.addComponent(textField_13, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(s2_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_14, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(s3_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblSubject_2)
 						.addComponent(lblSubject_5)
-						.addComponent(textField_18, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(s4_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_15, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(s5_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblSubject_3)
 						.addComponent(lblSubject_6)
-						.addComponent(textField_19, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(s6_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField_16, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(s7_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNewLabel_8)
 						.addComponent(lblSubject_7)
-						.addComponent(textField_20, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(s8_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_contentPanel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblSubject_4)
-						.addGroup(gl_contentPanel.createParallelGroup(Alignment.BASELINE)
-							.addComponent(textField_17, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addComponent(textField_21, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
+							.addComponent(s9_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addComponent(s10_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addComponent(lblSubject_8)))
 					.addContainerGap(131, Short.MAX_VALUE))
 		);
-		contentPanel.setLayout(gl_contentPanel);
+		form_panel.setLayout(gl_form_panel);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -336,15 +352,67 @@ public class StudentUpdateForm extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						try{
+							/*
+							 * Have to find a way around This stuff of modifying password by ADMIN(ROADBLOCK)
+							 */
+							/*if(!prev.equals(password_text.getText())){
+									flag=1;
+									System.out.println("Changed");
+							}
+							else flag=0;*/
+							StudentDbHandler stdb=new StudentDbHandler();
+							stdb.modifyStudent(roll_text.getText(),first_text.getText(),
+									middle_text.getText(),last_text.getText(),sex_text.getText(),new Integer(age_text.getText()),
+									email_text.getText(),batch_text.getText(),password_text.getText(),security_text.getText(),ans_text.getText(),
+									s1_text.getText(),s2_text.getText(),s3_text.getText(),s4_text.getText(),s5_text.getText(),s6_text.getText(),
+									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText());
+							dispose();
+						}catch(Exception exc){
+							exc.printStackTrace();
+						}
+					}
+				});
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
 				JButton cancelButton = new JButton("Cancel");
+				cancelButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+					}
+				});
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
 		}
+	}
+	private void populateForm(){
+		id_text.setText((new Integer(tempStu.getId()).toString()));
+		roll_text.setText(tempStu.getRollno());;
+		first_text.setText(tempStu.getFirstname());;
+		middle_text.setText(tempStu.getMiddlename());
+		last_text.setText(tempStu.getLastname());
+		sex_text.setText(""+tempStu.getSex());
+		age_text.setText(new Integer(tempStu.getAge()).toString());;
+		email_text.setText(tempStu.getEmail());;
+		password_text.setText(tempStu.getPassword());;
+		security_text.setText(tempStu.getSecurityques());;
+		ans_text.setText(new Integer(tempStu.getAge()).toString());
+		batch_text.setText(tempStu.getBatch());
+		s1_text.setText(tempStu.getSubject1());
+		s2_text.setText(tempStu.getSubject2());
+		s3_text.setText(tempStu.getSubject3());
+		s4_text.setText(tempStu.getSubject5());
+		s5_text.setText(tempStu.getSubject5());
+		s7_text.setText(tempStu.getSubject7());
+		s9_text.setText(tempStu.getSubject9());
+		s6_text.setText(tempStu.getSubject6());
+		s8_text.setText(tempStu.getSubject8());
+		s10_text.setText(tempStu.getSubject10());
 	}
 }

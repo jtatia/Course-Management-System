@@ -3,6 +3,8 @@ package main.admin.adminpanel;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import main.admin.admin.*;
+import main.util.login.LoginPortal;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -118,6 +120,13 @@ public class MainAdminPanel extends JFrame {
 		
 		JButton btnNewButton = new JButton("Settings");
 		JButton btnLogout = new JButton("Logout");
+		btnLogout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				LoginPortal login=new LoginPortal("Admin");
+				login.setVisible(true);
+				dispose();
+			}
+		});
 		
 		btnAdminPanel = new JButton("Admin Panel");
 		btnAdminPanel.setEnabled(false);

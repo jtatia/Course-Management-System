@@ -25,6 +25,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import main.student.coursepanel.CoursePanel;
+import main.student.settings.SettingsFrame;
 import main.student.student.Student;
 import main.student.studentcourseoutlinedao.StudentCourseOutlineDAO;
 import net.miginfocom.swing.MigLayout;
@@ -78,6 +79,18 @@ public class StudentCourseOutline extends JFrame {
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
 		
 		JButton settingsButton = new JButton("Settings");
+		settingsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			try
+			{
+			new SettingsFrame(student.getRollno());
+			}
+			catch(Exception err)
+			{
+				JOptionPane.showMessageDialog(StudentCourseOutline.this,err.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+			}
+			}
+		});
 		settingsPanel.add(settingsButton);
 		
 		JButton logoutButton = new JButton("Logout");

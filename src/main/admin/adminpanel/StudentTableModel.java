@@ -9,6 +9,7 @@ import main.student.student.Student;
 public class StudentTableModel extends AbstractTableModel{
 	
 	// The constants below are used to indicate the column numbers 
+	public static final int OBJECT_COL=-1;
 	
 	private static final int ID=0;
 	
@@ -118,6 +119,8 @@ public class StudentTableModel extends AbstractTableModel{
 				return stud.getSubject9();
 			case SUBJECT10 :
 				return stud.getSubject10();
+			case OBJECT_COL:
+				return stud;
 			default :
 				return stud;   					// default returns the complete student object
 		}
