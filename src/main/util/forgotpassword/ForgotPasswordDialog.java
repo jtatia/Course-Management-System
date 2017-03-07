@@ -8,6 +8,9 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import main.admin.admin.Admin;
+import main.admin.admindao.AdminDAO;
+import main.admin.adminpanel.MainAdminPanel;
 import main.student.student.Student;
 import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.StudentDAO;
@@ -38,13 +41,17 @@ public class ForgotPasswordDialog extends JDialog {
 	
 	private Student student;
 	
-	private StudentDAO dao;
+	private Admin admin;
+	
+	private StudentDAO studentdao;
+	
+	private AdminDAO admindao;
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			ForgotPasswordDialog dialog = new ForgotPasswordDialog();
+			ForgotPasswordDialog dialog = new ForgotPasswordDialog("Student");
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -55,7 +62,7 @@ public class ForgotPasswordDialog extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public ForgotPasswordDialog() {
+	public ForgotPasswordDialog(String user) {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,12 +74,17 @@ public class ForgotPasswordDialog extends JDialog {
 		contentPanel.add(userIdPanel);
 		userIdPanel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Enter User Id : ");
-		lblNewLabel.setBounds(10, 11, 103, 14);
+		JLabel lblNewLabel=new JLabel("Enter User Id : ");;
+		if(user.equals("Student"))
+		lblNewLabel = new JLabel("Enter Roll No : ");
+		else if(user.equals("Admin"))
+		lblNewLabel = new JLabel("Enter User Name : ");	
+		
+		lblNewLabel.setBounds(10, 11, 115, 14);
 		userIdPanel.add(lblNewLabel);
 		
 		userIdTextField = new JTextField();
-		userIdTextField.setBounds(123, 8, 180, 20);
+		userIdTextField.setBounds(131, 8, 172, 20);
 		userIdPanel.add(userIdTextField);
 		userIdTextField.setColumns(10);
 		
@@ -81,21 +93,42 @@ public class ForgotPasswordDialog extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 			try
 			{
-				dao=new StudentDAO();	                   		// getting instance of StudentDAO to access database
-				String rollNo=userIdTextField.getText();		// getting the rollNo from the user id field
-				student=dao.getStudentByRollno(rollNo.trim());  // obtaining the reference to the student using the roll no 
-				if(student==null)
+				if(user.equals("Student"))
 				{
-					// if no such roll no exists 
-					JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Invalid User Id","Error",JOptionPane.ERROR_MESSAGE);
+					studentdao=new StudentDAO();							// getting instance of StudentDAO to access database	
+					String rollNo=userIdTextField.getText();				// getting the user id from the user id field
+					student=studentdao.getStudentByRollno(rollNo.trim());  	// obtaining the reference to the student using the roll no 
+					if(student==null)
+					{
+						// if no such roll no exists 
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Invalid User Id","Error",JOptionPane.ERROR_MESSAGE);
+					}
+					else
+					{
+						questionLabel.setVisible(true);			// to display the security question
+						cancelButton.setEnabled(true);			// enable the buttons so that the user can submit the answer or cancel
+						submitButton2.setEnabled(true);				
+						questionLabel.setText(student.getSecurityques());	
+					}	
 				}
-				else
+				else if(user.equals("Admin"))
 				{
-					questionLabel.setVisible(true);			// to display the security question
-					cancelButton.setEnabled(true);			// enable the buttons so that the user can submit the answer or cancel
- 					submitButton2.setEnabled(true);				
-					questionLabel.setText(student.getSecurityques());	
-				}	
+					admindao=new AdminDAO();								// getting instance of StudentDAO to access database	
+					String username=userIdTextField.getText();				// getting the user id from the user id field
+					admin=admindao.getAdminByUserName(username.trim());  	// obtaining the reference to the student using the roll no 
+					if(admin==null)
+					{
+						// if no such roll no exists 
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
+					}
+					else
+					{
+						questionLabel.setVisible(true);			// to display the security question
+						cancelButton.setEnabled(true);			// enable the buttons so that the user can submit the answer or cancel
+						submitButton2.setEnabled(true);				
+						questionLabel.setText(admin.getSecurityques());	
+					}
+				}
 			}
 			catch(Exception ex)
 			{
@@ -129,25 +162,51 @@ public class ForgotPasswordDialog extends JDialog {
 			submitButton2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 				String answer=(answerTextArea.getText()).trim();      // obtaining the user answer
-				if(answer.equalsIgnoreCase(student.getAnswer())){
-					String str=student.getFirstname()+(int)(Math.random()*100);    // generating a new password
- 					student.setPassword(str);		// setting the new password
-					JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
-					try
-					{
-						// entering the student course outline using the security answer  
-						StudentCourseOutline studentCourseOutline=new StudentCourseOutline(student);
-						studentCourseOutline.setVisible(true);
+				if(user.equals("Student"))
+				{	
+					if(answer.equalsIgnoreCase(student.getAnswer())){
+						String str=student.getFirstname()+(int)(Math.random()*100);    // generating a new password
+						student.setPassword(str);		// setting the new password
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
+						try
+						{
+							// entering the student course outline using the security answer  
+							StudentCourseOutline studentCourseOutline=new StudentCourseOutline(student);
+							studentCourseOutline.setVisible(true);
+						}
+						catch(Exception ex)
+						{
+							JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+						}
 					}
-					catch(Exception ex)
+					else
 					{
-						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
-					}
+						// case of invalid security answer
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Security answer did not match !! Access denied." ,"Information"  ,JOptionPane.INFORMATION_MESSAGE );
+					}	
 				}
-				else
+				else if(user.equals("Admin"))
 				{
-					// case of invalid security answer
-					JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Security answer did not match !! Access denied." ,"Information"  ,JOptionPane.INFORMATION_MESSAGE );
+					if(answer.equalsIgnoreCase(admin.getAnswer())){
+						String str=admin.getFirstname()+(int)(Math.random()*100);    // generating a new password
+						admin.setPassword(str);		// setting the new password
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
+						try
+						{
+							// entering the student course outline using the security answer  
+							MainAdminPanel mainAdminPanel=new MainAdminPanel(admin);
+							mainAdminPanel.setVisible(true);
+						}
+						catch(Exception ex)
+						{
+							JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					else
+					{
+						// case of invalid security answer
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Security answer did not match !! Access denied." ,"Information"  ,JOptionPane.INFORMATION_MESSAGE );
+					}
 				}	
 				}
 			});

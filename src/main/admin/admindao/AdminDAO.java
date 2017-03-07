@@ -11,6 +11,7 @@ import main.admin.admin.*;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import main.admin.admin.Admin;
+import main.student.student.Student;
 
 public class AdminDAO {
 	
@@ -41,6 +42,41 @@ public class AdminDAO {
 			System.out.println("Connection Problem::: Message ::");
 			exc.printStackTrace();
 		}
+	}
+	
+	public void modifyAdmin(Admin admin){
+			PreparedStatement pstmt=null;
+			try{
+				pstmt=myCon.prepareStatement("update admin set first_name = ?,middle_name=?,last_name =?,sex = ?,age = ?,email = ?,password = ? ,security_ques = ?,answer = ? where username = ?");
+				pstmt.setString(1, admin.getFirstname());
+				pstmt.setString(2, admin.getMiddlename());
+				pstmt.setString(3, admin.getLastname());
+				pstmt.setString(4, ""+admin.getSex());
+				pstmt.setInt(5, admin.getAge());
+				pstmt.setString(6, admin.getEmail());
+			    pstmt.setString(8, admin.getPassword());
+				pstmt.setString(9, admin.getSecurityques());
+				pstmt.setString(10, admin.getAnswer());
+				pstmt.setString(11, admin.getUsername());
+				pstmt.executeUpdate();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}finally{
+				if(pstmt!=null){
+					try{
+						pstmt.close();
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+				}
+				if(myCon!=null){
+					try{
+						myCon.close();
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+				}
+			}
 	}
 	
 	public int passwordChecker(Admin admin){
@@ -88,28 +124,32 @@ public class AdminDAO {
 		}
 		return 0;
 	}
-	public Admin getAdminByUsername(String user_name){
+
+	public Admin getAdminByUserName(String username) {
 		PreparedStatement pstmt=null;
-		Admin ad=null;
-		try{
-			pstmt=myCon.prepareStatement("select * from admin where username=?");
-			pstmt.setString(1, user_name);
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next()){
-				ad=new Admin(rs.getInt("s.no"),user_name,rs.getString("password"),rs.getString("first_name"),rs.getString("middle_name"),rs.getString("last_name"),rs.getInt("age"),rs.getString("sex").charAt(0),rs.getString("email"),rs.getString("security_ques"),rs.getString("answer"));
+		Admin admin=null;
+		
+		try {
+			pstmt=myCon.prepareStatement("select * from admin where username = ?");
+
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				admin=new Admin(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+						rs.getInt(7), rs.getString(8).charAt(0), rs.getString(9), rs.getString(10), rs.getString(11));
 			}
-			return ad;
+			
 		}catch(Exception exc){
 			exc.printStackTrace();
 		}finally{
-			if(pstmt!=null){
-				try{
-					pstmt.close();
-				}catch(Exception exc){
-					exc.printStackTrace();
-				}
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
 			}
 		}
-		return ad;
+		return admin;
 	}
 }

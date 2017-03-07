@@ -154,7 +154,7 @@ public class LoginPortal extends JFrame {
 								currentObject.setVisible(false);
 								currentObject.dispose();
 								// obtaining student by roll no
-								Admin ad=dao.getAdminByUsername(username);
+								Admin ad=dao.getAdminByUserName(username);
 								MainAdminPanel adminpanel=new MainAdminPanel(ad);
 								adminpanel.setVisible(true);
 								// Student GUI to be added here
@@ -196,7 +196,7 @@ public class LoginPortal extends JFrame {
 		JButton btnForgotPassword = new JButton("Forgot Password");
 		btnForgotPassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			ForgotPasswordDialog dialog=new ForgotPasswordDialog();	
+			ForgotPasswordDialog dialog=new ForgotPasswordDialog(str);	
 			dialog.setVisible(true);
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			}
