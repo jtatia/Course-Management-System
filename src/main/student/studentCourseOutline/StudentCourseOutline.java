@@ -1,3 +1,11 @@
+/*  -----------NOT USED ANYWHERE
+ * ------------IN PLACE OF THIS CourseOutline.java HAS BEEN USED
+ * ------------DEPRECATED CLASS
+ * ------------LOOK INTO ITS VARIOUS CONNECTIONS ELSEWHER
+ * ------------AND DELETE THIS FILE
+ */
+
+
 // Use of migLayout in the top and central pane
 package main.student.studentCourseOutline;
 
