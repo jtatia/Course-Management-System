@@ -196,7 +196,7 @@ public class LoginPortal extends JFrame {
 		JButton btnForgotPassword = new JButton("Forgot Password");
 		btnForgotPassword.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			ForgotPasswordDialog dialog=new ForgotPasswordDialog();	
+			ForgotPasswordDialog dialog=new ForgotPasswordDialog(str);	
 			dialog.setVisible(true);
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			}

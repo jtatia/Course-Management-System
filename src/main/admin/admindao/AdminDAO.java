@@ -11,6 +11,7 @@ import main.admin.admin.*;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import main.admin.admin.Admin;
+import main.student.student.Student;
 
 public class AdminDAO {
 	
@@ -111,5 +112,33 @@ public class AdminDAO {
 			}
 		}
 		return ad;
+	}
+
+	public Admin getAdminByUserName(String username) {
+		PreparedStatement pstmt=null;
+		Admin admin=null;
+		
+		try {
+			pstmt=myCon.prepareStatement("select * from admin where username = ?");
+
+			pstmt.setString(1, username);
+			ResultSet rs = pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				admin=new Admin(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+						rs.getInt(7), rs.getString(8).charAt(0), rs.getString(9), rs.getString(10), rs.getString(11));
+			}
+			
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}
+		}
+		return admin;
 	}
 }
