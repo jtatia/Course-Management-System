@@ -70,7 +70,7 @@ public class AddStudentForm extends JFrame {
 	public AddStudentForm() {
 		setTitle("Add Student");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(300, 100, 450, 300);
 		setSize(800,550);
 		setVisible(true);
 		contentPane = new JPanel();

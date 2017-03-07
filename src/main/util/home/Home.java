@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import main.util.lookandfeel.*;
+
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -47,7 +50,7 @@ public class Home extends JFrame {
 		setTitle("Course Management System");
 		setIconImage(ImageIO.read(new File("iitp.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(500, 200, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -87,6 +90,10 @@ public class Home extends JFrame {
 		});
 		btnAdmin.setFont(new Font("Comic Sans MS", Font.BOLD, 19));
 		panel.add(btnAdmin);
+		/*try{
+			main.util.lookandfeel.LookAndFeel.set();
+			}catch(Exception exc){
+				exc.printStackTrace();
+		}*/
 	}
-
 }
