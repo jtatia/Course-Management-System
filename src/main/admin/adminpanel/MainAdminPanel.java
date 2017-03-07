@@ -25,6 +25,7 @@ public class MainAdminPanel extends JFrame {
 	private JButton btnFacultyPanel;
 	private JButton btnStudent;
 	private JButton btnAdminPanel;
+	private JButton btnCourseSide;
 	private JLabel lblNameField;
 	private JLabel lblUserfield;
 	private JLabel lblEmailfield;
@@ -166,11 +167,14 @@ public class MainAdminPanel extends JFrame {
 				btnAdminPanel.setEnabled(false);
 			}
 		});
+		
+		JButton btnCoursePanel = new JButton("Course Panel");
+		btnCoursePanel.setEnabled(false);
 		GroupLayout gl_panelFooter = new GroupLayout(panelFooter);
 		gl_panelFooter.setHorizontalGroup(
 			gl_panelFooter.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panelFooter.createSequentialGroup()
-					.addContainerGap(738, Short.MAX_VALUE)
+					.addContainerGap(740, Short.MAX_VALUE)
 					.addComponent(btnHomePage)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnFacultyPanel)
@@ -178,7 +182,9 @@ public class MainAdminPanel extends JFrame {
 					.addComponent(btnStudent)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(btnAdminPanel)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGap(10)
+					.addComponent(btnCoursePanel)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnNewButton)
 					.addGap(14)
 					.addComponent(btnLogout, GroupLayout.PREFERRED_SIZE, 76, GroupLayout.PREFERRED_SIZE)
@@ -194,7 +200,8 @@ public class MainAdminPanel extends JFrame {
 						.addComponent(btnAdminPanel)
 						.addComponent(btnStudent)
 						.addComponent(btnFacultyPanel)
-						.addComponent(btnHomePage)))
+						.addComponent(btnHomePage)
+						.addComponent(btnCoursePanel)))
 		);
 		panelFooter.setLayout(gl_panelFooter);
 		
@@ -205,52 +212,74 @@ public class MainAdminPanel extends JFrame {
 		JPanel panel_select = new JPanel();
 		adminSearchPanel asp=new adminSearchPanel();
 		StudentSearchPanel ssp=new StudentSearchPanel();
+		CourseSearchPanel csp = new CourseSearchPanel();
 		panelMiddle.add(panel_select, "Selection Panel");
 		panelMiddle.add(asp, "Admin Search Panel");
 		panelMiddle.add(ssp,"Student Search Panel");
-		
+		panelMiddle.add(csp,"Course Search Panel");
 		JButton btnNewButton_1 = new JButton("STUDENT SIDE");
+		btnNewButton_1.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(panelMiddle, "Student Search Panel");
 				btnFacultyPanel.setEnabled(true);
 				btnStudent.setEnabled(true);
 				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
 		
 		JButton btnNewButton_2 = new JButton("FACULTY SIDE");
+		btnNewButton_2.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 		
 		JButton btnNewButton_3 = new JButton("ADMIN SIDE");
+		btnNewButton_3.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(panelMiddle, "Admin Search Panel");
 				btnFacultyPanel.setEnabled(true);
 				btnStudent.setEnabled(true);
 				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
+		
+		btnCourseSide = new JButton("COURSE SIDE");
+		btnCourseSide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(panelMiddle, "Course Search Panel");
+				btnFacultyPanel.setEnabled(true);
+				btnStudent.setEnabled(true);
+				btnAdminPanel.setEnabled(true);
+			}
+		});
+		btnCourseSide.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 		GroupLayout gl_panel_select = new GroupLayout(panel_select);
 		gl_panel_select.setHorizontalGroup(
 			gl_panel_select.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel_select.createSequentialGroup()
-					.addGap(514)
-					.addGroup(gl_panel_select.createParallelGroup(Alignment.TRAILING)
-						.addComponent(btnNewButton_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-						.addComponent(btnNewButton_2, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-						.addComponent(btnNewButton_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
-					.addGap(582))
+				.addGroup(gl_panel_select.createSequentialGroup()
+					.addGap(260)
+					.addGroup(gl_panel_select.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnNewButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
+					.addGroup(gl_panel_select.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(btnCourseSide, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+					.addGap(289))
 		);
 		gl_panel_select.setVerticalGroup(
 			gl_panel_select.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_select.createSequentialGroup()
-					.addGap(78)
-					.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-					.addGap(128)
-					.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-					.addGap(142)
-					.addComponent(btnNewButton_2, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(149, Short.MAX_VALUE))
+					.addGap(84)
+					.addGroup(gl_panel_select.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE))
+					.addGap(47)
+					.addGroup(gl_panel_select.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnCourseSide, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+					.addContainerGap(105, Short.MAX_VALUE))
 		);
 		panel_select.setLayout(gl_panel_select);
 	}
