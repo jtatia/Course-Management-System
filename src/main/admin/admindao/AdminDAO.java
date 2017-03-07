@@ -44,6 +44,41 @@ public class AdminDAO {
 		}
 	}
 	
+	public void modifyAdmin(Admin admin){
+			PreparedStatement pstmt=null;
+			try{
+				pstmt=myCon.prepareStatement("update admin set first_name = ?,middle_name=?,last_name =?,sex = ?,age = ?,email = ?,password = ? ,security_ques = ?,answer = ? where username = ?");
+				pstmt.setString(1, admin.getFirstname());
+				pstmt.setString(2, admin.getMiddlename());
+				pstmt.setString(3, admin.getLastname());
+				pstmt.setString(4, ""+admin.getSex());
+				pstmt.setInt(5, admin.getAge());
+				pstmt.setString(6, admin.getEmail());
+			    pstmt.setString(8, admin.getPassword());
+				pstmt.setString(9, admin.getSecurityques());
+				pstmt.setString(10, admin.getAnswer());
+				pstmt.setString(11, admin.getUsername());
+				pstmt.executeUpdate();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}finally{
+				if(pstmt!=null){
+					try{
+						pstmt.close();
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+				}
+				if(myCon!=null){
+					try{
+						myCon.close();
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+				}
+			}
+	}
+	
 	public int passwordChecker(Admin admin){
 		
 		PreparedStatement pstmt=null;
@@ -88,30 +123,6 @@ public class AdminDAO {
 			}
 		}
 		return 0;
-	}
-	public Admin getAdminByUsername(String user_name){
-		PreparedStatement pstmt=null;
-		Admin ad=null;
-		try{
-			pstmt=myCon.prepareStatement("select * from admin where username=?");
-			pstmt.setString(1, user_name);
-			ResultSet rs=pstmt.executeQuery();
-			while(rs.next()){
-				ad=new Admin(rs.getInt("s.no"),user_name,rs.getString("password"),rs.getString("first_name"),rs.getString("middle_name"),rs.getString("last_name"),rs.getInt("age"),rs.getString("sex").charAt(0),rs.getString("email"),rs.getString("security_ques"),rs.getString("answer"));
-			}
-			return ad;
-		}catch(Exception exc){
-			exc.printStackTrace();
-		}finally{
-			if(pstmt!=null){
-				try{
-					pstmt.close();
-				}catch(Exception exc){
-					exc.printStackTrace();
-				}
-			}
-		}
-		return ad;
 	}
 
 	public Admin getAdminByUserName(String username) {

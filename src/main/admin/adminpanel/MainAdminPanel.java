@@ -3,6 +3,7 @@ package main.admin.adminpanel;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import main.admin.admin.*;
+import main.admin.settings.AdminSettingsFrame;
 import main.util.login.LoginPortal;
 
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -48,8 +50,10 @@ public class MainAdminPanel extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	Admin ad;
 	public MainAdminPanel(Admin ad)throws Exception{
 		this();
+		this.ad=ad;
 		lblNameField.setText(ad.getFirstname()+ad.getMiddlename()+ad.getLastname());
 		lblUserfield.setText(ad.getUsername());
 		lblEmailfield.setText(ad.getEmail());
@@ -119,6 +123,18 @@ public class MainAdminPanel extends JFrame {
 		contentPane.add(panelFooter, BorderLayout.SOUTH);
 		
 		JButton btnNewButton = new JButton("Settings");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			try
+			{
+				new AdminSettingsFrame(ad.getUsername());
+			}
+			catch(Exception e)
+			{
+				JOptionPane.showMessageDialog(MainAdminPanel.this,e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+			}
+			}
+		});
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

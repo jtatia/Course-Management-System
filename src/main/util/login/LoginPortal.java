@@ -154,7 +154,7 @@ public class LoginPortal extends JFrame {
 								currentObject.setVisible(false);
 								currentObject.dispose();
 								// obtaining student by roll no
-								Admin ad=dao.getAdminByUsername(username);
+								Admin ad=dao.getAdminByUserName(username);
 								MainAdminPanel adminpanel=new MainAdminPanel(ad);
 								adminpanel.setVisible(true);
 								// Student GUI to be added here
