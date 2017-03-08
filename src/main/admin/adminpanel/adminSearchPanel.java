@@ -17,6 +17,9 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+
+import org.jdesktop.swingx.JXTextField;
+
 import javax.swing.JToggleButton;
 
 public class adminSearchPanel extends JPanel {
@@ -24,7 +27,7 @@ public class adminSearchPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
+	private JXTextField textField;
 	private JTable table;
     private AdminTableModel adminTableModel;
     List<Admin> admin = null;
@@ -39,8 +42,9 @@ public class adminSearchPanel extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
-		textField = new JTextField();
+		textField = new JXTextField();
 		textField.setBounds(10, 11, 1090, 20);
+		textField.setPrompt("Admin search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
 		AdminPanelDAO adminPanelDAO = new AdminPanelDAO();

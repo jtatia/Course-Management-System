@@ -10,12 +10,19 @@ import main.admin.admin.Admin;
 public class AdminTableModel extends AbstractTableModel{
 	
 	private static final int SNO=0;
+	
 	private static final int USERNAME=1;
+	
 	private static final int FIRST_NAME=2;
+	
 	private static final int MIDDLE_NAME=3;
+	
 	private static final int LAST_NAME=4;
+	
 	private static final int AGE=5;
+	
 	private static final int SEX=6;
+	
 	private static final int EMAIL=7;
 	
 	
@@ -45,7 +52,7 @@ public class AdminTableModel extends AbstractTableModel{
 	}
 	
 	@Override
-	public Class getColumnClass(int c) {
+	public Class<?> getColumnClass(int c) {
 		return getValueAt(0, c).getClass();
 	}
 	
