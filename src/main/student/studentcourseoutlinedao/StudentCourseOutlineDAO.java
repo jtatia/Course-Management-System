@@ -24,7 +24,7 @@ public class StudentCourseOutlineDAO {
 		String dbname=properties.getProperty("dbName");
 		String user=properties.getProperty("user");
 		String password=properties.getProperty("password");
-		try{
+		try{System.out.println("StudentCourseOutlineDAO");
 		myCon=DriverManager.getConnection(dbname, user, password);
 		/*
 		 * For Debugging Purpose

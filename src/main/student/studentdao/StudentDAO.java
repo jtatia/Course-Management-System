@@ -27,7 +27,7 @@ public class StudentDAO{
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("StudentDAO");
 		myCon=DriverManager.getConnection(dbname, user, password);
 		/*
 		 * For Debugging Purpose

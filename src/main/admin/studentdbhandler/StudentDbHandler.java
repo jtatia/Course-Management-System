@@ -30,7 +30,7 @@ public class StudentDbHandler {
 		dbName=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("StudentDBHandler");
 		myCon=DriverManager.getConnection(dbName,user,password);
 		/*
 		 * System.out.println("Connection Established");
@@ -74,13 +74,7 @@ public class StudentDbHandler {
 					exc.printStackTrace();
 				}
 			}
-			if(myCon!=null){
-				try{
-					myCon.close();
-				}catch(Exception exc){
-					exc.printStackTrace();
-				}
-			}
+			
 		}
 		return list_stud;
 	}
@@ -206,13 +200,8 @@ public class StudentDbHandler {
 					}catch(Exception exc){
 						exc.printStackTrace();
 					}
-				}
-				if(myCon!=null){
-					try{
-						myCon.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
+				
+				
 				}
 			}
 	}
@@ -268,13 +257,8 @@ public class StudentDbHandler {
 						exc.printStackTrace();
 					}
 				}
-				if(myCon!=null){
-					try{
-						myCon.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
-				}
+				
+				
 			}
 	}
 }
