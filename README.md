@@ -4,5 +4,4 @@ Innovation Lab Project
 Jai Tatia<br />
 Kshitij Jauhri<br />
 Shashwat Tiwari<br />
-Prateek Karnal<br />
 Abhijit Roy
