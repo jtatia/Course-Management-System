@@ -31,6 +31,11 @@ public class Professor {
 	private String courseid4;
 	
 	private String courseid5;
+	
+	public Professor()
+	{
+		
+	}
 
 	public Professor(int sno, String username, String firstname, String middlename, String lastname, String email,
 			char sex, String password, String securityques, String answer, String courseid1, String courseid2,
@@ -283,5 +288,9 @@ public class Professor {
 		this.courseid5 = courseid5;
 	}
 	
-	
+	public String toString()
+	{
+		return firstname+" "+middlename+" "+lastname;
+		
+	}
 }

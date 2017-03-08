@@ -2,6 +2,7 @@ package main.admin.adminpanel;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.JScrollPane;
@@ -25,6 +26,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.JToggleButton;
 
 public class StudentSearchPanel extends JPanel {
+	
 	private JTextField textField;
 	
 	private JTable table;
@@ -39,19 +41,19 @@ public class StudentSearchPanel extends JPanel {
 		setLayout(null);
 		setVisible(true);
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 1320, 40);
+		panel.setBounds(10, 11, 1320, 38);
 		//panel.setBounds(10, 11, 830, 400);
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
-		list=new ArrayList<Student>();
 		sdbh=new StudentDbHandler();
 		list=sdbh.getAllStudent();
 		StudentTableModel model=new StudentTableModel(list);
 		table.setModel(model);
+
 		
 		textField = new JTextField();
-		textField.setBounds(0, 11, 1080, 20);
+		textField.setBounds(10, 11, 1090, 20);
 		panel.add(textField);
 		textField.setColumns(10);
 		
@@ -59,18 +61,12 @@ public class StudentSearchPanel extends JPanel {
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			String text=textField.getText();
-			list=new ArrayList<Student>();
 			try
 			{
 				sdbh=new StudentDbHandler();
-				if(text!=null && text.trim().length()>0)
-				{
-					list=sdbh.searchStudent(text);
-				}	
-				else
-				{
-					list=sdbh.getAllStudent();
-				}
+				list=sdbh.searchStudent(text);
+				if(text.trim().equals(""))
+				list=new ArrayList<Student>();		
 				StudentTableModel model=new StudentTableModel(list);
 				table.setModel(model);
 			}
@@ -82,7 +78,7 @@ public class StudentSearchPanel extends JPanel {
 			}
 		});
 		btnSearch.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSearch.setBounds(1100, 9, 104, 23);
+		btnSearch.setBounds(1120, 10, 89, 23);
 		panel.add(btnSearch);
 		
 		JButton btnNewButton = new JButton("Refresh");
@@ -91,7 +87,6 @@ public class StudentSearchPanel extends JPanel {
 			try
 			{	
 			textField.setText("");
-			list=new ArrayList<Student>();
 			sdbh=new StudentDbHandler();
 			list=sdbh.getAllStudent();
 			StudentTableModel model=new StudentTableModel(list);
@@ -105,19 +100,18 @@ public class StudentSearchPanel extends JPanel {
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNewButton.setBounds(1220, 10, 97, 23);
+		btnNewButton.setBounds(1230, 10, 89, 23);
 		panel.add(btnNewButton);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
-		
 		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(10,530, 1280,40);
+		panel_1.setBounds(10, 530, 1320, 42);
 		add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		JButton btnAdd = new JButton("Add ");
@@ -155,7 +149,7 @@ public class StudentSearchPanel extends JPanel {
 					JOptionPane.showMessageDialog(StudentSearchPanel.this, "Select a Student","Error",JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				Student tempEmp=(Student)table.getValueAt(row,StudentTableModel.OBJECT_COL);
+				Student tempEmp=(Student)table.getValueAt(row,-1);
 				try{
 				StudentUpdateForm dialog=new StudentUpdateForm(tempEmp);
 				dialog.setVisible(true);
