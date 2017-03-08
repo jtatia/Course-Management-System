@@ -11,6 +11,9 @@ import javax.swing.border.EmptyBorder;
 import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
 import main.admin.adminpanel.MainAdminPanel;
+import main.professor.professor.Professor;
+import main.professor.professorDAO.ProfessorDAO;
+import main.professor.professorframe.ProfessorFrame;
 import main.student.student.Student;
 import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.StudentDAO;
@@ -42,6 +45,8 @@ public class ForgotPasswordDialog extends JDialog {
 	private Student student;
 	
 	private Admin admin;
+	
+	private Professor prof;
 	
 	private StudentDAO studentdao;
 	
@@ -129,6 +134,26 @@ public class ForgotPasswordDialog extends JDialog {
 						questionLabel.setText(admin.getSecurityques());	
 					}
 				}
+				
+				else if(user.equals("Professor"))
+				{
+					ProfessorDAO pdao=new ProfessorDAO();
+					String username=userIdTextField.getText();
+					prof=pdao.getProfByUsername(username.trim());
+					
+					if(prof==null)
+					{
+						// if no such roll no exists 
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
+					}
+					else
+					{
+						questionLabel.setVisible(true);			// to display the security question
+						cancelButton.setEnabled(true);			// enable the buttons so that the user can submit the answer or cancel
+						submitButton2.setEnabled(true);				
+						questionLabel.setText(prof.getSecurityques());	
+					}
+				}
 			}
 			catch(Exception ex)
 			{
@@ -208,6 +233,30 @@ public class ForgotPasswordDialog extends JDialog {
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Security answer did not match !! Access denied." ,"Information"  ,JOptionPane.INFORMATION_MESSAGE );
 					}
 				}	
+				
+				else if(user.equals("Professor"))
+				{
+					if(answer.equalsIgnoreCase(prof.getAnswer())){
+						String str=prof.getFirstname()+(int)(Math.random()*100);    // generating a new password
+						prof.setPassword(str);		// setting the new password
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
+						try
+						{
+							// entering the student course outline using the security answer  
+							ProfessorFrame profframe=new ProfessorFrame(prof);
+							profframe.setVisible(true);
+						}
+						catch(Exception ex)
+						{
+							JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					else
+					{
+						// case of invalid security answer
+						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Security answer did not match !! Access denied." ,"Information"  ,JOptionPane.INFORMATION_MESSAGE );
+					}
+				}
 				}
 			});
 			submitButton2.setBounds(215, 202, 78, 23);
