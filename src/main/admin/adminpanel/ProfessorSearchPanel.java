@@ -7,6 +7,8 @@ import main.admin.adminpanel.addAdmin.addAdmin;
 import main.admin.adminpanel.admintablemodel.AdminTableModel;
 import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.admin.adminpaneldao.AdminPanelDAO;
+import main.professor.professor.Professor;
+import main.professor.professorDAO.ProfessorDAO;
 
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
@@ -31,7 +33,7 @@ public class ProfessorSearchPanel extends JPanel {
 	private JXTextField textField;
 	private JTable table;
     private ProfTableModel profTableModel;
-    List<Admin> prof = null;
+    List<Professor> prof = null;
 	/**
 	 * Create the panel.
 	 */
@@ -48,18 +50,18 @@ public class ProfessorSearchPanel extends JPanel {
 		textField.setPrompt("Faculty search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
-		ProfPanelDAO profPanelDAO = new ProfPanelDAO();
+		ProfessorDAO profPanelDAO = new ProfessorDAO();
 		prof = profPanelDAO.getAllProfessor(); 
 		profTableModel = new ProfTableModel(prof);
-		table.setModel(ProfTableModel);
+		table.setModel(profTableModel);
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
 				String toSearch = textField.getText();
-				admin = adminPanelDAO.searchAdmin(toSearch);
-				adminTableModel = new AdminTableModel(admin);
-				table.setModel(adminTableModel);
+				prof = profPanelDAO.searchProfessor(toSearch);
+				profTableModel = new ProfTableModel(prof);
+				table.setModel(profTableModel);
 				}catch(Exception e1){
 					e1.printStackTrace();
 				}
@@ -74,9 +76,9 @@ public class ProfessorSearchPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
 				try {
-					admin = adminPanelDAO.getAllAdmin();
-					adminTableModel = new AdminTableModel(admin);
-					table.setModel(adminTableModel);
+					prof = profPanelDAO.getAllProfessor();
+					profTableModel = new ProfTableModel(prof);
+					table.setModel(profTableModel);
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}

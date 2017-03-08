@@ -78,7 +78,7 @@ public class ProfTableModel extends AbstractTableModel{
 			case COURSE_ID3:return prof.getCourseid3();
 			case COURSE_ID4:return prof.getCourseid4();
 			case COURSE_ID5:return prof.getCourseid5();
+			default:return prof.getFirstname();
 		}
-		return null;
 	}
 }
