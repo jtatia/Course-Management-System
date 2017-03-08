@@ -63,7 +63,7 @@ public class StudentSearchPanel extends JPanel {
 			String text=textField.getText();
 			try
 			{
-				sdbh=new StudentDbHandler();
+				//sdbh=new StudentDbHandler();
 				list=sdbh.searchStudent(text);
 				if(text.trim().equals(""))
 				list=new ArrayList<Student>();		
@@ -87,7 +87,7 @@ public class StudentSearchPanel extends JPanel {
 			try
 			{	
 			textField.setText("");
-			sdbh=new StudentDbHandler();
+			//sdbh=new StudentDbHandler();
 			list=sdbh.getAllStudent();
 			StudentTableModel model=new StudentTableModel(list);
 			table.setModel(model);

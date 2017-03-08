@@ -32,7 +32,7 @@ public class ProfessorDAO {
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("ProfessorDAO");
 			myCon=DriverManager.getConnection(dbname, user, password);
 		}catch(SQLException exc){
 			System.out.println("Connection Problem::: Message ::");
