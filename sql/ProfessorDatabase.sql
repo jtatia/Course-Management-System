@@ -1,3 +1,10 @@
+CREATE SCHEMA if  not exists `cms` ;
+
+use cms;
+
+drop table if exists professor;
+
+
 CREATE TABLE `cms`.`professor` (
   `s.no` INT NOT NULL AUTO_INCREMENT,
   `user_name` VARCHAR(45) NOT NULL,
@@ -6,7 +13,7 @@ CREATE TABLE `cms`.`professor` (
   `last_name` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `sex` VARCHAR(1) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
   `security_ques` VARCHAR(45) NOT NULL,
   `answer` VARCHAR(45) NOT NULL,
   `course_id1` VARCHAR(45) NOT NULL,

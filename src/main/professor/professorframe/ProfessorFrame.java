@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import main.professor.professor.Professor;
 import main.student.studentCourseOutline.StudentCourseOutline;
 
 import javax.swing.GroupLayout;
@@ -26,26 +27,8 @@ public class ProfessorFrame extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ProfessorFrame frame = new ProfessorFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public ProfessorFrame() {
+	
+	public ProfessorFrame(Professor prof) {
 		setTitle("Professor Panel");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0,0, 1366, 730);
@@ -66,13 +49,13 @@ public class ProfessorFrame extends JFrame {
 		JLabel lblEmail = new JLabel("Email :");
 		lblEmail.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 22));
 		
-		JLabel lblNameField = new JLabel("New label");
+		JLabel lblNameField = new JLabel(prof.toString());
 		lblNameField.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 22));
 		
-		JLabel lblUserfield = new JLabel("New label");
+		JLabel lblUserfield = new JLabel(prof.getUsername());
 		lblUserfield.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 22));
 		
-		Container lblEmailfield = new JLabel("New label");
+		Container lblEmailfield = new JLabel(prof.getEmail());
 		lblEmailfield.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 22));
 		GroupLayout gl_panelTop = new GroupLayout(panelTop);
 		gl_panelTop.setHorizontalGroup(

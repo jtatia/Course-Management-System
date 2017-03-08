@@ -5,6 +5,9 @@ package main.util.login;
 import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
 import main.admin.adminpanel.MainAdminPanel;
+import main.professor.professor.Professor;
+import main.professor.professorDAO.ProfessorDAO;
+import main.professor.professorframe.ProfessorFrame;
 import main.student.student.*;
 import main.student.studentCourseOutline.CourseOutline;
 import main.student.studentdao.*;
@@ -67,7 +70,53 @@ public class LoginPortal extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(str.equals("Student"))
+				
+				if(str.equals("Professor"))
+				{
+					try
+					{
+						Professor prof = new Professor();
+						
+						String username = textField.getText();
+						char[] pass=passwordField.getPassword();
+						String password = new String(pass);
+						prof.setUsername(username);
+						prof.setPassword(password);
+						
+						ProfessorDAO dao=new ProfessorDAO();
+						int value=dao.passwordChecker(prof);
+						
+						switch(value)
+						{
+							case 0:
+								// invalid user name
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid User Name","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							case 1:
+								// invalid password
+								JOptionPane.showMessageDialog(LoginPortal.this,"Invalid Password","Error",JOptionPane.ERROR_MESSAGE);
+								break;
+							case 2:
+								// everything is fine. Login successful
+								currentObject.setVisible(false);
+								currentObject.dispose();
+								// obtaining Prof by username
+								Professor professor=dao.getProfByUsername(prof.getUsername());
+								/*StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
+								studentCourseOutline.setVisible(true);*/
+								ProfessorFrame profframe=new ProfessorFrame(professor);
+								profframe.setVisible(true);
+								// Student GUI to be added here 
+						}	
+						
+					}catch(Exception ex)
+					{
+						// In case of Execptions
+						JOptionPane.showMessageDialog(LoginPortal.this,"Error : "+ex.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+					}
+				}
+				
+			else if(str.equals("Student"))
 					
 				{	
 					
