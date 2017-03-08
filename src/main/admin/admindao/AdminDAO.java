@@ -32,7 +32,7 @@ public class AdminDAO {
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("AdminDAO");
 		myCon=DriverManager.getConnection(dbname, user, password);
 		/*
 		 * For Debugging Purpose

@@ -46,9 +46,14 @@ public class StudentTableModel extends AbstractTableModel{
 	
 	private static final int SUBJECT10=18;
 	
-	
-	private String[] columnNames={"ID", "Roll No", "First Name", "Middle Name", "Last Name", "Batch", "Email", "Sex", "Age", "Subject 1", "Subject 2", "Subject 3", "Subject 4", "Subject 5", "Subject 6", "Subject 7", "Subject 8", "Subject 9", "Subject 10"};
+	private String[] columnNames={"ID", "Roll No", "First Name","Middle Name","Last Name", "Batch", "Email", "Sex", "Age", "Subject 1", "Subject 2", "Subject 3", "Subject 4", "Subject 5", "Subject 6", "Subject 7", "Subject 8", "Subject 9", "Subject 10"};
+
 	private List<Student> list;
+	
+	public String getColumnName(int col)
+	{
+		return columnNames[col];
+	}
 	
 	public StudentTableModel(List<Student> list)
 	{

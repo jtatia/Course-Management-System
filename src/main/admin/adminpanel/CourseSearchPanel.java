@@ -1,6 +1,7 @@
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
+
 import javax.swing.JTextField;
 
 import javax.swing.JButton;
@@ -14,7 +15,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
+
 import main.admin.adminpanel.addcourse.AddCourse;
+
+import org.jdesktop.swingx.JXTextField;
+
+
 import main.admin.adminpanel.coursetablemodel.CourseTableModel;
 import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
@@ -28,7 +34,7 @@ public class CourseSearchPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
+	private JXTextField textField;
 	private JTable table;
     private CourseTableModel courseTableModel;
     private CourseDAO dao = null;
@@ -43,8 +49,9 @@ public class CourseSearchPanel extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
-		textField = new JTextField();
+		textField = new JXTextField();
 		textField.setBounds(10, 11, 1090, 20);
+		textField.setPrompt("Course search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
 		dao = new CourseDAO();

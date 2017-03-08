@@ -3,9 +3,14 @@ package main.student.coursepanel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.border.LineBorder;
 import javax.swing.JScrollBar;
 import java.awt.FlowLayout;
+import javax.swing.border.MatteBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class CoursePanel extends JPanel {
 
@@ -13,7 +18,11 @@ public class CoursePanel extends JPanel {
 	 * Create the panel.
 	 */
 	public CoursePanel() {
+		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		JTabbedPane jtp = new JTabbedPane(JTabbedPane.RIGHT);
+		//jtp.setBounds(100, 100, 300, 200);
+		//jtp.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
+		//int ft_size=jtp.getFont().getSize();
 		CourseAssignmentPanel cap=new CourseAssignmentPanel();
 		
 		CourseMaterialPanel cmp=new CourseMaterialPanel();

@@ -31,7 +31,7 @@ public class StudentDbHandler {
 		dbName=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("StudentDBHandler");
 		myCon=DriverManager.getConnection(dbName,user,password);
 		/*
 		 * System.out.println("Connection Established");
@@ -42,9 +42,9 @@ public class StudentDbHandler {
 		}
 	}
 	
-	private String EncryptPassword(){
+	private String EncryptPassword(String password){
 		StrongPasswordEncryptor encryptor=new StrongPasswordEncryptor();
-		String encryptedPassword=encryptor.encryptPassword(this.password);
+		String encryptedPassword=encryptor.encryptPassword(password);
 		return encryptedPassword;
 	}
 	public List<Student> getAllStudent()throws Exception{
@@ -75,13 +75,7 @@ public class StudentDbHandler {
 					exc.printStackTrace();
 				}
 			}
-			if(myCon!=null){
-				try{
-					myCon.close();
-				}catch(Exception exc){
-					exc.printStackTrace();
-				}
-			}
+			
 		}
 		return list_stud;
 	}
@@ -135,13 +129,13 @@ public class StudentDbHandler {
 					exc.printStackTrace();
 				}
 			}
-			if(myCon!=null){
+			/*if(myCon!=null){
 				try{
 				myCon.close();
 				}catch(Exception exc){
 					exc.printStackTrace();
 				}
-			}
+			}*/
 		}
 		return list_search;
 	}
@@ -184,7 +178,7 @@ public class StudentDbHandler {
 				pstmt.setInt(6, age);
 				pstmt.setString(7, email);
 				pstmt.setString(8,batch);
-				pstmt.setString(9,EncryptPassword());
+				pstmt.setString(9,EncryptPassword(password));
 				pstmt.setString(10, securityques);
 				pstmt.setString(11, answer);
 				pstmt.setString(12, subject1);
@@ -207,13 +201,8 @@ public class StudentDbHandler {
 					}catch(Exception exc){
 						exc.printStackTrace();
 					}
-				}
-				if(myCon!=null){
-					try{
-						myCon.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
+				
+				
 				}
 			}
 	}
@@ -244,7 +233,7 @@ public class StudentDbHandler {
 				pstmt.setInt(5, age);
 				pstmt.setString(6, email);
 				pstmt.setString(7,batch);
-			    pstmt.setString(8, password);
+			    pstmt.setString(8, EncryptPassword(password));
 				pstmt.setString(9, securityques);
 				pstmt.setString(10, answer);
 				pstmt.setString(11, subject1);
@@ -265,13 +254,6 @@ public class StudentDbHandler {
 				if(pstmt!=null){
 					try{
 						pstmt.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
-				}
-				if(myCon!=null){
-					try{
-						myCon.close();
 					}catch(Exception exc){
 						exc.printStackTrace();
 					}

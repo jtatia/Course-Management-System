@@ -8,7 +8,6 @@ import java.awt.EventQueue;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 import main.admin.studentdbhandler.StudentDbHandler;
 import main.student.student.Student;
@@ -23,11 +22,14 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.ListSelectionModel;
 import javax.swing.SwingUtilities;
+
+import org.jdesktop.swingx.JXTextField;
+
 import javax.swing.JToggleButton;
 
 public class StudentSearchPanel extends JPanel {
 	
-	private JTextField textField;
+	private JXTextField textField;
 	
 	private JTable table;
 	
@@ -52,8 +54,9 @@ public class StudentSearchPanel extends JPanel {
 		table.setModel(model);
 
 		
-		textField = new JTextField();
+		textField = new JXTextField();
 		textField.setBounds(10, 11, 1090, 20);
+		textField.setPrompt("Student Search panel.Please enter a String to search.");
 		panel.add(textField);
 		textField.setColumns(10);
 		
@@ -63,7 +66,7 @@ public class StudentSearchPanel extends JPanel {
 			String text=textField.getText();
 			try
 			{
-				sdbh=new StudentDbHandler();
+				//sdbh=new StudentDbHandler();
 				list=sdbh.searchStudent(text);
 				if(text.trim().equals(""))
 				list=new ArrayList<Student>();		
@@ -87,7 +90,7 @@ public class StudentSearchPanel extends JPanel {
 			try
 			{	
 			textField.setText("");
-			sdbh=new StudentDbHandler();
+			//sdbh=new StudentDbHandler();
 			list=sdbh.getAllStudent();
 			StudentTableModel model=new StudentTableModel(list);
 			table.setModel(model);

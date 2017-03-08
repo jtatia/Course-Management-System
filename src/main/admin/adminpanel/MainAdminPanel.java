@@ -28,6 +28,7 @@ public class MainAdminPanel extends JFrame {
 	private JButton btnStudent;
 	private JButton btnAdminPanel;
 	private JButton btnCourseSide;
+	JButton btnCoursePanel;
 	private JLabel lblNameField;
 	private JLabel lblUserfield;
 	private JLabel lblEmailfield;
@@ -139,9 +140,12 @@ public class MainAdminPanel extends JFrame {
 		JButton btnLogout = new JButton("Logout");
 		btnLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				LoginPortal login=new LoginPortal("Admin");
-				login.setVisible(true);
-				dispose();
+				int response=JOptionPane.showConfirmDialog(panelMiddle, "Are you Sure you want to logout");
+				if(response==JOptionPane.YES_OPTION){
+					LoginPortal login=new LoginPortal("Admin");
+					login.setVisible(true);
+					dispose();
+				}
 			}
 		});
 		
@@ -153,6 +157,7 @@ public class MainAdminPanel extends JFrame {
 				btnFacultyPanel.setEnabled(true);
 				btnStudent.setEnabled(true);
 				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
 		
@@ -164,6 +169,7 @@ public class MainAdminPanel extends JFrame {
 				btnFacultyPanel.setEnabled(true);
 				btnStudent.setEnabled(true);
 				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
 		
@@ -171,6 +177,11 @@ public class MainAdminPanel extends JFrame {
 		btnFacultyPanel.setEnabled(false);
 		btnFacultyPanel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				card.show(panelMiddle, "Professor Search Panel");
+				btnFacultyPanel.setEnabled(true);
+				btnStudent.setEnabled(true);
+				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
 		
@@ -181,10 +192,20 @@ public class MainAdminPanel extends JFrame {
 				btnFacultyPanel.setEnabled(false);
 				btnStudent.setEnabled(false);
 				btnAdminPanel.setEnabled(false);
+				btnCoursePanel.setEnabled(false);
 			}
 		});
 		
-		JButton btnCoursePanel = new JButton("Course Panel");
+		btnCoursePanel = new JButton("Course Panel");
+		btnCoursePanel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(panelMiddle, "Course Search Panel");
+				btnFacultyPanel.setEnabled(true);
+				btnStudent.setEnabled(true);
+				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
+			}
+		});
 		btnCoursePanel.setEnabled(false);
 		GroupLayout gl_panelFooter = new GroupLayout(panelFooter);
 		gl_panelFooter.setHorizontalGroup(
@@ -229,13 +250,15 @@ public class MainAdminPanel extends JFrame {
 		adminSearchPanel asp=new adminSearchPanel();
 		StudentSearchPanel ssp=new StudentSearchPanel();
 		CourseSearchPanel csp = new CourseSearchPanel();
+		ProfessorSearchPanel psp=new ProfessorSearchPanel();
 		panelMiddle.add(panel_select, "Selection Panel");
 		panelMiddle.add(asp, "Admin Search Panel");
 		panelMiddle.add(ssp,"Student Search Panel");
 		panelMiddle.add(csp,"Course Search Panel");
-		JButton btnNewButton_1 = new JButton("STUDENT SIDE");
-		btnNewButton_1.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-		btnNewButton_1.addActionListener(new ActionListener() {
+		panelMiddle.add(psp,"Professor Search Panel");
+		JButton btnStudentSide = new JButton("STUDENT SIDE");
+		btnStudentSide.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
+		btnStudentSide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(panelMiddle, "Student Search Panel");
 				btnFacultyPanel.setEnabled(true);
@@ -245,12 +268,21 @@ public class MainAdminPanel extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton_2 = new JButton("FACULTY SIDE");
-		btnNewButton_2.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
+		JButton btnFacultySide = new JButton("FACULTY SIDE");
+		btnFacultySide.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				card.show(panelMiddle, "Professor Search Panel");
+				btnFacultyPanel.setEnabled(true);
+				btnStudent.setEnabled(true);
+				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
+			}
+		});
+		btnFacultySide.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
 		
-		JButton btnNewButton_3 = new JButton("ADMIN SIDE");
-		btnNewButton_3.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnAdminSide = new JButton("ADMIN SIDE");
+		btnAdminSide.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
+		btnAdminSide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				card.show(panelMiddle, "Admin Search Panel");
 				btnFacultyPanel.setEnabled(true);
@@ -267,6 +299,7 @@ public class MainAdminPanel extends JFrame {
 				btnFacultyPanel.setEnabled(true);
 				btnStudent.setEnabled(true);
 				btnAdminPanel.setEnabled(true);
+				btnCoursePanel.setEnabled(true);
 			}
 		});
 		btnCourseSide.setFont(new Font("Comic Sans MS", Font.BOLD, 24));
@@ -276,12 +309,12 @@ public class MainAdminPanel extends JFrame {
 				.addGroup(gl_panel_select.createSequentialGroup()
 					.addGap(260)
 					.addGroup(gl_panel_select.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(btnNewButton_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+						.addComponent(btnAdminSide, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(btnFacultySide, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
 					.addGroup(gl_panel_select.createParallelGroup(Alignment.TRAILING, false)
 						.addComponent(btnCourseSide, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(btnNewButton_1, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+						.addComponent(btnStudentSide, GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
 					.addGap(289))
 		);
 		gl_panel_select.setVerticalGroup(
@@ -289,12 +322,12 @@ public class MainAdminPanel extends JFrame {
 				.addGroup(gl_panel_select.createSequentialGroup()
 					.addGap(84)
 					.addGroup(gl_panel_select.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton_3, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE))
+						.addComponent(btnStudentSide, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnAdminSide, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE))
 					.addGap(47)
 					.addGroup(gl_panel_select.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnCourseSide, GroupLayout.PREFERRED_SIZE, 185, GroupLayout.PREFERRED_SIZE)
-						.addComponent(btnNewButton_2, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
+						.addComponent(btnFacultySide, GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE))
 					.addContainerGap(105, Short.MAX_VALUE))
 		);
 		panel_select.setLayout(gl_panel_select);

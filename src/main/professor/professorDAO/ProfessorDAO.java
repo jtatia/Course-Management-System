@@ -6,6 +6,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.jasypt.util.password.StrongPasswordEncryptor;
@@ -29,7 +32,7 @@ public class ProfessorDAO {
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");
-		try{
+		try{System.out.println("ProfessorDAO");
 			myCon=DriverManager.getConnection(dbname, user, password);
 		}catch(SQLException exc){
 			System.out.println("Connection Problem::: Message ::");
@@ -111,6 +114,71 @@ public class ProfessorDAO {
 			}
 		}
 		return prof;
+	}
+	
+	public List<Professor> getAllProfessor(){
+		PreparedStatement pstmt=null;
+		ArrayList<Professor> pr_list=new ArrayList<Professor>();
+		try{
+			/*if(myCon==null)
+				System.out.println("null");*/
+			pstmt=myCon.prepareStatement("select * from professor");
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				Professor temp_pr=convertRowToProfessor(rs);
+				pr_list.add(temp_pr);
+			}
+			return pr_list;
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+		}
+		return null;
+	}
+	
+	private Professor convertRowToProfessor(ResultSet rs) throws Exception{
+		return new Professor(rs.getInt("s.no"), rs.getString("user_name"), rs.getString("first_name"), rs.getString("middle_name"),rs.getString("last_name"), rs.getString("email"), rs.getString("sex").charAt(0), rs.getString("password"), rs.getString("security_ques"), rs.getString("answer"), rs.getString("course_id1"), rs.getString("course_id2"), rs.getString("course_id3"), rs.getString("course_id4"), rs.getString("course_id5"));
+	}
+
+	public List<Professor> searchProfessor(String toSearch) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt=null;
+		ArrayList<Professor> pr_list=new ArrayList<Professor>();
+		try{
+			pstmt=myCon.prepareStatement("select * from professor where (user_name like ?) or (first_name like ?) or (middle_name like ?) or (last_name like ?) or (email like ?) or (sex like ?) or (course_id1 like ?) or (course_id2 like ?) or (course_id3 like ?) or (course_id4 like ?) or (course_id5 like ?)");
+			pstmt.setString(1, toSearch);
+			pstmt.setString(2, toSearch);
+			pstmt.setString(3, toSearch);
+			pstmt.setString(4, toSearch);
+			pstmt.setString(5, toSearch);
+			pstmt.setString(6, toSearch);
+			pstmt.setString(7, toSearch);
+			pstmt.setString(8, toSearch);
+			pstmt.setString(9, toSearch);
+			pstmt.setString(10, toSearch);
+			pstmt.setString(11, toSearch);
+			//pstmt.setString(12, toSearch);
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				Professor pr_temp=convertRowToProfessor(rs);
+				pr_list.add(pr_temp);
+			}
+			return pr_list;
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+		}
+		return null;
 	}
 
 }

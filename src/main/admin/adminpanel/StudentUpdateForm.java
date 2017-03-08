@@ -402,7 +402,7 @@ public class StudentUpdateForm extends JDialog {
 		email_text.setText(tempStu.getEmail());;
 		password_text.setText(tempStu.getPassword());;
 		security_text.setText(tempStu.getSecurityques());;
-		ans_text.setText(new Integer(tempStu.getAge()).toString());
+		ans_text.setText(tempStu.getAnswer());
 		batch_text.setText(tempStu.getBatch());
 		s1_text.setText(tempStu.getSubject1());
 		s2_text.setText(tempStu.getSubject2());
