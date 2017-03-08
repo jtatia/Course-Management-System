@@ -91,13 +91,13 @@ public class CourseDAO {
 					exc.printStackTrace();
 				}
 		}
-			if(myCon!=null){
+			/*if(myCon!=null){
 				try{
 					myCon.close();
 				}catch(Exception exc){
 					exc.printStackTrace();
 				}
-			}
+			}*/
 		}
 	}
 }

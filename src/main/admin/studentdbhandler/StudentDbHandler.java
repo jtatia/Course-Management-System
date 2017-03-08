@@ -41,9 +41,9 @@ public class StudentDbHandler {
 		}
 	}
 	
-	private String EncryptPassword(){
+	private String EncryptPassword(String password){
 		StrongPasswordEncryptor encryptor=new StrongPasswordEncryptor();
-		String encryptedPassword=encryptor.encryptPassword(this.password);
+		String encryptedPassword=encryptor.encryptPassword(password);
 		return encryptedPassword;
 	}
 	public List<Student> getAllStudent()throws Exception{
@@ -128,13 +128,13 @@ public class StudentDbHandler {
 					exc.printStackTrace();
 				}
 			}
-			if(myCon!=null){
+			/*if(myCon!=null){
 				try{
 				myCon.close();
 				}catch(Exception exc){
 					exc.printStackTrace();
 				}
-			}
+			}*/
 		}
 		return list_search;
 	}
@@ -177,7 +177,7 @@ public class StudentDbHandler {
 				pstmt.setInt(6, age);
 				pstmt.setString(7, email);
 				pstmt.setString(8,batch);
-				pstmt.setString(9,EncryptPassword());
+				pstmt.setString(9,EncryptPassword(password));
 				pstmt.setString(10, securityques);
 				pstmt.setString(11, answer);
 				pstmt.setString(12, subject1);
@@ -232,7 +232,7 @@ public class StudentDbHandler {
 				pstmt.setInt(5, age);
 				pstmt.setString(6, email);
 				pstmt.setString(7,batch);
-			    pstmt.setString(8, password);
+			    pstmt.setString(8, EncryptPassword(password));
 				pstmt.setString(9, securityques);
 				pstmt.setString(10, answer);
 				pstmt.setString(11, subject1);
@@ -257,8 +257,6 @@ public class StudentDbHandler {
 						exc.printStackTrace();
 					}
 				}
-				
-				
 			}
 	}
 }
