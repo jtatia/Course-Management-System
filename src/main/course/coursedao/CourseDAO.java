@@ -6,9 +6,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import main.course.course.Course;
+import main.student.student.Student;
 
 public class CourseDAO {
 	
@@ -41,20 +45,123 @@ public class CourseDAO {
 		}
 	}
 	
+	public Course convertRowToCourse(ResultSet rs)throws Exception{
+		Course course=new Course();
+		course.setCourseId(rs.getString("course_id"));
+		course.setSerialNo(rs.getInt("s.no"));
+		course.setCourseName(rs.getString("course_name"));
+		course.setCourseInfo(rs.getString("course_info"));
+		return course;
+	}
+	public List<Course> getAllCourses()
+	{
+		Statement st=null;
+		ArrayList<Course> list= new ArrayList<Course>();
+		ResultSet rs=null;
+		try
+		{
+			st=myCon.createStatement();
+			rs=st.executeQuery("select * from course");
+			while(rs.next())
+			{
+				Course course=convertRowToCourse(rs);
+				list.add(course);
+			}
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally{
+			if(st!=null){
+				try{
+					st.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+			if(rs!=null){
+				try{
+					rs.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+		return list;
+	}
+	
+	public List<Course> searchCourse(String field)
+	{
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		ArrayList<Course> list=new ArrayList<Course>();
+		try
+		{
+			String text="%"+field+"%";
+			pstmt=myCon.prepareStatement("select * from course where (course_id like ?) or (course_name like ?)");
+			pstmt.setString(1, text);
+			pstmt.setString(2, text);
+			rs=pstmt.executeQuery();
+			while(rs.next())
+			{
+				Course course=convertRowToCourse(rs);
+				list.add(course);
+			}
+		}	
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(pstmt!=null)
+			{	
+				try
+				{
+					pstmt.close();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+			if(rs!=null){
+				try{
+					rs.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+		return list;
+	}
 	public Course getCourseById(String course_id) {
 		
 		PreparedStatement pstmt=null;
 		Course course=null;
 		
 		try {
+			System.out.println("hello0");
 			pstmt=myCon.prepareStatement("select * from course where course_id = ?");
-
-			pstmt.setString(1, course_id);
-			ResultSet rs = pstmt.executeQuery();
+			System.out.println("hello");
 			
+			pstmt.setString(1, course_id);
+			System.out.println("hello1");
+			ResultSet rs = pstmt.executeQuery();
+			System.out.println(rs.next());
 			if(rs.next())
 			{
-				course=new Course(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
+			/*	course = new Course();
+				course.setCourseId(rs.getString("course_id"));
+				course.setCourseName(rs.getString("course_name"));
+				course.setSerialNo(rs.getInt("s.no"));
+				course.setCourseInfo("");*/
+				System.out.println(rs.getInt("s.no"));
+				System.out.println(rs.getString("course_id"));
+				System.out.println(rs.getString("course_name"));
+				System.out.println(rs.getString("course_info"));
+				course=new Course(rs.getInt("s.no"),rs.getString("course_id"),rs.getString("course_name"),rs.getString("course_info"));
 			}
 			
 		}catch(Exception exc){
@@ -91,13 +198,27 @@ public class CourseDAO {
 					exc.printStackTrace();
 				}
 		}
-			if(myCon!=null){
-				try{
-					myCon.close();
-				}catch(Exception exc){
-					exc.printStackTrace();
-				}
-			}
 		}
 	}
+	 public void addCourse(Course course)
+	 {
+		 PreparedStatement pstmt=null;
+			try{
+				pstmt=myCon.prepareStatement("INSERT INTO course(`course_id`,`course_name`,`course_info`)VALUES(?,?,?)");
+				pstmt.setString(1, course.getCourseId());
+				pstmt.setString(2, course.getCourseName());
+				pstmt.setString(3, course.getCourseInfo());
+				pstmt.executeUpdate();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}finally{
+				if(pstmt!=null){
+					try{
+						pstmt.close();
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+				}
+			}
+	 }
 }

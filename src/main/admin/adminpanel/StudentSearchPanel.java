@@ -149,10 +149,10 @@ public class StudentSearchPanel extends JPanel {
 					JOptionPane.showMessageDialog(StudentSearchPanel.this, "Select a Student","Error",JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				Student tempEmp=(Student)table.getValueAt(row,-1);
+				Student tempStud=(Student)table.getValueAt(row,-1);
 				try{
-				StudentUpdateForm dialog=new StudentUpdateForm(tempEmp);
-				dialog.setVisible(true);
+				StudentUpdateForm form=new StudentUpdateForm(tempStud);
+				form.setVisible(true);
 				}catch(Exception exc){
 					exc.printStackTrace();
 				}

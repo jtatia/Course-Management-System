@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -13,8 +14,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 
+import main.admin.adminpanel.addcourse.AddCourse;
 import main.admin.adminpanel.coursetablemodel.CourseTableModel;
+import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
+import main.course.coursedao.CourseDAO;
+import main.student.student.Student;
 
 import javax.swing.JToggleButton;
 
@@ -26,13 +31,13 @@ public class CourseSearchPanel extends JPanel {
 	private JTextField textField;
 	private JTable table;
     private CourseTableModel courseTableModel;
+    private CourseDAO dao = null;
     List<Course> course = null;
 	/**
 	 * Create the panel.
 	 */
 	public CourseSearchPanel()throws Exception {
 		setLayout(null);
-		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 11, 1320, 38);
 		add(panel);
@@ -42,14 +47,15 @@ public class CourseSearchPanel extends JPanel {
 		textField.setBounds(10, 11, 1090, 20);
 		panel.add(textField);
 		textField.setColumns(10);
+		dao = new CourseDAO();
 		courseTableModel = new CourseTableModel(course);
 		table.setModel(courseTableModel);
 		JButton btnSearch = new JButton("Search");
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
-				//String toSearch = textField.getText();
-				//send toSearch to dao method to search
+				String toSearch = textField.getText();
+				course=dao.searchCourse(toSearch);
 				courseTableModel = new CourseTableModel(course);
 				table.setModel(courseTableModel);
 				}catch(Exception e1){
@@ -66,6 +72,7 @@ public class CourseSearchPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
 				try {
+					course=dao.getAllCourses();
 					courseTableModel = new CourseTableModel(course);
 					table.setModel(courseTableModel);
 				} catch (Exception e1) {
@@ -85,9 +92,27 @@ public class CourseSearchPanel extends JPanel {
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				new AddCourse();
 			}
 		});
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				int row=table.getSelectedRow();
+				if(row<0){
+					JOptionPane.showMessageDialog(CourseSearchPanel.this, "Select a Course","Error",JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				Course tempCourse=(Course)table.getValueAt(row,-1);
+				try{//System.out.println(tempCourse.getCourseId());
+					UpdateCourse form=new UpdateCourse(tempCourse.getCourseId());
+					form.setVisible(true);
+					}catch(Exception exc){
+						exc.printStackTrace();
+					}
+			}
+			
+		});
 		JToggleButton tglbtnSelectMultiple = new JToggleButton("Select Multiple");
 		tglbtnSelectMultiple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
