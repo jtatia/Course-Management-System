@@ -8,9 +8,6 @@ import main.student.student.Student;
 
 public class StudentTableModel extends AbstractTableModel{
 	
-	// The constants below are used to indicate the column numbers 
-	public static final int OBJECT_COL=-1;
-	
 	private static final int ID=0;
 	
 	private static final int ROLL_NO=1;
@@ -49,11 +46,8 @@ public class StudentTableModel extends AbstractTableModel{
 	
 	private static final int SUBJECT10=18;
 	
-	// to store the column names 
 	
-	private String colNames[]={"ID","Roll No","First Name","Last Name","Batch","Email","Sex","Age","Subject 1","Subject 2","Subject 3","Subject 4","Subject 5","Subject 6","Subject 7","Subject 8","Subject 9","Subject 10"};
-	
-	// list of type student
+	private String[] columnNames={"ID", "Roll No", "First Name", "Last Name", "Batch", "Email", "Sex", "Age", "Subject 1", "Subject 2", "Subject 3", "Subject 4", "Subject 5", "Subject 6", "Subject 7", "Subject 8", "Subject 9", "Subject 10"};
 	private List<Student> list;
 	
 	public StudentTableModel(List<Student> list)
@@ -64,7 +58,7 @@ public class StudentTableModel extends AbstractTableModel{
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
-		return colNames.length;    			//  returns number of columns
+		return columnNames.length;    			//  returns number of columns
 	}
 
 	@Override
@@ -119,10 +113,10 @@ public class StudentTableModel extends AbstractTableModel{
 				return stud.getSubject9();
 			case SUBJECT10 :
 				return stud.getSubject10();
-			case OBJECT_COL:
+			case -1:
 				return stud;
-			default :
-				return stud;   					// default returns the complete student object
+			default:
+				return stud.getRollno();
 		}
 	}
 	public Class getColumnClass(int c)

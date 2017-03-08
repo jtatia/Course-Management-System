@@ -15,11 +15,12 @@ public class Course {
 		
 	}
 	
-	public Course(int serialNo,String courseId,String courseInfo)
+	public Course(int serialNo,String courseId,String courseName,String courseInfo)
 	{
 		this();
 		this.serialNo=serialNo;
 		this.courseInfo=courseInfo;
+		this.courseName=courseName;
 		this.courseId=courseId;
 	}
 	
