@@ -22,3 +22,8 @@ CREATE TABLE `cms`.`admin` (
 INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`last_name`,`age`,`sex`,`email`,`security_ques`,`answer`) VALUES (2,'brisingr','/KSzksMk8J5+abgQDx/Aw3jqouHKSzURozZNVjYPNyJMWChwfholQL+O9TGRUOc+','Kshitij','EkNumber','Jauhri',19,'M','brisingr@pom.com','Where do you Live','Lucknow');
 INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`last_name`,`age`,`sex`,`email`,`security_ques`,`answer`) VALUES (3,'jthacker','/rG3Heck62f0GnYgB+BWG0HhLeF0nDOmorshBZppBQq7aKKEJwResAHaq47AcWvN','Jai','Coder','Tatia',19,'M','jtatia@pom.com','Where do you Live','Goa');
 INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`last_name`,`age`,`sex`,`email`,`security_ques`,`answer`) VALUES (4,'sasyboy','RaHyf59CuPa52j/9bCF6ERluRV6ZjSwGc4HyiPedaurGziWeCKnK/pKD+1BK/udV','Shashwat','Laudiwala','Tiwari',19,'M','sasy@pom.com','Where do you Live','Kanpur');
+
+UPDATE `cms`.`admin` SET `middle_name`='Susheel', `email`='brisingr@gmail.com' WHERE `s.no`='2' and`username`='brisingr';
+UPDATE `cms`.`admin` SET `middle_name`='', `email`='jtatia@gmail.com' WHERE `s.no`='3' and`username`='jthacker';
+UPDATE `cms`.`admin` SET `middle_name`='', `email`='sasy@gmail.com' WHERE `s.no`='4' and`username`='sasyboy';
+UPDATE `cms`.`admin` SET `email`='emberroy@gmail.com' WHERE `s.no`='1' and`username`='warlord';
