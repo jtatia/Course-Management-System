@@ -11,10 +11,12 @@ import javax.swing.border.EmptyBorder;
 import main.admin.admin.Admin;
 import main.admin.admindao.AdminDAO;
 import main.admin.adminpanel.MainAdminPanel;
+import main.admin.studentdbhandler.StudentDbHandler;
 import main.professor.professor.Professor;
 import main.professor.professorDAO.ProfessorDAO;
 import main.professor.professorframe.ProfessorFrame;
 import main.student.student.Student;
+import main.student.studentCourseOutline.CourseOutline;
 import main.student.studentCourseOutline.StudentCourseOutline;
 import main.student.studentdao.StudentDAO;
 
@@ -23,6 +25,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
 
 public class ForgotPasswordDialog extends JDialog {
@@ -50,7 +53,11 @@ public class ForgotPasswordDialog extends JDialog {
 	
 	private StudentDAO studentdao;
 	
+	private StudentDbHandler sdbh;
+	
 	private AdminDAO admindao;
+	
+	private ProfessorDAO professordao;
 	/**
 	 * Launch the application.
 	 */
@@ -137,9 +144,9 @@ public class ForgotPasswordDialog extends JDialog {
 				
 				else if(user.equals("Professor"))
 				{
-					ProfessorDAO pdao=new ProfessorDAO();
+					professordao=new ProfessorDAO();
 					String username=userIdTextField.getText();
-					prof=pdao.getProfByUsername(username.trim());
+					prof=professordao.getProfByUsername(username.trim());
 					
 					if(prof==null)
 					{
@@ -192,12 +199,22 @@ public class ForgotPasswordDialog extends JDialog {
 					if(answer.equalsIgnoreCase(student.getAnswer())){
 						String str=student.getFirstname()+(int)(Math.random()*100);    // generating a new password
 						student.setPassword(str);		// setting the new password
+						try {
+							sdbh=new StudentDbHandler();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						sdbh.modifyStudent(student.getRollno(), student.getFirstname(),student.getMiddlename(), student.getLastname(), ""+student.getSex(), student.getAge(),
+								student.getEmail(), student.getBatch(),student.getPassword(), student.getSecurityques(), student.getAnswer(), student.getSubject1(), student.getSubject2(),
+								student.getSubject3(),student.getSubject4(), student.getSubject5(), student.getSubject6(), student.getSubject7(), student.getSubject8(),
+								student.getSubject9(), student.getSubject10());
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
 							// entering the student course outline using the security answer  
-							StudentCourseOutline studentCourseOutline=new StudentCourseOutline(student);
-							studentCourseOutline.setVisible(true);
+							CourseOutline courseOutline=new CourseOutline(student);
+							courseOutline.setVisible(true);
 						}
 						catch(Exception ex)
 						{
@@ -215,6 +232,7 @@ public class ForgotPasswordDialog extends JDialog {
 					if(answer.equalsIgnoreCase(admin.getAnswer())){
 						String str=admin.getFirstname()+(int)(Math.random()*100);    // generating a new password
 						admin.setPassword(str);		// setting the new password
+						admindao.modifyAdmin(admin);
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
@@ -239,6 +257,7 @@ public class ForgotPasswordDialog extends JDialog {
 					if(answer.equalsIgnoreCase(prof.getAnswer())){
 						String str=prof.getFirstname()+(int)(Math.random()*100);    // generating a new password
 						prof.setPassword(str);		// setting the new password
+						professordao.modifyProfessor(prof);
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{

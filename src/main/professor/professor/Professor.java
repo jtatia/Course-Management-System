@@ -1,5 +1,6 @@
 package main.professor.professor;
 
+// password for username samrat is currently Samrat86
 public class Professor {
 
 	private int sno;

@@ -180,5 +180,49 @@ public class ProfessorDAO {
 		}
 		return null;
 	}
-
+	private String EncryptPassword(String password){
+		StrongPasswordEncryptor encryptor=new StrongPasswordEncryptor();
+		String encryptedPassword=encryptor.encryptPassword(password);
+		return encryptedPassword;
+	}
+	public void modifyProfessor(Professor prof)
+	{
+		PreparedStatement pstmt=null;
+		try{
+			
+			pstmt=myCon.prepareStatement("update professor set first_name = ?, middle_name= ?, last_name = ?, sex = ?,email = ?,password = ? ,security_ques = ?, answer = ?, course_id1 = ?, course_id2= ?, course_id3= ?, course_id4= ?, course_id5= ? where user_name = ?");
+			pstmt.setString(1, prof.getFirstname());
+			pstmt.setString(2, prof.getMiddlename());
+			pstmt.setString(3, prof.getLastname());
+			pstmt.setString(4, ""+prof.getSex());
+			pstmt.setString(5, prof.getEmail());
+			pstmt.setString(6, EncryptPassword(prof.getPassword()));
+		    pstmt.setString(7, prof.getSecurityques());
+			pstmt.setString(8, prof.getAnswer());
+			pstmt.setString(9, prof.getCourseid1());
+			pstmt.setString(10, prof.getCourseid2());
+			pstmt.setString(11,	prof.getCourseid3());
+			pstmt.setString(12, prof.getCourseid4());
+			pstmt.setString(13, prof.getCourseid5());
+			pstmt.setString(14, prof.getUsername());
+			pstmt.executeUpdate();
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+			if(myCon!=null){
+				try{
+					myCon.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+	}
 }
