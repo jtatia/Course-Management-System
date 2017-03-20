@@ -30,6 +30,9 @@ import javax.swing.AbstractListModel;
 import javax.swing.DefaultListModel;
 
 import java.awt.Color;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JCheckBox;
 
 public class AddCourse extends JFrame {
 	static int z=0,i=0;
@@ -69,7 +72,7 @@ public class AddCourse extends JFrame {
 		setTitle("Add Course");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 50, 453, 650);
+		setBounds(100, 50, 713, 650);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -202,5 +205,45 @@ public class AddCourse extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton_1.setBounds(336, 134, 52, 19);
 		contentPane.add(btnNewButton_1);
+		
+		JLabel lblBatch = new JLabel("Batch :");
+		lblBatch.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblBatch.setBounds(425, 51, 46, 14);
+		contentPane.add(lblBatch);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13", "mtech16", "mtech15", "mtech14"}));
+		comboBox.setBounds(481, 48, 176, 20);
+		contentPane.add(comboBox);
+		
+		JCheckBox chckbxCse = new JCheckBox("cse");
+		chckbxCse.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxCse.setBounds(425, 85, 52, 23);
+		contentPane.add(chckbxCse);
+		
+		JCheckBox chckbxEe = new JCheckBox("ee");
+		chckbxEe.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxEe.setBounds(481, 85, 52, 23);
+		contentPane.add(chckbxEe);
+		
+		JCheckBox chckbxMe = new JCheckBox("me");
+		chckbxMe.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxMe.setBounds(535, 85, 46, 23);
+		contentPane.add(chckbxMe);
+		
+		JCheckBox chckbxCe = new JCheckBox("ce");
+		chckbxCe.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxCe.setBounds(583, 85, 52, 23);
+		contentPane.add(chckbxCe);
+		
+		JCheckBox chckbxCh = new JCheckBox("ch");
+		chckbxCh.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxCh.setBounds(634, 85, 41, 23);
+		contentPane.add(chckbxCh);
+		
+		JCheckBox chckbxMathematics = new JCheckBox("Mathematics");
+		chckbxMathematics.setFont(new Font("Tahoma", Font.BOLD, 14));
+		chckbxMathematics.setBounds(425, 130, 119, 23);
+		contentPane.add(chckbxMathematics);
 	}
 }
