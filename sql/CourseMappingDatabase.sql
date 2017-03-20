@@ -34,7 +34,7 @@ INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (11,'ME101','rishiraj','me16b','che16b','ce16b',NULL,NULL);
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (12,'CS201','arijit','cse15b',NULL,NULL,NULL,NULL);
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (13,'CS203','suman','cse15b',NULL,NULL,NULL,NULL);
-INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (14,'CS299','arijit_samrat_somnath_jimson_joydeep','cse15b',NULL,NULL,NULL,NULL);
+INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (14,'CS299','arijit_samrat_somnath_jimson_asif','cse15b',NULL,NULL,NULL,NULL);
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (15,'MA102','omprakash','ee16b','me16b',NULL,NULL,NULL);
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (16,'MA102','sudhan','cse16b','che16b','ce16b',NULL,NULL);
 INSERT INTO `course_mapping` (`s.no`,`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`) VALUES (17,'EE200','shiva','ee15b',NULL,NULL,NULL,NULL);

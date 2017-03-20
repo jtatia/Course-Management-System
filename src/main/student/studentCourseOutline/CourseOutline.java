@@ -133,7 +133,7 @@ public class CourseOutline extends JFrame {
 		card=new CardLayout(0,0);
 		panel_1.setLayout(card);
 		PanelCourses panel_course=new PanelCourses(student,this);
-		CoursePanel c_panel=new CoursePanel();
+		CoursePanel c_panel=new CoursePanel("");
 		panel_1.add(panel_course,"PanelCourses");
 		panel_1.add(c_panel,"CoursePanel");
 		

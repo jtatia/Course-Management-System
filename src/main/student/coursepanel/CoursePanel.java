@@ -17,7 +17,7 @@ public class CoursePanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CoursePanel() {
+	public CoursePanel(String path) {
 		setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		JTabbedPane jtp = new JTabbedPane(JTabbedPane.RIGHT);
 		//jtp.setBounds(100, 100, 300, 200);
