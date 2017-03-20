@@ -14,6 +14,7 @@ import com.jcraft.jsch.Session;
 
 public class Upload {
 	
+	static final String path="/home/stud/btech/cse/2015/kshitij.cs15/cms" ;
 	String ip;
 	String username;
 	String password;
@@ -65,6 +66,31 @@ public class Upload {
 		}catch(Exception ex){
 			ex.printStackTrace();
 		}
+	}
+	
+	/*
+	 * from - path on local system including file name
+	 * courseid - specific course id including prof name +cours name
+	 * assignment - assignment no.
+	 * roll - roll no. of the student
+	 */
+	public void studentUploadAssignment(String from, String courseid, String assignment, String roll)
+	{
+		String extension = from.substring(from.lastIndexOf('.'));
+		String to = path+"/"+courseid+"/uploaded assignments/"+assignment+"/"+roll+extension;
+		uploadFile(from,to);
+	}
+	
+	/*
+	 * from - path on local system including file name
+	 * courseid - specific course id including prof name +cours name
+	 * folder - either "assignments" or "material"
+	 */
+	public void professorUploadFile(String from, String courseid, String folder )
+	{
+		String filename = from.substring(from.lastIndexOf('/')+1);
+		String to = path+"/"+courseid+"/"+folder+"/"+filename;
+		uploadFile(from, to);
 	}
 
 }
