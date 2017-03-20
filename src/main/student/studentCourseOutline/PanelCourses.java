@@ -17,6 +17,7 @@ import javax.swing.JList;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
 
+import main.course.coursedao.CourseMappingDAO;
 import main.student.coursepanel.CoursePanel;
 import main.student.student.*;
 public class PanelCourses extends JPanel {
@@ -24,9 +25,11 @@ public class PanelCourses extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+	private CourseMappingDAO cmdao;
+	
 	public PanelCourses(Student student,CourseOutline co) throws Exception{
 		setLayout(new BorderLayout(0, 0));
-		
+		cmdao=new CourseMappingDAO();
 		JScrollPane scrollPane = new JScrollPane();
 		add(scrollPane, BorderLayout.CENTER);
 		
@@ -44,10 +47,12 @@ public class PanelCourses extends JPanel {
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
-				CoursePanel cp=new CoursePanel();
+				String course_name=(String)list.getSelectedValue();
+				String path=cmdao.getDirectoryPath(course_name, student.getBatch());
+				System.out.println(path);
+				CoursePanel cp=new CoursePanel(path);
 				JLabel jb=(JLabel)co.panel.getComponent(7);
 				JLabel jb_c=(JLabel)co.panel.getComponent(6);
-				String course_name=(String)list.getSelectedValue();
 				jb.setVisible(true);
 				jb_c.setVisible(true);
 				jb.setText(course_name);
