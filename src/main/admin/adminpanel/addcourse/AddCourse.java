@@ -21,14 +21,25 @@ import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JList;
+import javax.swing.border.BevelBorder;
+import javax.swing.AbstractListModel;
+import javax.swing.DefaultListModel;
+
+import java.awt.Color;
 
 public class AddCourse extends JFrame {
-
+	static int z=0,i=0;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField IdText;
+	private JTextField courseText;
 	private CourseDAO dao = null;
-
+	private JTextField profText;
+	private JList list;
+	private DefaultListModel<String> model;
 	/**
 	 * Launch the application.
 	 */
@@ -58,58 +69,51 @@ public class AddCourse extends JFrame {
 		setTitle("Add Course");
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 450, 500);
+		setBounds(100, 50, 453, 650);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JLabel lblAddCourseForm = new JLabel("Add Course Form");
+		lblAddCourseForm.setBounds(121, 16, 126, 14);
 		lblAddCourseForm.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblAddCourseForm.setBounds(138, 29, 180, 14);
-		contentPane.add(lblAddCourseForm);
 		
 		JLabel lblNewLabel = new JLabel("Course ID : ");
+		lblNewLabel.setBounds(67, 50, 76, 14);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblNewLabel.setBounds(44, 80, 130, 14);
-		contentPane.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(184, 78, 204, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		IdText = new JTextField();
+		IdText.setBounds(141, 48, 247, 20);
+		IdText.setColumns(10);
 		
 		JLabel lblCourseName = new JLabel("Course Name : ");
+		lblCourseName.setBounds(46, 88, 97, 14);
 		lblCourseName.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblCourseName.setBounds(44, 128, 130, 14);
-		contentPane.add(lblCourseName);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(184, 126, 204, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		courseText = new JTextField();
+		courseText.setBounds(141, 86, 247, 20);
+		courseText.setColumns(10);
 		
 		JLabel lblCourseInfo = new JLabel("Course Info :");
+		lblCourseInfo.setBounds(44, 334, 130, 14);
 		lblCourseInfo.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblCourseInfo.setBounds(44, 175, 130, 14);
-		contentPane.add(lblCourseInfo);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(44, 212, 344, 189);
-		contentPane.add(textArea);
+		textArea.setBounds(44, 359, 344, 189);
 		
 		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setBounds(121, 559, 89, 23);
 		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			Course course=new Course();
 			int f=0;
-			String course_id=textField.getText();
+			String course_id=IdText.getText();
 			if(course_id.equals(""))
 			{
 				f=1;	
 				JOptionPane.showMessageDialog(AddCourse.this,"Enter the Course Id","Alert : ",JOptionPane.WARNING_MESSAGE);
 			}
-			if(textField_1.getText().equals(""))
+			if(courseText.getText().equals(""))
 			{
 				f=1;
 				JOptionPane.showMessageDialog(AddCourse.this,"Enter the Course Name","Alert : ",JOptionPane.WARNING_MESSAGE);
@@ -119,8 +123,8 @@ public class AddCourse extends JFrame {
 			{
 				if(f==0)
 				{	
-					course.setCourseId(textField.getText());
-					course.setCourseName(textField_1.getText());
+					course.setCourseId(IdText.getText());
+					course.setCourseName(courseText.getText());
 					course.setCourseInfo(textArea.getText());
 					dao.addCourse(course);
 					JOptionPane.showMessageDialog(AddCourse.this,"New Course has been added","Info : ",JOptionPane.INFORMATION_MESSAGE);
@@ -132,10 +136,9 @@ public class AddCourse extends JFrame {
 			}
 		});
 		btnSubmit.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSubmit.setBounds(116, 427, 89, 23);
-		contentPane.add(btnSubmit);
 		
 		JButton btnCancel = new JButton("Cancel");
+		btnCancel.setBounds(241, 559, 89, 23);
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -143,7 +146,61 @@ public class AddCourse extends JFrame {
 			}
 		});
 		btnCancel.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnCancel.setBounds(227, 428, 89, 23);
+		
+		JLabel lblNameOfProfessor = new JLabel("Professor(s) :");
+		lblNameOfProfessor.setBounds(44, 134, 99, 16);
+		lblNameOfProfessor.setFont(new Font("Tahoma", Font.BOLD, 13));
+		
+		profText = new JTextField();
+		profText.setBounds(141, 133, 126, 20);
+		profText.setColumns(10);
+		
+		JButton btnNewButton = new JButton("+");
+		btnNewButton.setBounds(278, 134, 52, 20);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.addElement(profText.getText());
+				profText.setText("");
+				list.revalidate();
+				list.repaint();
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 10));
+		contentPane.setLayout(null);
+		
+		model = new DefaultListModel<>();
+		list = new JList(model);
+		list.setForeground(new Color(255, 255, 255));
+		list.setBackground(new Color(221, 160, 221));
+		list.setBounds(44, 189, 344, 134);
+		contentPane.add(list);
+		contentPane.add(lblAddCourseForm);
+		contentPane.add(lblNewLabel);
+		contentPane.add(IdText);
+		contentPane.add(lblCourseName);
+		contentPane.add(courseText);
+		contentPane.add(lblNameOfProfessor);
+		contentPane.add(profText);
+		contentPane.add(btnNewButton);
+		contentPane.add(lblCourseInfo);
+		contentPane.add(textArea);
+		contentPane.add(btnSubmit);
 		contentPane.add(btnCancel);
+		
+		JLabel lblNewLabel_1 = new JLabel("List of Professors for this Course");
+		lblNewLabel_1.setBounds(44, 164, 241, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JButton btnNewButton_1 = new JButton("-");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.remove(list.getSelectedIndex());
+				list.revalidate();
+				list.repaint();
+			}
+		});
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnNewButton_1.setBounds(336, 134, 52, 19);
+		contentPane.add(btnNewButton_1);
 	}
 }
