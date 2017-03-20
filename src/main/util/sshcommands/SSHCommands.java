@@ -49,7 +49,8 @@ public class SSHCommands {
 		obj.close();
 	}
 	
-	public static void runMultipleCommand(String cmd[]) throws TaskExecFailException
+	/*Will return "error" if error occurs*/
+	public static String runMultipleCommand(String cmd[]) throws TaskExecFailException
 	{	
 		CustomTask task = new ExecCommand(cmd);
 		Result res = ssh.exec(task);
@@ -62,10 +63,13 @@ public class SSHCommands {
 		{
 			System.out.println("Return code: " + res.rc);
 			System.out.println("error message: " + res.error_msg);
+			return "error";
 		}
+		return res.sysout;
 	}
 	
-	public static void runSingleCommand(String cmd) throws TaskExecFailException
+	/*Will return "error" if error occurs*/
+	public static String runSingleCommand(String cmd) throws TaskExecFailException
 	{	
 		CustomTask task = new ExecCommand(cmd);
 		Result res = ssh.exec(task);
@@ -78,7 +82,9 @@ public class SSHCommands {
 		{
 			System.out.println("Return code: " + res.rc);
 			System.out.println("error message: " + res.error_msg);
+			return "error";
 		}
+		return res.sysout;
 	}
 	
 	public void close()
