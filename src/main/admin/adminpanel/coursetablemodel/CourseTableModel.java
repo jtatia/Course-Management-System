@@ -11,7 +11,7 @@ public class CourseTableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	private static final int SNO=0;
 	private static final int COURSE_ID=1;
 	private static final int COURSE_NAME=2;
@@ -38,7 +38,7 @@ public class CourseTableModel extends AbstractTableModel {
 	}
 	
 	@Override
-	public Class getColumnClass(int c) {
+	public Class<?> getColumnClass(int c) {
 		return getValueAt(0, c).getClass();
 	}
 	

@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import main.admin.adminpanel.AddStudentForm;
@@ -102,7 +103,9 @@ public class AddCourse extends JFrame {
 		lblCourseInfo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(44, 359, 344, 189);
+		textArea.setLineWrap(true);
+		JScrollPane jsp=new JScrollPane(textArea);
+		jsp.setBounds(44, 359, 344, 189);
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(121, 559, 89, 23);
@@ -186,7 +189,7 @@ public class AddCourse extends JFrame {
 		contentPane.add(profText);
 		contentPane.add(btnNewButton);
 		contentPane.add(lblCourseInfo);
-		contentPane.add(textArea);
+		contentPane.add(jsp);
 		contentPane.add(btnSubmit);
 		contentPane.add(btnCancel);
 		

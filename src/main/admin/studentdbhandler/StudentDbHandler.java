@@ -261,4 +261,27 @@ public class StudentDbHandler {
 				}
 			}
 	}
+	public void deleteStudent(String rn){
+		 PreparedStatement pstmt=null;
+		 ResultSet rs=null;
+		 try{
+			 //System.out.println("Course"+id);
+			 pstmt=myCon.prepareStatement("delete from student where roll_no = ?");
+			 pstmt.setString(1, rn);
+			 pstmt.executeUpdate();
+		 }catch(Exception exc){
+			 exc.printStackTrace();
+		 }finally{
+			 if(pstmt!=null){
+				 try{
+					 pstmt.close();
+				 }catch(Exception exc){}
+			 }
+			 if(rs!=null){
+				 try{
+					 rs.close();
+				 }catch(Exception exc){}
+			 }
+		 }
+	 }
 }

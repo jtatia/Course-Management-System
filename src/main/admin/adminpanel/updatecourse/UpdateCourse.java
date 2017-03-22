@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import main.course.course.Course;
@@ -75,7 +76,7 @@ public class UpdateCourse extends JFrame {
 		lblNewLabel.setBounds(44, 78, 130, 14);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel(course.getCourseId());
+		JLabel lblNewLabel_1 = new JLabel(course_id);//changed
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblNewLabel_1.setBounds(184, 78, 204, 14);
 		contentPane.add(lblNewLabel_1);
@@ -95,11 +96,15 @@ public class UpdateCourse extends JFrame {
 		lblCourseInfo.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCourseInfo.setBounds(44, 175, 130, 14);
 		contentPane.add(lblCourseInfo);
-		
+		 
 		JTextArea textArea = new JTextArea();
+		JScrollPane jsp=new JScrollPane(textArea);
+		textArea.setLineWrap(true);
 		textArea.setText(course.getCourseInfo());
-		textArea.setBounds(44, 212, 344, 189);
-		contentPane.add(textArea);
+		//textArea.setBounds(44, 212, 344, 189);
+		jsp.setBounds(44,212,344,189);
+		contentPane.add(jsp);
+		//contentPane.add(textArea);
 		
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.addActionListener(new ActionListener() {

@@ -1,3 +1,5 @@
+/*PLEASE ADD METHOD FOR MULTIPLE DELETE*/
+/*METHOD SET TO ONLY SINGLE DELETE*/
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
@@ -6,6 +8,7 @@ import javax.swing.JTextField;
 import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
 import main.admin.adminpanel.admintablemodel.AdminTableModel;
+import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.admin.adminpaneldao.AdminPanelDAO;
 
 import javax.swing.JButton;
@@ -30,7 +33,8 @@ public class adminSearchPanel extends JPanel {
 	private JXTextField textField;
 	private JTable table;
     private AdminTableModel adminTableModel;
-    List<Admin> admin = null;
+    private List<Admin> admin = null;
+    private AdminPanelDAO adminPanelDAO=null;
 	/**
 	 * Create the panel.
 	 */
@@ -47,7 +51,7 @@ public class adminSearchPanel extends JPanel {
 		textField.setPrompt("Admin search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
-		AdminPanelDAO adminPanelDAO = new AdminPanelDAO();
+		adminPanelDAO = new AdminPanelDAO();
 		admin = adminPanelDAO.getAllAdmin(); 
 		adminTableModel = new AdminTableModel(admin);
 		table.setModel(adminTableModel);
@@ -121,6 +125,18 @@ public class adminSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index=table.getSelectedRow();
+				String user_name=(String)adminTableModel.getValueAt(index, 1);
+				adminPanelDAO.deleteAdmin(user_name);
+				try{
+				admin = adminPanelDAO.getAllAdmin();
+				adminTableModel = new AdminTableModel(admin);
+				table.setModel(adminTableModel);
+				}catch(Exception exc){}
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		

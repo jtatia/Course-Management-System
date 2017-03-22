@@ -1,3 +1,5 @@
+/*PLEASE ADD METHOD FOR MULTIPLE DELETE*/
+/*METHOD SET TO ONLY SINGLE DELETE*/
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
@@ -143,6 +145,16 @@ public class CourseSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index=table.getSelectedRow();
+				String id=(String)courseTableModel.getValueAt(index, 1);
+				dao.deleteCourse(id);
+				course=dao.getAllCourses();
+				courseTableModel = new CourseTableModel(course);
+				table.setModel(courseTableModel);
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		

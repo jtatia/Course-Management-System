@@ -1,6 +1,7 @@
 package main.course.coursedao;
 
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -142,25 +143,16 @@ public class CourseDAO {
 		Course course=null;
 		
 		try {
-			System.out.println("hello0");
+			//System.out.println("hello0");
 			pstmt=myCon.prepareStatement("select * from course where course_id = ?");
-			System.out.println("hello");
+			//System.out.println("hello");
 			
 			pstmt.setString(1, course_id);
-			System.out.println("hello1");
+			//System.out.println("hello1");
 			ResultSet rs = pstmt.executeQuery();
-			System.out.println(rs.next());
-			if(rs.next())
+			//System.out.println(rs.next());
+			while(rs.next())
 			{
-			/*	course = new Course();
-				course.setCourseId(rs.getString("course_id"));
-				course.setCourseName(rs.getString("course_name"));
-				course.setSerialNo(rs.getInt("s.no"));
-				course.setCourseInfo("");*/
-				System.out.println(rs.getInt("s.no"));
-				System.out.println(rs.getString("course_id"));
-				System.out.println(rs.getString("course_name"));
-				System.out.println(rs.getString("course_info"));
 				course=new Course(rs.getInt("s.no"),rs.getString("course_id"),rs.getString("course_name"),rs.getString("course_info"));
 			}
 			
@@ -220,5 +212,28 @@ public class CourseDAO {
 					}
 				}
 			}
+	 }
+	 public void deleteCourse(String id){
+		 PreparedStatement pstmt=null;
+		 ResultSet rs=null;
+		 try{
+			 //System.out.println("Course"+id);
+			 pstmt=myCon.prepareStatement("delete from course where course_id = ?");
+			 pstmt.setString(1, id);
+			 pstmt.executeUpdate();
+		 }catch(Exception exc){
+			 exc.printStackTrace();
+		 }finally{
+			 if(pstmt!=null){
+				 try{
+					 pstmt.close();
+				 }catch(Exception exc){}
+			 }
+			 if(rs!=null){
+				 try{
+					 rs.close();
+				 }catch(Exception exc){}
+			 }
+		 }
 	 }
 }
