@@ -39,8 +39,8 @@ public class Download {
 	/*
 	 * This is a generic function to download file from "from " on ssh to 
 	 * "to" on the local system.
-	 * Make sure that you specify complete path upto the filename in both the 
-	 * strings.
+	 * Make sure that you specify complete path upto the filename in from and 
+	 * only till parent directory in to. Everything else is handled inside the fuction
 	 * ALSO MAKE SURE THAT PATH IS SPECIFIED USING '/' AS SEPARATOR 
 	 */
 	public void downloadFile(String from, String to)
@@ -50,7 +50,7 @@ public class Download {
         ChannelSftp channelSftp = null;
         
         String directory=from.substring(0, from.lastIndexOf('/'));
-        String filename=from.substring(from.lastIndexOf('/'+1));
+        String filename=from.substring(from.lastIndexOf('/')+1);
         
         try {
             JSch jsch = new JSch();
@@ -66,7 +66,11 @@ public class Download {
             
             channelSftp.cd(directory);
             byte[] buffer = new byte[1024];
-            BufferedInputStream bis = new BufferedInputStream(channelSftp.get(filename));
+            System.out.println("from dir  =  "+directory);
+            System.out.println("filename = "+filename);
+            System.out.println("to dir =  "+to);
+            BufferedInputStream bis = new BufferedInputStream(channelSftp.get(filename.substring(1,filename.length()-1)));
+            to+=("/"+filename.substring(1,filename.length()-1));
             File newFile = new File(to);
             OutputStream os = new FileOutputStream(newFile);
             BufferedOutputStream bos = new BufferedOutputStream(os);

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -19,6 +20,8 @@ import javax.swing.ListSelectionModel;
 
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
+import main.util.download.Download;
+import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
 
 public class CourseAssignmentPanel extends JPanel {
@@ -59,9 +62,9 @@ public class CourseAssignmentPanel extends JPanel {
 		for(int i=0;i<str.length;i++)
 		{
 			Assignment temp = new Assignment();
-			temp.setName(str[i]);
+			temp.setName("\""+str[i]+"\"");
 			temp.setPath(path);
-			String s[]=FileDetails.getStats(path, "\""+str[i]+"\"");
+			String s[]=FileDetails.getStats(path,temp.getName() );
 			temp.setLastModified(s[1]);
 			temp.setSize(s[0]);
 			list.add(temp);
@@ -75,6 +78,25 @@ public class CourseAssignmentPanel extends JPanel {
 		panel_2.setBounds(10, 510, 1320, 42);
 		add(panel_2);
 		panel_2.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JButton downloadbtn = new JButton("Download");
+		downloadbtn.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				FileChooser fc = new FileChooser();
+				String path = fc.getDirectoryPath();
+				if(table.getSelectedRowCount()>0){
+					int[] row = table.getSelectedRows();
+					for(int r : row){
+						Assignment a = list.get(r);
+						String file = a.getPath()+a.getName();
+						Download dwn = new Download();
+						dwn.downloadFile(file, path);	
+					}
+				}
+				
+			}
+		});
+		
 		
 		JToggleButton tglbtnSelectMultiple = new JToggleButton("Select Multiple");
 		tglbtnSelectMultiple.addActionListener(new ActionListener() {
@@ -92,6 +114,7 @@ public class CourseAssignmentPanel extends JPanel {
 	//	tglbtnSelectMultiple.setBounds(10, 530, 200, 20);
 		tglbtnSelectMultiple.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(tglbtnSelectMultiple);
+		panel_2.add(downloadbtn);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);
