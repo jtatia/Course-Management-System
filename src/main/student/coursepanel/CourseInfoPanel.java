@@ -10,5 +10,8 @@ public class CourseInfoPanel extends JPanel {
 	public CourseInfoPanel() {
 
 	}
+	public CourseInfoPanel(String path) {
+
+	}
 
 }

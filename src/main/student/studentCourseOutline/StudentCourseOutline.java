@@ -154,7 +154,13 @@ public class StudentCourseOutline extends JFrame {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				coursePanel.setVisible(false);
-				CoursePanel cp=new CoursePanel("");
+				CoursePanel cp=null;
+				try {
+					cp = new CoursePanel();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				contentPane.add(cp,BorderLayout.CENTER);
 				//cp.setVisible(true);
 			}

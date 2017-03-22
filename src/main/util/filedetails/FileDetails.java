@@ -30,7 +30,10 @@ public class FileDetails {
 		
 		int mod_index=result.indexOf("Change: ");
 		mod_index+=8;
-		String mod= result.substring(mod_index, result.lastIndexOf(':', mod_index));
+		System.out.println("asdfadf"+result.lastIndexOf(':', mod_index));
+		System.out.println("cxvascxx"+mod_index);
+		String mod= result.substring(mod_index, result.lastIndexOf(':'));
+		
 		mod.trim();
 		ans[1]=mod;
 		sh.close();		
@@ -44,7 +47,11 @@ public class FileDetails {
 	{
 		SSHCommands sh = new SSHCommands();
 		String result = sh.runSingleCommand("ls "+path);
-		String ans[] = result.split(" ");
+		System.out.println("################# Result "+result);
+		String ans[] = result.split("\n");
+		System.out.println("################Length "+ans.length);
+		System.out.println("ans : :" + ans[0]+"lauda");
+		sh.close();
 		return ans;
 	}
 }

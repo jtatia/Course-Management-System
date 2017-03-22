@@ -30,6 +30,7 @@ public class CourseOutline extends JFrame {
 	JPanel panel;
 	JPanel panel_1;
 	JPanel panel_2;
+	CoursePanel c_panel;
 	/**
 	 * Launch the application.
 	 */
@@ -132,8 +133,9 @@ public class CourseOutline extends JFrame {
 		contentPane.add(panel_1, BorderLayout.CENTER);
 		card=new CardLayout(0,0);
 		panel_1.setLayout(card);
+		c_panel=new CoursePanel();
 		PanelCourses panel_course=new PanelCourses(student,this);
-		CoursePanel c_panel=new CoursePanel("");
+		
 		panel_1.add(panel_course,"PanelCourses");
 		panel_1.add(c_panel,"CoursePanel");
 		

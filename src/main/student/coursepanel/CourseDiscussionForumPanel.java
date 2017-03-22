@@ -10,5 +10,8 @@ public class CourseDiscussionForumPanel extends JPanel {
 	public CourseDiscussionForumPanel() {
 
 	}
+	public CourseDiscussionForumPanel(String path) {
+
+	}
 
 }

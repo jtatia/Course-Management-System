@@ -48,9 +48,18 @@ public class PanelCourses extends JPanel {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				String course_name=(String)list.getSelectedValue();
+				System.out.println("Course id is::"+course_name);
+				System.out.println("Batch is ::"+student.getBatch());
 				String path=cmdao.getDirectoryPath(course_name, student.getBatch());
+				
+				System.out.println("Path is::"+path);
 				System.out.println(path);
-				CoursePanel cp=new CoursePanel(path);
+				try {
+					co.c_panel.resetPanes(path);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				JLabel jb=(JLabel)co.panel.getComponent(7);
 				JLabel jb_c=(JLabel)co.panel.getComponent(6);
 				jb.setVisible(true);

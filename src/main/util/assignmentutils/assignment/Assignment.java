@@ -7,6 +7,10 @@ public class Assignment {
 	private String name;
 	private String path;
 	
+	public Assignment()
+	{
+		super();
+	}
 	public Assignment(String lastModified, String size, String name, String path) {
 		super();
 		this.lastModified = lastModified;

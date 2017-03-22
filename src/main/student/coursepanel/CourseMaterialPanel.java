@@ -9,6 +9,9 @@ public class CourseMaterialPanel extends JPanel {
 	 */
 	public CourseMaterialPanel() {
 
+	} 
+	public CourseMaterialPanel(String path) {
+
 	}
 
 }
