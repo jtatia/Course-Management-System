@@ -21,9 +21,25 @@ public class FileChooser {
 	}
 	    return "";
 }
-	
+	public String getDirectoryPath(){
+		JFileChooser chooser = new JFileChooser();
+	    chooser.setCurrentDirectory(new java.io.File("."));
+	    chooser.setDialogTitle("DIRECTORY SELECT");
+	    chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	    chooser.setAcceptAllFileFilterUsed(false);
+	    if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+	    	String path = chooser.getSelectedFile().getAbsolutePath();
+	    	return path;
+	    	
+	    }
+	    return "";
+
+	}
 	public static void main(String args[]){
-}
+		//FileChooser fc = new FileChooser();
+		//System.out.println(fc.getDirectoryPath());
+		
+	}
 }
 
    
