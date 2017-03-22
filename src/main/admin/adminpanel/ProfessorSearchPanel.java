@@ -1,5 +1,3 @@
-/*PLEASE ADD METHOD FOR MULTIPLE DELETE*/
-/*METHOD SET TO ONLY SINGLE DELETE*/
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
@@ -128,9 +126,11 @@ public class ProfessorSearchPanel extends JPanel {
 		JButton btnDelete = new JButton("Delete");
 		btnDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int index=table.getSelectedRow();
-				String rn=(String)profTableModel.getValueAt(index, 1);
-				profPanelDAO.deleteProf(rn);
+				int index[]=table.getSelectedRows();
+				for(int i=0;i<index.length;i++){
+					String rn=(String)profTableModel.getValueAt(index[i], 1);
+					profPanelDAO.deleteProf(rn);
+				}
 				try{
 				prof = profPanelDAO.getAllProfessor();
 				profTableModel = new ProfTableModel(prof);
