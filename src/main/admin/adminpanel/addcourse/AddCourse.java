@@ -212,38 +212,39 @@ public class AddCourse extends JFrame {
 		contentPane.add(lblBatch);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13", "mtech16", "mtech15", "mtech14"}));
+		comboBox.setBackground(Color.WHITE);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13"}));
 		comboBox.setBounds(481, 48, 176, 20);
 		contentPane.add(comboBox);
 		
-		JCheckBox chckbxCse = new JCheckBox("cse");
+		JCheckBox chckbxCse = new JCheckBox("Computer Science(cse) ");
 		chckbxCse.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxCse.setBounds(425, 85, 52, 23);
+		chckbxCse.setBounds(425, 210, 253, 23);
 		contentPane.add(chckbxCse);
 		
-		JCheckBox chckbxEe = new JCheckBox("ee");
+		JCheckBox chckbxEe = new JCheckBox("Electrical(ee)");
 		chckbxEe.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxEe.setBounds(481, 85, 52, 23);
+		chckbxEe.setBounds(425, 236, 155, 23);
 		contentPane.add(chckbxEe);
 		
-		JCheckBox chckbxMe = new JCheckBox("me");
+		JCheckBox chckbxMe = new JCheckBox("Mechanical(me)");
 		chckbxMe.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxMe.setBounds(535, 85, 46, 23);
+		chckbxMe.setBounds(425, 261, 176, 23);
 		contentPane.add(chckbxMe);
 		
-		JCheckBox chckbxCe = new JCheckBox("ce");
+		JCheckBox chckbxCe = new JCheckBox("Civil Engineering(ce)");
 		chckbxCe.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxCe.setBounds(583, 85, 52, 23);
+		chckbxCe.setBounds(425, 158, 232, 23);
 		contentPane.add(chckbxCe);
 		
-		JCheckBox chckbxCh = new JCheckBox("ch");
+		JCheckBox chckbxCh = new JCheckBox("Chemical Engineering(che)");
 		chckbxCh.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxCh.setBounds(634, 85, 41, 23);
+		chckbxCh.setBounds(425, 184, 220, 23);
 		contentPane.add(chckbxCh);
 		
-		JCheckBox chckbxMathematics = new JCheckBox("Mathematics");
-		chckbxMathematics.setFont(new Font("Tahoma", Font.BOLD, 14));
-		chckbxMathematics.setBounds(425, 130, 119, 23);
-		contentPane.add(chckbxMathematics);
+		JLabel lblNewLabel_2 = new JLabel("BRANCH/STREAM");
+		lblNewLabel_2.setFont(new Font("Microsoft JhengHei Light", Font.BOLD, 18));
+		lblNewLabel_2.setBounds(425, 107, 232, 20);
+		contentPane.add(lblNewLabel_2);
 	}
 }
