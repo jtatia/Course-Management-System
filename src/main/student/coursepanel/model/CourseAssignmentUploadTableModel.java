@@ -9,12 +9,11 @@ import main.student.coursepanel.objects.UploadInfo;
 public class CourseAssignmentUploadTableModel extends AbstractTableModel {
 	
 	private static final long serialVersionUID = 1L;
-	private static final int SNO=0;
-	private static final int FILE_NAME=1;
-	private static final int DATE_MODIFIED=2;
-	private static final int FILE_SIZE=3;
+	private static final int FILE_NAME=0;
+	private static final int DATE_MODIFIED=1;
+	private static final int FILE_SIZE=2;
 	
-	private String[] columnNames = {"S.No","File Name","Date Modified", "File Size"};
+	private String[] columnNames = {"File Name","Date Modified", "File Size"};
 	private List<UploadInfo> list;
 	public CourseAssignmentUploadTableModel(List<UploadInfo> uploadInfo) {
 		super();
@@ -45,8 +44,6 @@ public class CourseAssignmentUploadTableModel extends AbstractTableModel {
 		UploadInfo temp = list.get(row);
 
 		switch (col) {
-		case SNO:
-//			return temp.getSerialNo();
 		case FILE_NAME:
 			return temp.getName();
 		case DATE_MODIFIED:

@@ -9,6 +9,9 @@ import javax.swing.border.LineBorder;
 import javax.swing.JScrollBar;
 import java.awt.FlowLayout;
 import javax.swing.border.MatteBorder;
+
+import main.student.student.Student;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -25,7 +28,7 @@ public class CoursePanel extends JPanel {
 	private static CourseDiscussionForumPanel cdfp;
 	private static CourseInfoPanel cip;
 	
-	public void resetPanes(String path) throws Exception
+	public void resetPanes(Student student, String path) throws Exception
 	{
 		
 		jtp.removeAll();
@@ -36,7 +39,7 @@ public class CoursePanel extends JPanel {
 		cmp.add(new JLabel("TESTING"));
 		cmp.revalidate();
 		cmp.repaint();
-		caup=new CourseAssignmentUploadPanel(null,path);
+		caup=new CourseAssignmentUploadPanel(student,path);
 		
 		cdfp=new CourseDiscussionForumPanel(path);
 		

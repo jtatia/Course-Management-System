@@ -3144,3 +3144,3206 @@ Change: 2017-03-20 22:19:11.000000000 +0530
 [18:57:52] INFO:    Error message: stat: cannot stat `/home/stud/btech/cse/2015/kshitij.cs15/cms//assignments/error': No such file or directory
 [18:57:52] INFO:    Now wait 5 seconds to begin next task ...
 [18:57:57] INFO:    Connection channel disconnect
+
+=============== [2017/03/22 19:30:48, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[19:30:48] INFO:    SSHExec initializing ...
+[19:30:48] INFO:    Session initialized and associated with user credential 7301997
+[19:30:48] INFO:    SSHExec initialized successfully
+[19:30:48] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:30:49] INFO:    SSH connection established
+[19:30:49] INFO:    Command is ls 
+[19:30:50] INFO:    Connection channel established succesfully
+[19:30:50] INFO:    Start to run command
+[19:30:50] INFO:    cms
+testdir
+
+[19:30:50] INFO:    Connection channel closed
+[19:30:50] INFO:    Check if exec success or not ... 
+[19:30:50] INFO:    Execute successfully for command: ls 
+[19:30:50] INFO:    Now wait 5 seconds to begin next task ...
+[19:30:55] INFO:    Connection channel disconnect
+[19:30:55] INFO:    SSH connection shutdown
+[19:30:55] INFO:    Session initialized and associated with user credential 7301997
+[19:30:55] INFO:    SSHExec initialized successfully
+[19:30:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:30:55] INFO:    SSH connection established
+[19:30:55] INFO:    Command is stat "cms"
+[19:30:55] INFO:    Connection channel established succesfully
+[19:30:55] INFO:    Start to run command
+[19:30:55] INFO:      File: `cms'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869754     Links: 22
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-20 21:44:55.000000000 +0530
+Modify: 2017-03-21 03:02:05.000000000 +0530
+Change: 2017-03-21 03:02:05.000000000 +0530
+
+[19:30:55] INFO:    Connection channel closed
+[19:30:55] INFO:    Check if exec success or not ... 
+[19:30:55] INFO:    Execute successfully for command: stat "cms"
+[19:30:55] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:00] INFO:    Connection channel disconnect
+[19:31:00] INFO:    SSH connection shutdown
+[19:31:00] INFO:    Session initialized and associated with user credential 7301997
+[19:31:00] INFO:    SSHExec initialized successfully
+[19:31:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:01] INFO:    SSH connection established
+[19:31:01] INFO:    Command is stat "testdir"
+[19:31:01] INFO:    Connection channel established succesfully
+[19:31:01] INFO:    Start to run command
+[19:31:01] INFO:      File: `testdir'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5866414     Links: 9
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-02-09 15:14:09.000000000 +0530
+Modify: 2017-03-20 22:19:11.000000000 +0530
+Change: 2017-03-20 22:19:11.000000000 +0530
+
+[19:31:01] INFO:    Connection channel closed
+[19:31:01] INFO:    Check if exec success or not ... 
+[19:31:01] INFO:    Execute successfully for command: stat "testdir"
+[19:31:01] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:06] INFO:    Connection channel disconnect
+[19:31:06] INFO:    SSH connection shutdown
+[19:31:11] INFO:    Session initialized and associated with user credential 7301997
+[19:31:11] INFO:    SSHExec initialized successfully
+[19:31:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:11] INFO:    SSH connection established
+[19:31:11] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:31:11] INFO:    Connection channel established succesfully
+[19:31:11] INFO:    Start to run command
+[19:31:11] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[19:31:11] INFO:    Connection channel closed
+[19:31:11] INFO:    Check if exec success or not ... 
+[19:31:11] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:31:11] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:16] INFO:    Connection channel disconnect
+[19:31:16] INFO:    SSH connection shutdown
+[19:31:16] INFO:    Session initialized and associated with user credential 7301997
+[19:31:16] INFO:    SSHExec initialized successfully
+[19:31:16] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:17] INFO:    SSH connection established
+[19:31:17] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:31:17] INFO:    Connection channel established succesfully
+[19:31:17] INFO:    Start to run command
+[19:31:17] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[19:31:17] INFO:    Connection channel closed
+[19:31:17] INFO:    Check if exec success or not ... 
+[19:31:17] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:31:17] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:22] INFO:    Connection channel disconnect
+[19:31:22] INFO:    SSH connection shutdown
+[19:31:22] INFO:    Session initialized and associated with user credential 7301997
+[19:31:22] INFO:    SSHExec initialized successfully
+[19:31:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:22] INFO:    SSH connection established
+[19:31:22] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:31:23] INFO:    Connection channel established succesfully
+[19:31:23] INFO:    Start to run command
+[19:31:23] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:31:23] INFO:    Connection channel closed
+[19:31:23] INFO:    Check if exec success or not ... 
+[19:31:23] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:31:23] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:28] INFO:    Connection channel disconnect
+[19:31:28] INFO:    SSH connection shutdown
+[19:31:28] INFO:    Session initialized and associated with user credential 7301997
+[19:31:28] INFO:    SSHExec initialized successfully
+[19:31:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:29] INFO:    SSH connection established
+[19:31:29] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:31:29] INFO:    Connection channel established succesfully
+[19:31:29] INFO:    Start to run command
+[19:31:29] INFO:    assignments
+materials
+uploads
+
+[19:31:29] INFO:    Connection channel closed
+[19:31:29] INFO:    Check if exec success or not ... 
+[19:31:29] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:31:29] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:34] INFO:    Connection channel disconnect
+[19:31:34] INFO:    SSH connection shutdown
+[19:31:34] INFO:    Session initialized and associated with user credential 7301997
+[19:31:34] INFO:    SSHExec initialized successfully
+[19:31:34] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:34] INFO:    SSH connection established
+[19:31:34] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:31:34] INFO:    Connection channel established succesfully
+[19:31:34] INFO:    Start to run command
+[19:31:34] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869779     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:04:19.000000000 +0530
+Modify: 2017-03-22 22:52:27.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:31:35] INFO:    Connection channel closed
+[19:31:35] INFO:    Check if exec success or not ... 
+[19:31:35] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:31:35] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:40] INFO:    Connection channel disconnect
+[19:31:40] INFO:    SSH connection shutdown
+[19:31:40] INFO:    Session initialized and associated with user credential 7301997
+[19:31:40] INFO:    SSHExec initialized successfully
+[19:31:40] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:40] INFO:    SSH connection established
+[19:31:40] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:31:40] INFO:    Connection channel established succesfully
+[19:31:40] INFO:    Start to run command
+[19:31:40] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/materials'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869780     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:16.000000000 +0530
+Modify: 2017-03-21 03:06:16.000000000 +0530
+Change: 2017-03-21 03:06:16.000000000 +0530
+
+[19:31:40] INFO:    Connection channel closed
+[19:31:40] INFO:    Check if exec success or not ... 
+[19:31:40] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:31:40] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:45] INFO:    Connection channel disconnect
+[19:31:45] INFO:    SSH connection shutdown
+[19:31:45] INFO:    Session initialized and associated with user credential 7301997
+[19:31:45] INFO:    SSHExec initialized successfully
+[19:31:45] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:45] INFO:    SSH connection established
+[19:31:46] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:31:46] INFO:    Connection channel established succesfully
+[19:31:46] INFO:    Start to run command
+[19:31:46] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869781     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:28.000000000 +0530
+Modify: 2017-03-21 03:06:28.000000000 +0530
+Change: 2017-03-21 03:06:28.000000000 +0530
+
+[19:31:46] INFO:    Connection channel closed
+[19:31:46] INFO:    Check if exec success or not ... 
+[19:31:46] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:31:46] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:51] INFO:    Connection channel disconnect
+[19:31:51] INFO:    SSH connection shutdown
+[19:31:51] INFO:    Session initialized and associated with user credential 7301997
+[19:31:51] INFO:    SSHExec initialized successfully
+[19:31:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:51] INFO:    SSH connection established
+[19:31:51] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:31:52] INFO:    Connection channel established succesfully
+[19:31:52] INFO:    Start to run command
+[19:31:52] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[19:31:52] INFO:    Connection channel closed
+[19:31:52] INFO:    Check if exec success or not ... 
+[19:31:52] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:31:52] INFO:    Now wait 5 seconds to begin next task ...
+[19:31:57] INFO:    Connection channel disconnect
+[19:31:57] INFO:    SSH connection shutdown
+[19:31:57] INFO:    Session initialized and associated with user credential 7301997
+[19:31:57] INFO:    SSHExec initialized successfully
+[19:31:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:31:57] INFO:    SSH connection established
+[19:31:57] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:31:57] INFO:    Connection channel established succesfully
+[19:31:57] INFO:    Start to run command
+[19:31:57] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[19:31:57] INFO:    Connection channel closed
+[19:31:57] INFO:    Check if exec success or not ... 
+[19:31:57] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:31:57] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:03] INFO:    Connection channel disconnect
+[19:32:03] INFO:    SSH connection shutdown
+[19:32:03] INFO:    Session initialized and associated with user credential 7301997
+[19:32:03] INFO:    SSHExec initialized successfully
+[19:32:03] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:32:03] INFO:    SSH connection established
+[19:32:03] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:32:03] INFO:    Connection channel established succesfully
+[19:32:03] INFO:    Start to run command
+[19:32:03] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:32:03] INFO:    Connection channel closed
+[19:32:03] INFO:    Check if exec success or not ... 
+[19:32:03] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:32:03] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:08] INFO:    Connection channel disconnect
+[19:32:08] INFO:    SSH connection shutdown
+[19:32:08] INFO:    Session initialized and associated with user credential 7301997
+[19:32:08] INFO:    SSHExec initialized successfully
+[19:32:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:32:08] INFO:    SSH connection established
+[19:32:08] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:32:09] INFO:    Connection channel established succesfully
+[19:32:09] INFO:    Start to run command
+[19:32:09] INFO:    assignments
+materials
+uploads
+
+[19:32:09] INFO:    Connection channel closed
+[19:32:09] INFO:    Check if exec success or not ... 
+[19:32:09] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:32:09] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:14] INFO:    Connection channel disconnect
+[19:32:14] INFO:    SSH connection shutdown
+[19:32:14] INFO:    Session initialized and associated with user credential 7301997
+[19:32:14] INFO:    SSHExec initialized successfully
+[19:32:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:32:14] INFO:    SSH connection established
+[19:32:14] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:32:14] INFO:    Connection channel established succesfully
+[19:32:14] INFO:    Start to run command
+[19:32:14] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869779     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:04:19.000000000 +0530
+Modify: 2017-03-22 22:52:27.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:32:14] INFO:    Connection channel closed
+[19:32:14] INFO:    Check if exec success or not ... 
+[19:32:14] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:32:14] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:19] INFO:    Connection channel disconnect
+[19:32:20] INFO:    SSH connection shutdown
+[19:32:20] INFO:    Session initialized and associated with user credential 7301997
+[19:32:20] INFO:    SSHExec initialized successfully
+[19:32:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:32:20] INFO:    SSH connection established
+[19:32:20] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:32:20] INFO:    Connection channel established succesfully
+[19:32:20] INFO:    Start to run command
+[19:32:20] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/materials'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869780     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:16.000000000 +0530
+Modify: 2017-03-21 03:06:16.000000000 +0530
+Change: 2017-03-21 03:06:16.000000000 +0530
+
+[19:32:20] INFO:    Connection channel closed
+[19:32:20] INFO:    Check if exec success or not ... 
+[19:32:20] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:32:20] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:25] INFO:    Connection channel disconnect
+[19:32:25] INFO:    SSH connection shutdown
+[19:32:25] INFO:    Session initialized and associated with user credential 7301997
+[19:32:25] INFO:    SSHExec initialized successfully
+[19:32:25] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:32:25] INFO:    SSH connection established
+[19:32:25] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:32:26] INFO:    Connection channel established succesfully
+[19:32:26] INFO:    Start to run command
+[19:32:26] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869781     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:28.000000000 +0530
+Modify: 2017-03-21 03:06:28.000000000 +0530
+Change: 2017-03-21 03:06:28.000000000 +0530
+
+[19:32:26] INFO:    Connection channel closed
+[19:32:26] INFO:    Check if exec success or not ... 
+[19:32:26] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:32:26] INFO:    Now wait 5 seconds to begin next task ...
+[19:32:31] INFO:    Connection channel disconnect
+[19:32:31] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 19:45:46, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[19:45:46] INFO:    SSHExec initializing ...
+[19:45:46] INFO:    Session initialized and associated with user credential 7301997
+[19:45:46] INFO:    SSHExec initialized successfully
+[19:45:46] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:45:48] INFO:    SSH connection established
+[19:45:48] INFO:    Command is ls 
+[19:45:48] INFO:    Connection channel established succesfully
+[19:45:48] INFO:    Start to run command
+[19:45:48] INFO:    cms
+testdir
+
+[19:45:48] INFO:    Connection channel closed
+[19:45:48] INFO:    Check if exec success or not ... 
+[19:45:48] INFO:    Execute successfully for command: ls 
+[19:45:48] INFO:    Now wait 5 seconds to begin next task ...
+[19:45:53] INFO:    Connection channel disconnect
+[19:45:53] INFO:    SSH connection shutdown
+[19:45:53] INFO:    Session initialized and associated with user credential 7301997
+[19:45:53] INFO:    SSHExec initialized successfully
+[19:45:53] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:45:53] INFO:    SSH connection established
+[19:45:53] INFO:    Command is stat "cms"
+[19:45:53] INFO:    Connection channel established succesfully
+[19:45:53] INFO:    Start to run command
+[19:45:53] INFO:      File: `cms'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869754     Links: 22
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-20 21:44:55.000000000 +0530
+Modify: 2017-03-21 03:02:05.000000000 +0530
+Change: 2017-03-21 03:02:05.000000000 +0530
+
+[19:45:53] INFO:    Connection channel closed
+[19:45:53] INFO:    Check if exec success or not ... 
+[19:45:54] INFO:    Execute successfully for command: stat "cms"
+[19:45:54] INFO:    Now wait 5 seconds to begin next task ...
+[19:45:59] INFO:    Connection channel disconnect
+[19:45:59] INFO:    SSH connection shutdown
+[19:45:59] INFO:    Session initialized and associated with user credential 7301997
+[19:45:59] INFO:    SSHExec initialized successfully
+[19:45:59] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:45:59] INFO:    SSH connection established
+[19:45:59] INFO:    Command is stat "testdir"
+[19:45:59] INFO:    Connection channel established succesfully
+[19:45:59] INFO:    Start to run command
+[19:45:59] INFO:      File: `testdir'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5866414     Links: 9
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-02-09 15:14:09.000000000 +0530
+Modify: 2017-03-20 22:19:11.000000000 +0530
+Change: 2017-03-20 22:19:11.000000000 +0530
+
+[19:45:59] INFO:    Connection channel closed
+[19:45:59] INFO:    Check if exec success or not ... 
+[19:45:59] INFO:    Execute successfully for command: stat "testdir"
+[19:45:59] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:04] INFO:    Connection channel disconnect
+[19:46:04] INFO:    SSH connection shutdown
+[19:46:11] INFO:    Session initialized and associated with user credential 7301997
+[19:46:11] INFO:    SSHExec initialized successfully
+[19:46:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:11] INFO:    SSH connection established
+[19:46:11] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:46:11] INFO:    Connection channel established succesfully
+[19:46:11] INFO:    Start to run command
+[19:46:11] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[19:46:11] INFO:    Connection channel closed
+[19:46:11] INFO:    Check if exec success or not ... 
+[19:46:11] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:46:11] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:16] INFO:    Connection channel disconnect
+[19:46:16] INFO:    SSH connection shutdown
+[19:46:16] INFO:    Session initialized and associated with user credential 7301997
+[19:46:17] INFO:    SSHExec initialized successfully
+[19:46:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:17] INFO:    SSH connection established
+[19:46:17] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:46:17] INFO:    Connection channel established succesfully
+[19:46:17] INFO:    Start to run command
+[19:46:17] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[19:46:17] INFO:    Connection channel closed
+[19:46:17] INFO:    Check if exec success or not ... 
+[19:46:17] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:46:17] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:22] INFO:    Connection channel disconnect
+[19:46:22] INFO:    SSH connection shutdown
+[19:46:22] INFO:    Session initialized and associated with user credential 7301997
+[19:46:22] INFO:    SSHExec initialized successfully
+[19:46:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:22] INFO:    SSH connection established
+[19:46:22] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:46:23] INFO:    Connection channel established succesfully
+[19:46:23] INFO:    Start to run command
+[19:46:23] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:46:23] INFO:    Connection channel closed
+[19:46:23] INFO:    Check if exec success or not ... 
+[19:46:23] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:46:23] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:28] INFO:    Connection channel disconnect
+[19:46:28] INFO:    SSH connection shutdown
+[19:46:28] INFO:    Session initialized and associated with user credential 7301997
+[19:46:28] INFO:    SSHExec initialized successfully
+[19:46:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:28] INFO:    SSH connection established
+[19:46:28] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:46:28] INFO:    Connection channel established succesfully
+[19:46:28] INFO:    Start to run command
+[19:46:29] INFO:    assignments
+materials
+uploads
+
+[19:46:29] INFO:    Connection channel closed
+[19:46:29] INFO:    Check if exec success or not ... 
+[19:46:29] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:46:29] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:34] INFO:    Connection channel disconnect
+[19:46:34] INFO:    SSH connection shutdown
+[19:46:34] INFO:    Session initialized and associated with user credential 7301997
+[19:46:34] INFO:    SSHExec initialized successfully
+[19:46:34] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:34] INFO:    SSH connection established
+[19:46:34] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:46:34] INFO:    Connection channel established succesfully
+[19:46:34] INFO:    Start to run command
+[19:46:34] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869779     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:04:19.000000000 +0530
+Modify: 2017-03-22 22:52:27.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:46:34] INFO:    Connection channel closed
+[19:46:34] INFO:    Check if exec success or not ... 
+[19:46:34] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:46:34] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:39] INFO:    Connection channel disconnect
+[19:46:40] INFO:    SSH connection shutdown
+[19:46:40] INFO:    Session initialized and associated with user credential 7301997
+[19:46:40] INFO:    SSHExec initialized successfully
+[19:46:40] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:40] INFO:    SSH connection established
+[19:46:40] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:46:40] INFO:    Connection channel established succesfully
+[19:46:40] INFO:    Start to run command
+[19:46:40] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/materials'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869780     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:16.000000000 +0530
+Modify: 2017-03-21 03:06:16.000000000 +0530
+Change: 2017-03-21 03:06:16.000000000 +0530
+
+[19:46:40] INFO:    Connection channel closed
+[19:46:40] INFO:    Check if exec success or not ... 
+[19:46:40] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:46:40] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:45] INFO:    Connection channel disconnect
+[19:46:46] INFO:    SSH connection shutdown
+[19:46:46] INFO:    Session initialized and associated with user credential 7301997
+[19:46:47] INFO:    SSHExec initialized successfully
+[19:46:47] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:47] INFO:    SSH connection established
+[19:46:47] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:46:47] INFO:    Connection channel established succesfully
+[19:46:47] INFO:    Start to run command
+[19:46:47] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869781     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:28.000000000 +0530
+Modify: 2017-03-21 03:06:28.000000000 +0530
+Change: 2017-03-21 03:06:28.000000000 +0530
+
+[19:46:47] INFO:    Connection channel closed
+[19:46:47] INFO:    Check if exec success or not ... 
+[19:46:47] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:46:47] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:52] INFO:    Connection channel disconnect
+[19:46:52] INFO:    SSH connection shutdown
+[19:46:53] INFO:    Session initialized and associated with user credential 7301997
+[19:46:53] INFO:    SSHExec initialized successfully
+[19:46:53] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:53] INFO:    SSH connection established
+[19:46:53] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:46:53] INFO:    Connection channel established succesfully
+[19:46:53] INFO:    Start to run command
+[19:46:53] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[19:46:53] INFO:    Connection channel closed
+[19:46:53] INFO:    Check if exec success or not ... 
+[19:46:53] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[19:46:53] INFO:    Now wait 5 seconds to begin next task ...
+[19:46:58] INFO:    Connection channel disconnect
+[19:46:58] INFO:    SSH connection shutdown
+[19:46:58] INFO:    Session initialized and associated with user credential 7301997
+[19:46:58] INFO:    SSHExec initialized successfully
+[19:46:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:46:59] INFO:    SSH connection established
+[19:46:59] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:46:59] INFO:    Connection channel established succesfully
+[19:46:59] INFO:    Start to run command
+[19:46:59] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[19:46:59] INFO:    Connection channel closed
+[19:46:59] INFO:    Check if exec success or not ... 
+[19:46:59] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[19:46:59] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:04] INFO:    Connection channel disconnect
+[19:47:04] INFO:    SSH connection shutdown
+[19:47:04] INFO:    Session initialized and associated with user credential 7301997
+[19:47:04] INFO:    SSHExec initialized successfully
+[19:47:04] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:47:04] INFO:    SSH connection established
+[19:47:04] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:47:04] INFO:    Connection channel established succesfully
+[19:47:05] INFO:    Start to run command
+[19:47:05] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:47:05] INFO:    Connection channel closed
+[19:47:05] INFO:    Check if exec success or not ... 
+[19:47:05] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[19:47:05] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:10] INFO:    Connection channel disconnect
+[19:47:10] INFO:    SSH connection shutdown
+[19:47:10] INFO:    Session initialized and associated with user credential 7301997
+[19:47:10] INFO:    SSHExec initialized successfully
+[19:47:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:47:10] INFO:    SSH connection established
+[19:47:10] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:47:10] INFO:    Connection channel established succesfully
+[19:47:10] INFO:    Start to run command
+[19:47:10] INFO:    assignments
+materials
+uploads
+
+[19:47:10] INFO:    Connection channel closed
+[19:47:10] INFO:    Check if exec success or not ... 
+[19:47:10] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[19:47:10] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:15] INFO:    Connection channel disconnect
+[19:47:15] INFO:    SSH connection shutdown
+[19:47:15] INFO:    Session initialized and associated with user credential 7301997
+[19:47:15] INFO:    SSHExec initialized successfully
+[19:47:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:47:16] INFO:    SSH connection established
+[19:47:16] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:47:16] INFO:    Connection channel established succesfully
+[19:47:16] INFO:    Start to run command
+[19:47:16] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869779     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:04:19.000000000 +0530
+Modify: 2017-03-22 22:52:27.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[19:47:16] INFO:    Connection channel closed
+[19:47:16] INFO:    Check if exec success or not ... 
+[19:47:16] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"assignments"
+[19:47:16] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:21] INFO:    Connection channel disconnect
+[19:47:21] INFO:    SSH connection shutdown
+[19:47:21] INFO:    Session initialized and associated with user credential 7301997
+[19:47:21] INFO:    SSHExec initialized successfully
+[19:47:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:47:21] INFO:    SSH connection established
+[19:47:21] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:47:21] INFO:    Connection channel established succesfully
+[19:47:21] INFO:    Start to run command
+[19:47:21] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/materials'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869780     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:16.000000000 +0530
+Modify: 2017-03-21 03:06:16.000000000 +0530
+Change: 2017-03-21 03:06:16.000000000 +0530
+
+[19:47:22] INFO:    Connection channel closed
+[19:47:22] INFO:    Check if exec success or not ... 
+[19:47:22] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"materials"
+[19:47:22] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:27] INFO:    Connection channel disconnect
+[19:47:27] INFO:    SSH connection shutdown
+[19:47:27] INFO:    Session initialized and associated with user credential 7301997
+[19:47:27] INFO:    SSHExec initialized successfully
+[19:47:27] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[19:47:27] INFO:    SSH connection established
+[19:47:27] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:47:27] INFO:    Connection channel established succesfully
+[19:47:27] INFO:    Start to run command
+[19:47:27] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads'
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 802h/2050d	Inode: 5869781     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-21 03:06:28.000000000 +0530
+Modify: 2017-03-21 03:06:28.000000000 +0530
+Change: 2017-03-21 03:06:28.000000000 +0530
+
+[19:47:27] INFO:    Connection channel closed
+[19:47:27] INFO:    Check if exec success or not ... 
+[19:47:27] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/"uploads"
+[19:47:27] INFO:    Now wait 5 seconds to begin next task ...
+[19:47:32] INFO:    Connection channel disconnect
+[19:47:32] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:00:17, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:00:17] INFO:    SSHExec initializing ...
+[20:00:17] INFO:    Session initialized and associated with user credential 7301997
+[20:00:17] INFO:    SSHExec initialized successfully
+[20:00:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:00:18] INFO:    SSH connection established
+[20:00:18] INFO:    Command is ls 
+[20:00:19] INFO:    Connection channel established succesfully
+[20:00:19] INFO:    Start to run command
+[20:00:19] INFO:    cms
+testdir
+
+[20:00:19] INFO:    Connection channel closed
+[20:00:19] INFO:    Check if exec success or not ... 
+[20:00:19] INFO:    Execute successfully for command: ls 
+[20:00:19] INFO:    Now wait 5 seconds to begin next task ...
+[20:00:24] INFO:    Connection channel disconnect
+[20:00:24] INFO:    SSH connection shutdown
+[20:00:24] INFO:    Session initialized and associated with user credential 7301997
+[20:00:24] INFO:    SSHExec initialized successfully
+[20:00:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:00:24] INFO:    SSH connection established
+[20:00:24] INFO:    Command is ls /cms
+[20:00:24] INFO:    Connection channel established succesfully
+[20:00:24] INFO:    Start to run command
+[20:00:24] INFO:    Connection channel closed
+[20:00:24] INFO:    Check if exec success or not ... 
+[20:00:24] INFO:    Execution failed while executing command: ls /cms
+[20:00:24] INFO:    Error message: ls: /cms: No such file or directory
+[20:00:24] INFO:    Now wait 5 seconds to begin next task ...
+[20:00:30] INFO:    Connection channel disconnect
+[20:00:30] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:02:36, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:02:36] INFO:    SSHExec initializing ...
+[20:02:36] INFO:    Session initialized and associated with user credential 7301997
+[20:02:36] INFO:    SSHExec initialized successfully
+[20:02:36] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:02:37] INFO:    SSH connection established
+[20:02:37] INFO:    Command is ls 
+[20:02:37] INFO:    Connection channel established succesfully
+[20:02:37] INFO:    Start to run command
+[20:02:37] INFO:    cms
+testdir
+
+[20:02:37] INFO:    Connection channel closed
+[20:02:37] INFO:    Check if exec success or not ... 
+[20:02:37] INFO:    Execute successfully for command: ls 
+[20:02:37] INFO:    Now wait 5 seconds to begin next task ...
+[20:02:42] INFO:    Connection channel disconnect
+[20:02:43] INFO:    SSH connection shutdown
+[20:02:43] INFO:    Session initialized and associated with user credential 7301997
+[20:02:43] INFO:    SSHExec initialized successfully
+[20:02:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:02:43] INFO:    SSH connection established
+[20:02:43] INFO:    Command is ls /cms
+[20:02:43] INFO:    Connection channel established succesfully
+[20:02:43] INFO:    Start to run command
+[20:02:43] INFO:    Connection channel closed
+[20:02:43] INFO:    Check if exec success or not ... 
+[20:02:43] INFO:    Execution failed while executing command: ls /cms
+[20:02:43] INFO:    Error message: ls: /cms: No such file or directory
+[20:02:43] INFO:    Now wait 5 seconds to begin next task ...
+[20:02:48] INFO:    Connection channel disconnect
+[20:02:48] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:03:17, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:03:17] INFO:    SSHExec initializing ...
+[20:03:17] INFO:    Session initialized and associated with user credential 7301997
+[20:03:17] INFO:    SSHExec initialized successfully
+[20:03:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:03:18] INFO:    SSH connection established
+[20:03:18] INFO:    Command is ls 
+[20:03:18] INFO:    Connection channel established succesfully
+[20:03:18] INFO:    Start to run command
+[20:03:18] INFO:    cms
+testdir
+
+[20:03:18] INFO:    Connection channel closed
+[20:03:19] INFO:    Check if exec success or not ... 
+[20:03:19] INFO:    Execute successfully for command: ls 
+[20:03:19] INFO:    Now wait 5 seconds to begin next task ...
+[20:03:24] INFO:    Connection channel disconnect
+[20:03:24] INFO:    SSH connection shutdown
+[20:03:24] INFO:    Session initialized and associated with user credential 7301997
+[20:03:24] INFO:    SSHExec initialized successfully
+[20:03:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:03:24] INFO:    SSH connection established
+[20:03:24] INFO:    Command is ls /cms
+[20:03:24] INFO:    Connection channel established succesfully
+[20:03:24] INFO:    Start to run command
+[20:03:24] INFO:    Connection channel closed
+[20:03:24] INFO:    Check if exec success or not ... 
+[20:03:24] INFO:    Execution failed while executing command: ls /cms
+[20:03:24] INFO:    Error message: ls: /cms: No such file or directory
+[20:03:24] INFO:    Now wait 5 seconds to begin next task ...
+[20:03:29] INFO:    Connection channel disconnect
+[20:03:29] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:04:04, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:04:05] INFO:    SSHExec initializing ...
+[20:04:05] INFO:    Session initialized and associated with user credential 7301997
+[20:04:05] INFO:    SSHExec initialized successfully
+[20:04:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:04:06] INFO:    SSH connection established
+[20:04:06] INFO:    Command is ls 
+[20:04:06] INFO:    Connection channel established succesfully
+[20:04:06] INFO:    Start to run command
+[20:04:06] INFO:    cms
+testdir
+
+[20:04:06] INFO:    Connection channel closed
+[20:04:06] INFO:    Check if exec success or not ... 
+[20:04:06] INFO:    Execute successfully for command: ls 
+[20:04:06] INFO:    Now wait 5 seconds to begin next task ...
+[20:04:11] INFO:    Connection channel disconnect
+[20:04:11] INFO:    SSH connection shutdown
+[20:04:11] INFO:    Session initialized and associated with user credential 7301997
+[20:04:11] INFO:    SSHExec initialized successfully
+[20:04:12] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:04:12] INFO:    SSH connection established
+[20:04:12] INFO:    Command is ls /cms
+[20:04:12] INFO:    Connection channel established succesfully
+[20:04:12] INFO:    Start to run command
+[20:04:12] INFO:    Connection channel closed
+[20:04:12] INFO:    Check if exec success or not ... 
+[20:04:12] INFO:    Execution failed while executing command: ls /cms
+[20:04:12] INFO:    Error message: ls: /cms: No such file or directory
+[20:04:12] INFO:    Now wait 5 seconds to begin next task ...
+[20:04:17] INFO:    Connection channel disconnect
+[20:04:17] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:05:44, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:05:44] INFO:    SSHExec initializing ...
+[20:05:44] INFO:    Session initialized and associated with user credential 7301997
+[20:05:44] INFO:    SSHExec initialized successfully
+[20:05:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:05:45] INFO:    SSH connection established
+[20:05:45] INFO:    Command is ls 
+[20:05:45] INFO:    Connection channel established succesfully
+[20:05:45] INFO:    Start to run command
+[20:05:45] INFO:    cms
+testdir
+
+[20:05:45] INFO:    Connection channel closed
+[20:05:45] INFO:    Check if exec success or not ... 
+[20:05:45] INFO:    Execute successfully for command: ls 
+[20:05:45] INFO:    Now wait 5 seconds to begin next task ...
+[20:05:50] INFO:    Connection channel disconnect
+[20:05:50] INFO:    SSH connection shutdown
+[20:05:50] INFO:    Session initialized and associated with user credential 7301997
+[20:05:51] INFO:    SSHExec initialized successfully
+[20:05:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:05:51] INFO:    SSH connection established
+[20:05:51] INFO:    Command is ls /cms
+[20:05:51] INFO:    Connection channel established succesfully
+[20:05:51] INFO:    Start to run command
+[20:05:51] INFO:    Connection channel closed
+[20:05:51] INFO:    Check if exec success or not ... 
+[20:05:51] INFO:    Execution failed while executing command: ls /cms
+[20:05:51] INFO:    Error message: ls: /cms: No such file or directory
+[20:05:51] INFO:    Now wait 5 seconds to begin next task ...
+[20:05:56] INFO:    Connection channel disconnect
+[20:05:56] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:07:02, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:07:02] INFO:    SSHExec initializing ...
+[20:07:02] INFO:    Session initialized and associated with user credential 7301997
+[20:07:02] INFO:    SSHExec initialized successfully
+[20:07:02] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:03] INFO:    SSH connection established
+[20:07:03] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:07:04] INFO:    Connection channel established succesfully
+[20:07:04] INFO:    Start to run command
+[20:07:04] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:07:04] INFO:    Connection channel closed
+[20:07:04] INFO:    Check if exec success or not ... 
+[20:07:04] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:07:04] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:09] INFO:    Connection channel disconnect
+[20:07:09] INFO:    SSH connection shutdown
+[20:07:09] INFO:    Session initialized and associated with user credential 7301997
+[20:07:09] INFO:    SSHExec initialized successfully
+[20:07:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:09] INFO:    SSH connection established
+[20:07:09] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:07:09] INFO:    Connection channel established succesfully
+[20:07:09] INFO:    Start to run command
+[20:07:09] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:07:09] INFO:    Connection channel closed
+[20:07:09] INFO:    Check if exec success or not ... 
+[20:07:09] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:07:09] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:14] INFO:    Connection channel disconnect
+[20:07:14] INFO:    SSH connection shutdown
+[20:07:14] INFO:    Session initialized and associated with user credential 7301997
+[20:07:14] INFO:    SSHExec initialized successfully
+[20:07:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:15] INFO:    SSH connection established
+[20:07:15] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:07:15] INFO:    Connection channel established succesfully
+[20:07:15] INFO:    Start to run command
+[20:07:15] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:07:15] INFO:    Connection channel closed
+[20:07:15] INFO:    Check if exec success or not ... 
+[20:07:15] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:07:15] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:20] INFO:    Connection channel disconnect
+[20:07:20] INFO:    SSH connection shutdown
+[20:07:20] INFO:    Session initialized and associated with user credential 7301997
+[20:07:20] INFO:    SSHExec initialized successfully
+[20:07:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:20] INFO:    SSH connection established
+[20:07:20] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:07:20] INFO:    Connection channel established succesfully
+[20:07:20] INFO:    Start to run command
+[20:07:20] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:07:20] INFO:    Connection channel closed
+[20:07:20] INFO:    Check if exec success or not ... 
+[20:07:20] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:07:20] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:26] INFO:    Connection channel disconnect
+[20:07:26] INFO:    SSH connection shutdown
+[20:07:26] INFO:    Session initialized and associated with user credential 7301997
+[20:07:26] INFO:    SSHExec initialized successfully
+[20:07:26] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:26] INFO:    SSH connection established
+[20:07:26] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:07:26] INFO:    Connection channel established succesfully
+[20:07:26] INFO:    Start to run command
+[20:07:26] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:07:26] INFO:    Connection channel closed
+[20:07:26] INFO:    Check if exec success or not ... 
+[20:07:26] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:07:26] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:31] INFO:    Connection channel disconnect
+[20:07:31] INFO:    SSH connection shutdown
+[20:07:31] INFO:    Session initialized and associated with user credential 7301997
+[20:07:31] INFO:    SSHExec initialized successfully
+[20:07:31] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:07:31] INFO:    SSH connection established
+[20:07:31] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:07:31] INFO:    Connection channel established succesfully
+[20:07:31] INFO:    Start to run command
+[20:07:31] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:07:31] INFO:    Connection channel closed
+[20:07:32] INFO:    Check if exec success or not ... 
+[20:07:32] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:07:32] INFO:    Now wait 5 seconds to begin next task ...
+[20:07:37] INFO:    Connection channel disconnect
+[20:07:37] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:13:20, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:13:20] INFO:    SSHExec initializing ...
+[20:13:20] INFO:    Session initialized and associated with user credential 7301997
+[20:13:20] INFO:    SSHExec initialized successfully
+[20:13:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:22] INFO:    SSH connection established
+[20:13:22] INFO:    Command is ls 
+[20:13:22] INFO:    Connection channel established succesfully
+[20:13:22] INFO:    Start to run command
+[20:13:22] INFO:    cms
+testdir
+
+[20:13:22] INFO:    Connection channel closed
+[20:13:22] INFO:    Check if exec success or not ... 
+[20:13:22] INFO:    Execute successfully for command: ls 
+[20:13:22] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:27] INFO:    Connection channel disconnect
+[20:13:27] INFO:    SSH connection shutdown
+[20:13:31] INFO:    Session initialized and associated with user credential 7301997
+[20:13:31] INFO:    SSHExec initialized successfully
+[20:13:31] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:31] INFO:    SSH connection established
+[20:13:31] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:13:31] INFO:    Connection channel established succesfully
+[20:13:31] INFO:    Start to run command
+[20:13:31] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:13:32] INFO:    Connection channel closed
+[20:13:32] INFO:    Check if exec success or not ... 
+[20:13:32] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:13:32] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:37] INFO:    Connection channel disconnect
+[20:13:37] INFO:    SSH connection shutdown
+[20:13:37] INFO:    Session initialized and associated with user credential 7301997
+[20:13:37] INFO:    SSHExec initialized successfully
+[20:13:37] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:37] INFO:    SSH connection established
+[20:13:37] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:13:37] INFO:    Connection channel established succesfully
+[20:13:37] INFO:    Start to run command
+[20:13:37] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:13:37] INFO:    Connection channel closed
+[20:13:37] INFO:    Check if exec success or not ... 
+[20:13:37] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:13:37] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:42] INFO:    Connection channel disconnect
+[20:13:42] INFO:    SSH connection shutdown
+[20:13:42] INFO:    Session initialized and associated with user credential 7301997
+[20:13:42] INFO:    SSHExec initialized successfully
+[20:13:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:43] INFO:    SSH connection established
+[20:13:43] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:13:43] INFO:    Connection channel established succesfully
+[20:13:43] INFO:    Start to run command
+[20:13:43] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:13:43] INFO:    Connection channel closed
+[20:13:43] INFO:    Check if exec success or not ... 
+[20:13:43] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:13:43] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:48] INFO:    Connection channel disconnect
+[20:13:48] INFO:    SSH connection shutdown
+[20:13:48] INFO:    Session initialized and associated with user credential 7301997
+[20:13:48] INFO:    SSHExec initialized successfully
+[20:13:48] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:48] INFO:    SSH connection established
+[20:13:48] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[20:13:48] INFO:    Connection channel established succesfully
+[20:13:48] INFO:    Start to run command
+[20:13:48] INFO:    assignments
+materials
+uploads
+
+[20:13:49] INFO:    Connection channel closed
+[20:13:49] INFO:    Check if exec success or not ... 
+[20:13:49] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[20:13:49] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:54] INFO:    Connection channel disconnect
+[20:13:54] INFO:    SSH connection shutdown
+[20:13:54] INFO:    Session initialized and associated with user credential 7301997
+[20:13:54] INFO:    SSHExec initialized successfully
+[20:13:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:13:54] INFO:    SSH connection established
+[20:13:54] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:13:54] INFO:    Connection channel established succesfully
+[20:13:54] INFO:    Start to run command
+[20:13:54] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:13:54] INFO:    Connection channel closed
+[20:13:54] INFO:    Check if exec success or not ... 
+[20:13:54] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:13:54] INFO:    Now wait 5 seconds to begin next task ...
+[20:13:59] INFO:    Connection channel disconnect
+[20:13:59] INFO:    SSH connection shutdown
+[20:13:59] INFO:    Session initialized and associated with user credential 7301997
+[20:13:59] INFO:    SSHExec initialized successfully
+[20:13:59] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:14:00] INFO:    SSH connection established
+[20:14:00] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:14:00] INFO:    Connection channel established succesfully
+[20:14:00] INFO:    Start to run command
+[20:14:00] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:14:00] INFO:    Connection channel closed
+[20:14:00] INFO:    Check if exec success or not ... 
+[20:14:00] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:14:00] INFO:    Now wait 5 seconds to begin next task ...
+[20:14:05] INFO:    Connection channel disconnect
+[20:14:05] INFO:    SSH connection shutdown
+[20:14:05] INFO:    Session initialized and associated with user credential 7301997
+[20:14:05] INFO:    SSHExec initialized successfully
+[20:14:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:14:05] INFO:    SSH connection established
+[20:14:05] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:14:05] INFO:    Connection channel established succesfully
+[20:14:05] INFO:    Start to run command
+[20:14:05] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:14:05] INFO:    Connection channel closed
+[20:14:06] INFO:    Check if exec success or not ... 
+[20:14:06] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:14:06] INFO:    Now wait 5 seconds to begin next task ...
+[20:14:11] INFO:    Connection channel disconnect
+[20:14:11] INFO:    SSH connection shutdown
+[20:14:11] INFO:    Session initialized and associated with user credential 7301997
+[20:14:11] INFO:    SSHExec initialized successfully
+[20:14:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:14:11] INFO:    SSH connection established
+[20:14:11] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[20:14:11] INFO:    Connection channel established succesfully
+[20:14:11] INFO:    Start to run command
+[20:14:11] INFO:    assignments
+materials
+uploads
+
+[20:14:11] INFO:    Connection channel closed
+[20:14:11] INFO:    Check if exec success or not ... 
+[20:14:11] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/
+[20:14:11] INFO:    Now wait 5 seconds to begin next task ...
+[20:14:16] INFO:    Connection channel disconnect
+[20:14:16] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:25:12, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:25:12] INFO:    SSHExec initializing ...
+[20:25:12] INFO:    Session initialized and associated with user credential 7301997
+[20:25:12] INFO:    SSHExec initialized successfully
+[20:25:13] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:25:14] INFO:    SSH connection established
+[20:25:14] INFO:    Command is ls /uploads
+[20:25:14] INFO:    Connection channel established succesfully
+[20:25:14] INFO:    Start to run command
+[20:25:14] INFO:    Connection channel closed
+[20:25:14] INFO:    Check if exec success or not ... 
+[20:25:14] INFO:    Execution failed while executing command: ls /uploads
+[20:25:14] INFO:    Error message: ls: /uploads: No such file or directory
+[20:25:14] INFO:    Now wait 5 seconds to begin next task ...
+[20:25:19] INFO:    Connection channel disconnect
+[20:25:19] INFO:    SSH connection shutdown
+[20:25:19] INFO:    Session initialized and associated with user credential 7301997
+[20:25:19] INFO:    SSHExec initialized successfully
+[20:25:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:25:20] INFO:    SSH connection established
+[20:25:20] INFO:    Command is ls /uploads/error
+[20:25:20] INFO:    Connection channel established succesfully
+[20:25:20] INFO:    Start to run command
+[20:25:20] INFO:    Connection channel closed
+[20:25:20] INFO:    Check if exec success or not ... 
+[20:25:20] INFO:    Execution failed while executing command: ls /uploads/error
+[20:25:20] INFO:    Error message: ls: /uploads/error: No such file or directory
+[20:25:20] INFO:    Now wait 5 seconds to begin next task ...
+[20:25:25] INFO:    Connection channel disconnect
+[20:25:25] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:31:35, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:31:35] INFO:    SSHExec initializing ...
+[20:31:35] INFO:    Session initialized and associated with user credential 7301997
+[20:31:35] INFO:    SSHExec initialized successfully
+[20:31:35] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:31:37] INFO:    SSH connection established
+[20:31:37] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:31:37] INFO:    Connection channel established succesfully
+[20:31:37] INFO:    Start to run command
+[20:31:37] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:31:37] INFO:    Connection channel closed
+[20:31:37] INFO:    Check if exec success or not ... 
+[20:31:37] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:31:37] INFO:    Now wait 5 seconds to begin next task ...
+[20:31:42] INFO:    Connection channel disconnect
+[20:31:42] INFO:    SSH connection shutdown
+[20:31:42] INFO:    Session initialized and associated with user credential 7301997
+[20:31:43] INFO:    SSHExec initialized successfully
+[20:31:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:31:43] INFO:    SSH connection established
+[20:31:43] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:31:43] INFO:    Connection channel established succesfully
+[20:31:43] INFO:    Start to run command
+[20:31:43] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:31:43] INFO:    Connection channel closed
+[20:31:43] INFO:    Check if exec success or not ... 
+[20:31:43] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:31:43] INFO:    Now wait 5 seconds to begin next task ...
+[20:31:48] INFO:    Connection channel disconnect
+[20:31:48] INFO:    SSH connection shutdown
+[20:31:48] INFO:    Session initialized and associated with user credential 7301997
+[20:31:48] INFO:    SSHExec initialized successfully
+[20:31:48] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:31:48] INFO:    SSH connection established
+[20:31:48] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:31:48] INFO:    Connection channel established succesfully
+[20:31:48] INFO:    Start to run command
+[20:31:48] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:31:48] INFO:    Connection channel closed
+[20:31:48] INFO:    Check if exec success or not ... 
+[20:31:49] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:31:49] INFO:    Now wait 5 seconds to begin next task ...
+[20:31:54] INFO:    Connection channel disconnect
+[20:31:54] INFO:    SSH connection shutdown
+[20:31:54] INFO:    Session initialized and associated with user credential 7301997
+[20:31:54] INFO:    SSHExec initialized successfully
+[20:31:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:31:54] INFO:    SSH connection established
+[20:31:54] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:31:54] INFO:    Connection channel established succesfully
+[20:31:54] INFO:    Start to run command
+[20:31:54] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:31:54] INFO:    Connection channel closed
+[20:31:54] INFO:    Check if exec success or not ... 
+[20:31:54] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:31:54] INFO:    Now wait 5 seconds to begin next task ...
+[20:31:59] INFO:    Connection channel disconnect
+[20:31:59] INFO:    SSH connection shutdown
+[20:31:59] INFO:    Session initialized and associated with user credential 7301997
+[20:31:59] INFO:    SSHExec initialized successfully
+[20:31:59] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:31:59] INFO:    SSH connection established
+[20:31:59] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:32:00] INFO:    Connection channel established succesfully
+[20:32:00] INFO:    Start to run command
+[20:32:00] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:32:00] INFO:    Connection channel closed
+[20:32:00] INFO:    Check if exec success or not ... 
+[20:32:00] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:32:00] INFO:    Now wait 5 seconds to begin next task ...
+[20:32:05] INFO:    Connection channel disconnect
+[20:32:05] INFO:    SSH connection shutdown
+[20:32:05] INFO:    Session initialized and associated with user credential 7301997
+[20:32:05] INFO:    SSHExec initialized successfully
+[20:32:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:32:05] INFO:    SSH connection established
+[20:32:05] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:32:05] INFO:    Connection channel established succesfully
+[20:32:05] INFO:    Start to run command
+[20:32:05] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:32:05] INFO:    Connection channel closed
+[20:32:05] INFO:    Check if exec success or not ... 
+[20:32:05] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:32:05] INFO:    Now wait 5 seconds to begin next task ...
+[20:32:10] INFO:    Connection channel disconnect
+[20:32:10] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:35:21, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:35:21] INFO:    SSHExec initializing ...
+[20:35:21] INFO:    Session initialized and associated with user credential 7301997
+[20:35:21] INFO:    SSHExec initialized successfully
+[20:35:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:23] INFO:    SSH connection established
+[20:35:23] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:35:23] INFO:    Connection channel established succesfully
+[20:35:23] INFO:    Start to run command
+[20:35:23] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:35:23] INFO:    Connection channel closed
+[20:35:23] INFO:    Check if exec success or not ... 
+[20:35:23] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:35:23] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:28] INFO:    Connection channel disconnect
+[20:35:28] INFO:    SSH connection shutdown
+[20:35:28] INFO:    Session initialized and associated with user credential 7301997
+[20:35:28] INFO:    SSHExec initialized successfully
+[20:35:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:28] INFO:    SSH connection established
+[20:35:28] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:35:28] INFO:    Connection channel established succesfully
+[20:35:28] INFO:    Start to run command
+[20:35:28] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:35:29] INFO:    Connection channel closed
+[20:35:29] INFO:    Check if exec success or not ... 
+[20:35:29] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:35:29] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:34] INFO:    Connection channel disconnect
+[20:35:34] INFO:    SSH connection shutdown
+[20:35:34] INFO:    Session initialized and associated with user credential 7301997
+[20:35:34] INFO:    SSHExec initialized successfully
+[20:35:34] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:34] INFO:    SSH connection established
+[20:35:34] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:35:34] INFO:    Connection channel established succesfully
+[20:35:34] INFO:    Start to run command
+[20:35:34] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:35:34] INFO:    Connection channel closed
+[20:35:34] INFO:    Check if exec success or not ... 
+[20:35:34] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:35:34] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:39] INFO:    Connection channel disconnect
+[20:35:39] INFO:    SSH connection shutdown
+[20:35:39] INFO:    Session initialized and associated with user credential 7301997
+[20:35:39] INFO:    SSHExec initialized successfully
+[20:35:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:40] INFO:    SSH connection established
+[20:35:40] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:35:40] INFO:    Connection channel established succesfully
+[20:35:40] INFO:    Start to run command
+[20:35:40] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:35:40] INFO:    Connection channel closed
+[20:35:40] INFO:    Check if exec success or not ... 
+[20:35:40] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:35:40] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:45] INFO:    Connection channel disconnect
+[20:35:45] INFO:    SSH connection shutdown
+[20:35:45] INFO:    Session initialized and associated with user credential 7301997
+[20:35:45] INFO:    SSHExec initialized successfully
+[20:35:45] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:45] INFO:    SSH connection established
+[20:35:45] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:35:45] INFO:    Connection channel established succesfully
+[20:35:45] INFO:    Start to run command
+[20:35:45] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:35:45] INFO:    Connection channel closed
+[20:35:45] INFO:    Check if exec success or not ... 
+[20:35:45] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:35:45] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:51] INFO:    Connection channel disconnect
+[20:35:51] INFO:    SSH connection shutdown
+[20:35:51] INFO:    Session initialized and associated with user credential 7301997
+[20:35:51] INFO:    SSHExec initialized successfully
+[20:35:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:35:51] INFO:    SSH connection established
+[20:35:51] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:35:51] INFO:    Connection channel established succesfully
+[20:35:51] INFO:    Start to run command
+[20:35:51] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:35:51] INFO:    Connection channel closed
+[20:35:51] INFO:    Check if exec success or not ... 
+[20:35:51] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:35:51] INFO:    Now wait 5 seconds to begin next task ...
+[20:35:56] INFO:    Connection channel disconnect
+[20:35:56] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:38:58, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:38:58] INFO:    SSHExec initializing ...
+[20:38:58] INFO:    Session initialized and associated with user credential 7301997
+[20:38:58] INFO:    SSHExec initialized successfully
+[20:38:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:38:59] INFO:    SSH connection established
+[20:38:59] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:39:00] INFO:    Connection channel established succesfully
+[20:39:00] INFO:    Start to run command
+[20:39:00] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:39:00] INFO:    Connection channel closed
+[20:39:00] INFO:    Check if exec success or not ... 
+[20:39:00] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:39:00] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:05] INFO:    Connection channel disconnect
+[20:39:05] INFO:    SSH connection shutdown
+[20:39:05] INFO:    Session initialized and associated with user credential 7301997
+[20:39:05] INFO:    SSHExec initialized successfully
+[20:39:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:39:05] INFO:    SSH connection established
+[20:39:05] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:39:05] INFO:    Connection channel established succesfully
+[20:39:05] INFO:    Start to run command
+[20:39:05] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:39:05] INFO:    Connection channel closed
+[20:39:05] INFO:    Check if exec success or not ... 
+[20:39:05] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:39:05] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:10] INFO:    Connection channel disconnect
+[20:39:10] INFO:    SSH connection shutdown
+[20:39:10] INFO:    Session initialized and associated with user credential 7301997
+[20:39:10] INFO:    SSHExec initialized successfully
+[20:39:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:39:11] INFO:    SSH connection established
+[20:39:11] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:39:11] INFO:    Connection channel established succesfully
+[20:39:11] INFO:    Start to run command
+[20:39:11] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:39:11] INFO:    Connection channel closed
+[20:39:11] INFO:    Check if exec success or not ... 
+[20:39:11] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:39:11] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:16] INFO:    Connection channel disconnect
+[20:39:16] INFO:    SSH connection shutdown
+[20:39:16] INFO:    Session initialized and associated with user credential 7301997
+[20:39:16] INFO:    SSHExec initialized successfully
+[20:39:16] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:39:16] INFO:    SSH connection established
+[20:39:16] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:39:16] INFO:    Connection channel established succesfully
+[20:39:16] INFO:    Start to run command
+[20:39:16] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:39:16] INFO:    Connection channel closed
+[20:39:16] INFO:    Check if exec success or not ... 
+[20:39:16] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:39:17] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:22] INFO:    Connection channel disconnect
+[20:39:22] INFO:    SSH connection shutdown
+[20:39:22] INFO:    Session initialized and associated with user credential 7301997
+[20:39:22] INFO:    SSHExec initialized successfully
+[20:39:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:39:22] INFO:    SSH connection established
+[20:39:22] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:39:22] INFO:    Connection channel established succesfully
+[20:39:22] INFO:    Start to run command
+[20:39:22] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:39:22] INFO:    Connection channel closed
+[20:39:22] INFO:    Check if exec success or not ... 
+[20:39:22] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:39:22] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:27] INFO:    Connection channel disconnect
+[20:39:27] INFO:    SSH connection shutdown
+[20:39:27] INFO:    Session initialized and associated with user credential 7301997
+[20:39:27] INFO:    SSHExec initialized successfully
+[20:39:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:39:28] INFO:    SSH connection established
+[20:39:28] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:39:28] INFO:    Connection channel established succesfully
+[20:39:28] INFO:    Start to run command
+[20:39:28] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:39:28] INFO:    Connection channel closed
+[20:39:28] INFO:    Check if exec success or not ... 
+[20:39:28] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:39:28] INFO:    Now wait 5 seconds to begin next task ...
+[20:39:33] INFO:    Connection channel disconnect
+[20:39:33] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:45:56, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:45:56] INFO:    SSHExec initializing ...
+[20:45:56] INFO:    Session initialized and associated with user credential 7301997
+[20:45:56] INFO:    SSHExec initialized successfully
+[20:45:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:45:58] INFO:    SSH connection established
+[20:45:58] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:45:58] INFO:    Connection channel established succesfully
+[20:45:58] INFO:    Start to run command
+[20:45:58] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:45:58] INFO:    Connection channel closed
+[20:45:58] INFO:    Check if exec success or not ... 
+[20:45:58] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:45:58] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:03] INFO:    Connection channel disconnect
+[20:46:03] INFO:    SSH connection shutdown
+[20:46:03] INFO:    Session initialized and associated with user credential 7301997
+[20:46:03] INFO:    SSHExec initialized successfully
+[20:46:04] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:46:04] INFO:    SSH connection established
+[20:46:04] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:46:04] INFO:    Connection channel established succesfully
+[20:46:04] INFO:    Start to run command
+[20:46:04] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:46:04] INFO:    Connection channel closed
+[20:46:04] INFO:    Check if exec success or not ... 
+[20:46:04] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:46:04] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:09] INFO:    Connection channel disconnect
+[20:46:09] INFO:    SSH connection shutdown
+[20:46:09] INFO:    Session initialized and associated with user credential 7301997
+[20:46:09] INFO:    SSHExec initialized successfully
+[20:46:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:46:09] INFO:    SSH connection established
+[20:46:09] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:46:09] INFO:    Connection channel established succesfully
+[20:46:09] INFO:    Start to run command
+[20:46:09] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:46:09] INFO:    Connection channel closed
+[20:46:09] INFO:    Check if exec success or not ... 
+[20:46:09] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:46:10] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:15] INFO:    Connection channel disconnect
+[20:46:15] INFO:    SSH connection shutdown
+[20:46:15] INFO:    Session initialized and associated with user credential 7301997
+[20:46:15] INFO:    SSHExec initialized successfully
+[20:46:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:46:15] INFO:    SSH connection established
+[20:46:15] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:46:15] INFO:    Connection channel established succesfully
+[20:46:15] INFO:    Start to run command
+[20:46:15] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:46:15] INFO:    Connection channel closed
+[20:46:15] INFO:    Check if exec success or not ... 
+[20:46:15] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:46:15] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:20] INFO:    Connection channel disconnect
+[20:46:20] INFO:    SSH connection shutdown
+[20:46:20] INFO:    Session initialized and associated with user credential 7301997
+[20:46:20] INFO:    SSHExec initialized successfully
+[20:46:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:46:21] INFO:    SSH connection established
+[20:46:21] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:46:21] INFO:    Connection channel established succesfully
+[20:46:21] INFO:    Start to run command
+[20:46:21] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:46:21] INFO:    Connection channel closed
+[20:46:21] INFO:    Check if exec success or not ... 
+[20:46:21] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:46:21] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:26] INFO:    Connection channel disconnect
+[20:46:26] INFO:    SSH connection shutdown
+[20:46:26] INFO:    Session initialized and associated with user credential 7301997
+[20:46:26] INFO:    SSHExec initialized successfully
+[20:46:26] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:46:26] INFO:    SSH connection established
+[20:46:26] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:46:26] INFO:    Connection channel established succesfully
+[20:46:26] INFO:    Start to run command
+[20:46:27] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:46:27] INFO:    Connection channel closed
+[20:46:27] INFO:    Check if exec success or not ... 
+[20:46:27] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:46:27] INFO:    Now wait 5 seconds to begin next task ...
+[20:46:32] INFO:    Connection channel disconnect
+[20:46:32] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:51:00, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:51:00] INFO:    SSHExec initializing ...
+[20:51:00] INFO:    Session initialized and associated with user credential 7301997
+[20:51:00] INFO:    SSHExec initialized successfully
+[20:51:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:01] INFO:    SSH connection established
+[20:51:01] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:51:01] INFO:    Connection channel established succesfully
+[20:51:01] INFO:    Start to run command
+[20:51:02] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:51:02] INFO:    Connection channel closed
+[20:51:02] INFO:    Check if exec success or not ... 
+[20:51:02] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:51:02] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:07] INFO:    Connection channel disconnect
+[20:51:07] INFO:    SSH connection shutdown
+[20:51:07] INFO:    Session initialized and associated with user credential 7301997
+[20:51:07] INFO:    SSHExec initialized successfully
+[20:51:07] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:07] INFO:    SSH connection established
+[20:51:07] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:51:07] INFO:    Connection channel established succesfully
+[20:51:07] INFO:    Start to run command
+[20:51:07] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:51:07] INFO:    Connection channel closed
+[20:51:07] INFO:    Check if exec success or not ... 
+[20:51:07] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:51:07] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:12] INFO:    Connection channel disconnect
+[20:51:12] INFO:    SSH connection shutdown
+[20:51:12] INFO:    Session initialized and associated with user credential 7301997
+[20:51:12] INFO:    SSHExec initialized successfully
+[20:51:12] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:13] INFO:    SSH connection established
+[20:51:13] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:51:13] INFO:    Connection channel established succesfully
+[20:51:13] INFO:    Start to run command
+[20:51:13] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:51:13] INFO:    Connection channel closed
+[20:51:13] INFO:    Check if exec success or not ... 
+[20:51:13] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:51:13] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:18] INFO:    Connection channel disconnect
+[20:51:18] INFO:    SSH connection shutdown
+[20:51:18] INFO:    Session initialized and associated with user credential 7301997
+[20:51:18] INFO:    SSHExec initialized successfully
+[20:51:18] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:18] INFO:    SSH connection established
+[20:51:18] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:51:18] INFO:    Connection channel established succesfully
+[20:51:18] INFO:    Start to run command
+[20:51:18] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:51:18] INFO:    Connection channel closed
+[20:51:19] INFO:    Check if exec success or not ... 
+[20:51:19] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:51:19] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:24] INFO:    Connection channel disconnect
+[20:51:24] INFO:    SSH connection shutdown
+[20:51:24] INFO:    Session initialized and associated with user credential 7301997
+[20:51:24] INFO:    SSHExec initialized successfully
+[20:51:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:24] INFO:    SSH connection established
+[20:51:24] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:51:24] INFO:    Connection channel established succesfully
+[20:51:24] INFO:    Start to run command
+[20:51:24] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:51:24] INFO:    Connection channel closed
+[20:51:24] INFO:    Check if exec success or not ... 
+[20:51:24] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:51:24] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:29] INFO:    Connection channel disconnect
+[20:51:29] INFO:    SSH connection shutdown
+[20:51:29] INFO:    Session initialized and associated with user credential 7301997
+[20:51:29] INFO:    SSHExec initialized successfully
+[20:51:29] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:51:29] INFO:    SSH connection established
+[20:51:29] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:51:29] INFO:    Connection channel established succesfully
+[20:51:29] INFO:    Start to run command
+[20:51:30] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:51:30] INFO:    Connection channel closed
+[20:51:30] INFO:    Check if exec success or not ... 
+[20:51:30] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:51:30] INFO:    Now wait 5 seconds to begin next task ...
+[20:51:35] INFO:    Connection channel disconnect
+[20:51:35] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:53:03, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:53:03] INFO:    SSHExec initializing ...
+[20:53:03] INFO:    Session initialized and associated with user credential 7301997
+[20:53:03] INFO:    SSHExec initialized successfully
+[20:53:03] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:05] INFO:    SSH connection established
+[20:53:05] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:53:05] INFO:    Connection channel established succesfully
+[20:53:05] INFO:    Start to run command
+[20:53:05] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:53:05] INFO:    Connection channel closed
+[20:53:05] INFO:    Check if exec success or not ... 
+[20:53:05] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:53:05] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:10] INFO:    Connection channel disconnect
+[20:53:10] INFO:    SSH connection shutdown
+[20:53:10] INFO:    Session initialized and associated with user credential 7301997
+[20:53:10] INFO:    SSHExec initialized successfully
+[20:53:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:10] INFO:    SSH connection established
+[20:53:10] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:53:10] INFO:    Connection channel established succesfully
+[20:53:10] INFO:    Start to run command
+[20:53:11] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:53:11] INFO:    Connection channel closed
+[20:53:11] INFO:    Check if exec success or not ... 
+[20:53:11] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:53:11] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:16] INFO:    Connection channel disconnect
+[20:53:16] INFO:    SSH connection shutdown
+[20:53:16] INFO:    Session initialized and associated with user credential 7301997
+[20:53:16] INFO:    SSHExec initialized successfully
+[20:53:16] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:16] INFO:    SSH connection established
+[20:53:16] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:53:16] INFO:    Connection channel established succesfully
+[20:53:16] INFO:    Start to run command
+[20:53:16] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:53:16] INFO:    Connection channel closed
+[20:53:16] INFO:    Check if exec success or not ... 
+[20:53:16] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:53:16] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:21] INFO:    Connection channel disconnect
+[20:53:22] INFO:    SSH connection shutdown
+[20:53:22] INFO:    Session initialized and associated with user credential 7301997
+[20:53:22] INFO:    SSHExec initialized successfully
+[20:53:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:22] INFO:    SSH connection established
+[20:53:22] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:53:22] INFO:    Connection channel established succesfully
+[20:53:22] INFO:    Start to run command
+[20:53:22] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:53:22] INFO:    Connection channel closed
+[20:53:22] INFO:    Check if exec success or not ... 
+[20:53:22] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:53:22] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:27] INFO:    Connection channel disconnect
+[20:53:27] INFO:    SSH connection shutdown
+[20:53:28] INFO:    Session initialized and associated with user credential 7301997
+[20:53:28] INFO:    SSHExec initialized successfully
+[20:53:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:28] INFO:    SSH connection established
+[20:53:28] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:53:28] INFO:    Connection channel established succesfully
+[20:53:28] INFO:    Start to run command
+[20:53:28] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:53:28] INFO:    Connection channel closed
+[20:53:28] INFO:    Check if exec success or not ... 
+[20:53:28] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:53:28] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:33] INFO:    Connection channel disconnect
+[20:53:33] INFO:    SSH connection shutdown
+[20:53:33] INFO:    Session initialized and associated with user credential 7301997
+[20:53:33] INFO:    SSHExec initialized successfully
+[20:53:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:53:33] INFO:    SSH connection established
+[20:53:33] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:53:33] INFO:    Connection channel established succesfully
+[20:53:33] INFO:    Start to run command
+[20:53:33] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:53:34] INFO:    Connection channel closed
+[20:53:34] INFO:    Check if exec success or not ... 
+[20:53:34] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:53:34] INFO:    Now wait 5 seconds to begin next task ...
+[20:53:39] INFO:    Connection channel disconnect
+[20:53:39] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 20:58:50, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:58:50] INFO:    SSHExec initializing ...
+[20:58:50] INFO:    Session initialized and associated with user credential 7301997
+[20:58:50] INFO:    SSHExec initialized successfully
+[20:58:50] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:58:52] INFO:    SSH connection established
+[20:58:52] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:58:52] INFO:    Connection channel established succesfully
+[20:58:52] INFO:    Start to run command
+[20:58:52] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:58:52] INFO:    Connection channel closed
+[20:58:52] INFO:    Check if exec success or not ... 
+[20:58:52] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:58:52] INFO:    Now wait 5 seconds to begin next task ...
+[20:58:57] INFO:    Connection channel disconnect
+[20:58:57] INFO:    SSH connection shutdown
+[20:58:57] INFO:    Session initialized and associated with user credential 7301997
+[20:58:57] INFO:    SSHExec initialized successfully
+[20:58:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:58:57] INFO:    SSH connection established
+[20:58:57] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:58:57] INFO:    Connection channel established succesfully
+[20:58:57] INFO:    Start to run command
+[20:58:57] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:58:57] INFO:    Connection channel closed
+[20:58:58] INFO:    Check if exec success or not ... 
+[20:58:58] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:58:58] INFO:    Now wait 5 seconds to begin next task ...
+[20:59:03] INFO:    Connection channel disconnect
+[20:59:03] INFO:    SSH connection shutdown
+[20:59:03] INFO:    Session initialized and associated with user credential 7301997
+[20:59:03] INFO:    SSHExec initialized successfully
+[20:59:03] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:59:03] INFO:    SSH connection established
+[20:59:03] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:59:03] INFO:    Connection channel established succesfully
+[20:59:03] INFO:    Start to run command
+[20:59:03] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:59:03] INFO:    Connection channel closed
+[20:59:03] INFO:    Check if exec success or not ... 
+[20:59:03] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:59:03] INFO:    Now wait 5 seconds to begin next task ...
+[20:59:08] INFO:    Connection channel disconnect
+[20:59:08] INFO:    SSH connection shutdown
+[20:59:08] INFO:    Session initialized and associated with user credential 7301997
+[20:59:08] INFO:    SSHExec initialized successfully
+[20:59:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:59:08] INFO:    SSH connection established
+[20:59:09] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:59:09] INFO:    Connection channel established succesfully
+[20:59:09] INFO:    Start to run command
+[20:59:09] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[20:59:09] INFO:    Connection channel closed
+[20:59:09] INFO:    Check if exec success or not ... 
+[20:59:09] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[20:59:09] INFO:    Now wait 5 seconds to begin next task ...
+[20:59:14] INFO:    Connection channel disconnect
+[20:59:14] INFO:    SSH connection shutdown
+[20:59:14] INFO:    Session initialized and associated with user credential 7301997
+[20:59:14] INFO:    SSHExec initialized successfully
+[20:59:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:59:14] INFO:    SSH connection established
+[20:59:14] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:59:14] INFO:    Connection channel established succesfully
+[20:59:14] INFO:    Start to run command
+[20:59:14] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[20:59:14] INFO:    Connection channel closed
+[20:59:14] INFO:    Check if exec success or not ... 
+[20:59:14] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[20:59:14] INFO:    Now wait 5 seconds to begin next task ...
+[20:59:19] INFO:    Connection channel disconnect
+[20:59:19] INFO:    SSH connection shutdown
+[20:59:19] INFO:    Session initialized and associated with user credential 7301997
+[20:59:19] INFO:    SSHExec initialized successfully
+[20:59:19] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:59:20] INFO:    SSH connection established
+[20:59:20] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:59:20] INFO:    Connection channel established succesfully
+[20:59:20] INFO:    Start to run command
+[20:59:20] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[20:59:20] INFO:    Connection channel closed
+[20:59:20] INFO:    Check if exec success or not ... 
+[20:59:20] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[20:59:20] INFO:    Now wait 5 seconds to begin next task ...
+[20:59:25] INFO:    Connection channel disconnect
+[20:59:25] INFO:    SSH connection shutdown
+[20:59:58] INFO:    Session initialized and associated with user credential 7301997
+[20:59:58] INFO:    SSHExec initialized successfully
+[20:59:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[20:59:58] INFO:    SSH connection established
+[20:59:59] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads
+[20:59:59] INFO:    Connection channel established succesfully
+[20:59:59] INFO:    Start to run command
+[20:59:59] INFO:    assign1
+assign2
+assign3
+
+[20:59:59] INFO:    Connection channel closed
+[20:59:59] INFO:    Check if exec success or not ... 
+[20:59:59] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads
+[20:59:59] INFO:    Now wait 5 seconds to begin next task ...
+[21:00:04] INFO:    Connection channel disconnect
+[21:00:04] INFO:    SSH connection shutdown
+[21:00:05] INFO:    Session initialized and associated with user credential 7301997
+[21:00:05] INFO:    SSHExec initialized successfully
+[21:00:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:00:05] INFO:    SSH connection established
+[21:00:05] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads/assign1
+[21:00:05] INFO:    Connection channel established succesfully
+[21:00:05] INFO:    Start to run command
+[21:00:05] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:00:05] INFO:    Connection channel closed
+[21:00:05] INFO:    Check if exec success or not ... 
+[21:00:05] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads/assign1
+[21:00:05] INFO:    Now wait 5 seconds to begin next task ...
+[21:00:10] INFO:    Connection channel disconnect
+[21:00:10] INFO:    SSH connection shutdown
+[21:00:11] INFO:    Session initialized and associated with user credential 7301997
+[21:00:11] INFO:    SSHExec initialized successfully
+[21:00:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:00:11] INFO:    SSH connection established
+[21:00:11] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads/1501CS23.logassign1
+[21:00:11] INFO:    Connection channel established succesfully
+[21:00:11] INFO:    Start to run command
+[21:00:11] INFO:    Connection channel closed
+[21:00:11] INFO:    Check if exec success or not ... 
+[21:00:11] INFO:    Execution failed while executing command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads/1501CS23.logassign1
+[21:00:11] INFO:    Error message: stat: cannot stat `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant//uploads/1501CS23.logassign1': No such file or directory
+[21:00:11] INFO:    Now wait 5 seconds to begin next task ...
+[21:00:16] INFO:    Connection channel disconnect
+
+=============== [2017/03/22 21:09:15, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:09:15] INFO:    SSHExec initializing ...
+[21:09:15] INFO:    Session initialized and associated with user credential 7301997
+[21:09:15] INFO:    SSHExec initialized successfully
+[21:09:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:16] INFO:    SSH connection established
+[21:09:17] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:09:17] INFO:    Connection channel established succesfully
+[21:09:17] INFO:    Start to run command
+[21:09:17] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:09:17] INFO:    Connection channel closed
+[21:09:17] INFO:    Check if exec success or not ... 
+[21:09:17] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:09:17] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:22] INFO:    Connection channel disconnect
+[21:09:22] INFO:    SSH connection shutdown
+[21:09:22] INFO:    Session initialized and associated with user credential 7301997
+[21:09:22] INFO:    SSHExec initialized successfully
+[21:09:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:22] INFO:    SSH connection established
+[21:09:22] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:09:22] INFO:    Connection channel established succesfully
+[21:09:22] INFO:    Start to run command
+[21:09:22] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:09:22] INFO:    Connection channel closed
+[21:09:22] INFO:    Check if exec success or not ... 
+[21:09:22] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:09:22] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:27] INFO:    Connection channel disconnect
+[21:09:27] INFO:    SSH connection shutdown
+[21:09:27] INFO:    Session initialized and associated with user credential 7301997
+[21:09:27] INFO:    SSHExec initialized successfully
+[21:09:27] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:28] INFO:    SSH connection established
+[21:09:28] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:09:28] INFO:    Connection channel established succesfully
+[21:09:28] INFO:    Start to run command
+[21:09:28] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:09:28] INFO:    Connection channel closed
+[21:09:28] INFO:    Check if exec success or not ... 
+[21:09:28] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:09:28] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:33] INFO:    Connection channel disconnect
+[21:09:33] INFO:    SSH connection shutdown
+[21:09:33] INFO:    Session initialized and associated with user credential 7301997
+[21:09:33] INFO:    SSHExec initialized successfully
+[21:09:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:33] INFO:    SSH connection established
+[21:09:33] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:09:33] INFO:    Connection channel established succesfully
+[21:09:33] INFO:    Start to run command
+[21:09:34] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:09:34] INFO:    Connection channel closed
+[21:09:34] INFO:    Check if exec success or not ... 
+[21:09:34] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:09:34] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:39] INFO:    Connection channel disconnect
+[21:09:39] INFO:    SSH connection shutdown
+[21:09:39] INFO:    Session initialized and associated with user credential 7301997
+[21:09:39] INFO:    SSHExec initialized successfully
+[21:09:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:39] INFO:    SSH connection established
+[21:09:39] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:09:39] INFO:    Connection channel established succesfully
+[21:09:39] INFO:    Start to run command
+[21:09:39] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:09:39] INFO:    Connection channel closed
+[21:09:39] INFO:    Check if exec success or not ... 
+[21:09:39] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:09:39] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:44] INFO:    Connection channel disconnect
+[21:09:44] INFO:    SSH connection shutdown
+[21:09:44] INFO:    Session initialized and associated with user credential 7301997
+[21:09:44] INFO:    SSHExec initialized successfully
+[21:09:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:45] INFO:    SSH connection established
+[21:09:45] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:09:45] INFO:    Connection channel established succesfully
+[21:09:45] INFO:    Start to run command
+[21:09:45] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:09:45] INFO:    Connection channel closed
+[21:09:45] INFO:    Check if exec success or not ... 
+[21:09:45] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:09:45] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:50] INFO:    Connection channel disconnect
+[21:09:50] INFO:    SSH connection shutdown
+[21:09:54] INFO:    Session initialized and associated with user credential 7301997
+[21:09:54] INFO:    SSHExec initialized successfully
+[21:09:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:09:54] INFO:    SSH connection established
+[21:09:54] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:09:54] INFO:    Connection channel established succesfully
+[21:09:54] INFO:    Start to run command
+[21:09:54] INFO:    assign1
+assign2
+assign3
+
+[21:09:54] INFO:    Connection channel closed
+[21:09:54] INFO:    Check if exec success or not ... 
+[21:09:54] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:09:54] INFO:    Now wait 5 seconds to begin next task ...
+[21:09:59] INFO:    Connection channel disconnect
+[21:09:59] INFO:    SSH connection shutdown
+[21:09:59] INFO:    Session initialized and associated with user credential 7301997
+[21:10:00] INFO:    SSHExec initialized successfully
+[21:10:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:10:00] INFO:    SSH connection established
+[21:10:00] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:10:00] INFO:    Connection channel established succesfully
+[21:10:00] INFO:    Start to run command
+[21:10:00] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:10:00] INFO:    Connection channel closed
+[21:10:00] INFO:    Check if exec success or not ... 
+[21:10:00] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:10:00] INFO:    Now wait 5 seconds to begin next task ...
+[21:10:05] INFO:    Connection channel disconnect
+[21:10:05] INFO:    SSH connection shutdown
+[21:10:05] INFO:    Session initialized and associated with user credential 7301997
+[21:10:05] INFO:    SSHExec initialized successfully
+[21:10:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:10:05] INFO:    SSH connection established
+[21:10:05] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign11501CS23.log
+[21:10:05] INFO:    Connection channel established succesfully
+[21:10:05] INFO:    Start to run command
+[21:10:06] INFO:    Connection channel closed
+[21:10:06] INFO:    Check if exec success or not ... 
+[21:10:06] INFO:    Execution failed while executing command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign11501CS23.log
+[21:10:06] INFO:    Error message: stat: cannot stat `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign11501CS23.log': No such file or directory
+[21:10:06] INFO:    Now wait 5 seconds to begin next task ...
+[21:10:11] INFO:    Connection channel disconnect
+
+=============== [2017/03/22 21:10:44, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:10:44] INFO:    SSHExec initializing ...
+[21:10:44] INFO:    Session initialized and associated with user credential 7301997
+[21:10:44] INFO:    SSHExec initialized successfully
+[21:10:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:10:46] INFO:    SSH connection established
+[21:10:46] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:10:46] INFO:    Connection channel established succesfully
+[21:10:46] INFO:    Start to run command
+[21:10:46] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:10:46] INFO:    Connection channel closed
+[21:10:46] INFO:    Check if exec success or not ... 
+[21:10:46] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:10:46] INFO:    Now wait 5 seconds to begin next task ...
+[21:10:51] INFO:    Connection channel disconnect
+[21:10:51] INFO:    SSH connection shutdown
+[21:10:51] INFO:    Session initialized and associated with user credential 7301997
+[21:10:51] INFO:    SSHExec initialized successfully
+[21:10:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:10:51] INFO:    SSH connection established
+[21:10:51] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:10:51] INFO:    Connection channel established succesfully
+[21:10:51] INFO:    Start to run command
+[21:10:52] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:10:52] INFO:    Connection channel closed
+[21:10:52] INFO:    Check if exec success or not ... 
+[21:10:52] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:10:52] INFO:    Now wait 5 seconds to begin next task ...
+[21:10:57] INFO:    Connection channel disconnect
+[21:10:57] INFO:    SSH connection shutdown
+[21:10:57] INFO:    Session initialized and associated with user credential 7301997
+[21:10:57] INFO:    SSHExec initialized successfully
+[21:10:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:10:57] INFO:    SSH connection established
+[21:10:57] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:10:57] INFO:    Connection channel established succesfully
+[21:10:57] INFO:    Start to run command
+[21:10:57] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:10:57] INFO:    Connection channel closed
+[21:10:57] INFO:    Check if exec success or not ... 
+[21:10:57] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:10:57] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:02] INFO:    Connection channel disconnect
+[21:11:02] INFO:    SSH connection shutdown
+[21:11:02] INFO:    Session initialized and associated with user credential 7301997
+[21:11:02] INFO:    SSHExec initialized successfully
+[21:11:02] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:03] INFO:    SSH connection established
+[21:11:03] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:11:03] INFO:    Connection channel established succesfully
+[21:11:03] INFO:    Start to run command
+[21:11:03] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:11:03] INFO:    Connection channel closed
+[21:11:03] INFO:    Check if exec success or not ... 
+[21:11:03] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:11:03] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:08] INFO:    Connection channel disconnect
+[21:11:08] INFO:    SSH connection shutdown
+[21:11:08] INFO:    Session initialized and associated with user credential 7301997
+[21:11:08] INFO:    SSHExec initialized successfully
+[21:11:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:08] INFO:    SSH connection established
+[21:11:08] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:11:08] INFO:    Connection channel established succesfully
+[21:11:08] INFO:    Start to run command
+[21:11:08] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:11:08] INFO:    Connection channel closed
+[21:11:08] INFO:    Check if exec success or not ... 
+[21:11:09] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:11:09] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:14] INFO:    Connection channel disconnect
+[21:11:14] INFO:    SSH connection shutdown
+[21:11:14] INFO:    Session initialized and associated with user credential 7301997
+[21:11:14] INFO:    SSHExec initialized successfully
+[21:11:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:14] INFO:    SSH connection established
+[21:11:14] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:11:14] INFO:    Connection channel established succesfully
+[21:11:14] INFO:    Start to run command
+[21:11:14] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:11:14] INFO:    Connection channel closed
+[21:11:14] INFO:    Check if exec success or not ... 
+[21:11:14] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:11:14] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:19] INFO:    Connection channel disconnect
+[21:11:19] INFO:    SSH connection shutdown
+[21:11:31] INFO:    Session initialized and associated with user credential 7301997
+[21:11:31] INFO:    SSHExec initialized successfully
+[21:11:31] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:31] INFO:    SSH connection established
+[21:11:31] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:11:31] INFO:    Connection channel established succesfully
+[21:11:31] INFO:    Start to run command
+[21:11:31] INFO:    assign1
+assign2
+assign3
+
+[21:11:31] INFO:    Connection channel closed
+[21:11:31] INFO:    Check if exec success or not ... 
+[21:11:32] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:11:32] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:37] INFO:    Connection channel disconnect
+[21:11:37] INFO:    SSH connection shutdown
+[21:11:37] INFO:    Session initialized and associated with user credential 7301997
+[21:11:37] INFO:    SSHExec initialized successfully
+[21:11:37] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:37] INFO:    SSH connection established
+[21:11:37] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:11:37] INFO:    Connection channel established succesfully
+[21:11:37] INFO:    Start to run command
+[21:11:37] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:11:37] INFO:    Connection channel closed
+[21:11:37] INFO:    Check if exec success or not ... 
+[21:11:37] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:11:37] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:42] INFO:    Connection channel disconnect
+[21:11:42] INFO:    SSH connection shutdown
+[21:11:42] INFO:    Session initialized and associated with user credential 7301997
+[21:11:42] INFO:    SSHExec initialized successfully
+[21:11:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:43] INFO:    SSH connection established
+[21:11:43] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:11:43] INFO:    Connection channel established succesfully
+[21:11:43] INFO:    Start to run command
+[21:11:43] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:11:43] INFO:    Connection channel closed
+[21:11:43] INFO:    Check if exec success or not ... 
+[21:11:43] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:11:43] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:48] INFO:    Connection channel disconnect
+[21:11:48] INFO:    SSH connection shutdown
+[21:11:48] INFO:    Session initialized and associated with user credential 7301997
+[21:11:48] INFO:    SSHExec initialized successfully
+[21:11:48] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:48] INFO:    SSH connection established
+[21:11:48] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:11:49] INFO:    Connection channel established succesfully
+[21:11:49] INFO:    Start to run command
+[21:11:49] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:11:49] INFO:    Connection channel closed
+[21:11:49] INFO:    Check if exec success or not ... 
+[21:11:49] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:11:49] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:54] INFO:    Connection channel disconnect
+[21:11:54] INFO:    SSH connection shutdown
+[21:11:54] INFO:    Session initialized and associated with user credential 7301997
+[21:11:54] INFO:    SSHExec initialized successfully
+[21:11:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:11:54] INFO:    SSH connection established
+[21:11:54] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:11:54] INFO:    Connection channel established succesfully
+[21:11:54] INFO:    Start to run command
+[21:11:54] INFO:    1501CS23.txt
+
+[21:11:54] INFO:    Connection channel closed
+[21:11:54] INFO:    Check if exec success or not ... 
+[21:11:54] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:11:54] INFO:    Now wait 5 seconds to begin next task ...
+[21:11:59] INFO:    Connection channel disconnect
+[21:12:00] INFO:    SSH connection shutdown
+[21:13:28] INFO:    Session initialized and associated with user credential 7301997
+[21:13:28] INFO:    SSHExec initialized successfully
+[21:13:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:13:28] INFO:    SSH connection established
+[21:13:28] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:13:28] INFO:    Connection channel established succesfully
+[21:13:28] INFO:    Start to run command
+[21:13:28] INFO:    assign1
+assign2
+assign3
+
+[21:13:28] INFO:    Connection channel closed
+[21:13:28] INFO:    Check if exec success or not ... 
+[21:13:28] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:13:28] INFO:    Now wait 5 seconds to begin next task ...
+[21:13:33] INFO:    Connection channel disconnect
+[21:13:33] INFO:    SSH connection shutdown
+[21:13:33] INFO:    Session initialized and associated with user credential 7301997
+[21:13:33] INFO:    SSHExec initialized successfully
+[21:13:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:13:33] INFO:    SSH connection established
+[21:13:33] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:13:33] INFO:    Connection channel established succesfully
+[21:13:33] INFO:    Start to run command
+[21:13:33] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:13:34] INFO:    Connection channel closed
+[21:13:34] INFO:    Check if exec success or not ... 
+[21:13:34] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:13:34] INFO:    Now wait 5 seconds to begin next task ...
+[21:13:39] INFO:    Connection channel disconnect
+[21:13:39] INFO:    SSH connection shutdown
+[21:13:39] INFO:    Session initialized and associated with user credential 7301997
+[21:13:39] INFO:    SSHExec initialized successfully
+[21:13:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:13:39] INFO:    SSH connection established
+[21:13:39] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:13:39] INFO:    Connection channel established succesfully
+[21:13:39] INFO:    Start to run command
+[21:13:39] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:13:39] INFO:    Connection channel closed
+[21:13:39] INFO:    Check if exec success or not ... 
+[21:13:39] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:13:39] INFO:    Now wait 5 seconds to begin next task ...
+[21:13:44] INFO:    Connection channel disconnect
+[21:13:44] INFO:    SSH connection shutdown
+[21:13:45] INFO:    Session initialized and associated with user credential 7301997
+[21:13:45] INFO:    SSHExec initialized successfully
+[21:13:45] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:13:45] INFO:    SSH connection established
+[21:13:45] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:13:45] INFO:    Connection channel established succesfully
+[21:13:45] INFO:    Start to run command
+[21:13:45] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:13:45] INFO:    Connection channel closed
+[21:13:45] INFO:    Check if exec success or not ... 
+[21:13:45] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:13:45] INFO:    Now wait 5 seconds to begin next task ...
+[21:13:50] INFO:    Connection channel disconnect
+[21:13:50] INFO:    SSH connection shutdown
+[21:13:50] INFO:    Session initialized and associated with user credential 7301997
+[21:13:50] INFO:    SSHExec initialized successfully
+[21:13:50] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:13:50] INFO:    SSH connection established
+[21:13:50] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:13:50] INFO:    Connection channel established succesfully
+[21:13:50] INFO:    Start to run command
+[21:13:50] INFO:    1501CS23.sql
+
+[21:13:51] INFO:    Connection channel closed
+[21:13:51] INFO:    Check if exec success or not ... 
+[21:13:51] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:13:51] INFO:    Now wait 5 seconds to begin next task ...
+[21:13:56] INFO:    Connection channel disconnect
+[21:13:56] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 21:16:58, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:16:58] INFO:    SSHExec initializing ...
+[21:16:58] INFO:    Session initialized and associated with user credential 7301997
+[21:16:58] INFO:    SSHExec initialized successfully
+[21:16:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:16:59] INFO:    SSH connection established
+[21:16:59] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:17:00] INFO:    Connection channel established succesfully
+[21:17:00] INFO:    Start to run command
+[21:17:00] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:17:00] INFO:    Connection channel closed
+[21:17:00] INFO:    Check if exec success or not ... 
+[21:17:00] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:17:00] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:05] INFO:    Connection channel disconnect
+[21:17:05] INFO:    SSH connection shutdown
+[21:17:05] INFO:    Session initialized and associated with user credential 7301997
+[21:17:05] INFO:    SSHExec initialized successfully
+[21:17:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:05] INFO:    SSH connection established
+[21:17:05] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:17:05] INFO:    Connection channel established succesfully
+[21:17:05] INFO:    Start to run command
+[21:17:05] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:17:05] INFO:    Connection channel closed
+[21:17:05] INFO:    Check if exec success or not ... 
+[21:17:06] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:17:06] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:11] INFO:    Connection channel disconnect
+[21:17:11] INFO:    SSH connection shutdown
+[21:17:11] INFO:    Session initialized and associated with user credential 7301997
+[21:17:11] INFO:    SSHExec initialized successfully
+[21:17:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:11] INFO:    SSH connection established
+[21:17:11] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:17:11] INFO:    Connection channel established succesfully
+[21:17:11] INFO:    Start to run command
+[21:17:11] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:17:11] INFO:    Connection channel closed
+[21:17:11] INFO:    Check if exec success or not ... 
+[21:17:11] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:17:11] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:16] INFO:    Connection channel disconnect
+[21:17:16] INFO:    SSH connection shutdown
+[21:17:17] INFO:    Session initialized and associated with user credential 7301997
+[21:17:17] INFO:    SSHExec initialized successfully
+[21:17:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:17] INFO:    SSH connection established
+[21:17:17] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:17:17] INFO:    Connection channel established succesfully
+[21:17:17] INFO:    Start to run command
+[21:17:17] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:17:17] INFO:    Connection channel closed
+[21:17:17] INFO:    Check if exec success or not ... 
+[21:17:17] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:17:17] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:22] INFO:    Connection channel disconnect
+[21:17:22] INFO:    SSH connection shutdown
+[21:17:22] INFO:    Session initialized and associated with user credential 7301997
+[21:17:22] INFO:    SSHExec initialized successfully
+[21:17:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:23] INFO:    SSH connection established
+[21:17:23] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:17:23] INFO:    Connection channel established succesfully
+[21:17:23] INFO:    Start to run command
+[21:17:23] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:17:23] INFO:    Connection channel closed
+[21:17:23] INFO:    Check if exec success or not ... 
+[21:17:23] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:17:23] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:28] INFO:    Connection channel disconnect
+[21:17:28] INFO:    SSH connection shutdown
+[21:17:28] INFO:    Session initialized and associated with user credential 7301997
+[21:17:28] INFO:    SSHExec initialized successfully
+[21:17:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:28] INFO:    SSH connection established
+[21:17:28] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:17:28] INFO:    Connection channel established succesfully
+[21:17:28] INFO:    Start to run command
+[21:17:28] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:17:28] INFO:    Connection channel closed
+[21:17:28] INFO:    Check if exec success or not ... 
+[21:17:28] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:17:28] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:33] INFO:    Connection channel disconnect
+[21:17:34] INFO:    SSH connection shutdown
+[21:17:38] INFO:    Session initialized and associated with user credential 7301997
+[21:17:38] INFO:    SSHExec initialized successfully
+[21:17:38] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:38] INFO:    SSH connection established
+[21:17:38] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:17:38] INFO:    Connection channel established succesfully
+[21:17:38] INFO:    Start to run command
+[21:17:38] INFO:    assign1
+assign2
+assign3
+
+[21:17:38] INFO:    Connection channel closed
+[21:17:38] INFO:    Check if exec success or not ... 
+[21:17:38] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:17:38] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:43] INFO:    Connection channel disconnect
+[21:17:43] INFO:    SSH connection shutdown
+[21:17:43] INFO:    Session initialized and associated with user credential 7301997
+[21:17:43] INFO:    SSHExec initialized successfully
+[21:17:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:43] INFO:    SSH connection established
+[21:17:43] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:17:44] INFO:    Connection channel established succesfully
+[21:17:44] INFO:    Start to run command
+[21:17:44] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:17:44] INFO:    Connection channel closed
+[21:17:44] INFO:    Check if exec success or not ... 
+[21:17:44] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:17:44] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:49] INFO:    Connection channel disconnect
+[21:17:49] INFO:    SSH connection shutdown
+[21:17:49] INFO:    Session initialized and associated with user credential 7301997
+[21:17:49] INFO:    SSHExec initialized successfully
+[21:17:49] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:49] INFO:    SSH connection established
+[21:17:49] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:17:49] INFO:    Connection channel established succesfully
+[21:17:49] INFO:    Start to run command
+[21:17:49] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:17:49] INFO:    Connection channel closed
+[21:17:49] INFO:    Check if exec success or not ... 
+[21:17:49] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:17:49] INFO:    Now wait 5 seconds to begin next task ...
+[21:17:54] INFO:    Connection channel disconnect
+[21:17:54] INFO:    SSH connection shutdown
+[21:17:54] INFO:    Session initialized and associated with user credential 7301997
+[21:17:54] INFO:    SSHExec initialized successfully
+[21:17:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:17:55] INFO:    SSH connection established
+[21:17:55] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.txt
+[21:17:55] INFO:    Connection channel established succesfully
+[21:17:55] INFO:    Start to run command
+[21:17:55] INFO:    Connection channel closed
+[21:17:55] INFO:    Check if exec success or not ... 
+[21:17:55] INFO:    Execution failed while executing command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.txt
+[21:17:55] INFO:    Error message: stat: cannot stat `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.txt': No such file or directory
+[21:17:55] INFO:    Now wait 5 seconds to begin next task ...
+[21:18:00] INFO:    Connection channel disconnect
+
+=============== [2017/03/22 21:19:09, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:19:09] INFO:    SSHExec initializing ...
+[21:19:09] INFO:    Session initialized and associated with user credential 7301997
+[21:19:09] INFO:    SSHExec initialized successfully
+[21:19:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:11] INFO:    SSH connection established
+[21:19:11] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:19:11] INFO:    Connection channel established succesfully
+[21:19:11] INFO:    Start to run command
+[21:19:11] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:19:11] INFO:    Connection channel closed
+[21:19:11] INFO:    Check if exec success or not ... 
+[21:19:11] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:19:11] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:16] INFO:    Connection channel disconnect
+[21:19:16] INFO:    SSH connection shutdown
+[21:19:16] INFO:    Session initialized and associated with user credential 7301997
+[21:19:16] INFO:    SSHExec initialized successfully
+[21:19:16] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:16] INFO:    SSH connection established
+[21:19:17] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:19:17] INFO:    Connection channel established succesfully
+[21:19:17] INFO:    Start to run command
+[21:19:17] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:19:17] INFO:    Connection channel closed
+[21:19:17] INFO:    Check if exec success or not ... 
+[21:19:17] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:19:17] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:22] INFO:    Connection channel disconnect
+[21:19:22] INFO:    SSH connection shutdown
+[21:19:22] INFO:    Session initialized and associated with user credential 7301997
+[21:19:22] INFO:    SSHExec initialized successfully
+[21:19:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:22] INFO:    SSH connection established
+[21:19:22] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:19:22] INFO:    Connection channel established succesfully
+[21:19:22] INFO:    Start to run command
+[21:19:22] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:19:22] INFO:    Connection channel closed
+[21:19:22] INFO:    Check if exec success or not ... 
+[21:19:22] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:19:22] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:27] INFO:    Connection channel disconnect
+[21:19:27] INFO:    SSH connection shutdown
+[21:19:28] INFO:    Session initialized and associated with user credential 7301997
+[21:19:28] INFO:    SSHExec initialized successfully
+[21:19:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:28] INFO:    SSH connection established
+[21:19:28] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:19:28] INFO:    Connection channel established succesfully
+[21:19:28] INFO:    Start to run command
+[21:19:28] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:19:28] INFO:    Connection channel closed
+[21:19:28] INFO:    Check if exec success or not ... 
+[21:19:28] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:19:28] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:33] INFO:    Connection channel disconnect
+[21:19:33] INFO:    SSH connection shutdown
+[21:19:33] INFO:    Session initialized and associated with user credential 7301997
+[21:19:33] INFO:    SSHExec initialized successfully
+[21:19:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:33] INFO:    SSH connection established
+[21:19:34] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:19:34] INFO:    Connection channel established succesfully
+[21:19:34] INFO:    Start to run command
+[21:19:34] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:19:34] INFO:    Connection channel closed
+[21:19:34] INFO:    Check if exec success or not ... 
+[21:19:34] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:19:34] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:39] INFO:    Connection channel disconnect
+[21:19:39] INFO:    SSH connection shutdown
+[21:19:39] INFO:    Session initialized and associated with user credential 7301997
+[21:19:39] INFO:    SSHExec initialized successfully
+[21:19:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:39] INFO:    SSH connection established
+[21:19:39] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:19:39] INFO:    Connection channel established succesfully
+[21:19:39] INFO:    Start to run command
+[21:19:39] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:19:39] INFO:    Connection channel closed
+[21:19:39] INFO:    Check if exec success or not ... 
+[21:19:39] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:19:39] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:44] INFO:    Connection channel disconnect
+[21:19:44] INFO:    SSH connection shutdown
+[21:19:49] INFO:    Session initialized and associated with user credential 7301997
+[21:19:49] INFO:    SSHExec initialized successfully
+[21:19:49] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:49] INFO:    SSH connection established
+[21:19:49] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:19:49] INFO:    Connection channel established succesfully
+[21:19:50] INFO:    Start to run command
+[21:19:50] INFO:    assign1
+assign2
+assign3
+
+[21:19:50] INFO:    Connection channel closed
+[21:19:50] INFO:    Check if exec success or not ... 
+[21:19:50] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:19:50] INFO:    Now wait 5 seconds to begin next task ...
+[21:19:55] INFO:    Connection channel disconnect
+[21:19:55] INFO:    SSH connection shutdown
+[21:19:55] INFO:    Session initialized and associated with user credential 7301997
+[21:19:55] INFO:    SSHExec initialized successfully
+[21:19:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:19:55] INFO:    SSH connection established
+[21:19:55] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:19:55] INFO:    Connection channel established succesfully
+[21:19:55] INFO:    Start to run command
+[21:19:55] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:19:55] INFO:    Connection channel closed
+[21:19:55] INFO:    Check if exec success or not ... 
+[21:19:55] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:19:55] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:00] INFO:    Connection channel disconnect
+[21:20:00] INFO:    SSH connection shutdown
+[21:20:00] INFO:    Session initialized and associated with user credential 7301997
+[21:20:00] INFO:    SSHExec initialized successfully
+[21:20:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:20:01] INFO:    SSH connection established
+[21:20:01] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:20:01] INFO:    Connection channel established succesfully
+[21:20:01] INFO:    Start to run command
+[21:20:01] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:20:01] INFO:    Connection channel closed
+[21:20:01] INFO:    Check if exec success or not ... 
+[21:20:02] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:20:02] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:08] INFO:    Connection channel disconnect
+[21:20:08] INFO:    SSH connection shutdown
+[21:20:08] INFO:    Session initialized and associated with user credential 7301997
+[21:20:08] INFO:    SSHExec initialized successfully
+[21:20:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:20:08] INFO:    SSH connection established
+[21:20:08] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt
+[21:20:08] INFO:    Connection channel established succesfully
+[21:20:08] INFO:    Start to run command
+[21:20:08] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 802h/2050d	Inode: 21692438    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 01:28:36.000000000 +0530
+Modify: 2017-03-23 01:28:36.000000000 +0530
+Change: 2017-03-23 01:28:36.000000000 +0530
+
+[21:20:08] INFO:    Connection channel closed
+[21:20:08] INFO:    Check if exec success or not ... 
+[21:20:08] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt
+[21:20:08] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:13] INFO:    Connection channel disconnect
+[21:20:13] INFO:    SSH connection shutdown
+[21:20:13] INFO:    Session initialized and associated with user credential 7301997
+[21:20:13] INFO:    SSHExec initialized successfully
+[21:20:13] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:20:13] INFO:    SSH connection established
+[21:20:14] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:20:14] INFO:    Connection channel established succesfully
+[21:20:14] INFO:    Start to run command
+[21:20:14] INFO:    1501CS23.sql
+
+[21:20:14] INFO:    Connection channel closed
+[21:20:14] INFO:    Check if exec success or not ... 
+[21:20:14] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:20:14] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:19] INFO:    Connection channel disconnect
+[21:20:19] INFO:    SSH connection shutdown
+[21:20:19] INFO:    Session initialized and associated with user credential 7301997
+[21:20:19] INFO:    SSHExec initialized successfully
+[21:20:19] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:20:19] INFO:    SSH connection established
+[21:20:19] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql
+[21:20:20] INFO:    Connection channel established succesfully
+[21:20:20] INFO:    Start to run command
+[21:20:20] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql'
+  Size: 9556      	Blocks: 24         IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 3145742     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:47:41.000000000 +0530
+Modify: 2017-03-23 02:47:41.000000000 +0530
+Change: 2017-03-23 02:47:41.000000000 +0530
+
+[21:20:20] INFO:    Connection channel closed
+[21:20:20] INFO:    Check if exec success or not ... 
+[21:20:20] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql
+[21:20:20] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:25] INFO:    Connection channel disconnect
+[21:20:25] INFO:    SSH connection shutdown
+[21:20:25] INFO:    Session initialized and associated with user credential 7301997
+[21:20:25] INFO:    SSHExec initialized successfully
+[21:20:25] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:20:25] INFO:    SSH connection established
+[21:20:25] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign3
+[21:20:25] INFO:    Connection channel established succesfully
+[21:20:25] INFO:    Start to run command
+[21:20:25] INFO:    01CS23.log
+01CS23.md
+01CS23.png
+
+[21:20:25] INFO:    Connection channel closed
+[21:20:25] INFO:    Check if exec success or not ... 
+[21:20:25] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign3
+[21:20:25] INFO:    Now wait 5 seconds to begin next task ...
+[21:20:30] INFO:    Connection channel disconnect
+[21:20:31] INFO:    SSH connection shutdown
+
+=============== [2017/03/22 21:21:36, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:21:37] INFO:    SSHExec initializing ...
+[21:21:37] INFO:    Session initialized and associated with user credential 7301997
+[21:21:37] INFO:    SSHExec initialized successfully
+[21:21:37] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:21:38] INFO:    SSH connection established
+[21:21:38] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:21:38] INFO:    Connection channel established succesfully
+[21:21:38] INFO:    Start to run command
+[21:21:38] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:21:39] INFO:    Connection channel closed
+[21:21:39] INFO:    Check if exec success or not ... 
+[21:21:39] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:21:39] INFO:    Now wait 5 seconds to begin next task ...
+[21:21:44] INFO:    Connection channel disconnect
+[21:21:44] INFO:    SSH connection shutdown
+[21:21:44] INFO:    Session initialized and associated with user credential 7301997
+[21:21:44] INFO:    SSHExec initialized successfully
+[21:21:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:21:44] INFO:    SSH connection established
+[21:21:44] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:21:44] INFO:    Connection channel established succesfully
+[21:21:44] INFO:    Start to run command
+[21:21:44] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:21:44] INFO:    Connection channel closed
+[21:21:44] INFO:    Check if exec success or not ... 
+[21:21:44] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:21:44] INFO:    Now wait 5 seconds to begin next task ...
+[21:21:49] INFO:    Connection channel disconnect
+[21:21:49] INFO:    SSH connection shutdown
+[21:21:49] INFO:    Session initialized and associated with user credential 7301997
+[21:21:49] INFO:    SSHExec initialized successfully
+[21:21:49] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:21:49] INFO:    SSH connection established
+[21:21:50] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:21:50] INFO:    Connection channel established succesfully
+[21:21:50] INFO:    Start to run command
+[21:21:50] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:21:50] INFO:    Connection channel closed
+[21:21:50] INFO:    Check if exec success or not ... 
+[21:21:50] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:21:50] INFO:    Now wait 5 seconds to begin next task ...
+[21:21:55] INFO:    Connection channel disconnect
+[21:21:55] INFO:    SSH connection shutdown
+[21:21:55] INFO:    Session initialized and associated with user credential 7301997
+[21:21:55] INFO:    SSHExec initialized successfully
+[21:21:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:21:55] INFO:    SSH connection established
+[21:21:55] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:21:55] INFO:    Connection channel established succesfully
+[21:21:55] INFO:    Start to run command
+[21:21:55] INFO:    DIFFERENTIAL EQUATIONS.pdf
+HW1.pdf
+
+[21:21:55] INFO:    Connection channel closed
+[21:21:55] INFO:    Check if exec success or not ... 
+[21:21:55] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/
+[21:21:55] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:00] INFO:    Connection channel disconnect
+[21:22:01] INFO:    SSH connection shutdown
+[21:22:01] INFO:    Session initialized and associated with user credential 7301997
+[21:22:01] INFO:    SSHExec initialized successfully
+[21:22:01] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:01] INFO:    SSH connection established
+[21:22:01] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:22:01] INFO:    Connection channel established succesfully
+[21:22:01] INFO:    Start to run command
+[21:22:01] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/DIFFERENTIAL EQUATIONS.pdf'
+  Size: 17504902  	Blocks: 34240      IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659747    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2016-04-22 20:37:37.000000000 +0530
+Modify: 2016-03-28 02:23:06.000000000 +0530
+Change: 2017-03-22 18:48:57.000000000 +0530
+
+[21:22:01] INFO:    Connection channel closed
+[21:22:01] INFO:    Check if exec success or not ... 
+[21:22:01] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"DIFFERENTIAL EQUATIONS.pdf"
+[21:22:01] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:06] INFO:    Connection channel disconnect
+[21:22:06] INFO:    SSH connection shutdown
+[21:22:06] INFO:    Session initialized and associated with user credential 7301997
+[21:22:06] INFO:    SSHExec initialized successfully
+[21:22:06] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:07] INFO:    SSH connection established
+[21:22:07] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:22:07] INFO:    Connection channel established succesfully
+[21:22:07] INFO:    Start to run command
+[21:22:07] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/HW1.pdf'
+  Size: 89483     	Blocks: 184        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21659748    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-01-30 22:34:42.000000000 +0530
+Modify: 2017-01-30 18:14:13.000000000 +0530
+Change: 2017-03-22 22:52:27.000000000 +0530
+
+[21:22:07] INFO:    Connection channel closed
+[21:22:07] INFO:    Check if exec success or not ... 
+[21:22:07] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/assignments/"HW1.pdf"
+[21:22:07] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:12] INFO:    Connection channel disconnect
+[21:22:12] INFO:    SSH connection shutdown
+[21:22:14] INFO:    Session initialized and associated with user credential 7301997
+[21:22:14] INFO:    SSHExec initialized successfully
+[21:22:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:14] INFO:    SSH connection established
+[21:22:14] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:22:14] INFO:    Connection channel established succesfully
+[21:22:15] INFO:    Start to run command
+[21:22:15] INFO:    assign1
+assign2
+assign3
+
+[21:22:15] INFO:    Connection channel closed
+[21:22:15] INFO:    Check if exec success or not ... 
+[21:22:15] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads
+[21:22:15] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:20] INFO:    Connection channel disconnect
+[21:22:20] INFO:    SSH connection shutdown
+[21:22:20] INFO:    Session initialized and associated with user credential 7301997
+[21:22:20] INFO:    SSHExec initialized successfully
+[21:22:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:20] INFO:    SSH connection established
+[21:22:20] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:22:20] INFO:    Connection channel established succesfully
+[21:22:20] INFO:    Start to run command
+[21:22:20] INFO:    1501CS23.log
+1501CS23.txt
+
+[21:22:20] INFO:    Connection channel closed
+[21:22:20] INFO:    Check if exec success or not ... 
+[21:22:20] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1
+[21:22:20] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:26] INFO:    Connection channel disconnect
+[21:22:26] INFO:    SSH connection shutdown
+[21:22:26] INFO:    Session initialized and associated with user credential 7301997
+[21:22:26] INFO:    SSHExec initialized successfully
+[21:22:26] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:26] INFO:    SSH connection established
+[21:22:26] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:22:26] INFO:    Connection channel established succesfully
+[21:22:26] INFO:    Start to run command
+[21:22:26] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log'
+  Size: 312955    	Blocks: 624        IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 21692439    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:34:08.000000000 +0530
+Modify: 2017-03-23 02:34:08.000000000 +0530
+Change: 2017-03-23 02:34:08.000000000 +0530
+
+[21:22:26] INFO:    Connection channel closed
+[21:22:26] INFO:    Check if exec success or not ... 
+[21:22:26] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.log
+[21:22:26] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:31] INFO:    Connection channel disconnect
+[21:22:31] INFO:    SSH connection shutdown
+[21:22:31] INFO:    Session initialized and associated with user credential 7301997
+[21:22:31] INFO:    SSHExec initialized successfully
+[21:22:31] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:32] INFO:    SSH connection established
+[21:22:32] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt
+[21:22:32] INFO:    Connection channel established succesfully
+[21:22:32] INFO:    Start to run command
+[21:22:32] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt'
+  Size: 0         	Blocks: 0          IO Block: 4096   regular empty file
+Device: 802h/2050d	Inode: 21692438    Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 01:28:36.000000000 +0530
+Modify: 2017-03-23 01:28:36.000000000 +0530
+Change: 2017-03-23 01:28:36.000000000 +0530
+
+[21:22:32] INFO:    Connection channel closed
+[21:22:32] INFO:    Check if exec success or not ... 
+[21:22:32] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign1/1501CS23.txt
+[21:22:32] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:37] INFO:    Connection channel disconnect
+[21:22:37] INFO:    SSH connection shutdown
+[21:22:37] INFO:    Session initialized and associated with user credential 7301997
+[21:22:37] INFO:    SSHExec initialized successfully
+[21:22:37] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:37] INFO:    SSH connection established
+[21:22:37] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:22:37] INFO:    Connection channel established succesfully
+[21:22:37] INFO:    Start to run command
+[21:22:37] INFO:    1501CS23.sql
+
+[21:22:38] INFO:    Connection channel closed
+[21:22:38] INFO:    Check if exec success or not ... 
+[21:22:38] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2
+[21:22:38] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:43] INFO:    Connection channel disconnect
+[21:22:43] INFO:    SSH connection shutdown
+[21:22:43] INFO:    Session initialized and associated with user credential 7301997
+[21:22:43] INFO:    SSHExec initialized successfully
+[21:22:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:43] INFO:    SSH connection established
+[21:22:43] INFO:    Command is stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql
+[21:22:43] INFO:    Connection channel established succesfully
+[21:22:43] INFO:    Start to run command
+[21:22:43] INFO:      File: `/home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql'
+  Size: 9556      	Blocks: 24         IO Block: 4096   regular file
+Device: 802h/2050d	Inode: 3145742     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 2206/kshitij.cs15)   Gid: (  501/   admin)
+Access: 2017-03-23 02:47:41.000000000 +0530
+Modify: 2017-03-23 02:47:41.000000000 +0530
+Change: 2017-03-23 02:47:41.000000000 +0530
+
+[21:22:43] INFO:    Connection channel closed
+[21:22:43] INFO:    Check if exec success or not ... 
+[21:22:43] INFO:    Execute successfully for command: stat /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign2/1501CS23.sql
+[21:22:43] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:48] INFO:    Connection channel disconnect
+[21:22:48] INFO:    SSH connection shutdown
+[21:22:48] INFO:    Session initialized and associated with user credential 7301997
+[21:22:48] INFO:    SSHExec initialized successfully
+[21:22:48] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[21:22:48] INFO:    SSH connection established
+[21:22:48] INFO:    Command is ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign3
+[21:22:49] INFO:    Connection channel established succesfully
+[21:22:49] INFO:    Start to run command
+[21:22:49] INFO:    01CS23.log
+01CS23.md
+01CS23.png
+
+[21:22:49] INFO:    Connection channel closed
+[21:22:49] INFO:    Check if exec success or not ... 
+[21:22:49] INFO:    Execute successfully for command: ls /home/stud/btech/cse/2015/kshitij.cs15/cms/MA201_ashish_prashant/uploads/assign3
+[21:22:49] INFO:    Now wait 5 seconds to begin next task ...
+[21:22:54] INFO:    Connection channel disconnect
+[21:22:54] INFO:    SSH connection shutdown

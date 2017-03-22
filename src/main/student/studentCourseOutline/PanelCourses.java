@@ -55,7 +55,7 @@ public class PanelCourses extends JPanel {
 				System.out.println("Path is::"+path);
 				System.out.println(path);
 				try {
-					co.c_panel.resetPanes(path);
+					co.c_panel.resetPanes(student, path);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -40,15 +40,16 @@ public class Upload {
 	 *  Take care that both the paths must be complete upto the file name itself.
 	 *  MAKE SURE THAT THE SEPARATOR USED IS '/'
 	 */
-	public void uploadFile(String from, String to)
+	public void uploadFile(String from, String to, String filename)
 	{
 		Session     session     = null;
 		Channel     channel     = null;
 		ChannelSftp channelSftp = null;
 		
 		String directory=to.substring(0, to.lastIndexOf('/'));
-        String filename=to.substring(to.lastIndexOf('/'+1));
-		
+//        String filename=to.substring(to.lastIndexOf('/'+1));
+		System.out.println(directory);
+        System.out.println(filename);
 		try{
             JSch jsch = new JSch();
             session = jsch.getSession(username,ip,port);
@@ -70,15 +71,17 @@ public class Upload {
 	
 	/*
 	 * from - path on local system including file name
-	 * courseid - specific course id including prof name +cours name
+	 * courseid - path till courseid eg. /cms/MA201_prashnt/
 	 * assignment - assignment no.
 	 * roll - roll no. of the student
 	 */
 	public void studentUploadAssignment(String from, String courseid, String assignment, String roll)
 	{
 		String extension = from.substring(from.lastIndexOf('.'));
-		String to = path+"/"+courseid+"/uploaded assignments/"+assignment+"/"+roll+extension;
-		uploadFile(from,to);
+		String to = courseid+"uploads/"+assignment+"/"+roll+extension;
+		System.out.println("@@@@@@@\n"+from+"\n"+to);
+		String filename = roll+extension;
+		uploadFile(from,to,filename);
 	}
 	
 	/*
@@ -90,7 +93,7 @@ public class Upload {
 	{
 		String filename = from.substring(from.lastIndexOf('/')+1);
 		String to = path+"/"+courseid+"/"+folder+"/"+filename;
-		uploadFile(from, to);
+		uploadFile(from, to,filename);
 	}
 
 }

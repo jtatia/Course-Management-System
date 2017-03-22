@@ -37,7 +37,6 @@ public class CourseAssignmentUploadPanel extends JPanel {
 	private JXTextField assignField;
 	private JTable table;
     private CourseAssignmentUploadTableModel model;
-    private CourseMappingDAO dao = null;
     private List<UploadInfo> uploadInfo;
 	/**
 	 * Create the panel.
@@ -50,32 +49,19 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		panel.setLayout(null);
 		table=new JTable();
 		textField = new JXTextField();
-		textField.setBounds(10, 11, 850, 20);
+		textField.setBounds(10, 11, 800, 20);
 		textField.setPrompt("Enter path of file to upload");
 		panel.add(textField);
 		textField.setColumns(9);
 		assignField = new JXTextField();
-		assignField.setBounds(820,11,100,20);
+		assignField.setBounds(850,11,100,20);
+		assignField.setColumns(2);
 		assignField.setPrompt("Enter assign no. or name");
 		panel.add(assignField);
 		/* adding files into list which then is added into model which is added to table*/
 		
-        uploadInfo = new ArrayList<>();
-        
-		String str[] = FileDetails.getFileList(path);
-		for(int i=0;i<str.length;i++)
-		{
-			Assignment temp = new Assignment();
-			temp.setName(str[i]);
-			temp.setPath(path);
-			String s[]=FileDetails.getStats(path, "\""+str[i]+"\"");
-			temp.setLastModified(s[1]);
-			temp.setSize(s[0]);
-		//	list.add(temp);
-		}
-		
-		
-		
+        uploadInfo = new ArrayList<UploadInfo>();
+        System.out.println(path);
 		model = new CourseAssignmentUploadTableModel(uploadInfo);
 		table.setModel(model);
 		JButton btnUpload = new JButton("Upload");
@@ -90,7 +76,11 @@ public class CourseAssignmentUploadPanel extends JPanel {
 				else
 				{
 					Upload upload = new Upload();
+					System.out.println("**********\n"+textField.getText()+"\n"+path+"\n"+assignField.getText()+"\n"+student.getRollno());
 					upload.studentUploadAssignment(textField.getText(), path, assignField.getText(), student.getRollno());
+					System.out.println("Successful");
+					textField.setText("");
+					assignField.setText("");
 				}
 				}catch(Exception e1){
 					e1.printStackTrace();
@@ -98,7 +88,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 			}
 		});
 		btnUpload.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnUpload.setBounds(1120, 10, 89, 23);
+		btnUpload.setBounds(1040, 10, 89, 23);
 		panel.add(btnUpload);
 		
 		JButton btnRefresh = new JButton("Refresh");
@@ -107,13 +97,32 @@ public class CourseAssignmentUploadPanel extends JPanel {
 				textField.setText("");
 				assignField.setText("");
 				try {
-				} catch (Exception e1) {
-					e1.printStackTrace();
+					String str[] = FileDetails.getFileList(path+"uploads");
+					for(int i=0;i<str.length;i++)
+					{
+						System.out.println(str[i]);
+						String str1[] = FileDetails.getFileList(path+"uploads/"+str[i]);			
+						for(int j=0;j<str1.length;j++){
+							System.out.println(str1[j]);
+							if(str1[j].contains(student.getRollno())){
+						UploadInfo temp = new UploadInfo();
+						temp.setName(str1[j]);
+						String s[]=FileDetails.getStats(path+"uploads/"+str[i]+"/", temp.getName());
+						temp.setLastModified(s[1]);
+						temp.setSize(s[0]);
+						uploadInfo.add(temp);
+						model = new CourseAssignmentUploadTableModel(uploadInfo);
+						table.setModel(model);
+					
+					}
+}
+}
+				} catch (Exception e2) {
+					e2.printStackTrace();
 				}
-			}
-		});
+			}		});
 		btnRefresh.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnRefresh.setBounds(1230, 10, 89, 23);
+		btnRefresh.setBounds(1170, 10, 89, 23);
 		panel.add(btnRefresh);
 		
 				
