@@ -53,7 +53,7 @@ public class CourseAssignmentPanel extends JPanel {
 		panel.add(lblAssignmentsUploaded);
 		table=new JTable();
 		
-		list = new ArrayList();
+		list = new ArrayList<Assignment>();
 		
 		String str[] = FileDetails.getFileList(path);
 		for(int i=0;i<str.length;i++)

@@ -36,7 +36,7 @@ public class CoursePanel extends JPanel {
 		cmp.add(new JLabel("TESTING"));
 		cmp.revalidate();
 		cmp.repaint();
-		caup=new CourseAssignmentUploadPanel();
+		caup=new CourseAssignmentUploadPanel(null,path);
 		
 		cdfp=new CourseDiscussionForumPanel(path);
 		
@@ -67,7 +67,7 @@ public class CoursePanel extends JPanel {
 		//System.out.println("New things");
 	}
 	
-	public CoursePanel()
+	public CoursePanel() throws Exception
 	{
 //		this();
 			//jtp.setBounds(100, 100, 300, 200);
@@ -80,7 +80,7 @@ public class CoursePanel extends JPanel {
 			
 			cmp=new CourseMaterialPanel();
 			
-			caup=new CourseAssignmentUploadPanel();
+			caup=new CourseAssignmentUploadPanel(null, "");
 			
 			cdfp=new CourseDiscussionForumPanel();
 			
