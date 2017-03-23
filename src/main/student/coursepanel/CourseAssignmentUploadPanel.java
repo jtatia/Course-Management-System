@@ -60,10 +60,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		panel.add(assignField);
 		/* adding files into list which then is added into model which is added to table*/
 		
-        uploadInfo = new ArrayList<UploadInfo>();
         System.out.println(path);
-		model = new CourseAssignmentUploadTableModel(uploadInfo);
-		table.setModel(model);
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -94,6 +91,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		JButton btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+		        uploadInfo = new ArrayList<UploadInfo>();
 				textField.setText("");
 				assignField.setText("");
 				try {
