@@ -1,15 +1,13 @@
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
 import main.admin.adminpanel.admintablemodel.AdminTableModel;
-import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.admin.adminpaneldao.AdminPanelDAO;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -18,6 +16,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import org.jdesktop.swingx.JXTextField;
 
@@ -31,8 +30,7 @@ public class adminSearchPanel extends JPanel {
 	private JXTextField textField;
 	private JTable table;
     private AdminTableModel adminTableModel;
-    private List<Admin> admin = null;
-    private AdminPanelDAO adminPanelDAO=null;
+    List<Admin> admin = null;
 	/**
 	 * Create the panel.
 	 */
@@ -44,12 +42,16 @@ public class adminSearchPanel extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
+		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+		table.setDefaultRenderer(Object.class, centerRenderer);
+		table.setDefaultRenderer(Integer.class, centerRenderer);
 		textField = new JXTextField();
 		textField.setBounds(10, 11, 1090, 20);
 		textField.setPrompt("Admin search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
-		adminPanelDAO = new AdminPanelDAO();
+		AdminPanelDAO adminPanelDAO = new AdminPanelDAO();
 		admin = adminPanelDAO.getAllAdmin(); 
 		adminTableModel = new AdminTableModel(admin);
 		table.setModel(adminTableModel);
@@ -123,29 +125,15 @@ public class adminSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int index[]=table.getSelectedRows();
-				for(int i=0;i<index.length;i++){
-					String user_name=(String)adminTableModel.getValueAt(index[i], 1);
-					adminPanelDAO.deleteAdmin(user_name);
-				}
-				try{
-				admin = adminPanelDAO.getAllAdmin();
-				adminTableModel = new AdminTableModel(admin);
-				table.setModel(adminTableModel);
-				}catch(Exception exc){}
-			}
-		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
-		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
-
+	//	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		table.setRowHeight(30);
 	}
 }

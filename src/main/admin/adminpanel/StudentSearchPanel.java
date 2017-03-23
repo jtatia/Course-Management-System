@@ -1,10 +1,8 @@
 package main.admin.adminpanel;
 
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.EventQueue;
 
+import java.awt.Component;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -21,14 +19,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingUtilities;
-
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import org.jdesktop.swingx.JXTextField;
 
 import javax.swing.JToggleButton;
 
 public class StudentSearchPanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+
 	private JXTextField textField;
 	
 	private JTable table;
@@ -36,8 +39,6 @@ public class StudentSearchPanel extends JPanel {
 	private List<Student> list=null;
 	
 	private StudentDbHandler sdbh=null;
-	
-	private StudentTableModel model;
 	/**
 	 * Create the panel.
 	 */
@@ -52,7 +53,7 @@ public class StudentSearchPanel extends JPanel {
 		table=new JTable();
 		sdbh=new StudentDbHandler();
 		list=sdbh.getAllStudent();
-		model=new StudentTableModel(list);
+		StudentTableModel model=new StudentTableModel(list);
 		table.setModel(model);
 
 		
@@ -108,13 +109,38 @@ public class StudentSearchPanel extends JPanel {
 		btnNewButton.setBounds(1230, 10, 89, 23);
 		panel.add(btnNewButton);
 		
-		JScrollPane scrollPane = new JScrollPane();
+	/*	JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 57, 1320, 450);
+		add(scrollPane);*/
+		table = new JTable(){
+		    /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+		       public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
+		           Component component = super.prepareRenderer(renderer, row, column);
+		           int rendererWidth = component.getPreferredSize().width;
+		           TableColumn tableColumn = getColumnModel().getColumn(column);
+		           tableColumn.setPreferredWidth(Math.max(rendererWidth + getIntercellSpacing().width, tableColumn.getPreferredWidth()));
+		           return component;
+		        }
+		    };
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		table.setRowHeight(30);
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	//	scrollPane.setViewportView(table);
+		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+		table.setDefaultRenderer(Object.class, centerRenderer);
+		table.setDefaultRenderer(Integer.class, centerRenderer);
+		JScrollPane scrollPane = new JScrollPane(table,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+		
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		//resizeColumnWidth(table);
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
-		table = new JTable();
-		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		scrollPane.setViewportView(table);
-		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 530, 1320, 42);
 		add(panel_1);
@@ -166,20 +192,6 @@ public class StudentSearchPanel extends JPanel {
 		panel_1.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-				int index[]=table.getSelectedRows();
-				for(int i=0;i<index.length;i++){
-					String rn=(String)model.getValueAt(index[i], 1);
-					sdbh.deleteStudent(rn);
-				}
-				try{
-				list = sdbh.getAllStudent();
-				model = new StudentTableModel(list);
-				table.setModel(model);
-				}catch(Exception exc){}
-			}
-		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_1.add(btnDelete);
 
