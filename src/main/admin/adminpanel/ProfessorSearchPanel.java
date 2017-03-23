@@ -2,15 +2,13 @@ package main.admin.adminpanel;
 
 import javax.swing.JPanel;
 
-import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
-import main.admin.adminpanel.admintablemodel.AdminTableModel;
 import main.admin.adminpanel.proftablemodel.ProfTableModel;
-import main.admin.adminpaneldao.AdminPanelDAO;
 import main.professor.professor.Professor;
 import main.professor.professorDAO.ProfessorDAO;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -23,7 +21,7 @@ import javax.swing.ListSelectionModel;
 import org.jdesktop.swingx.JXTextField;
 
 import javax.swing.JToggleButton;
-import javax.swing.ScrollPaneConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class ProfessorSearchPanel extends JPanel {
 	/**
@@ -39,13 +37,16 @@ public class ProfessorSearchPanel extends JPanel {
 	 */
 	public ProfessorSearchPanel()throws Exception {
 		setLayout(null);
-		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 11, 1320, 38);
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
 		textField = new JXTextField();
+		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+		table.setDefaultRenderer(Object.class, centerRenderer);
+		table.setDefaultRenderer(Integer.class, centerRenderer);
 		textField.setBounds(10, 11, 1090, 20);
 		textField.setPrompt("Faculty search panel. Please enter the string to search");
 		panel.add(textField);
@@ -124,29 +125,15 @@ public class ProfessorSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int index[]=table.getSelectedRows();
-				for(int i=0;i<index.length;i++){
-					String rn=(String)profTableModel.getValueAt(index[i], 1);
-					profPanelDAO.deleteProf(rn);
-				}
-				try{
-				prof = profPanelDAO.getAllProfessor();
-				profTableModel = new ProfTableModel(prof);
-				table.setModel(profTableModel);
-				}catch(Exception exc){}
-			}
-		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
-		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
-
+	//	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		table.setRowHeight(30);
 	}
 }

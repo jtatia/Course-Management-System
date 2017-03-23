@@ -1,6 +1,7 @@
 package main.admin.adminpanel;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -11,12 +12,10 @@ import javax.swing.border.EmptyBorder;
 import main.admin.studentdbhandler.StudentDbHandler;
 import main.student.student.Student;
 import main.student.studentdao.StudentDAO;
-import main.util.login.LoginPortal;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,6 +24,10 @@ import javax.swing.JTextField;
 
 public class AddStudentForm extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField rollNoTextField;
 	private JTextField firstNameTextField;

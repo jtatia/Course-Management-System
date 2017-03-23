@@ -40,6 +40,78 @@ public class CourseMappingDAO {
 			exc.printStackTrace();
 		}
 	}
+	
+	public void addEntry(String courseId,String professors[],String batches[])
+	{
+		PreparedStatement pstmt=null;
+		String prof="";
+		for(int i=0;i<professors.length-1;i++)
+		{
+			prof=prof+professors[i]+"_";
+		}
+		prof=prof+professors[professors.length-1];
+		try
+		{
+			pstmt=myCon.prepareStatement("INSERT INTO course_mapping(`course_id`,`professor`,`batch_id1`,`batch_id2`,`batch_id3`,`batch_id4`,`batch_id5`)VALUES(?,?,?,?,?,?,?)");
+			pstmt.setString(1, courseId);
+			pstmt.setString(2, prof);
+			pstmt.setString(3, batches[0]);
+			pstmt.setString(4, batches[1]);
+			pstmt.setString(5, batches[2]);
+			pstmt.setString(6, batches[3]);
+			pstmt.setString(7, batches[4]);
+			pstmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public void updateEntry(String courseId,String professors[],String batches[])
+	{
+		PreparedStatement pstmt=null;
+		String prof="";
+		for(int i=0;i<professors.length-1;i++)
+		{
+			prof=prof+professors[i]+"_";
+		}
+		prof=prof+professors[professors.length-1];
+		try
+		{
+			pstmt=myCon.prepareStatement("update course_mapping set course_id=?, professor=?,batch_id1 =?,batch_id2 = ?,batch_id3 = ?,batch_id4 = ?,batch_id5 = ? where course_id = ? and professor = ?");
+			pstmt.setString(1, courseId);
+			pstmt.setString(2, prof);
+			pstmt.setString(3, batches[0]);
+			pstmt.setString(4, batches[1]);
+			pstmt.setString(5, batches[2]);
+			pstmt.setString(6, batches[3]);
+			pstmt.setString(7, batches[4]);
+			pstmt.setString(8, courseId);
+			pstmt.setString(9, prof);
+			pstmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		}
+	}
 	public String getDirectoryPath(String courseId,String batch)
 	{
 		String path="/home/stud/btech/cse/2015/kshitij.cs15/cms/";

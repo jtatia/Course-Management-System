@@ -2,9 +2,8 @@ package main.admin.adminpanel;
 
 import javax.swing.JPanel;
 
-import javax.swing.JTextField;
-
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
@@ -14,7 +13,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
-
+import javax.swing.table.DefaultTableCellRenderer;
 
 import main.admin.adminpanel.addcourse.AddCourse;
 
@@ -25,8 +24,6 @@ import main.admin.adminpanel.coursetablemodel.CourseTableModel;
 import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
-import main.student.student.Student;
-
 import javax.swing.JToggleButton;
 
 public class CourseSearchPanel extends JPanel {
@@ -49,12 +46,15 @@ public class CourseSearchPanel extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		table=new JTable();
+		DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+		centerRenderer.setHorizontalAlignment( JLabel.CENTER );
 		textField = new JXTextField();
 		textField.setBounds(10, 11, 1090, 20);
 		textField.setPrompt("Course search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
 		dao = new CourseDAO();
+		course=dao.getAllCourses();
 		courseTableModel = new CourseTableModel(course);
 		table.setModel(courseTableModel);
 		JButton btnSearch = new JButton("Search");
@@ -65,6 +65,8 @@ public class CourseSearchPanel extends JPanel {
 				course=dao.searchCourse(toSearch);
 				courseTableModel = new CourseTableModel(course);
 				table.setModel(courseTableModel);
+				table.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
+				table.getColumnModel().getColumn(1).setCellRenderer( centerRenderer );
 				}catch(Exception e1){
 					e1.printStackTrace();
 				}
@@ -82,6 +84,8 @@ public class CourseSearchPanel extends JPanel {
 					course=dao.getAllCourses();
 					courseTableModel = new CourseTableModel(course);
 					table.setModel(courseTableModel);
+					table.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
+					table.getColumnModel().getColumn(1).setCellRenderer( centerRenderer );
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -143,27 +147,16 @@ public class CourseSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
-		btnDelete.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				int index[]=table.getSelectedRows();
-				for(int i=0;i<index.length;i++){
-					String id=(String)courseTableModel.getValueAt(index[i], 1);
-					dao.deleteCourse(id);
-				}
-				course=dao.getAllCourses();
-				courseTableModel = new CourseTableModel(course);
-				table.setModel(courseTableModel);
-			}
-		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
-		table = new JTable();
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
-
+		table.getColumnModel().getColumn(0).setCellRenderer( centerRenderer );
+		table.getColumnModel().getColumn(1).setCellRenderer( centerRenderer );
+		table.setRowHeight(30);
 	}
 }

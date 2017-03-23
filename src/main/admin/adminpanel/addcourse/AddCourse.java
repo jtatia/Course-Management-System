@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import main.admin.adminpanel.AddStudentForm;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
+import main.course.coursedao.CourseMappingDAO;
 import main.student.student.Student;
 
 import javax.swing.JLabel;
@@ -25,6 +26,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.ListModel;
 import javax.swing.JList;
 import javax.swing.border.BevelBorder;
 import javax.swing.AbstractListModel;
@@ -41,6 +43,7 @@ public class AddCourse extends JFrame {
 	private JTextField IdText;
 	private JTextField courseText;
 	private CourseDAO dao = null;
+	private CourseMappingDAO cmdao=null;
 	private JTextField profText;
 	private JList list;
 	private DefaultListModel<String> model;
@@ -66,6 +69,7 @@ public class AddCourse extends JFrame {
 	public AddCourse() {
 		try {
 			dao=new CourseDAO();
+			cmdao=new CourseMappingDAO();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -106,7 +110,12 @@ public class AddCourse extends JFrame {
 		textArea.setLineWrap(true);
 		JScrollPane jsp=new JScrollPane(textArea);
 		jsp.setBounds(44, 359, 344, 189);
-		
+		JComboBox comboBox = new JComboBox();
+		JCheckBox chckbxCse = new JCheckBox("Computer Science(cse) ");
+		JCheckBox chckbxMe = new JCheckBox("Mechanical(me)");
+		JCheckBox chckbxEe = new JCheckBox("Electrical(ee)");
+		JCheckBox chckbxCe = new JCheckBox("Civil Engineering(ce)");
+		JCheckBox chckbxCh = new JCheckBox("Chemical Engineering(che)");
 		JButton btnSubmit = new JButton("Submit");
 		btnSubmit.setBounds(121, 559, 89, 23);
 		btnSubmit.addActionListener(new ActionListener() {
@@ -125,6 +134,7 @@ public class AddCourse extends JFrame {
 				JOptionPane.showMessageDialog(AddCourse.this,"Enter the Course Name","Alert : ",JOptionPane.WARNING_MESSAGE);
 			}
 			Course c=dao.getCourseById(course_id);
+			
 			if(c==null)
 			{
 				if(f==0)
@@ -135,6 +145,39 @@ public class AddCourse extends JFrame {
 					dao.addCourse(course);
 					JOptionPane.showMessageDialog(AddCourse.this,"New Course has been added","Info : ",JOptionPane.INFORMATION_MESSAGE);
 					// once the student has been added set the visibility to false and dispose off the JFrame
+					ListModel lm=list.getModel();
+					int size=lm.getSize();
+					String professors[]=new String [size];
+					for(int k=0;k<size;k++)
+					{
+						professors[k]=(String) lm.getElementAt(k);
+					}	
+					String batches[]=new String [5];
+					String b=(String) comboBox.getSelectedItem();
+					if(b.startsWith("btech"))
+					{
+						if(chckbxCse.isSelected())
+							batches[0]="cse"+b.substring(b.length()-2)+"b";
+						else
+							batches[0]="";
+						if(chckbxEe.isSelected())
+							batches[0]="ee"+b.substring(b.length()-2)+"b";
+						else
+							batches[0]="";
+						if(chckbxMe.isSelected())
+							batches[0]="me"+b.substring(b.length()-2)+"b";
+						else
+							batches[0]="";
+						if(chckbxCh.isSelected())
+							batches[0]="che"+b.substring(b.length()-2)+"b";
+						else
+							batches[0]="";
+						if(chckbxCe.isSelected())
+							batches[0]="ce"+b.substring(b.length()-2)+"b";
+						else
+							batches[0]="";
+					}	
+					cmdao.addEntry(course.getCourseId(), professors, batches);
 					AddCourse.this.setVisible(false);
 					AddCourse.this.dispose();
 				}
@@ -214,33 +257,33 @@ public class AddCourse extends JFrame {
 		lblBatch.setBounds(425, 51, 46, 14);
 		contentPane.add(lblBatch);
 		
-		JComboBox comboBox = new JComboBox();
+		
 		comboBox.setBackground(Color.WHITE);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13"}));
 		comboBox.setBounds(481, 48, 176, 20);
 		contentPane.add(comboBox);
 		
-		JCheckBox chckbxCse = new JCheckBox("Computer Science(cse) ");
+		
 		chckbxCse.setFont(new Font("Tahoma", Font.BOLD, 14));
 		chckbxCse.setBounds(425, 210, 253, 23);
 		contentPane.add(chckbxCse);
 		
-		JCheckBox chckbxEe = new JCheckBox("Electrical(ee)");
+		
 		chckbxEe.setFont(new Font("Tahoma", Font.BOLD, 14));
 		chckbxEe.setBounds(425, 236, 155, 23);
 		contentPane.add(chckbxEe);
 		
-		JCheckBox chckbxMe = new JCheckBox("Mechanical(me)");
+		
 		chckbxMe.setFont(new Font("Tahoma", Font.BOLD, 14));
 		chckbxMe.setBounds(425, 261, 176, 23);
 		contentPane.add(chckbxMe);
 		
-		JCheckBox chckbxCe = new JCheckBox("Civil Engineering(ce)");
+		
 		chckbxCe.setFont(new Font("Tahoma", Font.BOLD, 14));
 		chckbxCe.setBounds(425, 158, 232, 23);
 		contentPane.add(chckbxCe);
 		
-		JCheckBox chckbxCh = new JCheckBox("Chemical Engineering(che)");
+		
 		chckbxCh.setFont(new Font("Tahoma", Font.BOLD, 14));
 		chckbxCh.setBounds(425, 184, 220, 23);
 		contentPane.add(chckbxCh);

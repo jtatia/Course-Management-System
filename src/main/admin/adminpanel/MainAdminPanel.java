@@ -21,6 +21,10 @@ import java.awt.Font;
 import java.awt.CardLayout;
 
 public class MainAdminPanel extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	CardLayout card=new CardLayout(0, 0);
 	private JPanel contentPane;
 	private JPanel panelMiddle;
