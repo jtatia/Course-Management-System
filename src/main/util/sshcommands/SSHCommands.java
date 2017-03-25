@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import net.neoremind.sshxcute.core.ConnBean;
+import net.neoremind.sshxcute.core.IOptionName;
 import net.neoremind.sshxcute.core.Result;
 import net.neoremind.sshxcute.core.SSHExec;
 import net.neoremind.sshxcute.exception.TaskExecFailException;
@@ -39,6 +40,7 @@ public class SSHCommands {
 		conn = new ConnBean(ip,user,password);
 		ssh=SSHExec.getInstance(conn);
 		ssh.connect();
+		SSHExec.setOption(IOptionName.INTEVAL_TIME_BETWEEN_TASKS, 0l);
 	}
 	
 	public static void main(String args[]) throws Exception

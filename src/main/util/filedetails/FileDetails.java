@@ -1,5 +1,6 @@
 package main.util.filedetails;
 
+import main.util.sshcommands.SSHComm;
 import main.util.sshcommands.SSHCommands;
 
 public class FileDetails {
@@ -8,12 +9,18 @@ public class FileDetails {
 	 * Returns a String[2] array with first element as size and 
 	 * second element as last modified date 
 	 */
+	private static SSHComm sshc=null;
+	
 	public static String[] getStats(String path, String filename)throws Exception
 	{
 		String ans[]=new String[2];
-		SSHCommands sh = new SSHCommands();
-		String result = sh.runSingleCommand("stat "+path+filename);
-		
+		sshc=new SSHComm(); 
+		/*
+		 * The comments below can be used to revert back to the previous code. 
+		 * SSHCommands sh = new SSHCommands();
+		 * String result = sh.runSingleCommand("stat "+path+filename);
+		*/
+		String result = sshc.SSHClient("stat "+path+filename, sshc); 
 		int size_index=result.indexOf("Size: ");
 		size_index+=6;
 		String size =  result.substring(size_index, result.indexOf(' ', size_index));
@@ -36,7 +43,7 @@ public class FileDetails {
 		
 		mod.trim();
 		ans[1]=mod;
-		sh.close();		
+		sshc.close();		
 		return ans;
 	}
 	
@@ -44,14 +51,22 @@ public class FileDetails {
 	 * Be sure to pass valid path and not path upto a filename
 	 *  */
 	public static String[] getFileList(String path)throws Exception
-	{
+	{	
+		/*
+		 * The comments below can be used to revert back to the previous code.
 		SSHCommands sh = new SSHCommands();
 		String result = sh.runSingleCommand("ls "+path);
+		*/
+		sshc=new SSHComm();
+		String result=sshc.SSHClient("ls "+path, sshc);
 		System.out.println("################# Result "+result);
-		String ans[] = result.split("\n");
+		String arr[] = result.split("\n");
+		String ans[]=new String[arr.length-1];
+		for(int i=0;i<arr.length-1;i++)
+			ans[i]=arr[i];
 		System.out.println("################Length "+ans.length);
 		System.out.println("ans : :" + ans[0]+"lauda");
-		sh.close();
+		sshc.close();
 		return ans;
 	}
 }
