@@ -86,12 +86,18 @@ public class CourseAssignmentPanel extends JPanel {
 				String path = fc.getDirectoryPath();
 				if(table.getSelectedRowCount()>0){
 					int[] row = table.getSelectedRows();
-					for(int r : row){
-						Assignment a = list.get(r);
-						String file = a.getPath()+a.getName();
-						Download dwn = new Download();
-						dwn.downloadFile(file, path);	
-					}
+					 new Thread(){
+						
+						public void run(){
+							for(int r : row){
+								Assignment a = list.get(r);
+								String file = a.getPath()+a.getName();
+								Download dwn = new Download();
+								dwn.downloadFile(file, path);	
+							}
+						}
+					}.start();
+					
 				}
 				
 			}
