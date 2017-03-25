@@ -250,4 +250,38 @@ public class ProfessorDAO {
 			 }
 		 }
 	 }
+	
+	public List<String> getAllCourses(String user){
+		ArrayList<String> course_taken = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs=null;
+		try{
+			pstmt=myCon.prepareStatement("select * from professor where user_name=?");
+			pstmt.setString(1, user);
+			rs=pstmt.executeQuery();
+			while(rs.next()){
+				 for(int i=1;i<=5;i++){
+					 String c_name = rs.getString("course_id"+i);
+					 if(c_name!=""&&c_name!=null)
+						 System.out.println(c_name);
+						 course_taken.add(c_name);
+				 }
+			}
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+			if(rs!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+		}
+		System.out.println(course_taken.size());
+		return course_taken;
+	}
 }

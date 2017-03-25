@@ -14,6 +14,9 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.student.coursepanel.CourseAssignmentPanel;
+import main.util.assignmentutils.assignment.Assignment;
+
 public class Download {
 	
 	String ip;
@@ -43,7 +46,7 @@ public class Download {
 	 * only till parent directory in to. Everything else is handled inside the fuction
 	 * ALSO MAKE SURE THAT PATH IS SPECIFIED USING '/' AS SEPARATOR 
 	 */
-	public void downloadFile(String from, String to)
+	public void downloadFile(String from, String to,Assignment assgn)
 	{
 		Session session = null;
         Channel channel = null;

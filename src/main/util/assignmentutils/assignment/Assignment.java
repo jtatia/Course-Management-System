@@ -6,7 +6,8 @@ public class Assignment {
 	private String size;
 	private String name;
 	private String path;
-	
+	public double dn_size;
+	public double total_size;
 	public Assignment()
 	{
 		super();

@@ -117,7 +117,7 @@ public class CourseMaterialPanel extends JPanel {
 								Assignment a = list.get(r);
 								String file = a.getPath()+a.getName();
 								Download dwn = new Download();
-								dwn.downloadFile(file, path);	
+								dwn.downloadFile(file, path,a);	
 							}
 						}
 					}.start();

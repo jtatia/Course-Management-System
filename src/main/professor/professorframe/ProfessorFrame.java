@@ -28,7 +28,7 @@ public class ProfessorFrame extends JFrame {
 	private JPanel contentPane;
 
 	
-	public ProfessorFrame(Professor prof) {
+	public ProfessorFrame(Professor prof)throws Exception {
 		setTitle("Professor Panel");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(0,0, 1366, 730);
@@ -89,12 +89,14 @@ public class ProfessorFrame extends JFrame {
 		);
 		panelTop.setLayout(gl_panelTop);
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new CardLayout(0, 0));
-		
+		/*Card Layout Panel*/
+		JPanel card_panel = new JPanel();
+		contentPane.add(card_panel, BorderLayout.CENTER);
+		card_panel.setLayout(new CardLayout(0, 0));
+		CourseListPanel clp=new CourseListPanel(prof.getUsername());
 		JPanel settingsPanel = new JPanel();
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
+		card_panel.add(clp, "CourseList");
 		
 		JButton settingsButton = new JButton("Settings");
 		settingsPanel.add(settingsButton);
@@ -109,6 +111,5 @@ public class ProfessorFrame extends JFrame {
 			}
 		});
 		settingsPanel.add(logoutButton);
-		
 	}
 }
