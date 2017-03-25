@@ -104,6 +104,7 @@ public class LoginPortal extends JFrame {
 								Professor professor=dao.getProfByUsername(prof.getUsername());
 								/*StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
 								studentCourseOutline.setVisible(true);*/
+								System.out.println(professor.getUsername());
 								ProfessorFrame profframe=new ProfessorFrame(professor);
 								profframe.setVisible(true);
 								// Student GUI to be added here 

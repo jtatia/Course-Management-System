@@ -73,11 +73,13 @@ public class ProfTableModel extends AbstractTableModel{
 			case LAST_NAME:return prof.getLastname();
 			case EMAIL:return prof.getEmail();
 			case SEX:return prof.getSex();
-			case COURSE_ID1:return prof.getCourseid1();
-			case COURSE_ID2:return prof.getCourseid2();
-			case COURSE_ID3:return prof.getCourseid3();
-			case COURSE_ID4:return prof.getCourseid4();
-			case COURSE_ID5:return prof.getCourseid5();
+			// Dynamically adding columns on the basis of number of courses is yet to be added is to be done
+			// Currently only 5 columns have been considered
+			case COURSE_ID1:return prof.getCourseids().length>=1?(prof.getCourseids())[0]:"";
+			case COURSE_ID2:return prof.getCourseids().length>=2?(prof.getCourseids())[1]:"";
+			case COURSE_ID3:return prof.getCourseids().length>=3?(prof.getCourseids())[2]:"";
+			case COURSE_ID4:return prof.getCourseids().length>=4?(prof.getCourseids())[3]:"";
+			case COURSE_ID5:return prof.getCourseids().length>=5?(prof.getCourseids())[4]:"";
 			default:return prof.getFirstname();
 		}
 	}

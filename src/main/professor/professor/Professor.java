@@ -23,15 +23,7 @@ public class Professor {
 	
 	private String answer;
 	
-	private String courseid1;
-	
-	private String courseid2;
-	
-	private String courseid3;
-	
-	private String courseid4;
-	
-	private String courseid5;
+	public String courseids[];
 	
 	public Professor()
 	{
@@ -39,8 +31,7 @@ public class Professor {
 	}
 
 	public Professor(int sno, String username, String firstname, String middlename, String lastname, String email,
-			char sex, String password, String securityques, String answer, String courseid1, String courseid2,
-			String courseid3, String courseid4, String courseid5) {
+			char sex, String password, String securityques, String answer, String courseids[]) {
 		super();
 		this.sno = sno;
 		this.username = username;
@@ -52,16 +43,11 @@ public class Professor {
 		this.password = password;
 		this.securityques = securityques;
 		this.answer = answer;
-		this.courseid1 = courseid1;
-		this.courseid2 = courseid2;
-		this.courseid3 = courseid3;
-		this.courseid4 = courseid4;
-		this.courseid5 = courseid5;
+		this.courseids=courseids;
 	}
 
 	public Professor(String username, String firstname, String middlename, String lastname, String email, char sex,
-			String password, String securityques, String answer, String courseid1, String courseid2, String courseid3,
-			String courseid4, String courseid5) {
+			String password, String securityques, String answer, String courseids[]) {
 		super();
 		this.username = username;
 		this.firstname = firstname;
@@ -72,11 +58,7 @@ public class Professor {
 		this.password = password;
 		this.securityques = securityques;
 		this.answer = answer;
-		this.courseid1 = courseid1;
-		this.courseid2 = courseid2;
-		this.courseid3 = courseid3;
-		this.courseid4 = courseid4;
-		this.courseid5 = courseid5;
+		this.courseids=courseids;
 	}
 
 	/**
@@ -220,73 +202,17 @@ public class Professor {
 	}
 
 	/**
-	 * @return the courseid1
+	 * @return the courseids[]
 	 */
-	public String getCourseid1() {
-		return courseid1;
+	public String[] getCourseids() {
+		return courseids;
 	}
 
 	/**
-	 * @param courseid1 the courseid1 to set
+	 * @param courseids the courseids[] to set
 	 */
-	public void setCourseid1(String courseid1) {
-		this.courseid1 = courseid1;
-	}
-
-	/**
-	 * @return the courseid2
-	 */
-	public String getCourseid2() {
-		return courseid2;
-	}
-
-	/**
-	 * @param courseid2 the courseid2 to set
-	 */
-	public void setCourseid2(String courseid2) {
-		this.courseid2 = courseid2;
-	}
-
-	/**
-	 * @return the courseid3
-	 */
-	public String getCourseid3() {
-		return courseid3;
-	}
-
-	/**
-	 * @param courseid3 the courseid3 to set
-	 */
-	public void setCourseid3(String courseid3) {
-		this.courseid3 = courseid3;
-	}
-
-	/**
-	 * @return the courseid4
-	 */
-	public String getCourseid4() {
-		return courseid4;
-	}
-
-	/**
-	 * @param courseid4 the courseid4 to set
-	 */
-	public void setCourseid4(String courseid4) {
-		this.courseid4 = courseid4;
-	}
-
-	/**
-	 * @return the courseid5
-	 */
-	public String getCourseid5() {
-		return courseid5;
-	}
-
-	/**
-	 * @param courseid5 the courseid5 to set
-	 */
-	public void setCourseid5(String courseid5) {
-		this.courseid5 = courseid5;
+	public void setCourseids(String courseids[]) {
+		this.courseids = courseids;
 	}
 	
 	public String toString()

@@ -1,8 +1,9 @@
 package main.professor.professorframe;
 
+
 import java.awt.BorderLayout;
+
 import java.awt.Container;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,15 +13,13 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import main.professor.professor.Professor;
-import main.student.studentCourseOutline.StudentCourseOutline;
-
+import main.professor.settings.SettingsFrame;
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
-import java.awt.Dimension;
 import java.awt.CardLayout;
 
 public class ProfessorFrame extends JFrame {
@@ -91,12 +90,25 @@ public class ProfessorFrame extends JFrame {
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new CardLayout(0, 0));
+		CardLayout card=new CardLayout(0, 0);
+		panel.setLayout(card);
 		
 		JPanel settingsPanel = new JPanel();
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
 		
 		JButton settingsButton = new JButton("Settings");
+		settingsButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try
+				{System.out.println(prof.getUsername());
+				new SettingsFrame(prof.getUsername());
+				}
+				catch(Exception err)
+				{
+					JOptionPane.showMessageDialog(ProfessorFrame.this,err.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
+				}
+			}
+		});
 		settingsPanel.add(settingsButton);
 		
 		JButton logoutButton = new JButton("Logout");
@@ -109,6 +121,5 @@ public class ProfessorFrame extends JFrame {
 			}
 		});
 		settingsPanel.add(logoutButton);
-		
 	}
 }
