@@ -92,6 +92,14 @@ public class ProfessorFrame extends JFrame {
 		contentPane.add(panel, BorderLayout.CENTER);
 		CardLayout card=new CardLayout(0, 0);
 		panel.setLayout(card);
+		CourseSpecificPanel courseSpecificPanel=null;
+		try {
+			courseSpecificPanel = new CourseSpecificPanel();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		panel.add(courseSpecificPanel,"CourseSpecificPanel");
 		
 		JPanel settingsPanel = new JPanel();
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
