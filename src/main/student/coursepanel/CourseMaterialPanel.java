@@ -93,9 +93,10 @@ public class CourseMaterialPanel extends JPanel {
 					temp.setLastModified(s[1]);
 					temp.setSize(s[0]);
 					list.add(temp);
+					atm = new AssignmentTableModel(list);
+					table.setModel(atm);
 				}
-				atm = new AssignmentTableModel(list);
-				table.setModel(atm);
+				
 				}catch(Exception ex){
 					ex.printStackTrace();
 				}
