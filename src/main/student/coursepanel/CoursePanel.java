@@ -36,9 +36,7 @@ public class CoursePanel extends JPanel {
 		cap=new CourseAssignmentPanel(path);
 		System.out.println("Initialisation Done");
 		cmp=new CourseMaterialPanel(path);
-		cmp.add(new JLabel("TESTING"));
-		cmp.revalidate();
-		cmp.repaint();
+		
 		caup=new CourseAssignmentUploadPanel(student,path);
 		
 		cdfp=new CourseDiscussionForumPanel(path);

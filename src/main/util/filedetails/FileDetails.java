@@ -65,7 +65,7 @@ public class FileDetails {
 		for(int i=0;i<arr.length-1;i++)
 			ans[i]=arr[i];
 		System.out.println("################Length "+ans.length);
-		System.out.println("ans : :" + ans[0]+"lauda");
+		//System.out.println("ans : :" + ans[0]+"lauda");
 		sshc.close();
 		return ans;
 	}
