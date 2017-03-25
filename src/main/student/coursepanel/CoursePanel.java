@@ -27,7 +27,7 @@ public class CoursePanel extends JPanel {
 	private static CourseAssignmentUploadPanel caup;
 	private static CourseDiscussionForumPanel cdfp;
 	private static CourseInfoPanel cip;
-	
+	public static String curr_subject;
 	public void resetPanes(Student student, String path) throws Exception
 	{
 		
@@ -43,7 +43,7 @@ public class CoursePanel extends JPanel {
 		
 		cdfp=new CourseDiscussionForumPanel(path);
 		
-		cip=new CourseInfoPanel(path);
+		cip=new CourseInfoPanel(curr_subject);
 		
 		jtp.add("Material", cmp);
 		jtp.setForegroundAt(0, Color.WHITE);
