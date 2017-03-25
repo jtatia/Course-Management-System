@@ -13,6 +13,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JToggleButton;
@@ -33,6 +34,7 @@ public class CourseAssignmentPanel extends JPanel {
 	JTable table;
 	private AssignmentTableModel atm;
 	private String p;
+	private CourseAssignmentPanel cp=this;
 	public CourseAssignmentPanel()
 	{
 		
@@ -68,6 +70,7 @@ public class CourseAssignmentPanel extends JPanel {
 			temp.setPath(path);
 			String s[]=FileDetails.getStats(path,temp.getName() );
 			temp.setLastModified(s[1]);
+			temp.total_size=Double.parseDouble(s[0].substring(0, s[0].length()-3));
 			temp.setSize(s[0]);
 			list.add(temp);
 		}
@@ -99,10 +102,11 @@ public class CourseAssignmentPanel extends JPanel {
 					temp.setLastModified(s[1]);
 					temp.setSize(s[0]);
 					list.add(temp);
+					atm = new AssignmentTableModel(list);
+					table.setModel(atm);
 				}
 				
-				atm = new AssignmentTableModel(list);
-				table.setModel(atm);
+				
 				}catch(Exception ex){
 					ex.printStackTrace();
 				}
@@ -124,7 +128,7 @@ public class CourseAssignmentPanel extends JPanel {
 								Assignment a = list.get(r);
 								String file = a.getPath()+a.getName();
 								Download dwn = new Download();
-								dwn.downloadFile(file, path);	
+								dwn.downloadFile(file, path,a);	
 							}
 						}
 					}.start();
@@ -134,6 +138,9 @@ public class CourseAssignmentPanel extends JPanel {
 			}
 		});
 		
+		/*JProgressBar progressBar = new JProgressBar(0,100);
+		progressBar.setStringPainted(true);
+		progressBar.setValue(60);*/
 		
 		JToggleButton tglbtnSelectMultiple = new JToggleButton("Select Multiple");
 		tglbtnSelectMultiple.addActionListener(new ActionListener() {
@@ -153,6 +160,7 @@ public class CourseAssignmentPanel extends JPanel {
 		panel_2.add(tglbtnSelectMultiple);
 		panel_2.add(downloadbtn);
 		panel_2.add(refresh);
+		//panel_2.add(progressBar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 57, 1320, 450);

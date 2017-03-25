@@ -93,9 +93,10 @@ public class CourseMaterialPanel extends JPanel {
 					temp.setLastModified(s[1]);
 					temp.setSize(s[0]);
 					list.add(temp);
+					atm = new AssignmentTableModel(list);
+					table.setModel(atm);
 				}
-				atm = new AssignmentTableModel(list);
-				table.setModel(atm);
+				
 				}catch(Exception ex){
 					ex.printStackTrace();
 				}
@@ -117,7 +118,7 @@ public class CourseMaterialPanel extends JPanel {
 								Assignment a = list.get(r);
 								String file = a.getPath()+a.getName();
 								Download dwn = new Download();
-								dwn.downloadFile(file, path);	
+								dwn.downloadFile(file, path,a);	
 							}
 						}
 					}.start();
