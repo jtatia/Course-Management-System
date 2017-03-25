@@ -27,3 +27,13 @@ INSERT INTO `professor` (`s.no`,`user_name`,`first_name`,`middle_name`,`last_nam
 INSERT INTO `professor` (`s.no`,`user_name`,`first_name`,`middle_name`,`last_name`,`email`,`sex`,`password`,`security_ques`,`answer`,`course_id1`,`course_id2`,`course_id3`,`course_id4`,`course_id5`) VALUES (2,'arijit','Arijit','','Mondal','arijit@iitp.ac.in','M','4YJVDEJkTYZdeG0kD37pviV+/U0gcQQOWkdZTumqHW0Fz/K1f5kjiaFfUQeIfrAX','Where do you Live','Kolkata','CS229','CS2301','CS525','CS233','CS299');
 INSERT INTO `professor` (`s.no`,`user_name`,`first_name`,`middle_name`,`last_name`,`email`,`sex`,`password`,`security_ques`,`answer`,`course_id1`,`course_id2`,`course_id3`,`course_id4`,`course_id5`) VALUES (3,'jimson','Jimson','','Mathew','jimson@iitp.ac.in','M','1VQMs+GVlewgDIpXU2Wsw10e0PaowqjCe3wSeAOQfJzkMHFdKG2fK5eYZswSBUGL','Where do you Live','Bristol','CS401','CS101','CS525','CS243','CS201');
 INSERT INTO `professor` (`s.no`,`user_name`,`first_name`,`middle_name`,`last_name`,`email`,`sex`,`password`,`security_ques`,`answer`,`course_id1`,`course_id2`,`course_id3`,`course_id4`,`course_id5`) VALUES (4,'sriparna','Sriparna','','Saha','sriparna@iitp.ac.in','F','jzd/iMQCKfXFOr9scmn5K4QCPJe1SwT0E6BTxvSfEE3HMv+6rcxQqSLvq19BeYqk','Where do you Live','Bristol','CS401','CS101','CS501','CS343','CS251');
+ALTER TABLE `cms`.`professor` 
+DROP COLUMN `course_id5`,
+DROP COLUMN `course_id4`,
+DROP COLUMN `course_id3`,
+DROP COLUMN `course_id2`,
+CHANGE COLUMN `course_id1` `course_ids` LONGTEXT NOT NULL ;
+UPDATE `cms`.`professor` SET `course_ids`='CS229_CS552_CS110_CS444' WHERE `s.no`='1' and`user_name`='samrat';
+UPDATE `cms`.`professor` SET `course_ids`='CS202_CS333' WHERE `s.no`='2' and`user_name`='arijit';
+UPDATE `cms`.`professor` SET `course_ids`='CS225_CS226' WHERE `s.no`='3' and`user_name`='jimson';
+UPDATE `cms`.`professor` SET `course_ids`='CS400' WHERE `s.no`='4' and`user_name`='sriparna';
