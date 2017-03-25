@@ -59,7 +59,7 @@ public class CourseAssignmentPanel extends JPanel {
 		table=new JTable();
 		
 		list = new ArrayList<Assignment>();
-		
+		/*
 		String str[] = FileDetails.getFileList(path);
 		for(int i=0;i<str.length;i++)
 		{
@@ -71,7 +71,7 @@ public class CourseAssignmentPanel extends JPanel {
 			temp.setSize(s[0]);
 			list.add(temp);
 		}
-		
+		*/
 		atm = new AssignmentTableModel(list);
 		System.out.println("########   "+list);
 		table.setModel(atm);
@@ -89,7 +89,7 @@ public class CourseAssignmentPanel extends JPanel {
 				public void run(){
 				try{
 				String str[] = FileDetails.getFileList(p);
-				List<Assignment> list = new ArrayList<Assignment>();
+				list = new ArrayList<Assignment>();
 				for(int i=0;i<str.length;i++)
 				{
 					Assignment temp = new Assignment();
@@ -100,6 +100,7 @@ public class CourseAssignmentPanel extends JPanel {
 					temp.setSize(s[0]);
 					list.add(temp);
 				}
+				
 				atm = new AssignmentTableModel(list);
 				table.setModel(atm);
 				}catch(Exception ex){

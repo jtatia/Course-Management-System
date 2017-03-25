@@ -11,7 +11,7 @@ public class FileDetails {
 	 */
 	private static SSHComm sshc=null;
 	
-	public static String[] getStats(String path, String filename)throws Exception
+	synchronized public static String[] getStats(String path, String filename)throws Exception
 	{
 		String ans[]=new String[2];
 		sshc=new SSHComm(); 
@@ -50,7 +50,7 @@ public class FileDetails {
 	/* Will return an array of files (and folders0 in path directory
 	 * Be sure to pass valid path and not path upto a filename
 	 *  */
-	public static String[] getFileList(String path)throws Exception
+	synchronized public static String[] getFileList(String path)throws Exception
 	{	
 		/*
 		 * The comments below can be used to revert back to the previous code.

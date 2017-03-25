@@ -49,14 +49,12 @@ public class CourseInfoPanel extends JPanel {
 		coDao = new CourseDAO();
 		co=coDao.getCourseById(course_id);
 		panel_1.setPreferredSize(new Dimension(1290,500));
-		JXLabel jl=new JXLabel("\n\n"+co.getCourseInfo());
+		JXLabel jl =new JXLabel(" ");
+		if(co.getCourseInfo()!=null)
+		jl.setText("\n\n"+co.getCourseInfo());
 		jl.setLineWrap(true);
 		jl.setFont(new Font("Geneva", Font.BOLD, 16));
 		panel_1.add(jl);
 		add(panel_1,BorderLayout.CENTER);
 	}
 }
-
-
-
-
