@@ -67,6 +67,7 @@ public class PanelCourses extends JPanel {
 				jb.setText(course_name);
 				CardLayout card=(CardLayout)co.panel_1.getLayout();
 				co.panel_2.getComponent(0).setEnabled(true);
+				co.c_panel.curr_subject=course_name;
 				card.show(co.panel_1, "CoursePanel");
 			}
 		});
