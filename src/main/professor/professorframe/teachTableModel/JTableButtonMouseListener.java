@@ -8,7 +8,7 @@ import javax.swing.JTable;
 
 public class JTableButtonMouseListener extends MouseAdapter {
         private final JTable table;
-
+       
         public JTableButtonMouseListener(JTable table) {
             this.table = table;
         }
@@ -23,6 +23,8 @@ public class JTableButtonMouseListener extends MouseAdapter {
                 if (value instanceof JButton) {
                     /*perform a click event*/
                     ((JButton)value).doClick();
+                 //   ((JButton)value).
+                    
                 }
             }
         }

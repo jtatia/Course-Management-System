@@ -25,7 +25,12 @@ import java.awt.CardLayout;
 public class ProfessorFrame extends JFrame {
 
 	private JPanel contentPane;
-
+	
+	public JPanel panel;
+	
+	public CourseSpecificPanel csp=null; 
+	
+	public JPanel settingsPanel =null;
 	
 	public ProfessorFrame(Professor prof) {
 		setTitle("Professor Panel");
@@ -88,18 +93,26 @@ public class ProfessorFrame extends JFrame {
 		);
 		panelTop.setLayout(gl_panelTop);
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
 		CardLayout card=new CardLayout(0, 0);
 		panel.setLayout(card);
-		CourseSpecificPanel courseSpecificPanel=null;
+		CourseListPanel clp=null;
 		try {
-			courseSpecificPanel = new CourseSpecificPanel();
+			clp=new CourseListPanel(prof.getUsername(),this);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		panel.add(courseSpecificPanel,"CourseSpecificPanel");
+		panel.add(clp,"CourseListPanel");
+		
+		try {
+			csp = new CourseSpecificPanel();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		panel.add(csp,"CourseSpecificPanel");
 		
 		JPanel settingsPanel = new JPanel();
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
@@ -117,6 +130,15 @@ public class ProfessorFrame extends JFrame {
 				}
 			}
 		});
+		
+		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			
+			}
+		});
+		
+		settingsPanel.add(btnBack);
 		settingsPanel.add(settingsButton);
 		
 		JButton logoutButton = new JButton("Logout");

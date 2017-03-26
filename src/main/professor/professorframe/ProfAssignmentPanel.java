@@ -33,6 +33,7 @@ public class ProfAssignmentPanel extends JPanel {
 	JTable table;
 	private AssignmentTableModel atm;
 	private String p;
+	
 	public ProfAssignmentPanel()
 	{
 		
@@ -46,7 +47,7 @@ public class ProfAssignmentPanel extends JPanel {
 		//this.setBorder(BorderFactory.createLineBorder(Color.RED));
 		path+="assignments/";
 		p=path;
-		System.out.println("I have entered");
+		System.out.println("I have entered @ : : : "+p);
 		setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -58,7 +59,7 @@ public class ProfAssignmentPanel extends JPanel {
 		lblAssignmentsUploaded.setBounds(0, 11, 184, 14);
 		panel.add(lblAssignmentsUploaded);
 		table=new JTable();
-		
+
 		list = new ArrayList<Assignment>();
 		
 		String str[] = FileDetails.getFileList(path);
@@ -124,7 +125,7 @@ public class ProfAssignmentPanel extends JPanel {
 								Assignment a = list.get(r);
 								String file = a.getPath()+a.getName();
 								Download dwn = new Download();
-								dwn.downloadFile(file, path);	
+								dwn.downloadFile(file, path,a);	
 							}
 						}
 					}.start();
@@ -161,12 +162,13 @@ public class ProfAssignmentPanel extends JPanel {
 		});
 		panel_2.add(btnUpload);
 		panel_2.add(refresh);
-		
-		JScrollPane scrollPane = new JScrollPane();
+	//	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		JScrollPane scrollPane = new JScrollPane(table,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
+		table.setRowHeight(30);
 	}
 
 	

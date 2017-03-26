@@ -259,14 +259,13 @@ public class ProfessorDAO {
 			pstmt.setString(1, user);
 			rs=pstmt.executeQuery();
 			while(rs.next()){
-				 for(int i=1;i<=5;i++){
-					 String c_name = rs.getString("course_id"+i);
-					 if(c_name!=""&&c_name!=null)
-						 System.out.println(c_name);
-						 course_taken.add(c_name);
+					 String c_name = rs.getString("course_ids");
+					 String str[]=c_name.split("_");
+					 for(int i=0;i<str.length;i++)
+						 course_taken.add(str[i]);
 				 }
 			}
-		}catch(Exception exc){
+		catch(Exception exc){
 			exc.printStackTrace();
 		}finally{
 			if(pstmt!=null){

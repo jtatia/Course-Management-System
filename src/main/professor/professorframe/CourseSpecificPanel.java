@@ -26,6 +26,7 @@ public class CourseSpecificPanel extends JPanel {
 	private static ProfCourseInfoPanel pci;
 	private static ProfAssignmentViewPanel pav;
 	private static ProfAssignmentPanel pa;
+	public static String curr_subject;
 	public void resetPanes(Professor prof, String path) throws Exception
 	{	
 		jtp.removeAll();

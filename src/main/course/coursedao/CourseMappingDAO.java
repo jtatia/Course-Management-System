@@ -112,6 +112,35 @@ public class CourseMappingDAO {
 			}
 		}
 	}
+	public String getDirectoryPathForProf(String courseId,String profUsername)
+	{
+		String path="/home/stud/btech/cse/2015/kshitij.cs15/cms/";
+		PreparedStatement pstmt=null;
+	//	System.out.println(courseId);
+		try {
+			
+			pstmt=myCon.prepareStatement("select * from course_mapping where course_id = ? and professor like ?");
+			pstmt.setString(1, courseId);
+			pstmt.setString(2, "%"+profUsername+"%");
+			ResultSet rs = pstmt.executeQuery();
+			String dir_name="";
+			while(rs.next())
+			{
+				String professor=rs.getString("professor");
+				dir_name=dir_name+courseId+"_"+professor;	
+			}
+			path=path+dir_name+"/";
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}
+		}
+		return path;
+	}
 	public String getDirectoryPath(String courseId,String batch)
 	{
 		String path="/home/stud/btech/cse/2015/kshitij.cs15/cms/";

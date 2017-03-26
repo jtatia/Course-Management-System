@@ -28,11 +28,11 @@ public class CourseListPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public CourseListPanel(String user) throws Exception{
+	public CourseListPanel(String user,ProfessorFrame pf) throws Exception{
 		setLayout(new BorderLayout(0, 0));
         TableCellRenderer buttonRenderer = new ButtonRenderer();
 		dao = new ProfessorDAO();
-		model=new tableModelTeach(dao.getAllCourses(user));
+		model=new tableModelTeach(dao.getAllCourses(user),user,pf);
 		table = new JTable();
 		table.setRowHeight(30);
 		
@@ -42,6 +42,11 @@ public class CourseListPanel extends JPanel {
 		table.setModel(model);
 		JScrollPane scrollPane = new JScrollPane(table,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		//resizeColumnWidth(table);
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		TableColumnModel tcm = table.getColumnModel();
+		tcm.getColumn(0).setPreferredWidth(800);    
+		tcm.getColumn(1).setPreferredWidth(200);    
+		
 		scrollPane.setBounds(10, 57, 1320, 450);
 		add(scrollPane, BorderLayout.CENTER);	
 	}

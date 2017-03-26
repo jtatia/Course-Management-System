@@ -167,5 +167,6 @@ public class CourseAssignmentPanel extends JPanel {
 		add(scrollPane);
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
+		table.setRowHeight(30);
 	}
 }
