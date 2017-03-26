@@ -72,17 +72,18 @@ public class CourseAssignmentUploadPanel extends JPanel {
 				}
 				else
 				{
+					new Thread(){
+					
+						public void run(){					
 					Upload upload = new Upload();
-					System.out.println("**********\n"+textField.getText()+"\n"+path+"\n"+assignField.getText()+"\n"+student.getRollno());
 					upload.studentUploadAssignment(textField.getText(), path, assignField.getText(), student.getRollno());
-					System.out.println("Successful");
 					textField.setText("");
 					assignField.setText("");
-				}
-				}catch(Exception e1){
+				}}.start();
+				}}catch(Exception e1){
 					e1.printStackTrace();
-				}
-			}
+				
+			}}
 		});
 		btnUpload.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpload.setBounds(1040, 10, 89, 23);
@@ -91,7 +92,9 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		JButton btnRefresh = new JButton("Refresh");
 		btnRefresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		        uploadInfo = new ArrayList<UploadInfo>();
+				new Thread(){
+					public void run(){
+				uploadInfo = new ArrayList<UploadInfo>();
 				textField.setText("");
 				assignField.setText("");
 				try {
@@ -111,13 +114,14 @@ public class CourseAssignmentUploadPanel extends JPanel {
 						uploadInfo.add(temp);
 						model = new CourseAssignmentUploadTableModel(uploadInfo);
 						table.setModel(model);
-					
+		
 					}
 }
 }
-				} catch (Exception e2) {
+} catch (Exception e2) {
 					e2.printStackTrace();
 				}
+					}}.start();
 			}		});
 		btnRefresh.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRefresh.setBounds(1170, 10, 89, 23);
