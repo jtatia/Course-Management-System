@@ -91,7 +91,7 @@ public class tableModelTeach extends AbstractTableModel{
 										}
 			                    	
 			                    		CardLayout card=(CardLayout)pf.panel.getLayout();
-			            			//	pf.settingsPanel.getComponent(0).setEnabled(true);
+			                    		pf.btnBack.setEnabled(true);
 			            				pf.csp.curr_subject=course;
 			            				card.show(pf.panel, "CourseSpecificPanel");
 									}

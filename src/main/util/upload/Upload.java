@@ -91,9 +91,10 @@ public class Upload {
 	 */
 	public void professorUploadFile(String from, String courseid, String folder )
 	{
-		String filename = from.substring(from.lastIndexOf('/')+1);
-		String to = path+"/"+courseid+"/"+folder+"/"+filename;
+		String filename = from.substring(from.lastIndexOf('\\')+1);
+		System.out.println("The filename is :: "+filename+" from="+from);
+		String to = courseid+filename;
+		System.out.println(to);
 		uploadFile(from, to,filename);
 	}
-
 }

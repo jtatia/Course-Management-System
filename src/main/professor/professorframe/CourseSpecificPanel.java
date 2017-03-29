@@ -33,7 +33,7 @@ public class CourseSpecificPanel extends JPanel {
 		System.out.println("Before Initialisation");
 		pdf=new ProfDiscussionForumPanel();
 		System.out.println("Initialisation Done");
-		pcm=new ProfCourseMaterialPanel();
+		pcm=new ProfCourseMaterialPanel(path);
 		
 		pci=new ProfCourseInfoPanel();
 		
@@ -45,8 +45,6 @@ public class CourseSpecificPanel extends JPanel {
 		jtp.setForegroundAt(0, Color.WHITE);
 		jtp.setBackgroundAt(0, Color.DARK_GRAY);
 		jtp.add("Assignments", pa);
-		//jtp.removeTabAt(1);
-		//jtp.addTab("Assignments", cap);
 		jtp.setForegroundAt(1, Color.WHITE);
 		jtp.setBackgroundAt(1, Color.DARK_GRAY);
 		jtp.add("Upload Assignments", pav);
@@ -59,12 +57,8 @@ public class CourseSpecificPanel extends JPanel {
 		jtp.setForegroundAt(4, Color.WHITE);
 		jtp.setBackgroundAt(4, Color.DARK_GRAY);
 		pci.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		//jtp.revalidate();
-		//jtp.repaint();
-		//cap.revalidate();
-		//cap.repaint();
-		//System.out.println("New things");
 	}
+	
 	public CourseSpecificPanel() throws Exception {
 		jtp = new JTabbedPane(JTabbedPane.TOP);
 		

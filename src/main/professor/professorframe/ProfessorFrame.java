@@ -32,6 +32,8 @@ public class ProfessorFrame extends JFrame {
 	
 	public JPanel settingsPanel =null;
 	
+	public JButton btnBack; 
+	
 	public ProfessorFrame(Professor prof) {
 		setTitle("Professor Panel");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -113,7 +115,6 @@ public class ProfessorFrame extends JFrame {
 			e.printStackTrace();
 		}
 		panel.add(csp,"CourseSpecificPanel");
-		
 		JPanel settingsPanel = new JPanel();
 		contentPane.add(settingsPanel, BorderLayout.SOUTH);
 		
@@ -131,13 +132,14 @@ public class ProfessorFrame extends JFrame {
 			}
 		});
 		
-		JButton btnBack = new JButton("Back");
+		btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			
+				card.show(panel, "CourseListPanel");
+				btnBack.setEnabled(false);
 			}
 		});
-		
+		btnBack.setEnabled(false);
 		settingsPanel.add(btnBack);
 		settingsPanel.add(settingsButton);
 		

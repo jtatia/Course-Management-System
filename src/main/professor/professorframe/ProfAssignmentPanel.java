@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.ListSelectionModel;
 
@@ -23,6 +24,7 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.upload.Upload;
 
 public class ProfAssignmentPanel extends JPanel {
 
@@ -91,7 +93,7 @@ public class ProfAssignmentPanel extends JPanel {
 				public void run(){
 				try{
 				String str[] = FileDetails.getFileList(p);
-				List<Assignment> list = new ArrayList<Assignment>();
+				list = new ArrayList<Assignment>();
 				for(int i=0;i<str.length;i++)
 				{
 					Assignment temp = new Assignment();
@@ -154,14 +156,34 @@ public class ProfAssignmentPanel extends JPanel {
 		panel_2.add(tglbtnSelectMultiple);
 		panel_2.add(downloadbtn);
 		
+		JTextField textField=new JTextField();
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			// add functionality here
+				try{
+					String toUpload = textField.getText();
+					if(toUpload.equals("")){
+						FileChooser chooser = new FileChooser();
+						textField.setText(chooser.getFilePath());
+					}
+					else
+					{
+						new Thread(){
+							public void run(){					
+						Upload upload = new Upload();
+						upload.professorUploadFile(textField.getText(),p,"");
+						textField.setText("");
+					}}.start();
+					}}catch(Exception e1){
+						e1.printStackTrace();
+				}
 			}
 		});
-		panel_2.add(btnUpload);
 		panel_2.add(refresh);
+		panel_2.add(btnUpload);
+		textField.setColumns(30);
+		panel_2.add(textField);
 	//	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		JScrollPane scrollPane = new JScrollPane(table,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setBounds(10, 57, 1320, 450);
@@ -170,6 +192,4 @@ public class ProfAssignmentPanel extends JPanel {
 		scrollPane.setViewportView(table);
 		table.setRowHeight(30);
 	}
-
-	
 }

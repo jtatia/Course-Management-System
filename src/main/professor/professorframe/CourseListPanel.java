@@ -48,6 +48,6 @@ public class CourseListPanel extends JPanel {
 		tcm.getColumn(1).setPreferredWidth(200);    
 		
 		scrollPane.setBounds(10, 57, 1320, 450);
-		add(scrollPane, BorderLayout.CENTER);	
+		add(scrollPane, BorderLayout.CENTER);
 	}
 }
