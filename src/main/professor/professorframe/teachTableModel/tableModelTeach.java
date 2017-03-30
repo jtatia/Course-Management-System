@@ -25,7 +25,6 @@ public class tableModelTeach extends AbstractTableModel{
 	private ProfessorDAO pdao=null; 
 	
 	public tableModelTeach(List<String> list,String user,ProfessorFrame pf){
-		System.out.println("So Far");
 		this.list = list;
 		this.user=user;
 		this.pf=pf;
@@ -80,8 +79,9 @@ public class tableModelTeach extends AbstractTableModel{
 								
 										String course=jbtn.getActionCommand();
 										System.out.println(course+"   on button press");
-										System.out.println("   on button press");
+										//System.out.println("   on button press");
 										String path=cmdao.getDirectoryPathForProf(course, user);
+										pf.csp.curr_subject=course;
 			                    		System.out.println(path);
 										try {
 											pf.csp.resetPanes(pdao.getProfByUsername(user), path);
@@ -92,7 +92,6 @@ public class tableModelTeach extends AbstractTableModel{
 			                    	
 			                    		CardLayout card=(CardLayout)pf.panel.getLayout();
 			                    		pf.btnBack.setEnabled(true);
-			            				pf.csp.curr_subject=course;
 			            				card.show(pf.panel, "CourseSpecificPanel");
 									}
 								});
