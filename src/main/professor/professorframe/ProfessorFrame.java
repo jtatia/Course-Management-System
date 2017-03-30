@@ -135,8 +135,8 @@ public class ProfessorFrame extends JFrame {
 		btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				card.show(panel, "CourseListPanel");
-				btnBack.setEnabled(false);
+				//card.show(panel, "CourseListPanel");
+				//btnBack.setEnabled(false);
 			}
 		});
 		btnBack.setEnabled(false);
