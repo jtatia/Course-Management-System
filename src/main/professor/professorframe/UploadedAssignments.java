@@ -1,4 +1,4 @@
-package main.admin.adminpanel;
+package main.professor.professorframe;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -25,6 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
 
 public class UploadedAssignments extends JFrame {
 
@@ -54,7 +55,7 @@ public class UploadedAssignments extends JFrame {
 	 * @throws Exception 
 	 */
 	public UploadedAssignments(String p,String assignmentFolderName) throws Exception {
-		setTitle("UPLOADS ## "+assignmentFolderName);
+		setTitle("UPLOADS -  <dynamic>");
 		setVisible(true);
 		p=p+assignmentFolderName.substring(1,assignmentFolderName.length()-1)+"/";
 		path=p;
@@ -135,11 +136,63 @@ public class UploadedAssignments extends JFrame {
 		});
 		bottomPanel.add(btnNewButton);
 		
+		JButton btnTestFiles = new JButton("Test Files");
+		bottomPanel.add(btnTestFiles);
+		btnTestFiles.setEnabled(false);
+		
+		JButton btnLogFiles = new JButton("Log Files");
+		bottomPanel.add(btnLogFiles);
+		btnLogFiles.setEnabled(false);
+		
 		JPanel topPanel = new JPanel();
 		contentPane.add(topPanel, BorderLayout.NORTH);
+		topPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JLabel lblNewLabel = new JLabel(" ASSIGNMENT NAME : "+assignmentFolderName);
 		topPanel.add(lblNewLabel);
+		
+		JButton btnUploadOutputFile = new JButton("Upload Output File");
+		JButton btnUploadOutputProgram = new JButton("Upload Output Program");
+		JButton btnUploadTestCases = new JButton("Upload Test Cases");
+		JCheckBox chckbxEnableCompiler = new JCheckBox("Enable Compiler");
+		topPanel.add(chckbxEnableCompiler);
+		chckbxEnableCompiler.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				if(chckbxEnableCompiler.isSelected())
+				{
+					btnLogFiles.setEnabled(true);
+					btnTestFiles.setEnabled(true);
+					btnUploadTestCases.setEnabled(true);
+					btnUploadOutputProgram.setEnabled(true);
+					btnUploadOutputFile.setEnabled(true);
+				}
+				else
+				{
+					btnLogFiles.setEnabled(false);
+					btnTestFiles.setEnabled(false);
+					btnUploadTestCases.setEnabled(false);
+					btnUploadOutputProgram.setEnabled(false);
+					btnUploadOutputFile.setEnabled(false);
+				}	
+			}
+			
+		});
+		
+		btnUploadTestCases.setToolTipText("Click to upload test Cases");
+		topPanel.add(btnUploadTestCases);
+		btnUploadTestCases.setEnabled(false);
+		
+		btnUploadOutputProgram.setToolTipText("To upload the desired output program. You may also use the \"Upload Output File\" button to upload the .txt Output file. ");
+		topPanel.add(btnUploadOutputProgram);
+		btnUploadOutputProgram.setEnabled(false);
+		
+		
+		btnUploadOutputFile.setToolTipText("To upload the desired .txt output file. You may also use the \"Upload Output Program\" button to upload the Output Program. ");
+		topPanel.add(btnUploadOutputFile);
+		btnUploadOutputFile.setEnabled(false);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		topPanel.add(lblNewLabel_1);

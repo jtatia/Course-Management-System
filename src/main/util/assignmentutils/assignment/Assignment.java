@@ -6,6 +6,8 @@ public class Assignment {
 	private String size;
 	private String name;
 	private String path;
+	private int marks;
+	private String status;
 	public double dn_size;
 	public double total_size;
 	public Assignment()
@@ -19,7 +21,18 @@ public class Assignment {
 		this.name = name;
 		this.path = path;
 	}
+	
+	
 
+	public Assignment(String lastModified, String size, String name, String path, int marks, String status) {
+		super();
+		this.lastModified = lastModified;
+		this.size = size;
+		this.name = name;
+		this.path = path;
+		this.marks = marks;
+		this.status = status;
+	}
 	/**
 	 * @return the lastModified
 	 */
@@ -75,5 +88,30 @@ public class Assignment {
 	public void setPath(String path) {
 		this.path = path;
 	}
+	/**
+	 * @return the marks
+	 */
+	public int getMarks() {
+		return marks;
+	}
+	/**
+	 * @param marks the marks to set
+	 */
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
 	
 }
