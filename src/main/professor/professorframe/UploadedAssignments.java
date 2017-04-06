@@ -24,6 +24,10 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
@@ -137,6 +141,28 @@ public class UploadedAssignments extends JFrame {
 		bottomPanel.add(btnNewButton);
 		
 		JButton btnTestFiles = new JButton("Test Files");
+		btnTestFiles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(table.getSelectedRow() > 0){
+					int[] rows = table.getSelectedRows();
+					new Thread() {
+						
+						public void run(){
+							for(int r : rows){
+								Assignment a = list.get(r);
+								try {
+									list.add(test(a.getPath(),a.getName()));
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								atm = new AssignmentTableModel(list);
+								table.setModel(atm);
+							}
+						}
+					}.start();
+				}
+			}
+		});
 		bottomPanel.add(btnTestFiles);
 		btnTestFiles.setEnabled(false);
 		
@@ -219,5 +245,42 @@ public class UploadedAssignments extends JFrame {
 		atm = new AssignmentTableModel(list);
 		table.setModel(atm);
 		table.setRowHeight(30);
+	}
+	
+	private Assignment test(String path, String name) throws Exception {
+		String inp[] = FileDetails.getFileList(path+"inputFiles/");
+        int length = inp.length;
+        ArrayList<String> marks = new ArrayList<String>();
+		Assignment assign = new Assignment();
+		assign.setName(name);
+		assign.setPath(path);
+		String s[]=FileDetails.getStats(path,name);
+		assign.setLastModified(s[1]);
+		assign.setSize(s[0]);
+		String marks_file = path + "/marks.txt";
+		BufferedReader br = new BufferedReader(new FileReader(marks_file));
+		String mark = br.readLine();
+		while(mark!=null){                         //Storing marks in an array -> transfer method to global
+			marks.add(mark);
+			mark=br.readLine();
+		}
+		br.close();
+		while(length != 0){
+			/*int status = compile(path,name);            -->compiling
+			  int marksOfOutput = 0;
+			  if(status == 0){                        -->if compiles
+			  execute(path,name,inp[length]);                               -->execute
+			  String outputFile = path +"/"+name till . +".txt";
+			  String output = path + "/output/out_"+length+".txt"; 
+			  marksOfOutput+ = CheckOutputs(outputFile, output, marks.get(length));
+			  delete();
+			  }
+		assign.setMarks(marksOfOutput);
+		assign.setStatus(status);	  
+			 **/
+			 
+		}
+		
+		return assign;
 	}
 }
