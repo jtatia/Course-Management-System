@@ -12,6 +12,7 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.codetester.*;
 
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
@@ -38,6 +39,7 @@ public class UploadedAssignments extends JFrame {
 	private List<Assignment> list;
 	private AssignmentTableModel atm;
 	private String path="";
+	private JavaCompiler jc = new JavaCompiler();
 	/**
 	 * Launch the application.
 	 */
@@ -250,37 +252,45 @@ public class UploadedAssignments extends JFrame {
 	private Assignment test(String path, String name) throws Exception {
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
-        ArrayList<String> marks = new ArrayList<String>();
+        if(length ==0){
+        	//error log
+        }
+        ArrayList<Integer> marks = new ArrayList<Integer>();
 		Assignment assign = new Assignment();
 		assign.setName(name);
 		assign.setPath(path);
 		String s[]=FileDetails.getStats(path,name);
 		assign.setLastModified(s[1]);
 		assign.setSize(s[0]);
-		String marks_file = path + "/marks.txt";
+		String marks_file = path + "/marks.txt";  //all marks per question stored in a txt file in same directory
 		BufferedReader br = new BufferedReader(new FileReader(marks_file));
 		String mark = br.readLine();
 		while(mark!=null){                         //Storing marks in an array -> transfer method to global
-			marks.add(mark);
+			int conversion = Integer.parseInt(mark);
+			marks.add(conversion);
 			mark=br.readLine();
 		}
 		br.close();
-		while(length != 0){
-			/*int status = compile(path,name);            -->compiling
-			  int marksOfOutput = 0;
-			  if(status == 0){                        -->if compiles
-			  execute(path,name,inp[length]);                               -->execute
-			  String outputFile = path +"/"+name till . +".txt";
-			  String output = path + "/output/out_"+length+".txt"; 
-			  marksOfOutput+ = CheckOutputs(outputFile, output, marks.get(length));
-			  delete();
+		int marksOfOutput = 0;
+		String error = "Successful";
+		for(int i =0; i<length; i++){
+			int status = jc.compile(path,name);            //compiling
+			  if(status == 0){                        //-->if compiles
+			  int x = jc.execute(path,name,inp[length]);                             //  -->execute
+			  if(x == 0){
+			  String outputFile = path +"/output.txt";
+			  String output = path + "/outputFiles/out_"+(length+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(length));
+			  marksOfOutput  += fom.CheckOutputs();
 			  }
-		assign.setMarks(marksOfOutput);
-		assign.setStatus(status);	  
-			 **/
-			 
+			  else
+				  error = jc.getErrormessage();
+			  }
+			  else
+				  error = jc.getErrormessage();
 		}
-		
+		assign.setMarks(marksOfOutput);
+		assign.setStatus(error);	  
 		return assign;
 	}
 }

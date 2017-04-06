@@ -43,6 +43,7 @@ public class JavaCompiler {
 		
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
 		{
+			errormessage = "terminated";
 			ep.t.stop();
 			return 2;
 		}
@@ -50,9 +51,21 @@ public class JavaCompiler {
 			errormessage=s.substring(6);
 			return 1;
 		}
+		
+		errormessage = "Successful";
 		return 0;
 	}
 	
+	
+	
+	public String getErrormessage() {
+		return errormessage;
+	}
+
+	public void setErrormessage(String errormessage) {
+		this.errormessage = errormessage;
+	}
+
 	public static void main(String arg[])throws Exception
 	{
 		JavaCompiler obj = new JavaCompiler();
