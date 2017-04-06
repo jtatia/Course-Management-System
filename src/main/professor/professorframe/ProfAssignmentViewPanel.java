@@ -1,5 +1,6 @@
 package main.professor.professorframe;
 import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -21,7 +22,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import main.admin.adminpanel.UploadedAssignments;
+import main.professor.professorframe.UploadedAssignments;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
