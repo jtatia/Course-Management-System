@@ -9,6 +9,7 @@ public class FileDetails {
 	 * Returns a String[2] array with first element as size and 
 	 * second element as last modified date 
 	 */
+	
 	private static SSHComm sshc=null;
 	
 	synchronized public static String[] getStats(String path, String filename)throws Exception

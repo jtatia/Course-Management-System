@@ -34,12 +34,9 @@ public class CourseSpecificPanel extends JPanel {
 		pdf=new ProfDiscussionForumPanel();
 		System.out.println("Initialisation Done");
 		pcm=new ProfCourseMaterialPanel(path);
-		
-		pci=new ProfCourseInfoPanel();
-		
-		pav=new ProfAssignmentViewPanel(path);
-		
+		pav=new ProfAssignmentViewPanel(path);		
 		pa=new ProfAssignmentPanel(path);
+		pci=new ProfCourseInfoPanel(curr_subject);
 		
 		jtp.add("Material", pcm);
 		jtp.setForegroundAt(0, Color.WHITE);
@@ -89,7 +86,6 @@ public class CourseSpecificPanel extends JPanel {
 		jtp.setBackgroundAt(4, Color.DARK_GRAY);
 		pci.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		add(jtp);
-
 	}
 
 }

@@ -48,12 +48,13 @@ public class PanelCourses extends JPanel {
 		list.addListSelectionListener(new ListSelectionListener() {
 			public void valueChanged(ListSelectionEvent arg0) {
 				String course_name=(String)list.getSelectedValue();
-				System.out.println("Course id is::"+course_name);
-				System.out.println("Batch is ::"+student.getBatch());
+				//System.out.println("Course id is::"+course_name);
+				//System.out.println("Batch is ::"+student.getBatch());
 				String path=cmdao.getDirectoryPath(course_name, student.getBatch());
 				
-				System.out.println("Path is::"+path);
-				System.out.println(path);
+				//System.out.println("Path is::"+path);
+				//System.out.println(path);
+				co.c_panel.curr_subject=course_name;
 				try {
 					co.c_panel.resetPanes(student, path);
 				} catch (Exception e) {
@@ -67,7 +68,6 @@ public class PanelCourses extends JPanel {
 				jb.setText(course_name);
 				CardLayout card=(CardLayout)co.panel_1.getLayout();
 				co.panel_2.getComponent(0).setEnabled(true);
-				co.c_panel.curr_subject=course_name;
 				card.show(co.panel_1, "CoursePanel");
 			}
 		});

@@ -40,21 +40,17 @@ public class CourseInfoPanel extends JPanel {
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);//If you want a different background uncomment this
 		//panel_1.setPreferredSize(new Dimension(1300,400));
-		/*JScrollPane scrollPane = new JScrollPane(panel_1,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);;
-		add(scrollPane, BorderLayout.CENTER);
-		scrollPane.setViewportView(panel_1);
-		panel_1.setAutoscrolls(true);
-		scrollPane.setMinimumSize(new Dimension(1300,350));
-		scrollPane.setPreferredSize(new Dimension(1300,350));*/
 		coDao = new CourseDAO();
 		co=coDao.getCourseById(course_id);
+		System.out.println("Course Selected or not:::" + co.getCourseInfo());
 		panel_1.setPreferredSize(new Dimension(1290,500));
-		JXLabel jl =new JXLabel(" ");
+		JXLabel jl =new JXLabel("");
 		try{
-		if(co.getCourseInfo()!=null)
-		jl.setText("\n\n"+co.getCourseInfo());
+			System.out.println("Inside the try catch block");
+			if(co.getCourseInfo()!=null)
+				jl.setText("\n\n"+co.getCourseInfo());
 		}catch(Exception e){
-		e.printStackTrace();
+			e.printStackTrace();
 		}
 		jl.setLineWrap(true);
 		jl.setFont(new Font("Geneva", Font.BOLD, 16));

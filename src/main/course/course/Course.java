@@ -49,6 +49,7 @@ public class Course {
 	}
 	
 	public String getCourseInfo() {
+		//System.out.println("Inside the COURSE FUNCTION");
 		return courseInfo;
 	}
 
