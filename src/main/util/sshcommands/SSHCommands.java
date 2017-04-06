@@ -65,7 +65,7 @@ public class SSHCommands {
 		{
 			System.out.println("Return code: " + res.rc);
 			System.out.println("error message: " + res.error_msg);
-			return "error";
+			return "error "+res.error_msg;
 		}
 		return res.sysout;
 	}
@@ -84,7 +84,7 @@ public class SSHCommands {
 		{
 			System.out.println("Return code: " + res.rc);
 			System.out.println("error message: " + res.error_msg);
-			return "error";
+			return "error "+res.error_msg;
 		}
 		return res.sysout;
 	}
