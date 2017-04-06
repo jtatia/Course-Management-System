@@ -40,8 +40,8 @@ public class FileDetails {
 		
 		int mod_index=result.indexOf("Change: ");
 		mod_index+=8;
-		System.out.println("asdfadf"+result.lastIndexOf(':', mod_index));
-		System.out.println("cxvascxx"+mod_index);
+		//System.out.println("asdfadf"+result.lastIndexOf(':', mod_index));
+		//System.out.println("cxvascxx"+mod_index);
 		String mod= result.substring(mod_index, result.lastIndexOf(':'));
 		
 		mod.trim();
@@ -67,9 +67,16 @@ public class FileDetails {
 		String ans[]=new String[arr.length-1];
 		for(int i=0;i<arr.length-1;i++)
 			ans[i]=arr[i];
-		System.out.println("################Length "+ans.length);
+		//System.out.println("################Length "+ans.length);
 		//System.out.println("ans : :" + ans[0]+"lauda");
 		sshc.close();
 		return ans;
+	}
+	
+	synchronized public static void deleteSSHFiles(String path)throws Exception{
+		sshc=new SSHComm();
+		sshc.SSHClient("rm "+path+"out.txt", sshc);
+		sshc.SSHClient("rm "+path+"*.class", sshc);
+		sshc.close();
 	}
 }
