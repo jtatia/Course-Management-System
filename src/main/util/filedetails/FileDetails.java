@@ -23,6 +23,8 @@ public class FileDetails {
 		String result = sshc.SSHClient("stat "+path+filename, sshc); 
 		int size_index=result.indexOf("Size: ");
 		size_index+=6;
+		System.out.println(path+filename);
+		System.out.println(result);
 		String size =  result.substring(size_index, result.indexOf(' ', size_index));
 		double s=0;
 		size.trim();

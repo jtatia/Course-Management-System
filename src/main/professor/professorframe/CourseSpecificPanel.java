@@ -37,7 +37,7 @@ public class CourseSpecificPanel extends JPanel {
 		
 		pci=new ProfCourseInfoPanel();
 		
-		pav=new ProfAssignmentViewPanel();
+		pav=new ProfAssignmentViewPanel(path);
 		
 		pa=new ProfAssignmentPanel(path);
 		
