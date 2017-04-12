@@ -6,10 +6,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import main.util.lookandfeel.*;
-
+import com.seaglasslookandfeel.*;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -35,6 +35,11 @@ public class Home extends JFrame {
 			public void run() {
 				try {
 					Home frame = new Home();
+					try { 
+						UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+					} catch (Exception e) {
+					    e.printStackTrace();
+					}
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
