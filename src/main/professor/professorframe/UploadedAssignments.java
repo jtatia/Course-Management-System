@@ -146,14 +146,16 @@ public class UploadedAssignments extends JFrame {
 		JButton btnTestFiles = new JButton("Test Files");
 		btnTestFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(table.getSelectedRow() > 0){
+				System.out.println("here");
+			//	if(table.getSelectedRow() > 0){
+					System.out.println("inside");
 					int[] rows = table.getSelectedRows();
 					new Thread() {
 						
 						public void run(){
 							for(int r : rows){
 								Assignment a = list.get(r);
-								try {
+								try {System.out.println("calling");
 									list.add(test(a.getPath(),a.getName()));
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -163,7 +165,7 @@ public class UploadedAssignments extends JFrame {
 							}
 						}
 					}.start();
-				}
+				
 			}
 		});
 		bottomPanel.add(btnTestFiles);
@@ -255,6 +257,7 @@ public class UploadedAssignments extends JFrame {
         int length = inp.length;
         if(length ==0){
         	//error log
+        	System.out.println("ERRRORR");
         }
         ArrayList<Integer> marks = new ArrayList<Integer>();
 		Assignment assign = new Assignment();
@@ -263,11 +266,15 @@ public class UploadedAssignments extends JFrame {
 		String s[]=FileDetails.getStats(path,name);
 		assign.setLastModified(s[1]);
 		assign.setSize(s[0]);
-		String marks_file = path + "/marks.txt";  //all marks per question stored in a txt file in same directory
+		String marks_file = path + "marks.txt";  //all marks per question stored in a txt file in same directory
+		System.out.println("INSIDE          TEST               METHOD");
+		System.out.println("Marks path="+marks_file);
 		BufferedReader br = new BufferedReader(new FileReader(marks_file));
 		String mark = br.readLine();
+		System.out.println("MARKS");
 		while(mark!=null){                         //Storing marks in an array -> transfer method to global
 			int conversion = Integer.parseInt(mark);
+			System.out.println(conversion);
 			marks.add(conversion);
 			mark=br.readLine();
 		}
@@ -275,14 +282,19 @@ public class UploadedAssignments extends JFrame {
 		int marksOfOutput = 0;
 		String error = "Successful";
 		for(int i =0; i<length; i++){
+			System.out.println("Compiling\n"+path+"===="+name);
 			int status = jc.compile(path,name);            //compiling
 			  if(status == 0){                        //-->if compiles
 			  int x = jc.execute(path,name,inp[length]);                             //  -->execute
+			  System.out.println("EXecute"+inp[length]);
 			  if(x == 0){
-			  String outputFile = path +"/output.txt";
-			  String output = path + "/outputFiles/out_"+(length+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  String outputFile = path +"output.txt";
+			  System.out.println("outputPAth=="+outputFile);
+			  String output = path + "outputFiles/out_"+(length+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  System.out.println("output"+output);
 			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(length));
 			  marksOfOutput  += fom.CheckOutputs();
+			  System.out.println("current stud marks"+marksOfOutput);
 			  }
 			  else
 				  error = jc.getErrormessage();
@@ -291,7 +303,8 @@ public class UploadedAssignments extends JFrame {
 				  error = jc.getErrormessage();
 		}
 		assign.setMarks(marksOfOutput);
-		assign.setStatus(error);	  
+		assign.setStatus(error);
+		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		return assign;
 	}
 }

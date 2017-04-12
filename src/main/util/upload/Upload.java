@@ -14,7 +14,7 @@ import com.jcraft.jsch.Session;
 
 public class Upload {
 	
-	static final String path="/home/stud/btech/cse/2015/kshitij.cs15/cms" ;
+	static final String path="/home/Btech15/kshitij.cs15/cms" ;
 	String ip;
 	String username;
 	String password;
