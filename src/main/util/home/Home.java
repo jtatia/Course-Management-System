@@ -9,7 +9,16 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
+import com.birosoft.liquid.*;
 import com.seaglasslookandfeel.*;
+
+import de.javasoft.plaf.synthetica.SyntheticaBlackEyeLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlackMoonLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
+
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
@@ -19,6 +28,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import main.util.login.*;
+
 public class Home extends JFrame {
 
 	/**
@@ -36,7 +46,11 @@ public class Home extends JFrame {
 				try {
 					Home frame = new Home();
 					try { 
-						UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+						//UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
+						UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel()); 
+						//UIManager.setLookAndFeel(new SyntheticaBlackEyeLookAndFeel());
+						//UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+						//UIManager.setLookAndFeel(new LiquidLookAndFeel());
 					} catch (Exception e) {
 					    e.printStackTrace();
 					}
