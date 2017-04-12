@@ -36,9 +36,9 @@ public class PythonCompiler extends Languages {
 		// TODO Auto-generated method stub
 		PythonCompiler obj = new PythonCompiler();
 		
-		String path = "/home/stud/btech/cse/2015/jai.cs15/test/";
-		String filename = "LazyLoading.java";
-		String inputfile = "in.txt";
+		String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
+		String filename = "testing.py";
+		String inputfile = "input2.txt";
 		int res = obj.execute(path,filename,inputfile);
 		
 		System.out.println("Inside Main now :: \n\n ");

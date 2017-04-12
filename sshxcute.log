@@ -8739,3 +8739,462 @@ Change: 2017-03-23 04:39:49.000000000 +0530
 [16:22:19] INFO:    Now wait 0 seconds to begin next task ...
 [16:22:19] INFO:    Connection channel disconnect
 [16:22:19] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:12:27, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:12:27] INFO:    SSHExec initializing ...
+[22:12:27] INFO:    Session initialized and associated with user credential 7301997
+[22:12:27] INFO:    SSHExec initialized successfully
+[22:12:27] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:12:29] INFO:    SSH connection established
+[22:12:29] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:12:29] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:12:29] INFO:    Connection channel established succesfully
+[22:12:29] INFO:    Start to run command
+[22:12:29] INFO:    Connection channel closed
+[22:12:29] INFO:    Check if exec success or not ... 
+[22:12:29] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:12:29] INFO:    Error message: Traceback (most recent call last):  File "testing.py", line 4, in ?    str=input()  File "<string>", line 1    15 72 64 78 20 53 85 63 32 74 34 53 65 21 4 13 23 21 80 30 7 6 57 27 0 3 28 93 88 19 44 84 37 15 72 52 50 28 66 89 53 27 17 72 1 22 85 80 47 32 55 63 53 77 90 79 80 84 48 53 80 72 80 55 72 44 66 0 41 44         ^SyntaxError: invalid syntax
+[22:12:29] INFO:    Now wait 0 seconds to begin next task ...
+[22:12:29] INFO:    Connection channel disconnect
+[22:12:29] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:18:24, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:18:24] INFO:    SSHExec initializing ...
+[22:18:24] INFO:    Session initialized and associated with user credential 7301997
+[22:18:24] INFO:    SSHExec initialized successfully
+[22:18:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:18:25] INFO:    SSH connection established
+[22:18:25] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:18:25] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:18:25] INFO:    Connection channel established succesfully
+[22:18:25] INFO:    Start to run command
+[22:18:25] INFO:    Connection channel closed
+[22:18:25] INFO:    Check if exec success or not ... 
+[22:18:25] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:18:25] INFO:    Error message: Traceback (most recent call last):  File "testing.py", line 4, in ?    str=input()  File "<string>", line 1    1 2 3 4      ^SyntaxError: invalid syntax
+[22:18:25] INFO:    Now wait 0 seconds to begin next task ...
+[22:18:25] INFO:    Connection channel disconnect
+[22:18:25] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:23:32, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:23:32] INFO:    SSHExec initializing ...
+[22:23:32] INFO:    Session initialized and associated with user credential 7301997
+[22:23:32] INFO:    SSHExec initialized successfully
+[22:23:32] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:23:33] INFO:    SSH connection established
+[22:23:33] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:23:33] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:23:33] INFO:    Connection channel established succesfully
+[22:23:33] INFO:    Start to run command
+[22:23:33] INFO:    Connection channel closed
+[22:23:33] INFO:    Check if exec success or not ... 
+[22:23:33] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input.txt> out.txt
+[22:23:33] INFO:    Now wait 0 seconds to begin next task ...
+[22:23:33] INFO:    Connection channel disconnect
+[22:23:33] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:25:13, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:25:13] INFO:    SSHExec initializing ...
+[22:25:13] INFO:    Session initialized and associated with user credential 7301997
+[22:25:13] INFO:    SSHExec initialized successfully
+[22:25:13] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:25:13] INFO:    SSH connection established
+[22:25:13] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:25:13] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input2.txt> out.txt
+[22:25:13] INFO:    Connection channel established succesfully
+[22:25:13] INFO:    Start to run command
+[22:25:14] INFO:    Connection channel closed
+[22:25:14] INFO:    Check if exec success or not ... 
+[22:25:14] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;python testing.py <input2.txt> out.txt
+[22:25:14] INFO:    Now wait 0 seconds to begin next task ...
+[22:25:14] INFO:    Connection channel disconnect
+[22:25:14] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:26:21, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:26:21] INFO:    SSHExec initializing ...
+[22:26:21] INFO:    Session initialized and associated with user credential 7301997
+[22:26:21] INFO:    SSHExec initialized successfully
+[22:26:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:26:22] INFO:    SSH connection established
+[22:26:22] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:26:22] INFO:    Command is cd /home/stud/btech/cse/2015/jai.cs15/test/;g++ NumberSum.cpp
+[22:26:22] INFO:    Connection channel established succesfully
+[22:26:22] INFO:    Start to run command
+[22:26:22] INFO:    Connection channel closed
+[22:26:22] INFO:    Check if exec success or not ... 
+[22:26:22] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/jai.cs15/test/;g++ NumberSum.cpp
+[22:26:22] INFO:    Error message: g++: NumberSum.cpp: No such file or directoryg++: no input files
+[22:26:22] INFO:    Now wait 0 seconds to begin next task ...
+[22:26:22] INFO:    Connection channel disconnect
+[22:26:22] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:26:43, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:26:43] INFO:    SSHExec initializing ...
+[22:26:43] INFO:    Session initialized and associated with user credential 7301997
+[22:26:43] INFO:    SSHExec initialized successfully
+[22:26:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:26:44] INFO:    SSH connection established
+[22:26:44] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:26:44] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:26:44] INFO:    Connection channel established succesfully
+[22:26:44] INFO:    Start to run command
+[22:26:45] INFO:    Connection channel closed
+[22:26:45] INFO:    Check if exec success or not ... 
+[22:26:45] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:26:45] INFO:    Now wait 0 seconds to begin next task ...
+[22:26:45] INFO:    Connection channel disconnect
+[22:26:45] INFO:    SSH connection shutdown
+[22:26:45] INFO:    Session initialized and associated with user credential 7301997
+[22:26:45] INFO:    SSHExec initialized successfully
+[22:26:45] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:26:45] INFO:    SSH connection established
+[22:26:45] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:26:45] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:26:45] INFO:    Connection channel established succesfully
+[22:26:45] INFO:    Start to run command
+[22:26:45] INFO:    Connection channel closed
+[22:26:45] INFO:    Check if exec success or not ... 
+[22:26:45] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:26:45] INFO:    Now wait 0 seconds to begin next task ...
+[22:26:45] INFO:    Connection channel disconnect
+[22:26:45] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:29:32, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:29:32] INFO:    SSHExec initializing ...
+[22:29:32] INFO:    Session initialized and associated with user credential 7301997
+[22:29:32] INFO:    SSHExec initialized successfully
+[22:29:32] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:29:32] INFO:    SSH connection established
+[22:29:32] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:29:32] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:29:32] INFO:    Connection channel established succesfully
+[22:29:32] INFO:    Start to run command
+[22:29:33] INFO:    Connection channel closed
+[22:29:33] INFO:    Check if exec success or not ... 
+[22:29:33] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:29:33] INFO:    Error message: NumberSum.cpp: In function ‘int main()’:NumberSum.cpp:8: error: expected `;' before ‘for’NumberSum.cpp:8: error: ‘z’ was not declared in this scopeNumberSum.cpp:8: error: expected `;' before ‘)’ tokenNumberSum.cpp:19: error: expected `}' at end of input
+[22:29:33] INFO:    Now wait 0 seconds to begin next task ...
+[22:29:33] INFO:    Connection channel disconnect
+[22:29:33] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:37:12, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:37:12] INFO:    SSHExec initializing ...
+[22:37:12] INFO:    Session initialized and associated with user credential 7301997
+[22:37:12] INFO:    SSHExec initialized successfully
+[22:37:12] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:37:13] INFO:    SSH connection established
+[22:37:13] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:37:13] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:37:13] INFO:    Connection channel established succesfully
+[22:37:13] INFO:    Start to run command
+[22:37:13] INFO:    Connection channel closed
+[22:37:13] INFO:    Check if exec success or not ... 
+[22:37:13] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:37:13] INFO:    Error message: NumberSum.cpp: In function ‘int main()’:NumberSum.cpp:8: error: expected `;' before ‘for’NumberSum.cpp:8: error: ‘z’ was not declared in this scopeNumberSum.cpp:8: error: expected `;' before ‘)’ tokenNumberSum.cpp:19: error: expected `}' at end of input
+[22:37:13] INFO:    Now wait 0 seconds to begin next task ...
+[22:37:13] INFO:    Connection channel disconnect
+[22:37:13] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:37:43, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:37:43] INFO:    SSHExec initializing ...
+[22:37:43] INFO:    Session initialized and associated with user credential 7301997
+[22:37:43] INFO:    SSHExec initialized successfully
+[22:37:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:37:44] INFO:    SSH connection established
+[22:37:44] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:37:44] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:37:44] INFO:    Connection channel established succesfully
+[22:37:44] INFO:    Start to run command
+[22:37:44] INFO:    Connection channel closed
+[22:37:44] INFO:    Check if exec success or not ... 
+[22:37:44] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:37:44] INFO:    Now wait 0 seconds to begin next task ...
+[22:37:44] INFO:    Connection channel disconnect
+[22:37:44] INFO:    SSH connection shutdown
+[22:37:44] INFO:    Session initialized and associated with user credential 7301997
+[22:37:44] INFO:    SSHExec initialized successfully
+[22:37:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:37:44] INFO:    SSH connection established
+[22:37:44] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:37:44] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:37:44] INFO:    Connection channel established succesfully
+[22:37:44] INFO:    Start to run command
+[22:37:44] INFO:    Connection channel closed
+[22:37:44] INFO:    Check if exec success or not ... 
+[22:37:44] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:37:44] INFO:    Now wait 0 seconds to begin next task ...
+[22:37:44] INFO:    Connection channel disconnect
+[22:37:44] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:38:07, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:38:07] INFO:    SSHExec initializing ...
+[22:38:07] INFO:    Session initialized and associated with user credential 7301997
+[22:38:07] INFO:    SSHExec initialized successfully
+[22:38:07] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:38:08] INFO:    SSH connection established
+[22:38:08] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:38:08] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:38:08] INFO:    Connection channel established succesfully
+[22:38:08] INFO:    Start to run command
+[22:38:08] INFO:    Connection channel closed
+[22:38:08] INFO:    Check if exec success or not ... 
+[22:38:08] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;g++ NumberSum.cpp
+[22:38:08] INFO:    Now wait 0 seconds to begin next task ...
+[22:38:08] INFO:    Connection channel disconnect
+[22:38:08] INFO:    SSH connection shutdown
+[22:38:08] INFO:    Session initialized and associated with user credential 7301997
+[22:38:08] INFO:    SSHExec initialized successfully
+[22:38:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:38:08] INFO:    SSH connection established
+[22:38:08] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:38:08] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:38:08] INFO:    Connection channel established succesfully
+[22:38:08] INFO:    Start to run command
+[22:38:09] INFO:    Connection channel closed
+[22:38:09] INFO:    Check if exec success or not ... 
+[22:38:09] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:38:09] INFO:    Error message: bash: line 1: 31654 Floating point exception./a.out < input2.txt > out.txt
+[22:38:09] INFO:    Now wait 0 seconds to begin next task ...
+[22:38:09] INFO:    Connection channel disconnect
+[22:38:09] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:45:09, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:45:09] INFO:    SSHExec initializing ...
+[22:45:09] INFO:    Session initialized and associated with user credential 7301997
+[22:45:09] INFO:    SSHExec initialized successfully
+[22:45:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:45:10] INFO:    SSH connection established
+[22:45:10] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:45:10] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:45:10] INFO:    Connection channel established succesfully
+[22:45:10] INFO:    Start to run command
+[22:45:10] INFO:    Connection channel closed
+[22:45:10] INFO:    Check if exec success or not ... 
+[22:45:10] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:45:10] INFO:    Error message: testing.c: In function ‘main’:testing.c:11: error: ‘for’ loop initial declaration used outside C99 mode
+[22:45:10] INFO:    Now wait 0 seconds to begin next task ...
+[22:45:10] INFO:    Connection channel disconnect
+[22:45:10] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:45:35, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:45:35] INFO:    SSHExec initializing ...
+[22:45:35] INFO:    Session initialized and associated with user credential 7301997
+[22:45:35] INFO:    SSHExec initialized successfully
+[22:45:35] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:45:35] INFO:    SSH connection established
+[22:45:35] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:45:35] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:45:35] INFO:    Connection channel established succesfully
+[22:45:35] INFO:    Start to run command
+[22:45:35] INFO:    Connection channel closed
+[22:45:35] INFO:    Check if exec success or not ... 
+[22:45:35] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:45:35] INFO:    Error message: testing.c: In function ‘main’:testing.c:11: error: ‘for’ loop initial declaration used outside C99 mode
+[22:45:35] INFO:    Now wait 0 seconds to begin next task ...
+[22:45:35] INFO:    Connection channel disconnect
+[22:45:35] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:46:34, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:46:34] INFO:    SSHExec initializing ...
+[22:46:34] INFO:    Session initialized and associated with user credential 7301997
+[22:46:34] INFO:    SSHExec initialized successfully
+[22:46:34] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:46:35] INFO:    SSH connection established
+[22:46:35] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:46:35] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:46:35] INFO:    Connection channel established succesfully
+[22:46:35] INFO:    Start to run command
+[22:46:35] INFO:    Connection channel closed
+[22:46:35] INFO:    Check if exec success or not ... 
+[22:46:35] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:46:35] INFO:    Error message: /tmp/ccuzv9Wi.o: In function `main':testing.c:(.text+0x56): undefined reference to `scan'collect2: ld returned 1 exit status
+[22:46:35] INFO:    Now wait 0 seconds to begin next task ...
+[22:46:35] INFO:    Connection channel disconnect
+[22:46:35] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:47:06, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:47:06] INFO:    SSHExec initializing ...
+[22:47:06] INFO:    Session initialized and associated with user credential 7301997
+[22:47:06] INFO:    SSHExec initialized successfully
+[22:47:06] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:47:07] INFO:    SSH connection established
+[22:47:07] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:47:07] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:47:07] INFO:    Connection channel established succesfully
+[22:47:07] INFO:    Start to run command
+[22:47:07] INFO:    Connection channel closed
+[22:47:07] INFO:    Check if exec success or not ... 
+[22:47:07] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:47:07] INFO:    Now wait 0 seconds to begin next task ...
+[22:47:07] INFO:    Connection channel disconnect
+[22:47:07] INFO:    SSH connection shutdown
+[22:47:07] INFO:    Session initialized and associated with user credential 7301997
+[22:47:07] INFO:    SSHExec initialized successfully
+[22:47:07] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:47:07] INFO:    SSH connection established
+[22:47:07] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:47:07] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:47:07] INFO:    Connection channel established succesfully
+[22:47:07] INFO:    Start to run command
+[22:47:07] INFO:    Connection channel closed
+[22:47:07] INFO:    Check if exec success or not ... 
+[22:47:07] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:47:07] INFO:    Now wait 0 seconds to begin next task ...
+[22:47:07] INFO:    Connection channel disconnect
+[22:47:07] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:49:42, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:49:42] INFO:    SSHExec initializing ...
+[22:49:42] INFO:    Session initialized and associated with user credential 7301997
+[22:49:42] INFO:    SSHExec initialized successfully
+[22:49:42] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:49:43] INFO:    SSH connection established
+[22:49:43] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:49:43] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:49:43] INFO:    Connection channel established succesfully
+[22:49:43] INFO:    Start to run command
+[22:49:43] INFO:    Connection channel closed
+[22:49:43] INFO:    Check if exec success or not ... 
+[22:49:43] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:49:43] INFO:    Now wait 0 seconds to begin next task ...
+[22:49:43] INFO:    Connection channel disconnect
+[22:49:43] INFO:    SSH connection shutdown
+[22:49:43] INFO:    Session initialized and associated with user credential 7301997
+[22:49:43] INFO:    SSHExec initialized successfully
+[22:49:43] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:49:43] INFO:    SSH connection established
+[22:49:43] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:49:43] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:49:43] INFO:    Connection channel established succesfully
+[22:49:43] INFO:    Start to run command
+[22:49:43] INFO:    Connection channel closed
+[22:49:43] INFO:    Check if exec success or not ... 
+[22:49:43] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:49:43] INFO:    Now wait 0 seconds to begin next task ...
+[22:49:43] INFO:    Connection channel disconnect
+[22:49:43] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 22:50:38, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:50:38] INFO:    SSHExec initializing ...
+[22:50:38] INFO:    Session initialized and associated with user credential 7301997
+[22:50:38] INFO:    SSHExec initialized successfully
+[22:50:38] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:50:38] INFO:    SSH connection established
+[22:50:38] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:50:38] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:50:38] INFO:    Connection channel established succesfully
+[22:50:38] INFO:    Start to run command
+[22:50:39] INFO:    Connection channel closed
+[22:50:39] INFO:    Check if exec success or not ... 
+[22:50:39] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:50:39] INFO:    Now wait 0 seconds to begin next task ...
+[22:50:39] INFO:    Connection channel disconnect
+[22:50:39] INFO:    SSH connection shutdown
+[22:50:39] INFO:    Session initialized and associated with user credential 7301997
+[22:50:39] INFO:    SSHExec initialized successfully
+[22:50:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:50:39] INFO:    SSH connection established
+[22:50:39] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:50:39] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:50:39] INFO:    Connection channel established succesfully
+[22:50:39] INFO:    Start to run command
+
+=============== [2017/04/12 22:51:20, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[22:51:20] INFO:    SSHExec initializing ...
+[22:51:20] INFO:    Session initialized and associated with user credential 7301997
+[22:51:20] INFO:    SSHExec initialized successfully
+[22:51:20] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:51:21] INFO:    SSH connection established
+[22:51:21] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:51:21] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:51:21] INFO:    Connection channel established succesfully
+[22:51:21] INFO:    Start to run command
+[22:51:21] INFO:    Connection channel closed
+[22:51:21] INFO:    Check if exec success or not ... 
+[22:51:21] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;gcc testing.c -lm
+[22:51:21] INFO:    Now wait 0 seconds to begin next task ...
+[22:51:21] INFO:    Connection channel disconnect
+[22:51:21] INFO:    SSH connection shutdown
+[22:51:21] INFO:    Session initialized and associated with user credential 7301997
+[22:51:21] INFO:    SSHExec initialized successfully
+[22:51:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[22:51:21] INFO:    SSH connection established
+[22:51:21] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[22:51:21] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:51:21] INFO:    Connection channel established succesfully
+[22:51:21] INFO:    Start to run command
+[22:51:21] INFO:    Connection channel closed
+[22:51:21] INFO:    Check if exec success or not ... 
+[22:51:21] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;./a.out <input2.txt>out.txt
+[22:51:21] INFO:    Error message: bash: line 1:   300 Floating point exception./a.out < input2.txt > out.txt
+[22:51:21] INFO:    Now wait 0 seconds to begin next task ...
+[22:51:21] INFO:    Connection channel disconnect
+[22:51:21] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 23:02:10, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:02:10] INFO:    SSHExec initializing ...
+[23:02:10] INFO:    Session initialized and associated with user credential 7301997
+[23:02:10] INFO:    SSHExec initialized successfully
+[23:02:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[23:02:11] INFO:    SSH connection established
+[23:02:11] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:02:11] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:02:11] INFO:    Connection channel established succesfully
+[23:02:11] INFO:    Start to run command
+[23:02:14] INFO:    Connection channel closed
+[23:02:14] INFO:    Check if exec success or not ... 
+[23:02:14] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:02:14] INFO:    Error message: testing.java:5: error: cannot find symbolScanner sc=new Scanner(System.in);^  symbol:   class Scanner  location: class testingtesting.java:5: error: cannot find symbolScanner sc=new Scanner(System.in);               ^  symbol:   class Scanner  location: class testing2 errors
+[23:02:14] INFO:    Now wait 0 seconds to begin next task ...
+[23:02:14] INFO:    Connection channel disconnect
+[23:02:14] INFO:    SSH connection shutdown
+
+=============== [2017/04/12 23:02:39, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:02:39] INFO:    SSHExec initializing ...
+[23:02:39] INFO:    Session initialized and associated with user credential 7301997
+[23:02:39] INFO:    SSHExec initialized successfully
+[23:02:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[23:02:40] INFO:    SSH connection established
+[23:02:40] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:02:40] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:02:40] INFO:    Connection channel established succesfully
+[23:02:40] INFO:    Start to run command
+[23:02:41] INFO:    Connection channel closed
+[23:02:41] INFO:    Check if exec success or not ... 
+[23:02:41] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:02:41] INFO:    Now wait 0 seconds to begin next task ...
+[23:02:41] INFO:    Connection channel disconnect
+[23:02:41] INFO:    SSH connection shutdown
+[23:02:41] INFO:    Session initialized and associated with user credential 7301997
+[23:02:41] INFO:    SSHExec initialized successfully
+[23:02:41] INFO:    SSHExec trying to connect kshitij.cs15@172.16.1.3
+[23:02:41] INFO:    SSH connection established
+[23:02:41] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:02:41] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;java testing < input2.txt > testingout.txt
+[23:02:41] INFO:    Connection channel established succesfully
+[23:02:41] INFO:    Start to run command
+[23:02:42] INFO:    Connection channel closed
+[23:02:42] INFO:    Check if exec success or not ... 
+[23:02:42] INFO:    Execute successfully for command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;java testing < input2.txt > testingout.txt
+[23:02:42] INFO:    Now wait 0 seconds to begin next task ...
+[23:02:42] INFO:    Connection channel disconnect
+[23:02:42] INFO:    SSH connection shutdown

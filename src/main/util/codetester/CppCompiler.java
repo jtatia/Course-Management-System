@@ -57,9 +57,9 @@ public class CppCompiler extends Languages{
 		{
 			CppCompiler obj = new CppCompiler();
 			
-			String path = "/home/stud/btech/cse/2015/jai.cs15/test/";
-			String filename = "LazyLoading.java";
-			String inputfile = "in.txt";
+			String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
+			String filename = "NumberSum.cpp";
+			String inputfile = "input2.txt";
 			int res = obj.compile(path,filename);
 			
 			System.out.println("Inside Main now :: \n\n ");

@@ -16,7 +16,7 @@ public class CCompiler extends Languages{
 			SSHCommands sh=new SSHCommands();
 			filename.trim();
 			String command1 = "cd "+path;
-			String command2 = "gcc "+filename+"-lm";
+			String command2 = "gcc "+filename+" -lm";
 			String com[]={command1,command2};
 			s = sh.runMultipleCommand(com);
 			sh.close();
@@ -57,9 +57,9 @@ public class CCompiler extends Languages{
 		{
 			CCompiler obj = new CCompiler();
 			
-			String path = "/home/stud/btech/cse/2015/jai.cs15/test/";
-			String filename = "LazyLoading.java";
-			String inputfile = "in.txt";
+			String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
+			String filename = "testing.c";
+			String inputfile = "input2.txt";
 			int res = obj.compile(path,filename);
 			
 			System.out.println("Inside Main now :: \n\n ");
