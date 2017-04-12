@@ -33,6 +33,7 @@ public class FileOutputMatcher {
 	static String password;
 	static int port=22;
 	public FileOutputMatcher(String out,String check,int m){
+		
 		path_output = out;
 		path_check = check;
 		this.m = m;
@@ -43,6 +44,7 @@ public class FileOutputMatcher {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		ip=prop.getProperty("ip");
 		username=prop.getProperty("username");
 		password=prop.getProperty("password");
@@ -53,7 +55,7 @@ public class FileOutputMatcher {
 		Session session = null;
         Channel channel = null;
         ChannelSftp channelSftp = null;
-        PrintWriter pw=new PrintWriter(System.out);;
+        PrintWriter pw=new PrintWriter(System.out);
         try{
         	JSch jsch = new JSch();
             session = jsch.getSession(username, ip, port);
@@ -68,12 +70,13 @@ public class FileOutputMatcher {
             InputStream stream=channelSftp.get(path_output);
 			BufferedReader reader1=new BufferedReader(new InputStreamReader(stream));
             stream=channelSftp.get(path_check);
-			BufferedReader reader2=new BufferedReader(new FileReader(path_output));
+			BufferedReader reader2=new BufferedReader(new InputStreamReader(stream));
 			String actual_output = reader1.readLine(); //This string reads the actual output file
 			String output = reader2.readLine();//This String reads the output file uploaded by the student
 			int lineNum=1;//The line being compared
 			boolean areEqual=false;
 			while(actual_output!=null&&output!=null){
+				pw.println(actual_output+" "+output);
 				if(actual_output.equals(output)){
 					//add marks
 					areEqual = true;
@@ -88,11 +91,11 @@ public class FileOutputMatcher {
 			reader1.close();
 			reader2.close();
 			if(areEqual){
-				//pw.println("All test cases passed");
+				pw.println("All test cases passed");
 				return m;
 			}else{
-				//pw.println("Wrong Outputs at line = "+lineNum);
-				return m;//Confusion on what marks to reward for wrong output
+				pw.println("Wrong Outputs at line = "+lineNum);
+				return 0;//Confusion on what marks to reward for wrong output
 			}
         }catch(Exception exc){
         	pw.println("Error Executing Code");

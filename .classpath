@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="lib/sshxcute-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/jsch-0.1.54.jar"/>
 	<classpathentry kind="lib" path="lib/ganymed-ssh2-build210.jar"/>
+	<classpathentry kind="lib" path="lib/seaglasslookandfeel-0.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

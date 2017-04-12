@@ -61,6 +61,11 @@ public class PythonCompiler extends Languages {
 			System.exit(1);
 		}
 		System.out.println("Successful");
+		
+		FileOutputMatcher fom = new FileOutputMatcher(path+"output.txt",path+"out.txt",10);
+		int m=fom.CheckOutputs();
+		System.out.println(m);
+		fom.DeleteFiles();
 	}
 	
 }

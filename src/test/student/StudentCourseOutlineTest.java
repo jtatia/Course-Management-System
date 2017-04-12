@@ -1,4 +1,4 @@
-package test.student.studentcourseoutlinetest;
+package test.student;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
