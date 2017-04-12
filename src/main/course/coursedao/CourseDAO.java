@@ -215,7 +215,6 @@ public class CourseDAO {
 	 }
 	 public void deleteCourse(String id){
 		 PreparedStatement pstmt=null;
-		 ResultSet rs=null;
 		 try{
 			 //System.out.println("Course"+id);
 			 pstmt=myCon.prepareStatement("delete from course where course_id = ?");
@@ -227,11 +226,6 @@ public class CourseDAO {
 			 if(pstmt!=null){
 				 try{
 					 pstmt.close();
-				 }catch(Exception exc){}
-			 }
-			 if(rs!=null){
-				 try{
-					 rs.close();
 				 }catch(Exception exc){}
 			 }
 		 }
