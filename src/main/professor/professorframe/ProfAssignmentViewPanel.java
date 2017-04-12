@@ -68,7 +68,7 @@ public class ProfAssignmentViewPanel extends JPanel {
 		table=new JTable();
 
 		list = new ArrayList<Assignment>();
-		
+		/*
 		String str[] = FileDetails.getFileList(path);
 		for(int i=0;i<str.length;i++)
 		{
@@ -80,7 +80,7 @@ public class ProfAssignmentViewPanel extends JPanel {
 			temp.setSize(s[0]);
 			list.add(temp);
 		}
-		
+		*/
 		atm = new AssignmentTableModel(list);
 		table.getSelectionModel().setValueIsAdjusting(true);
 		System.out.println("########   "+list);
@@ -141,9 +141,10 @@ public class ProfAssignmentViewPanel extends JPanel {
 					temp.setLastModified(s[1]);
 					temp.setSize(s[0]);
 					list.add(temp);
+					atm = new AssignmentTableModel(list);
+					table.setModel(atm);
 				}
-				atm = new AssignmentTableModel(list);
-				table.setModel(atm);
+				
 				}catch(Exception ex){
 					ex.printStackTrace();
 				}

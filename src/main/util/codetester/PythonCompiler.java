@@ -19,7 +19,7 @@ public class PythonCompiler extends Languages {
 		String command2="python "+filename+" <"+inputFile+">"+" out.txt";//If you need to change name of output file please change from here
 		String cmd[]={command1,command2};
 		ExecuteProgram ep=new ExecuteProgram(sh,cmd,this);
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
 		{
@@ -36,9 +36,9 @@ public class PythonCompiler extends Languages {
 		// TODO Auto-generated method stub
 		PythonCompiler obj = new PythonCompiler();
 		
-		String path = "/home/stud/btech/cse/2015/jai.cs15/test/";
-		String filename = "LazyLoading.java";
-		String inputfile = "in.txt";
+		String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
+		String filename = "testing.py";
+		String inputfile = "input2.txt";
 		int res = obj.execute(path,filename,inputfile);
 		
 		System.out.println("Inside Main now :: \n\n ");
@@ -61,6 +61,11 @@ public class PythonCompiler extends Languages {
 			System.exit(1);
 		}
 		System.out.println("Successful");
+		
+		FileOutputMatcher fom = new FileOutputMatcher(path+"output.txt",path+"out.txt",10);
+		int m=fom.CheckOutputs();
+		System.out.println(m);
+		fom.DeleteFiles();
 	}
 	
 }

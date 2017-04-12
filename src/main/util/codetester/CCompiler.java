@@ -2,11 +2,11 @@ package main.util.codetester;
 
 import main.util.sshcommands.SSHCommands;
 import net.neoremind.sshxcute.exception.TaskExecFailException;
-public class CppCompiler extends Languages{
+public class CCompiler extends Languages{
 		
 		public String errormessage="";
 		//public String s="";
-		public CppCompiler(){
+		public CCompiler(){
 			super("");
 		}
 		/* Provide the path upto the directory in which the assignment is*/
@@ -16,7 +16,7 @@ public class CppCompiler extends Languages{
 			SSHCommands sh=new SSHCommands();
 			filename.trim();
 			String command1 = "cd "+path;
-			String command2 = "g++ "+filename;
+			String command2 = "gcc "+filename+" -lm";
 			String com[]={command1,command2};
 			s = sh.runMultipleCommand(com);
 			sh.close();
@@ -55,10 +55,10 @@ public class CppCompiler extends Languages{
 		
 		public static void main(String arg[])throws Exception
 		{
-			CppCompiler obj = new CppCompiler();
+			CCompiler obj = new CCompiler();
 			
 			String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
-			String filename = "NumberSum.cpp";
+			String filename = "testing.c";
 			String inputfile = "input2.txt";
 			int res = obj.compile(path,filename);
 			
