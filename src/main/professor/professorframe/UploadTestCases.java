@@ -65,7 +65,7 @@ public class UploadTestCases extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UploadTestCases frame = new UploadTestCases("CS225_jimson","HW1");
+					UploadTestCases frame = new UploadTestCases("/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -77,7 +77,7 @@ public class UploadTestCases extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UploadTestCases(String mainDir,String assignmentDir) {
+	public UploadTestCases(String path) {
 		setTitle("Upload Test Cases ");
 		setVisible(true);
 		@SuppressWarnings("deprecation")
@@ -137,7 +137,7 @@ public class UploadTestCases extends JFrame {
 				    		System.out.println(child.getName());
 				    		System.out.println(child.toPath());
 				    		Upload up=new Upload();
-					        up.uploadFile(currentDir+"/"+child.getName(),"/home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/"+child.getName(),child.getName());
+					        up.uploadFile(currentDir+"/"+child.getName(),path+"inputFiles/"+child.getName(),child.getName());
 				    	}	
 				    } 
 				  } else {
@@ -188,7 +188,7 @@ public class UploadTestCases extends JFrame {
 		String filenames="";
 		model = new DefaultListModel<>();
 		try {
-			filenames=sshc.runSingleCommand("ls /home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/");
+			filenames=sshc.runSingleCommand("ls "+path+"inputFiles/");
 		} catch (TaskExecFailException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -288,8 +288,8 @@ public class UploadTestCases extends JFrame {
 				else
 				{	
 				usingJsch=new UsingJsch();		
-				fileContent=usingJsch.readingFile("/home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/"+file);
-				marksContent=usingJsch.readingFile("/home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/marks.txt");
+				fileContent=usingJsch.readingFile(path+"inputFiles/"+file);
+				marksContent=usingJsch.readingFile(path+"inputFiles/marks.txt");
 				marks=getMarksFromName(marksContent);
 				usingJsch.close();
 				}
@@ -311,7 +311,7 @@ public class UploadTestCases extends JFrame {
 					model.removeElement(file);
 					list.revalidate();
 					list.repaint();
-					sshc.runSingleCommand("rm /home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/"+file);
+					sshc.runSingleCommand("rm "+path+"inputFiles/"+file);
 				} catch (TaskExecFailException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -370,7 +370,7 @@ public class UploadTestCases extends JFrame {
 				    File marksLocal=new File("marks.txt");
 				    usingJsch=new UsingJsch();
 					String fileContent="";
-					fileContent=usingJsch.readingFile("/home/stud/btech/cse/2015/kshitij.cs15/cms/"+mainDir+"/uploads/"+assignmentDir+"/inputFile/marks.txt");
+					fileContent=usingJsch.readingFile(path+"inputFiles/marks.txt");
 					usingJsch.close();
 					System.out.println(fileContent);
 					if(!fileContent.equals(""))
