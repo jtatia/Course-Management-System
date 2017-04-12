@@ -12,6 +12,7 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.codetester.*;
 
 import javax.swing.JScrollPane;
 import javax.swing.JToggleButton;
@@ -24,6 +25,10 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
@@ -34,6 +39,7 @@ public class UploadedAssignments extends JFrame {
 	private List<Assignment> list;
 	private AssignmentTableModel atm;
 	private String path="";
+	private JavaCompiler jc = new JavaCompiler();
 	/**
 	 * Launch the application.
 	 */
@@ -125,9 +131,10 @@ public class UploadedAssignments extends JFrame {
 						temp.setLastModified(s[1]);
 						temp.setSize(s[0]);
 						list.add(temp);
+						atm = new AssignmentTableModel(list);
+						table.setModel(atm);
 					}
-					atm = new AssignmentTableModel(list);
-					table.setModel(atm);
+					
 					}catch(Exception ex){
 						ex.printStackTrace();
 					}
@@ -137,6 +144,28 @@ public class UploadedAssignments extends JFrame {
 		bottomPanel.add(btnNewButton);
 		
 		JButton btnTestFiles = new JButton("Test Files");
+		btnTestFiles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if(table.getSelectedRow() > 0){
+					int[] rows = table.getSelectedRows();
+					new Thread() {
+						
+						public void run(){
+							for(int r : rows){
+								Assignment a = list.get(r);
+								try {
+									list.add(test(a.getPath(),a.getName()));
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								atm = new AssignmentTableModel(list);
+								table.setModel(atm);
+							}
+						}
+					}.start();
+				}
+			}
+		});
 		bottomPanel.add(btnTestFiles);
 		btnTestFiles.setEnabled(false);
 		
@@ -219,5 +248,50 @@ public class UploadedAssignments extends JFrame {
 		atm = new AssignmentTableModel(list);
 		table.setModel(atm);
 		table.setRowHeight(30);
+	}
+	
+	private Assignment test(String path, String name) throws Exception {
+		String inp[] = FileDetails.getFileList(path+"inputFiles/");
+        int length = inp.length;
+        if(length ==0){
+        	//error log
+        }
+        ArrayList<Integer> marks = new ArrayList<Integer>();
+		Assignment assign = new Assignment();
+		assign.setName(name);
+		assign.setPath(path);
+		String s[]=FileDetails.getStats(path,name);
+		assign.setLastModified(s[1]);
+		assign.setSize(s[0]);
+		String marks_file = path + "/marks.txt";  //all marks per question stored in a txt file in same directory
+		BufferedReader br = new BufferedReader(new FileReader(marks_file));
+		String mark = br.readLine();
+		while(mark!=null){                         //Storing marks in an array -> transfer method to global
+			int conversion = Integer.parseInt(mark);
+			marks.add(conversion);
+			mark=br.readLine();
+		}
+		br.close();
+		int marksOfOutput = 0;
+		String error = "Successful";
+		for(int i =0; i<length; i++){
+			int status = jc.compile(path,name);            //compiling
+			  if(status == 0){                        //-->if compiles
+			  int x = jc.execute(path,name,inp[length]);                             //  -->execute
+			  if(x == 0){
+			  String outputFile = path +"/output.txt";
+			  String output = path + "/outputFiles/out_"+(length+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(length));
+			  marksOfOutput  += fom.CheckOutputs();
+			  }
+			  else
+				  error = jc.getErrormessage();
+			  }
+			  else
+				  error = jc.getErrormessage();
+		}
+		assign.setMarks(marksOfOutput);
+		assign.setStatus(error);	  
+		return assign;
 	}
 }
