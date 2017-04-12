@@ -39,7 +39,7 @@ public class CppCompiler extends Languages{
 			String command2 = "./a.out <"+inputfile+">"+"out.txt";
 			String com[]={command1,command2};
 			ExecuteProgram ep = new ExecuteProgram(sh,com,this);
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 			
 			if(!ep.t.getState().equals(Thread.State.TERMINATED))
 			{

@@ -19,7 +19,7 @@ public class PythonCompiler extends Languages {
 		String command2="python "+filename+" <"+inputFile+">"+" out.txt";//If you need to change name of output file please change from here
 		String cmd[]={command1,command2};
 		ExecuteProgram ep=new ExecuteProgram(sh,cmd,this);
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
 		{
