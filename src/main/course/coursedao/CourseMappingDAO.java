@@ -114,7 +114,7 @@ public class CourseMappingDAO {
 	}
 	public String getDirectoryPathForProf(String courseId,String profUsername)
 	{
-		String path="/home/stud/btech/cse/2015/kshitij.cs15/cms/";
+		String path="/home/Btech15/kshitij.cs15/cms/";
 		PreparedStatement pstmt=null;
 	//	System.out.println(courseId);
 		try {
@@ -129,6 +129,7 @@ public class CourseMappingDAO {
 				String professor=rs.getString("professor");
 				dir_name=dir_name+courseId+"_"+professor;	
 			}
+			if(dir_name!="")
 			path=path+dir_name+"/";
 		}catch(Exception exc){
 			exc.printStackTrace();
@@ -143,7 +144,7 @@ public class CourseMappingDAO {
 	}
 	public String getDirectoryPath(String courseId,String batch)
 	{
-		String path="/home/stud/btech/cse/2015/kshitij.cs15/cms/";
+		String path="/home/Btech15/kshitij.cs15/cms/";
 		PreparedStatement pstmt=null;
 		try {
 			pstmt=myCon.prepareStatement("select * from course_mapping where course_id = ?");
@@ -172,6 +173,7 @@ public class CourseMappingDAO {
 					}
 				}	
 			}
+			if(dir_name!="")
 			path=path+dir_name+"/";
 		}catch(Exception exc){
 			exc.printStackTrace();
