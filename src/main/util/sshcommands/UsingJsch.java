@@ -19,20 +19,20 @@ import com.jcraft.jsch.UserInfo;
 
 public class UsingJsch {
 
-	private static ChannelSftp sftpChannel;
-    private static Session session;
-	
-	public static void main(String[] args) {
+	public static ChannelSftp sftpChannel;
+    public static Session session;
+	public static Channel channel;
+	/*public static void main(String[] args) {
         // TODO Auto-generated method stub
         JSch jsch = new JSch();
         session = null;
         try {
-            session = jsch.getSession("kshitij.cs15", "172.16.1.3", 22);
+            session = jsch.getSession("kshitij.cs15", "172.16.26.9", 22);
             session.setConfig("StrictHostKeyChecking", "no");
-            session.setPassword("7301997");
+            session.setPassword("kshitij#456");
             session.connect();
             System.out.println("Connected to session successfully");
-            Channel channel = session.openChannel("sftp");
+            channel = session.openChannel("sftp");
             channel.connect();
             System.out.println("Connected to Channel successfully");
             sftpChannel = (ChannelSftp) channel;
@@ -45,51 +45,110 @@ public class UsingJsch {
 				e.printStackTrace();
 			}
     		System.out.println(currentDirectory);
-            sftpChannel.exit();
-            session.disconnect();
+    	/*	try {
+				writingFile("cms/CS225_jimson/","hello this is demo input to be written","demo.txt");
+			} catch (SftpException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/
+         //   sftpChannel.exit();
+           // session.disconnect();
+       // } catch (JSchException e) {
+        //    e.printStackTrace();  
+      //  }
+    //}*/
+	public static void writingFile(String dir,String text,String file,int mode) throws SftpException, IOException
+	{
+		//this function has not been used but can be used to specify write mode like ChannelSftp.APPEND,ChannelSftp.RESUME,ChannelSftp.OVERWRITE
+		JSch jsch = new JSch();
+        session = null;
+        Properties prop=new Properties();
+		try {
+			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String ip=prop.getProperty("ip");
+		String user=prop.getProperty("username");
+		String password=prop.getProperty("password");
+        try {
+            session = jsch.getSession(user, ip, 22);
+            session.setConfig("StrictHostKeyChecking", "no");
+            session.setPassword(password);
+            session.connect();
+            System.out.println("Connected to session successfully");
+            channel = session.openChannel("sftp");
+            channel.connect();
+            System.out.println("Connected to Channel successfully");
+            sftpChannel = (ChannelSftp) channel;
         } catch (JSchException e) {
             e.printStackTrace();  
         }
-    }
-	public void writingFile(String text) throws SftpException
+	  System.out.println("Within writingFiles >>>>>>>>dir,text,file"+dir+",,,,,"+text+",,,,,"+file);
+	  sftpChannel.cd(dir);
+      InputStream obj_InputStream = new ByteArrayInputStream(text.getBytes());
+      sftpChannel.put(obj_InputStream,file,mode);
+      System.out.println(text);
+      System.out.println(dir+file);
+      System.out.println(sftpChannel.pwd());
+      sftpChannel.exit();
+      obj_InputStream.close();
+      channel.disconnect();
+      session.disconnect();
+	}
+
+	public static void writingFile(String dir,String text,String file) throws SftpException, IOException
 	{
+		/*
 		InputStream is=new ByteArrayInputStream(text.getBytes());
 		String currentDirectory=sftpChannel.pwd();
 		System.out.println(currentDirectory);
-		sftpChannel.cd("testdir");
+		sftpChannel.cd("");
 		currentDirectory=sftpChannel.pwd();
 		System.out.println(currentDirectory);
 	//	sftpChannel.mkdir("newDir");
 	//	sftpChannel.cd("newDir");
-		sftpChannel.put(is,"inputqwertyomomom.txt");
+		sftpChannel.put(is,"inputqwertyomomom.txt");*/
+		JSch jsch = new JSch();
+        session = null;
+        Properties prop=new Properties();
+		try {
+			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String ip=prop.getProperty("ip");
+		String user=prop.getProperty("username");
+		String password=prop.getProperty("password");
+        try {
+            session = jsch.getSession(user, ip, 22);
+            session.setConfig("StrictHostKeyChecking", "no");
+            session.setPassword(password);
+            session.connect();
+            System.out.println("Connected to session successfully");
+            channel = session.openChannel("sftp");
+            channel.connect();
+            System.out.println("Connected to Channel successfully");
+            sftpChannel = (ChannelSftp) channel;
+        } catch (JSchException e) {
+            e.printStackTrace();  
+        }
+	  System.out.println("Within writingFiles >>>>>>>>dir,text,file"+dir+",,,,,"+text+",,,,,"+file);
+	  sftpChannel.cd(dir);
+      InputStream obj_InputStream = new ByteArrayInputStream(text.getBytes());
+      sftpChannel.put(obj_InputStream,file);
+      System.out.println(text);
+      System.out.println(dir+file);
+      System.out.println(sftpChannel.pwd());
+      sftpChannel.exit();
+      obj_InputStream.close();
+      channel.disconnect();
+      session.disconnect();
 	}
 
-	public String readingFile(String remoteFile)
-	{
-		String str="";
-		    try
-		    {
-		    InputStream out= null;
-		    out= sftpChannel.get(remoteFile);
-		    BufferedReader br = new BufferedReader(new InputStreamReader(out));
-		    String line;
-		    while ((line = br.readLine()) != null) 
-		    {
-		        	str=str+line;
-		    }
-		    br.close();
-		        sftpChannel.disconnect();
-		        session.disconnect();
-		    }
-		    catch(SftpException | IOException e)
-		    {
-		    System.out.println(e);
-		    }
-		    return str;
-		}	
-	
-	
-	public UsingJsch()
+	public static String readingFile(String remoteFile)
 	{
 		JSch jsch = new JSch();
         session = null;
@@ -109,15 +168,35 @@ public class UsingJsch {
             session.setPassword(password);
             session.connect();
             System.out.println("Connected to session successfully");
-            Channel channel = session.openChannel("sftp");
+            channel = session.openChannel("sftp");
             channel.connect();
             System.out.println("Connected to Channel successfully");
             sftpChannel = (ChannelSftp) channel;
         } catch (JSchException e) {
             e.printStackTrace();  
         }
-	}
-	public void close()
+		String str="";
+		    try
+		    {
+		    InputStream out= null;
+		    out= sftpChannel.get(remoteFile);
+		    BufferedReader br = new BufferedReader(new InputStreamReader(out));
+		    String line;
+		    while ((line = br.readLine()) != null) 
+		    {
+		        	str=str+line+"\n";
+		    }
+		    br.close();
+		        sftpChannel.disconnect();
+		        session.disconnect();
+		    }
+		    catch(SftpException | IOException e)
+		    {
+		    System.out.println(e);
+		    }
+		    return str;
+		}	
+	public static void close()
 	{
 		sftpChannel.exit();
         session.disconnect();

@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.SftpException;
 
 import main.util.login.LoginPortal;
@@ -46,14 +45,11 @@ import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-public class UploadTestCases extends JFrame {
+public class UploadOutputFiles extends JFrame {
 
-	private String assignmentFolder;
-	private String dir;
 	private JPanel contentPane;
-	private JTextField textField;
 	private SSHCommands sshc;
-	
+	private UsingJsch usingJsch=null;
 	private boolean flag=true;
 	private JList list;
 	private DefaultListModel<String> model;
@@ -61,6 +57,7 @@ public class UploadTestCases extends JFrame {
 	File f;
 	public static String marksContent="";
 	private JTextField textField_1;
+	private JTextField textField;
 	/**
 	 * Launch the application.
 	 */
@@ -68,9 +65,7 @@ public class UploadTestCases extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-
-					UploadTestCases frame = new UploadTestCases("/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/");
-
+					UploadOutputFiles frame = new UploadOutputFiles("/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -82,24 +77,15 @@ public class UploadTestCases extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UploadTestCases(String path) {
-
-		/*
-		 * dir stores the directory name 
-		 * For eg. if path=/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/
-		 * 		   then dir=cms/CS225_jimson/uploads/HW1/
-		 * 			and assignmentFolder=HW1
-		 * */
-		assignmentFolder=path.substring(0,path.length()-1);
-		assignmentFolder=assignmentFolder.substring(assignmentFolder.lastIndexOf("/")+1);
-		dir=path.substring(path.indexOf("cms"));
-		dir=dir.substring(0,dir.lastIndexOf("/"))+"/";
-		System.out.println("#########"+dir);
-		System.out.println("#########"+assignmentFolder);
-
+	public UploadOutputFiles(String path) {
 		setTitle("Upload Test Cases ");
 		setVisible(true);
-
+		@SuppressWarnings("deprecation")
+		ArrayList<String> []ar=(ArrayList<String>[])new ArrayList<?>[3];
+		for(int i=0;i<3;i++)
+		{
+			ar[i]=new ArrayList<String>();
+		}
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		String currentDir = System.getProperty("user.dir");
@@ -111,11 +97,37 @@ public class UploadTestCases extends JFrame {
 		setContentPane(contentPane);
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.NORTH);
-		JLabel lblTestCasesUpload = new JLabel("TEST CASES  UPLOAD PANEL");
+		JLabel lblTestCasesUpload = new JLabel("OUTPUTS UPLOAD PANEL");
 		panel.add(lblTestCasesUpload);
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.SOUTH);
+		
+		JButton btnSubmitTestCases = new JButton("SUBMIT OUTPUTS");
+		btnSubmitTestCases.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				File dir = new File(currentDir);
+				  File[] directoryListing = dir.listFiles();
+				  if (directoryListing != null) {
+				    for (File child : directoryListing) {
+				    	if(child.getName().startsWith("output"))
+				    	{
+				    		System.out.println(child.getName());
+				    		System.out.println(child.toPath());
+				    		Upload up=new Upload();
+					        up.uploadFile(currentDir+"/"+child.getName(),path+"outputFiles/"+child.getName(),child.getName());
+				    	}	
+				    } 
+				  } else {
+				    // Handle the case where dir is not really a directory.
+				    // Checking dir.isDirectory() above would not be sufficient
+				    // to avoid race conditions with another process that deletes
+				    // directories.
+				  }
+			}
+		});
+		panel_1.add(btnSubmitTestCases);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -132,13 +144,9 @@ public class UploadTestCases extends JFrame {
 	    scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 	    panel_2.add(scroll);
 	    
-		JLabel lblTestCase = new JLabel("Test Case");
+		JLabel lblTestCase = new JLabel("ADD OUTPUT : ");
 		lblTestCase.setBounds(127, 17, 98, 14);
 		panel_2.add(lblTestCase);
-		
-		JLabel lblMarks = new JLabel("Marks");
-		lblMarks.setBounds(695, 17, 46, 14);
-		panel_2.add(lblMarks);
 		
 		textField_1 = new JTextField();
 		textField_1.setToolTipText("Specify File name ");
@@ -146,16 +154,10 @@ public class UploadTestCases extends JFrame {
 		panel_2.add(textField_1);
 		textField_1.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(676, 42, 86, 77);
-		panel_2.add(textField);
-		textField.setColumns(10);
-		
 		String filenames="";
 		model = new DefaultListModel<>();
 		try {
-			filenames=sshc.runSingleCommand("ls "+path+"inputFiles/");
+			filenames=sshc.runSingleCommand("ls "+path+"outputFiles/");
 		} catch (TaskExecFailException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -171,46 +173,71 @@ public class UploadTestCases extends JFrame {
 		panel_2.add(listScroll);
 		listScroll.setBounds(10, 314, 647, 155);
 		
-		JButton btnSubmit = new JButton("SUBMIT");
-		btnSubmit.addActionListener(new ActionListener() {
+		JButton button = new JButton("+");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			String text=textArea.getText();
 			
 			if(text!=null && !text.trim().equals(""))
 			{
-				String file=(textField_1.getText()).trim();
-				if(!file.equals(""))
-				{
-					if(!file.endsWith(".txt"))
-						file=file+".txt";
-					try {
-						UsingJsch.writingFile(dir+"inputFiles/", textArea.getText(), file);
-						setMarksFromName(file,textField.getText());
-						UsingJsch.writingFile(dir, marksContent, "marks.txt");
-					} catch (SftpException | IOException e) {
-						// TODO Auto-generated catch block
+				//FileWriter fw=null;
+				//BufferedWriter bw=null;
+			//	currentFile=(textField_1.getText()).trim();
+			//	if(!currentFile.equals(""))
+				//{
+					//if(!currentFile.endsWith(".txt"))
+						//currentFile=currentFile+".txt";
+					/*File f=new File(currentFile);
+					
+					try  {
+						fw=new FileWriter(f);
+						bw= new BufferedWriter(fw);
+						bw.write(text);
+						System.out.println("Done");
+					} catch (IOException e) {
 						e.printStackTrace();
 					}
+					finally
+					{
+						try {
+							if (bw != null)
+								bw.close();
+							if (fw != null)
+								fw.close();
+						} catch (IOException ex) {
+							ex.printStackTrace();
+						}
+					}*/
 					textArea.setText("");
+			//		setMarksFromName(currentFile,textField.getText());
 					
 					textField.setText("");
 					textField_1.setText("");
-					if(!model.contains(file))
+					if(!model.contains(currentFile))
 					{	
-						model.addElement(file);
+						ar[0].add(text);
+						ar[1].add(currentFile);
+			
+						model.addElement(currentFile);
 						list.revalidate();
 						list.repaint();
+					}
+					else
+					{
+						int index=ar[1].indexOf(currentFile);
+						ar[0].add(index, text);
+						ar[1].add(index,currentFile);
 					}	
 				}
 				else
 				{
-					JOptionPane.showMessageDialog(UploadTestCases.this,"Please enter a valid file name","Error",JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(UploadOutputFiles.this,"Please enter a valid file name","Error",JOptionPane.ERROR_MESSAGE);
 				}
 			}
-			}
+			
 		});
-		btnSubmit.setBounds(676, 378, 86, 23);
-		panel_2.add(btnSubmit);
+		button.setBounds(676, 378, 86, 23);
+		panel_2.add(button);
 		
 		JButton btnEdit = new JButton("Edit");
 		btnEdit.addActionListener(new ActionListener() {
@@ -218,12 +245,23 @@ public class UploadTestCases extends JFrame {
 				String file=(String) list.getSelectedValue();
 				String fileContent="";
 				String marks="";
-				System.out.println("File to be editted >>>>>>>>>>>>>> "+file);
-				textField.setText(getMarksFromName(file));					
-				fileContent=UsingJsch.readingFile(path+"inputFiles/"+file);
-				marks=getMarksFromName(file);
 				System.out.println(file);
-				textField.setText(getMarksFromName(file));
+			
+				if(ar[1].contains(file))
+				{
+					int index=ar[1].indexOf(file);
+					fileContent=ar[0].get(index);
+					marks=ar[2].get(index);
+				}	
+				else
+				{	
+				usingJsch=new UsingJsch();		
+				fileContent=usingJsch.readingFile(path+"inputFiles/"+file);
+				marksContent=usingJsch.readingFile(path+"inputFiles/marks.txt");
+			
+				usingJsch.close();
+				}
+				System.out.println(fileContent);	
 				textField_1.setText(file);
 				textField.setText(marks);
 				textArea.setText(fileContent);
@@ -237,7 +275,7 @@ public class UploadTestCases extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
 					String file=(String) list.getSelectedValue();
-					deleteMarksFromName(file);
+			
 					model.removeElement(file);
 					list.revalidate();
 					list.repaint();
@@ -251,113 +289,53 @@ public class UploadTestCases extends JFrame {
 		btnDelete.setBounds(676, 446, 86, 23);
 		panel_2.add(btnDelete);
 		
-		JLabel lblUploadedInputs = new JLabel("UPLOADED INPUTS");
+		JLabel lblUploadedInputs = new JLabel(" OUTPUT FILES LIST");
 		lblUploadedInputs.setBounds(10, 279, 161, 14);
 		panel_2.add(lblUploadedInputs);
 		
-		JLabel lblFileName = new JLabel("File Name ");
-		lblFileName.setBounds(695, 143, 86, 14);
+		JLabel lblFileName = new JLabel("Output File Name ");
+		lblFileName.setBounds(676, 141, 86, 14);
 		panel_2.add(lblFileName);
 		
+		JLabel lblNewLabel = new JLabel("Input File Name");
+		lblNewLabel.setBounds(676, 71, 86, 14);
+		panel_2.add(lblNewLabel);
 		
-		
+		textField = new JTextField();
+		textField.setBounds(676, 96, 86, 20);
+		panel_2.add(textField);
+		textField.setColumns(10);
 		
 		this.addWindowListener(new WindowAdapter(){			
 			@Override
 			public void windowOpened(WindowEvent arg0) {
 				// TODO Auto-generated method stub
-					
-					String fileContent="";
-					System.out.println("window open "+path);
-					fileContent=UsingJsch.readingFile(path+"marks.txt");
-					UsingJsch.close();
-					System.out.println("window open "+fileContent);
-					marksContent=fileContent;	
-					
-
+				File dir = new File(currentDir);
+				  File[] directoryListing = dir.listFiles();
+				  if (directoryListing != null) {
+				    for (File child : directoryListing) {
+				    	if(child.getName().startsWith("input") || child.getName().startsWith("marks"))
+				    	{
+				    		System.out.println(child.getName());
+				    		System.out.println(child.toPath());
+				    		try {
+							    Files.delete(child.toPath());
+							} catch (NoSuchFileException x) {
+							    System.err.format("%s: no such" + " file or directory%n", currentDir+"\\"+child.getName());
+							} catch (DirectoryNotEmptyException x) {
+							    System.err.format("%s not empty%n", currentDir+"\\"+child.getName());
+							} catch (IOException x) {
+							    // File permission problems are caught here.
+							    System.err.println(x);
+							}
+				    	}	
+				    
+				    }
+				    }			
 			}
-        });	
+			});	
 }
 
-public static void getMarksContent()
-{
-	BufferedReader br = null;
-	FileReader fr = null;
-	String currentDir=System.getProperty("user.dir");;
-	try {
-
-		fr = new FileReader(currentDir+"\\marks.txt");
-		br = new BufferedReader(fr);
-		String sCurrentLine;
-		br = new BufferedReader(fr);
-
-		while ((sCurrentLine = br.readLine()) != null) {
-			marksContent=marksContent+sCurrentLine;
-		}
-
-	} catch (IOException e) {
-
-		e.printStackTrace();
-
-	} finally {
-
-		try {
-
-			if (br != null)
-				br.close();
-
-			if (fr != null)
-				fr.close();
-
-		} catch (IOException ex) {
-
-			ex.printStackTrace();
-
-		}
-
-	}
 }
 
-public static String getMarksFromName(String file)
-{
-	String marks="";
-	System.out.println(marksContent);
-	int index=marksContent.indexOf(file);
-	marks=marksContent.substring(index+file.length()+2);
-	marks=marks.substring(0, marks.indexOf("_"));
-	return marks;
-}
 
-private static void setMarksFromName(String file,String m)
-{
-	String marks="";
-	System.out.println(file+"aks");
-	int index=marksContent.indexOf(file);
-	if(index!=-1)
-	{	
-		marks=marksContent.substring(index+file.length()+2);
-		marks=marks.substring(marks.indexOf("_"));
-		System.out.println("aks "+marksContent.substring(0,index+file.length()+2)+" "+m+" "+marks);
-		marksContent=marksContent.substring(0,index+file.length()+2)+m+marks;
-	}
-	else
-	{
-		marksContent=marksContent+file+"=="+m+"_";
-	}	
-
-	System.out.println("After set Marks call\n"+marksContent);
-}
-
-private static void deleteMarksFromName(String file)
-{
-	String marks="";
-	int index=marksContent.indexOf(file);
-	if(index!=-1)
-	{	
-		marks=marksContent.substring(index);
-		marks=marks.substring(marks.indexOf("_")+1);
-		marksContent=marksContent.substring(0, index)+marks;
-	}
-	System.out.println("After Delete Marks call\n"+marksContent);
-}
-}
