@@ -3,6 +3,7 @@ package main.student.coursepanel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
@@ -99,25 +100,46 @@ public class CourseAssignmentUploadPanel extends JPanel {
 				assignField.setText("");
 				try {
 					String str[] = FileDetails.getFileList(path+"uploads");
-					for(int i=0;i<str.length;i++)
+					
+					JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+
+					 JDialog dialog = new JDialog();
+					dialog.setTitle("Message");
+					dialog.setModal(true);
+					dialog.setContentPane(optionPane);
+					dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+					dialog.pack();
+					//System.out.println("what about here:::::::");
+					dialog.setBounds(500, 300, 350, 150);;
+					
+					new Thread(){
+					public void run()
 					{
-						System.out.println(str[i]);
-						String str1[] = FileDetails.getFileList(path+"uploads/"+str[i]);			
-						for(int j=0;j<str1.length;j++){
-							System.out.println(str1[j]);
-							if(str1[j].contains(student.getRollno())){
-						UploadInfo temp = new UploadInfo();
-						temp.setName(str1[j]);
-						String s[]=FileDetails.getStats(path+"uploads/"+str[i]+"/", temp.getName());
-						temp.setLastModified(s[1]);
-						temp.setSize(s[0]);
-						uploadInfo.add(temp);
-						model = new CourseAssignmentUploadTableModel(uploadInfo);
-						table.setModel(model);
-		
+						try{
+						for(int i=0;i<str.length;i++)
+						{
+							System.out.println(str[i]);
+							String str1[] = FileDetails.getFileList(path+"uploads/"+str[i]);			
+							for(int j=0;j<str1.length;j++){
+								System.out.println(str1[j]);
+								if(str1[j].contains(student.getRollno())){
+							UploadInfo temp = new UploadInfo();
+							temp.setName(str1[j]);
+							String s[]=FileDetails.getStats(path+"uploads/"+str[i]+"/", temp.getName());
+							temp.setLastModified(s[1]);
+							temp.setSize(s[0]);
+							uploadInfo.add(temp);
+							model = new CourseAssignmentUploadTableModel(uploadInfo);
+							table.setModel(model);
+			
+						}
+	
+						}
+						}
+						dialog.dispose();}catch(Exception e){e.printStackTrace();}
 					}
-}
-}
+					}.start();
+					dialog.setVisible(true);
 } catch (Exception e2) {
 					e2.printStackTrace();
 				}
