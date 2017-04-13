@@ -49,6 +49,7 @@ public class AdminDAO {
 		String encryptedPassword=encryptor.encryptPassword(password);
 		return encryptedPassword;
 	}
+	
 	public void modifyAdmin(Admin admin){
 			PreparedStatement pstmt=null;
 			try{
@@ -59,10 +60,10 @@ public class AdminDAO {
 				pstmt.setString(4, ""+admin.getSex());
 				pstmt.setInt(5, admin.getAge());
 				pstmt.setString(6, admin.getEmail());
-			    pstmt.setString(8, EncryptPassword(admin.getPassword()));
-				pstmt.setString(9, admin.getSecurityques());
-				pstmt.setString(10, admin.getAnswer());
-				pstmt.setString(11, admin.getUsername());
+			    pstmt.setString(7, EncryptPassword(admin.getPassword()));
+				pstmt.setString(8, admin.getSecurityques());
+				pstmt.setString(9, admin.getAnswer());
+				pstmt.setString(10, admin.getUsername());
 				pstmt.executeUpdate();
 			}catch(Exception exc){
 				exc.printStackTrace();
@@ -70,13 +71,6 @@ public class AdminDAO {
 				if(pstmt!=null){
 					try{
 						pstmt.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
-				}
-				if(myCon!=null){
-					try{
-						myCon.close();
 					}catch(Exception exc){
 						exc.printStackTrace();
 					}
@@ -157,4 +151,23 @@ public class AdminDAO {
 		}
 		return admin;
 	}
+	
+	public void deleteAdmin(String username) {
+		PreparedStatement pstmt=null;
+		try {
+			pstmt=myCon.prepareStatement("delete from admin where username = ?");
+			pstmt.setString(1, username);
+			pstmt.executeUpdate();
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}
+		}
+		return;
+	}
+	
 }

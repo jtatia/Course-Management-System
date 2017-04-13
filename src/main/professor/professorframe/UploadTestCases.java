@@ -68,7 +68,9 @@ public class UploadTestCases extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+
 					UploadTestCases frame = new UploadTestCases("/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/");
+
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -81,6 +83,7 @@ public class UploadTestCases extends JFrame {
 	 * Create the frame.
 	 */
 	public UploadTestCases(String path) {
+
 		/*
 		 * dir stores the directory name 
 		 * For eg. if path=/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/
@@ -96,6 +99,7 @@ public class UploadTestCases extends JFrame {
 
 		setTitle("Upload Test Cases ");
 		setVisible(true);
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		String currentDir = System.getProperty("user.dir");
@@ -216,10 +220,10 @@ public class UploadTestCases extends JFrame {
 				String marks="";
 				System.out.println("File to be editted >>>>>>>>>>>>>> "+file);
 				textField.setText(getMarksFromName(file));					
-					
 				fileContent=UsingJsch.readingFile(path+"inputFiles/"+file);
 				marks=getMarksFromName(file);
-				
+				System.out.println(file);
+				textField.setText(getMarksFromName(file));
 				textField_1.setText(file);
 				textField.setText(marks);
 				textArea.setText(fileContent);
@@ -257,16 +261,6 @@ public class UploadTestCases extends JFrame {
 		
 		
 		
-		/*IMPORTANT NOTE FOR FUTURE : In this program the objective is to delete all the inputs files created on the local machine of 
-		 * the end user. This must be implemented at the time of the window closing. The problem i was facing in deleting the files at 
-		 * the time of window closing was an error message that the file is already being used by some process inspite of the fact that
-		 * all the reader and writers had been closed. Then I tried the same thing using the window closed method. Still the same 
-		 * problem. Finally resolved it using the window open event. This is because when the window is opened these files are not 
-		 * being used in any process. Thus we have an advantage as well -- the inputs uploaded will remain at the local machine until 
-		 * the window is opened again to upload new inputs. 
-		 * 
-		 * Below is the code which iterates through the files in the present working directory and deletes all the files which start 
-		 * with "input" e.g. input1.txt, input2.txt*/
 		
 		this.addWindowListener(new WindowAdapter(){			
 			@Override
@@ -280,11 +274,12 @@ public class UploadTestCases extends JFrame {
 					System.out.println("window open "+fileContent);
 					marksContent=fileContent;	
 					
+
 			}
         });	
 }
 
-private static void getMarksContent()
+public static void getMarksContent()
 {
 	BufferedReader br = null;
 	FileReader fr = null;
@@ -323,7 +318,7 @@ private static void getMarksContent()
 	}
 }
 
-private static String getMarksFromName(String file)
+public static String getMarksFromName(String file)
 {
 	String marks="";
 	System.out.println(marksContent);

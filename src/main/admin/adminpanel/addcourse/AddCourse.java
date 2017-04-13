@@ -12,6 +12,7 @@ import main.admin.adminpanel.AddStudentForm;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
+import main.professor.professorDAO.ProfessorDAO;
 import main.student.student.Student;
 
 import javax.swing.JLabel;
@@ -22,6 +23,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -44,6 +46,7 @@ public class AddCourse extends JFrame {
 	private JTextField courseText;
 	private CourseDAO dao = null;
 	private CourseMappingDAO cmdao=null;
+	private ProfessorDAO pfdao = null;
 	private JTextField profText;
 	private JList list;
 	private DefaultListModel<String> model;
@@ -70,6 +73,7 @@ public class AddCourse extends JFrame {
 		try {
 			dao=new CourseDAO();
 			cmdao=new CourseMappingDAO();
+			pfdao=new ProfessorDAO();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -201,13 +205,17 @@ public class AddCourse extends JFrame {
 		profText = new JTextField();
 		profText.setBounds(141, 133, 126, 20);
 		profText.setColumns(10);
-		
+
+		List<String> pr_user=pfdao.getAllUsernames();
+		JComboBox profCombo = new JComboBox(pr_user.toArray());
+		profCombo.setBounds(141, 133, 127, 20);
+		contentPane.add(profCombo);
 		JButton btnNewButton = new JButton("+");
 		btnNewButton.setBounds(278, 134, 52, 20);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				model.addElement(profText.getText());
-				profText.setText("");
+				model.addElement((String)profCombo.getSelectedItem());
+				profCombo.setSelectedItem(null);
 				list.revalidate();
 				list.repaint();
 			}

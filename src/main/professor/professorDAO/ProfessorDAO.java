@@ -1,3 +1,6 @@
+/*
+ * ADD PROFESSOR METHOD HAS NOT YET BEEN DEFINED. ASSIGNED PERSON PLEASE ADD.
+ */
 package main.professor.professorDAO;
 
 import java.io.FileInputStream;
@@ -142,6 +145,29 @@ public class ProfessorDAO {
 		return null;
 	}
 	
+	public List<String> getAllUsernames(){
+		PreparedStatement pstmt=null;
+		ArrayList<String> pr_list=new ArrayList<String>();
+		try{
+			pstmt=myCon.prepareStatement("select * from professor");
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				String pr_str=convertRowToProfessor(rs).getUsername();
+				pr_list.add(pr_str);
+			}
+			return pr_list;
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+		}
+		return null;
+	}
+	
 	private Professor convertRowToProfessor(ResultSet rs) throws Exception{
 		String courses=rs.getString("course_ids");
 		String course[]=courses.split("_");
@@ -228,7 +254,6 @@ public class ProfessorDAO {
 	public void deleteProf(String user) {
 		// TODO Auto-generated method stub
 		PreparedStatement pstmt=null;
-		 ResultSet rs=null;
 		 try{
 			 //System.out.println("Course"+id);
 			 pstmt=myCon.prepareStatement("delete from professor where user_name = ?");
@@ -240,11 +265,6 @@ public class ProfessorDAO {
 			 if(pstmt!=null){
 				 try{
 					 pstmt.close();
-				 }catch(Exception exc){}
-			 }
-			 if(rs!=null){
-				 try{
-					 rs.close();
 				 }catch(Exception exc){}
 			 }
 		 }

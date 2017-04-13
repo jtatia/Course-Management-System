@@ -4,7 +4,10 @@ import javax.swing.JPanel;
 import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
 import main.admin.adminpanel.admintablemodel.AdminTableModel;
+import main.admin.adminpanel.adminupdateform.AdminUpdateForm;
+import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.admin.adminpaneldao.AdminPanelDAO;
+import main.professor.professor.Professor;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -102,6 +105,18 @@ public class adminSearchPanel extends JPanel {
 			}
 		});
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int index=table.getSelectedRow();
+				Admin admod=(Admin)table.getValueAt(index, -1);
+				try{
+					AdminUpdateForm adform=new AdminUpdateForm(admod);
+					adform.setVisible(true);
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		});
 		JToggleButton tglbtnSelectMultiple = new JToggleButton("Select Multiple");
 		tglbtnSelectMultiple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,6 +140,20 @@ public class adminSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index[]=table.getSelectedRows();
+				for(int k=0;k<index.length;k++){
+					Admin selad=(Admin)table.getValueAt(index[k], -1);
+					adminPanelDAO.deleteAdmin(selad.getUsername());
+				}
+				try{
+					admin = adminPanelDAO.getAllAdmin();
+				}catch(Exception exc){}
+				adminTableModel = new AdminTableModel(admin);
+				table.setModel(adminTableModel);
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		

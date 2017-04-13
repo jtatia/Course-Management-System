@@ -25,6 +25,7 @@ public class Professor {
 	
 	public String courseids[];
 	
+	public String strcourse;
 	public Professor()
 	{
 		
@@ -204,20 +205,27 @@ public class Professor {
 	/**
 	 * @return the courseids[]
 	 */
-	public String[] getCourseids() {
+	public String[] getCourseids() 
+	{
 		return courseids;
 	}
 
 	/**
 	 * @param courseids the courseids[] to set
 	 */
-	public void setCourseids(String courseids[]) {
+	public void setCourseids(String courseids[]){
 		this.courseids = courseids;
 	}
 	
-	public String toString()
-	{
+	public String toString(){
 		return firstname+" "+middlename+" "+lastname;
-		
+	}
+	
+	public void setCourseString(String courseids){
+		this.strcourse=courseids;
+	}
+	
+	public String getCourseString(String courseids){
+		return strcourse;
 	}
 }

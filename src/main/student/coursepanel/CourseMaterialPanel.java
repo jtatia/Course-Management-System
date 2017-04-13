@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -84,18 +86,45 @@ public class CourseMaterialPanel extends JPanel {
 				try{
 				String str[] = FileDetails.getFileList(p);
 				list = new ArrayList<Assignment>();
-				for(int i=0;i<str.length;i++)
-				{
-					Assignment temp = new Assignment();
-					temp.setName("\""+str[i]+"\"");
-					temp.setPath(p);
-					String s[]=FileDetails.getStats(p,temp.getName() );
-					temp.setLastModified(s[1]);
-					temp.setSize(s[0]);
-					list.add(temp);
-					atm = new AssignmentTableModel(list);
-					table.setModel(atm);
-				}
+				
+				//added
+				 JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+
+				 JDialog dialog = new JDialog();
+				dialog.setTitle("Message");
+				dialog.setModal(true);
+				dialog.setContentPane(optionPane);
+				dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+				dialog.pack();
+				//System.out.println("what about here:::::::");
+				dialog.setBounds(500, 300, 350, 150);;
+				//added
+				new Thread(){
+					public void run()
+					{try{
+							for(int i=0;i<str.length;i++)
+							{
+								Assignment temp = new Assignment();
+								temp.setName("\""+str[i]+"\"");
+								temp.setPath(p);
+								String s[]=FileDetails.getStats(p,temp.getName() );
+								temp.setLastModified(s[1]);
+								temp.setSize(s[0]);
+								list.add(temp);
+								atm = new AssignmentTableModel(list);
+								table.setModel(atm);
+							}
+							//System.out.println("I am here::::::");
+							
+							dialog.dispose();
+					}catch(Exception e)
+					{
+						e.printStackTrace();
+					}
+					}
+				}.start();
+				dialog.setVisible(true);
+				//System.out.println("I am hereeeeee:::::");
 				
 				}catch(Exception ex){
 					ex.printStackTrace();
@@ -153,7 +182,7 @@ public class CourseMaterialPanel extends JPanel {
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
 		table.setRowHeight(30);
-
+		
 	}
 
 }
