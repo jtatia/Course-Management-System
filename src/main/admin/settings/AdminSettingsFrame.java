@@ -72,7 +72,7 @@ public class AdminSettingsFrame extends JFrame {
 		
 		AdminDAO adao=new AdminDAO(); 
 		Admin admin=adao.getAdminByUserName(username);
-		setTitle("Student Settings");
+		setTitle("Admin Settings Frame");
 		setVisible(true);
 		
 		// default close operation is dispose on close so that it gets back to the original window
@@ -188,6 +188,7 @@ public class AdminSettingsFrame extends JFrame {
 			modifiedAdmin.setEmail(textField_4.getText());
 			modifiedAdmin.setAge(Integer.parseInt(textField_3.getText()));
 			modifiedAdmin.setSex(sex);
+			modifiedAdmin.setSecurityques((String)comboBox.getSelectedItem());
 			modifiedAdmin.setAnswer(textField_5.getText());
 			modifiedAdmin.setPassword(passwordField.getText());
 			adao.modifyAdmin(modifiedAdmin);

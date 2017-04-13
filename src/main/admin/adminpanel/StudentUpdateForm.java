@@ -21,6 +21,7 @@ import main.student.studentdao.StudentDAO;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class StudentUpdateForm extends JDialog {
 
@@ -35,7 +36,7 @@ public class StudentUpdateForm extends JDialog {
 	private JTextField age_text;
 	private JTextField email_text;
 	private JTextField password_text;
-	private JTextField security_text;
+	private JComboBox comboBox;
 	private JTextField ans_text;
 	private JTextField s1_text;
 	private JTextField s2_text;
@@ -131,9 +132,6 @@ public class StudentUpdateForm extends JDialog {
 		
 		JLabel lblNewLabel_7 = new JLabel("Security Question :");
 		
-		security_text = new JTextField();
-		security_text.setColumns(30);
-		
 		JLabel lblAnswer = new JLabel("Answer:");
 		
 		ans_text = new JTextField();
@@ -188,6 +186,9 @@ public class StudentUpdateForm extends JDialog {
 		
 		s10_text = new JTextField();
 		s10_text.setColumns(10);
+		
+		String ques[]={"Where do you live?","Which is your favourite book?","Which is your favourite movie?","Who is your role model?","What time of the day were you born?"};
+		comboBox = new JComboBox(ques);
 		GroupLayout gl_form_panel = new GroupLayout(form_panel);
 		gl_form_panel.setHorizontalGroup(
 			gl_form_panel.createParallelGroup(Alignment.LEADING)
@@ -222,8 +223,6 @@ public class StudentUpdateForm extends JDialog {
 						.addComponent(sex_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(age_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(email_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(password_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(security_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(ans_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_form_panel.createSequentialGroup()
 							.addComponent(s5_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -256,8 +255,11 @@ public class StudentUpdateForm extends JDialog {
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 								.addComponent(s2_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-								.addComponent(s4_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-					.addContainerGap(197, Short.MAX_VALUE))
+								.addComponent(s4_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+						.addGroup(gl_form_panel.createParallelGroup(Alignment.TRAILING, false)
+							.addComponent(comboBox, Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(password_text, Alignment.LEADING)))
+					.addContainerGap(205, Short.MAX_VALUE))
 		);
 		gl_form_panel.setVerticalGroup(
 			gl_form_panel.createParallelGroup(Alignment.LEADING)
@@ -304,10 +306,10 @@ public class StudentUpdateForm extends JDialog {
 						.addComponent(lblPassword)
 						.addComponent(password_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_form_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_7)
-						.addComponent(security_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(17)
 					.addGroup(gl_form_panel.createParallelGroup(Alignment.LEADING)
 						.addComponent(lblAnswer)
 						.addComponent(ans_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -342,7 +344,7 @@ public class StudentUpdateForm extends JDialog {
 							.addComponent(s9_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addComponent(s10_text, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 							.addComponent(lblSubject_8)))
-					.addContainerGap(131, Short.MAX_VALUE))
+					.addContainerGap(47, Short.MAX_VALUE))
 		);
 		form_panel.setLayout(gl_form_panel);
 		{
@@ -366,7 +368,7 @@ public class StudentUpdateForm extends JDialog {
 							StudentDbHandler stdb=new StudentDbHandler();
 							stdb.modifyStudent(roll_text.getText(),first_text.getText(),
 									middle_text.getText(),last_text.getText(),sex_text.getText(),new Integer(age_text.getText()),
-									email_text.getText(),batch_text.getText(),password_text.getText(),security_text.getText(),ans_text.getText(),
+									email_text.getText(),batch_text.getText(),password_text.getText(),(String)comboBox.getSelectedItem(),ans_text.getText(),
 									s1_text.getText(),s2_text.getText(),s3_text.getText(),s4_text.getText(),s5_text.getText(),s6_text.getText(),
 									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText());
 							dispose();
@@ -401,7 +403,8 @@ public class StudentUpdateForm extends JDialog {
 		age_text.setText(new Integer(tempStu.getAge()).toString());;
 		email_text.setText(tempStu.getEmail());;
 		password_text.setText(tempStu.getPassword());;
-		security_text.setText(tempStu.getSecurityques());;
+		//security_text.setText(tempStu.getSecurityques());;
+		comboBox.setSelectedItem(tempStu.getSecurityques());
 		ans_text.setText(tempStu.getAnswer());
 		batch_text.setText(tempStu.getBatch());
 		s1_text.setText(tempStu.getSubject1());

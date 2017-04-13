@@ -2,7 +2,9 @@ package main.admin.adminpanel;
 
 import javax.swing.JPanel;
 
+import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
+import main.admin.adminpanel.facultyupdateform.FacultyUpdateForm;
 import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.professor.professor.Professor;
 import main.professor.professorDAO.ProfessorDAO;
@@ -102,6 +104,18 @@ public class ProfessorSearchPanel extends JPanel {
 			}
 		});
 		JButton btnUpdate = new JButton("Update");
+		btnUpdate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index=table.getSelectedRow();
+				Professor prf=(Professor)table.getValueAt(index, -1);
+				try{
+					FacultyUpdateForm fuf=new FacultyUpdateForm(prf);
+					fuf.setVisible(true);
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		});
 		JToggleButton tglbtnSelectMultiple = new JToggleButton("Select Multiple");
 		tglbtnSelectMultiple.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,6 +139,18 @@ public class ProfessorSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index[]=table.getSelectedRows();
+				for(int k=0;k<index.length;k++){
+					Professor selpr=(Professor)table.getValueAt(index[k], -1);
+					profPanelDAO.deleteProf(selpr.getUsername());
+				}
+				prof = profPanelDAO.getAllProfessor();
+				profTableModel = new ProfTableModel(prof);
+				table.setModel(profTableModel);
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		

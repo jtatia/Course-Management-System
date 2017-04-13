@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -37,7 +38,7 @@ public class AddStudentForm extends JFrame {
 	private JTextField emailTextField;
 	private JTextField batchTextField;
 	private JTextField passwordTextField;
-	private JTextField securityQuestionTextField;
+	private JComboBox securityComboBox;
 	private JTextField securityAnswerTextField;
 	private JTextField sub1TextField;
 	private JTextField sub2TextField;
@@ -149,7 +150,7 @@ public class AddStudentForm extends JFrame {
 					}
 					
 					// security ques and ans are required fields
-					String securityQuestion=securityQuestionTextField.getText();
+					String securityQuestion=(String)securityComboBox.getSelectedItem();
 					if(securityQuestion.equals(""))
 					{
 						f=1;
@@ -285,9 +286,12 @@ public class AddStudentForm extends JFrame {
 		JLabel lblSecurityQuestion = new JLabel("Security Question :");
 		panel.add(lblSecurityQuestion, "cell 0 18,alignx trailing");
 		
-		securityQuestionTextField = new JTextField();
-		panel.add(securityQuestionTextField, "cell 1 18,growx");
-		securityQuestionTextField.setColumns(10);
+		/*securityQuestionTextField = new JTextField();*/
+		String ques[]={"Where do you live?","Which is your favourite book?","Which is your favourite movie?","Who is your role model?","What time of the day were you born?"};
+		securityComboBox=new JComboBox(ques);
+		securityComboBox.setSelectedItem(null);
+		panel.add(securityComboBox, "cell 1 18,growx");
+		/*securityQuestionTextField.setColumns(10);*/
 		
 		JLabel lblSecurityAnswer = new JLabel("Security Answer :");
 		panel.add(lblSecurityAnswer, "cell 0 20,alignx trailing");

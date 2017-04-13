@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -38,7 +39,7 @@ public class addAdmin extends JDialog {
 	private JTextField ageTextField;
 	private JPasswordField passwordField;
 	private JTextField emailTextField;
-	private JTextField seqTextField;
+	private JComboBox securityComboBox;
 	private JPasswordField answerTextField;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 
@@ -198,9 +199,10 @@ public class addAdmin extends JDialog {
 			contentPanel.add(lblSecurityQuestion, "6, 18, right, default");
 		}
 		{
-			seqTextField = new JTextField();
-			contentPanel.add(seqTextField, "8, 18, fill, default");
-			seqTextField.setColumns(10);
+			String ques[]={"Where do you live?","Which is your favourite book?","Which is your favourite movie?","Who is your role model?","What time of the day were you born?"};
+			securityComboBox=new JComboBox(ques);
+			securityComboBox.setSelectedItem(null);
+			contentPanel.add(securityComboBox, "8, 18, fill, default");
 		}
 		{
 			JLabel lblAnswer = new JLabel("Answer");
@@ -232,7 +234,7 @@ public class addAdmin extends JDialog {
 						String sex = buttonGroup.getSelection().getActionCommand();
 						admin.setSex(sex.charAt(0));
 						admin.setEmail(emailTextField.getText());
-						admin.setSecurityques(seqTextField.getText());
+						admin.setSecurityques((String)securityComboBox.getSelectedItem());
 						char[] ans = answerTextField.getPassword();
 						String answer = new String(ans);
 						admin.setPassword(password);
