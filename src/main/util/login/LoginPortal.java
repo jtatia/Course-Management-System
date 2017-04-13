@@ -106,6 +106,8 @@ public class LoginPortal extends JFrame {
 								studentCourseOutline.setVisible(true);*/
 								System.out.println(professor.getUsername());
 								ProfessorFrame profframe=new ProfessorFrame(professor);
+								profframe.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+								profframe.setUndecorated(true);
 								profframe.setVisible(true);
 								// Student GUI to be added here 
 						}	
@@ -155,6 +157,8 @@ public class LoginPortal extends JFrame {
 								/*StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
 								studentCourseOutline.setVisible(true);*/
 								CourseOutline studentCourseOutline=new CourseOutline(stud);
+								studentCourseOutline.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+								studentCourseOutline.setUndecorated(true);
 								studentCourseOutline.setVisible(true);
 								// Student GUI to be added here 
 						}	
@@ -206,6 +210,8 @@ public class LoginPortal extends JFrame {
 								// obtaining student by roll no
 								Admin ad=dao.getAdminByUserName(username);
 								MainAdminPanel adminpanel=new MainAdminPanel(ad);
+								adminpanel.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+								adminpanel.setUndecorated(true);
 								adminpanel.setVisible(true);
 								// Student GUI to be added here
 								   
