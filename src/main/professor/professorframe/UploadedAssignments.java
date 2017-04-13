@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
+import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
@@ -38,8 +39,10 @@ public class UploadedAssignments extends JFrame {
 	private JTable table;
 	private List<Assignment> list;
 	private AssignmentTableModel atm;
+	private AssignmentTableModelC atmc;
 	private String path="";
 	private JavaCompiler jc = new JavaCompiler();
+	private int model_mode = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -160,8 +163,8 @@ public class UploadedAssignments extends JFrame {
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
-								atm = new AssignmentTableModel(list);
-								table.setModel(atm);
+								atmc = new AssignmentTableModelC(list);
+								table.setModel(atmc);
 							}
 						}
 					}.start();
@@ -185,6 +188,12 @@ public class UploadedAssignments extends JFrame {
 		JButton btnUploadOutputFile = new JButton("Upload Output File");
 		JButton btnUploadOutputProgram = new JButton("Upload Output Program");
 		JButton btnUploadTestCases = new JButton("Upload Test Cases");
+		btnUploadTestCases.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				UploadTestCases utc = new UploadTestCases(path);
+				utc.setVisible(true);
+			}
+		});
 		JCheckBox chckbxEnableCompiler = new JCheckBox("Enable Compiler");
 		topPanel.add(chckbxEnableCompiler);
 		chckbxEnableCompiler.addActionListener(new ActionListener(){
@@ -192,6 +201,7 @@ public class UploadedAssignments extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
+				System.out.println("!!!!!!!!!!!!!!!!!!"+path);
 				if(chckbxEnableCompiler.isSelected())
 				{
 					btnLogFiles.setEnabled(true);
@@ -253,20 +263,31 @@ public class UploadedAssignments extends JFrame {
 	}
 	
 	private Assignment test(String path, String name) throws Exception {
+		//name = name.replace('"', '\u0000');
+		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
         if(length ==0){
         	//error log
         	System.out.println("ERRRORR");
         }
+        UploadTestCases utc = new UploadTestCases(path);
+        utc.getMarksContent();
+        //String content = utc.marksContent;
         ArrayList<Integer> marks = new ArrayList<Integer>();
-		Assignment assign = new Assignment();
+		for(int i=0;i<length;i++){
+			String contain = utc.getMarksFromName(inp[i]);
+			marks.add(Integer.parseInt(contain));
+			System.out.println("MMMMMMAAAAAAAAAARRRRRRRRRRRRRRRKKKKKKKKKSSSSSSSS="+marks);
+		}
+		
+        Assignment assign = new Assignment();
 		assign.setName(name);
 		assign.setPath(path);
 		String s[]=FileDetails.getStats(path,name);
 		assign.setLastModified(s[1]);
 		assign.setSize(s[0]);
-		String marks_file = path + "marks.txt";  //all marks per question stored in a txt file in same directory
+		/*String marks_file = path + "marks.txt";  //all marks per question stored in a txt file in same directory
 		System.out.println("INSIDE          TEST               METHOD");
 		System.out.println("Marks path="+marks_file);
 		BufferedReader br = new BufferedReader(new FileReader(marks_file));
@@ -279,22 +300,26 @@ public class UploadedAssignments extends JFrame {
 			mark=br.readLine();
 		}
 		br.close();
-		int marksOfOutput = 0;
+		*/
+        int marksOfOutput = 0;
 		String error = "Successful";
-		for(int i =0; i<length; i++){
-			System.out.println("Compiling\n"+path+"===="+name);
+		for(int i =0; i<length; i++)
+			{
+			System.out.println("@@@@@@@@@@@!!!!!!!!!!!Compiling\n"+path+"===="+name);
 			int status = jc.compile(path,name);            //compiling
 			  if(status == 0){                        //-->if compiles
-			  int x = jc.execute(path,name,inp[length]);                             //  -->execute
-			  System.out.println("EXecute"+inp[length]);
+			  
+				  System.out.println("THS IS THE PROBLEM\npath = "+path+"\nname ="+name+"\ninputfilename"+inp[i]);
+				 int x = jc.execute(path,name,inp[i]);                             //  -->execute
+			  System.out.println("%%%%%%%%%%%%%%%%EXecute"+inp[i]);
 			  if(x == 0){
-			  String outputFile = path +"output.txt";
-			  System.out.println("outputPAth=="+outputFile);
-			  String output = path + "outputFiles/out_"+(length+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
-			  System.out.println("output"+output);
-			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(length));
+			  String outputFile = path +"out.txt";
+			  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
+			  String output = path + "outputFiles/out_"+(i+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  System.out.println("OUTPUT!@!@@##$$:: "+output);
+			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
 			  marksOfOutput  += fom.CheckOutputs();
-			  System.out.println("current stud marks"+marksOfOutput);
+			  System.out.println("current stud marks="+marksOfOutput);
 			  }
 			  else
 				  error = jc.getErrormessage();

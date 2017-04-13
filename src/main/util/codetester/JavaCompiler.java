@@ -37,8 +37,10 @@ public class JavaCompiler extends Languages{
 		filename.trim();
 		inputfile.trim();
 		String command1 = "cd "+path;
-		String fn = filename.substring(0, filename.length()-5);
-		String command2 = "java "+fn+" < "+inputfile+" > "+"out.txt";
+		String fn = filename.substring(0, filename.length()-6)+"\"";
+		System.out.println("FILE"+fn);
+		String command2 = "java "+fn+" < inputFiles/"+inputfile+" > "+"out.txt";
+		System.out.println("COOOOOOOOOOOMMMMMMMMMAAAAAAAANNNNNNNNNDDDDDDDDDDD"+command2);
 		String com[]={command1,command2};
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
 		Thread.sleep(4000);
