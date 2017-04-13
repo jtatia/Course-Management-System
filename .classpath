@@ -15,5 +15,11 @@
 	<classpathentry kind="lib" path="lib/jsch-0.1.54.jar"/>
 	<classpathentry kind="lib" path="lib/ganymed-ssh2-build210.jar"/>
 	<classpathentry kind="lib" path="lib/seaglasslookandfeel-0.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/liquidlnf.jar"/>
+	<classpathentry kind="lib" path="lib/synthetica.jar"/>
+	<classpathentry kind="lib" path="lib/syntheticaBlackEye.jar"/>
+	<classpathentry kind="lib" path="lib/syntheticaBlackMoon.jar"/>
+	<classpathentry kind="lib" path="lib/syntheticaBlueLight.jar"/>
+	<classpathentry kind="lib" path="lib/syntheticaBlackStar.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -47,6 +47,7 @@ public class CourseMappingDAO {
 		String prof="";
 		for(int i=0;i<professors.length-1;i++)
 		{
+			System.out.println("pr="+professors[i]);
 			prof=prof+professors[i]+"_";
 		}
 		prof=prof+professors[professors.length-1];
@@ -185,5 +186,24 @@ public class CourseMappingDAO {
 			}
 		}
 		return path;
+	}
+
+	public void deleteEntry(String courseId) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt=null;
+		try{
+			 //System.out.println("Course"+id);
+			 pstmt=myCon.prepareStatement("delete from course_mapping where course_id = ?");
+			 pstmt.setString(1, courseId);
+			 pstmt.executeUpdate();
+		 }catch(Exception exc){
+			 exc.printStackTrace();
+		 }finally{
+			 if(pstmt!=null){
+				 try{
+					 pstmt.close();
+				 }catch(Exception exc){}
+			 }
+		 }
 	}
 }
