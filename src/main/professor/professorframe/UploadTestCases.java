@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.SftpException;
 
 import main.util.login.LoginPortal;
@@ -47,10 +48,12 @@ import java.io.FileReader;
 
 public class UploadTestCases extends JFrame {
 
+	private String assignmentFolder;
+	private String dir;
 	private JPanel contentPane;
 	private JTextField textField;
 	private SSHCommands sshc;
-	private UsingJsch usingJsch=null;
+	
 	private boolean flag=true;
 	private JList list;
 	private DefaultListModel<String> model;
@@ -78,14 +81,21 @@ public class UploadTestCases extends JFrame {
 	 * Create the frame.
 	 */
 	public UploadTestCases(String path) {
+		/*
+		 * dir stores the directory name 
+		 * For eg. if path=/home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/
+		 * 		   then dir=cms/CS225_jimson/uploads/HW1/
+		 * 			and assignmentFolder=HW1
+		 * */
+		assignmentFolder=path.substring(0,path.length()-1);
+		assignmentFolder=assignmentFolder.substring(assignmentFolder.lastIndexOf("/")+1);
+		dir=path.substring(path.indexOf("cms"));
+		dir=dir.substring(0,dir.lastIndexOf("/"))+"/";
+		System.out.println("#########"+dir);
+		System.out.println("#########"+assignmentFolder);
+
 		setTitle("Upload Test Cases ");
 		setVisible(true);
-		@SuppressWarnings("deprecation")
-		ArrayList<String> []ar=(ArrayList<String>[])new ArrayList<?>[3];
-		for(int i=0;i<3;i++)
-		{
-			ar[i]=new ArrayList<String>();
-		}
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		String currentDir = System.getProperty("user.dir");
@@ -102,53 +112,6 @@ public class UploadTestCases extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.SOUTH);
-		
-		JButton btnSubmitTestCases = new JButton("SUBMIT TEST CASES");
-		btnSubmitTestCases.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				File f=new File("marks.txt");
-				FileWriter fw=null;
-				BufferedWriter bw=null;
-				try  {
-					fw=new FileWriter(f);
-					bw= new BufferedWriter(fw);
-					bw.write(marksContent);
-					System.out.println("Done");
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-				finally
-				{
-					try {
-						if (bw != null)
-							bw.close();
-						if (fw != null)
-							fw.close();
-					} catch (IOException ex) {
-						ex.printStackTrace();
-					}
-				}
-				File dir = new File(currentDir);
-				  File[] directoryListing = dir.listFiles();
-				  if (directoryListing != null) {
-				    for (File child : directoryListing) {
-				    	if(child.getName().startsWith("input")||child.getName().startsWith("marks"))
-				    	{
-				    		System.out.println(child.getName());
-				    		System.out.println(child.toPath());
-				    		Upload up=new Upload();
-					        up.uploadFile(currentDir+"/"+child.getName(),path+"inputFiles/"+child.getName(),child.getName());
-				    	}	
-				    } 
-				  } else {
-				    // Handle the case where dir is not really a directory.
-				    // Checking dir.isDirectory() above would not be sufficient
-				    // to avoid race conditions with another process that deletes
-				    // directories.
-				  }
-			}
-		});
-		panel_1.add(btnSubmitTestCases);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
@@ -204,61 +167,35 @@ public class UploadTestCases extends JFrame {
 		panel_2.add(listScroll);
 		listScroll.setBounds(10, 314, 647, 155);
 		
-		JButton button = new JButton("+");
-		button.addActionListener(new ActionListener() {
+		JButton btnSubmit = new JButton("SUBMIT");
+		btnSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			String text=textArea.getText();
 			
 			if(text!=null && !text.trim().equals(""))
 			{
-				FileWriter fw=null;
-				BufferedWriter bw=null;
-				currentFile=(textField_1.getText()).trim();
-				if(!currentFile.equals(""))
+				String file=(textField_1.getText()).trim();
+				if(!file.equals(""))
 				{
-					if(!currentFile.endsWith(".txt"))
-						currentFile=currentFile+".txt";
-					File f=new File(currentFile);
-					
-					try  {
-						fw=new FileWriter(f);
-						bw= new BufferedWriter(fw);
-						bw.write(text);
-						System.out.println("Done");
-					} catch (IOException e) {
+					if(!file.endsWith(".txt"))
+						file=file+".txt";
+					try {
+						UsingJsch.writingFile(dir+"inputFiles/", textArea.getText(), file);
+						setMarksFromName(file,textField.getText());
+						UsingJsch.writingFile(dir, marksContent, "marks.txt");
+					} catch (SftpException | IOException e) {
+						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					finally
-					{
-						try {
-							if (bw != null)
-								bw.close();
-							if (fw != null)
-								fw.close();
-						} catch (IOException ex) {
-							ex.printStackTrace();
-						}
-					}
 					textArea.setText("");
-					setMarksFromName(currentFile,textField.getText());
 					
 					textField.setText("");
 					textField_1.setText("");
-					if(!model.contains(currentFile))
+					if(!model.contains(file))
 					{	
-						ar[0].add(text);
-						ar[1].add(currentFile);
-						ar[2].add(getMarksFromName(currentFile));
-						model.addElement(currentFile);
+						model.addElement(file);
 						list.revalidate();
 						list.repaint();
-					}
-					else
-					{
-						int index=ar[1].indexOf(currentFile);
-						ar[0].add(index, text);
-						ar[1].add(index,currentFile);
-						ar[2].add(index,getMarksFromName(currentFile));
 					}	
 				}
 				else
@@ -268,8 +205,8 @@ public class UploadTestCases extends JFrame {
 			}
 			}
 		});
-		button.setBounds(676, 378, 86, 23);
-		panel_2.add(button);
+		btnSubmit.setBounds(676, 378, 86, 23);
+		panel_2.add(btnSubmit);
 		
 		JButton btnEdit = new JButton("Edit");
 		btnEdit.addActionListener(new ActionListener() {
@@ -277,23 +214,12 @@ public class UploadTestCases extends JFrame {
 				String file=(String) list.getSelectedValue();
 				String fileContent="";
 				String marks="";
-				System.out.println(file);
-				textField.setText(getMarksFromName(file));
-				if(ar[1].contains(file))
-				{
-					int index=ar[1].indexOf(file);
-					fileContent=ar[0].get(index);
-					marks=ar[2].get(index);
-				}	
-				else
-				{	
-				usingJsch=new UsingJsch();		
-				fileContent=usingJsch.readingFile(path+"inputFiles/"+file);
-				marksContent=usingJsch.readingFile(path+"inputFiles/marks.txt");
-				marks=getMarksFromName(marksContent);
-				usingJsch.close();
-				}
-				System.out.println(fileContent);	
+				System.out.println("File to be editted >>>>>>>>>>>>>> "+file);
+				textField.setText(getMarksFromName(file));					
+					
+				fileContent=UsingJsch.readingFile(path+"inputFiles/"+file);
+				marks=getMarksFromName(file);
+				
 				textField_1.setText(file);
 				textField.setText(marks);
 				textArea.setText(fileContent);
@@ -346,67 +272,14 @@ public class UploadTestCases extends JFrame {
 			@Override
 			public void windowOpened(WindowEvent arg0) {
 				// TODO Auto-generated method stub
-				File dir = new File(currentDir);
-				  File[] directoryListing = dir.listFiles();
-				  if (directoryListing != null) {
-				    for (File child : directoryListing) {
-				    	if(child.getName().startsWith("input") || child.getName().startsWith("marks"))
-				    	{
-				    		System.out.println(child.getName());
-				    		System.out.println(child.toPath());
-				    		try {
-							    Files.delete(child.toPath());
-							} catch (NoSuchFileException x) {
-							    System.err.format("%s: no such" + " file or directory%n", currentDir+"\\"+child.getName());
-							} catch (DirectoryNotEmptyException x) {
-							    System.err.format("%s not empty%n", currentDir+"\\"+child.getName());
-							} catch (IOException x) {
-							    // File permission problems are caught here.
-							    System.err.println(x);
-							}
-				    	}	
-				    }
-				    
-				    File marksLocal=new File("marks.txt");
-				    usingJsch=new UsingJsch();
+					
 					String fileContent="";
-					fileContent=usingJsch.readingFile(path+"inputFiles/marks.txt");
-					usingJsch.close();
-					System.out.println(fileContent);
-					if(!fileContent.equals(""))
-						marksContent=fileContent;
-					else
-					{
-						marksContent="";
-					}
-				    FileWriter fw=null;
-				    BufferedWriter bw=null;
-				    try  {
-						fw=new FileWriter(marksLocal);
-						bw= new BufferedWriter(fw);
-						bw.write(marksContent);
-						System.out.println("Done");
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					finally
-					{
-						try {
-							if (bw != null)
-								bw.close();
-							if (fw != null)
-								fw.close();
-						} catch (IOException ex) {
-							ex.printStackTrace();
-						}
-					}
-					}
-				   else {
-				    // Handle the case where dir is not really a directory.
-				    // Checking dir.isDirectory() above would not be sufficient
-				    // to avoid race conditions with another process that deletes
-				    // directories.
-				  }
+					System.out.println("window open "+path);
+					fileContent=UsingJsch.readingFile(path+"marks.txt");
+					UsingJsch.close();
+					System.out.println("window open "+fileContent);
+					marksContent=fileContent;	
+					
 			}
         });	
 }

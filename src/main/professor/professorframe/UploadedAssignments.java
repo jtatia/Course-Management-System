@@ -2,6 +2,7 @@ package main.professor.professorframe;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FileDialog;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +13,7 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.upload.Upload;
 import main.util.codetester.*;
 
 import javax.swing.JScrollPane;
@@ -34,6 +36,7 @@ import javax.swing.JCheckBox;
 
 public class UploadedAssignments extends JFrame {
 
+	private Upload upload=null;
 	private JPanel contentPane;
 	private JTable table;
 	private List<Assignment> list;
@@ -182,9 +185,32 @@ public class UploadedAssignments extends JFrame {
 		JLabel lblNewLabel = new JLabel(" ASSIGNMENT NAME : "+assignmentFolderName);
 		topPanel.add(lblNewLabel);
 		
-		JButton btnUploadOutputFile = new JButton("Upload Output File");
+		JButton btnUploadOutputFile = new JButton("Upload Output Files");
+		btnUploadOutputFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			new UploadOutputFiles(path);
+			}
+		});
 		JButton btnUploadOutputProgram = new JButton("Upload Output Program");
+		btnUploadOutputProgram.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				upload=new Upload();
+				FileDialog fd=new FileDialog(UploadedAssignments.this,"Upload Output File",FileDialog.LOAD);
+				fd.setVisible(true);
+				String filename=fd.getFile();
+				String directory=fd.getDirectory();
+				if(filename!=null && directory!=null)
+				{
+					upload.uploadFile(directory+filename, path+"outputFiles/"+filename, filename);
+				}	
+			}
+		});
 		JButton btnUploadTestCases = new JButton("Upload Test Cases");
+		btnUploadTestCases.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			new UploadTestCases(path);
+			}
+		});
 		JCheckBox chckbxEnableCompiler = new JCheckBox("Enable Compiler");
 		topPanel.add(chckbxEnableCompiler);
 		chckbxEnableCompiler.addActionListener(new ActionListener(){
