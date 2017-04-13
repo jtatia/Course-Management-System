@@ -153,7 +153,7 @@ public class CourseMaterialPanel extends JPanel {
 		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane.setViewportView(table);
 		table.setRowHeight(30);
-
+		
 	}
 
 }
