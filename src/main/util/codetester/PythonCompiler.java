@@ -16,7 +16,7 @@ public class PythonCompiler extends Languages {
 		filename.trim();
 		inputFile.trim();
 		String command1="cd "+path;
-		String command2="python "+filename+" <"+inputFile+">"+" out.txt";//If you need to change name of output file please change from here
+		String command2="python "+filename+" <inputFiles/"+inputFile+">"+" out.txt";//If you need to change name of output file please change from here
 		String cmd[]={command1,command2};
 		ExecuteProgram ep=new ExecuteProgram(sh,cmd,this);
 		Thread.sleep(10000);
@@ -36,7 +36,7 @@ public class PythonCompiler extends Languages {
 		// TODO Auto-generated method stub
 		PythonCompiler obj = new PythonCompiler();
 		
-		String path = "/home/stud/btech/cse/2015/kshitij.cs15/test/";
+		String path = "/home/Btech15/kshitij.cs15/test/";
 		String filename = "testing.py";
 		String inputfile = "input2.txt";
 		int res = obj.execute(path,filename,inputfile);

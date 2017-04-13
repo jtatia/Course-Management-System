@@ -36,7 +36,7 @@ public class CppCompiler extends Languages{
 			filename.trim();
 			inputfile.trim();
 			String command1 = "cd "+path;
-			String command2 = "./a.out <"+inputfile+">"+"out.txt";
+			String command2 = "./a.out <inputFiles/"+inputfile+">"+"out.txt";
 			String com[]={command1,command2};
 			ExecuteProgram ep = new ExecuteProgram(sh,com,this);
 			Thread.sleep(2000);
