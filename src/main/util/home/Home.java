@@ -44,7 +44,7 @@ public class Home extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Home frame = new Home();
+					
 					try { 
 						//UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
 						UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel()); 
@@ -54,6 +54,7 @@ public class Home extends JFrame {
 					} catch (Exception e) {
 					    e.printStackTrace();
 					}
+					Home frame = new Home();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
