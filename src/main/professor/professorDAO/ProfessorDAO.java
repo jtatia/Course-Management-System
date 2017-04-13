@@ -1,3 +1,6 @@
+/*
+ * ADD PROFESSOR METHOD HAS NOT YET BEEN DEFINED. ASSIGNED PERSON PLEASE ADD.
+ */
 package main.professor.professorDAO;
 
 import java.io.FileInputStream;
@@ -251,7 +254,6 @@ public class ProfessorDAO {
 	public void deleteProf(String user) {
 		// TODO Auto-generated method stub
 		PreparedStatement pstmt=null;
-		 ResultSet rs=null;
 		 try{
 			 //System.out.println("Course"+id);
 			 pstmt=myCon.prepareStatement("delete from professor where user_name = ?");
@@ -263,11 +265,6 @@ public class ProfessorDAO {
 			 if(pstmt!=null){
 				 try{
 					 pstmt.close();
-				 }catch(Exception exc){}
-			 }
-			 if(rs!=null){
-				 try{
-					 rs.close();
 				 }catch(Exception exc){}
 			 }
 		 }

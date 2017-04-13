@@ -75,13 +75,6 @@ public class AdminDAO {
 						exc.printStackTrace();
 					}
 				}
-				if(myCon!=null){
-					try{
-						myCon.close();
-					}catch(Exception exc){
-						exc.printStackTrace();
-					}
-				}
 			}
 	}
 	
@@ -158,4 +151,23 @@ public class AdminDAO {
 		}
 		return admin;
 	}
+	
+	public void deleteAdmin(String username) {
+		PreparedStatement pstmt=null;
+		try {
+			pstmt=myCon.prepareStatement("delete from admin where username = ?");
+			pstmt.setString(1, username);
+			pstmt.executeUpdate();
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			try{
+				pstmt.close();
+			}catch(Exception exc){
+				exc.printStackTrace();
+			}
+		}
+		return;
+	}
+	
 }
