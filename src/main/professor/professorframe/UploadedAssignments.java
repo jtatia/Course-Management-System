@@ -7,6 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.Session;
+
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
@@ -22,6 +27,7 @@ import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -30,6 +36,10 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
@@ -347,12 +357,40 @@ public class UploadedAssignments extends JFrame {
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
 		//writing marks and status to new file
-		writeMarksAnderror(name,marksOfOutput,error);
+		writeMarksAnderror(path,name,marksOfOutput,error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		return assign;
 	}
 
-	private void writeMarksAnderror(String name, int marksOfOutput, String error) {
+	private void writeMarksAnderror(String path,String name, int marksOfOutput, String error) {
+		Properties prop=new Properties();
+		try {
+			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-	}
+        String ip=prop.getProperty("ip");
+ 		String username=prop.getProperty("username"); 
+        String password=prop.getProperty("password");
+        int port =22;
+		Session session = null;
+        Channel channel = null;
+        ChannelSftp channelSftp = null;
+        PrintWriter pw=new PrintWriter(System.out);
+        try{
+        	JSch jsch = new JSch();
+            session = jsch.getSession(username, ip, port);
+            session.setPassword(password);
+            java.util.Properties config = new java.util.Properties();
+            config.put("StrictHostKeyChecking", "no");
+            session.setConfig(config);
+            session.connect();
+            channel = session.openChannel("sftp");
+            channel.connect();
+            channelSftp = (ChannelSftp) channel;
+            channelSftp.cd(path);
+	}catch(Exception e){}
+}
 }
