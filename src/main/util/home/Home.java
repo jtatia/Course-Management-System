@@ -6,9 +6,27 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 
-import main.util.lookandfeel.*;
+import com.alee.laf.WebLookAndFeel;
+import com.birosoft.liquid.*;
+import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
+import com.jtattoo.plaf.bernstein.BernsteinLookAndFeel;
+import com.jtattoo.plaf.hifi.HiFiLookAndFeel;
+import com.jtattoo.plaf.mint.MintLookAndFeel;
+import com.jtattoo.plaf.noire.NoireLookAndFeel;
+import com.jtattoo.plaf.texture.TextureLookAndFeel;
+import com.seaglasslookandfeel.*;
+
+
+import de.javasoft.plaf.synthetica.SyntheticaBlackEyeLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlackMoonLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
+import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -19,6 +37,8 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import main.util.login.*;
+
+
 public class Home extends JFrame {
 
 	/**
@@ -34,6 +54,21 @@ public class Home extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
+					try { 
+						
+						//UIManager.setLookAndFeel(new BernsteinLookAndFeel ());
+						//UIManager.setLookAndFeel(new AluminiumLookAndFeel ());
+						//UIManager.setLookAndFeel(new TextureLookAndFeel ());
+						//UIManager.setLookAndFeel(new NoireLookAndFeel ());
+						//UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
+						UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel()); 
+						//UIManager.setLookAndFeel(new SyntheticaBlackEyeLookAndFeel());
+						//UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+						//UIManager.setLookAndFeel(new LiquidLookAndFeel());
+					} catch (Exception e) {
+					    e.printStackTrace();
+					}
 					Home frame = new Home();
 					frame.setVisible(true);
 				} catch (Exception e) {

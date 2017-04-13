@@ -12,6 +12,7 @@ import main.admin.adminpanel.AddStudentForm;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
+import main.professor.professorDAO.ProfessorDAO;
 import main.student.student.Student;
 
 import javax.swing.JLabel;
@@ -22,6 +23,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -44,6 +46,7 @@ public class AddCourse extends JFrame {
 	private JTextField courseText;
 	private CourseDAO dao = null;
 	private CourseMappingDAO cmdao=null;
+	private ProfessorDAO pfdao = null;
 	private JTextField profText;
 	private JList list;
 	private DefaultListModel<String> model;
@@ -70,6 +73,7 @@ public class AddCourse extends JFrame {
 		try {
 			dao=new CourseDAO();
 			cmdao=new CourseMappingDAO();
+			pfdao=new ProfessorDAO();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -154,29 +158,27 @@ public class AddCourse extends JFrame {
 					}	
 					String batches[]=new String [5];
 					String b=(String) comboBox.getSelectedItem();
-					if(b.startsWith("btech"))
-					{
-						if(chckbxCse.isSelected())
-							batches[0]="cse"+b.substring(b.length()-2)+"b";
-						else
-							batches[0]="";
-						if(chckbxEe.isSelected())
-							batches[0]="ee"+b.substring(b.length()-2)+"b";
-						else
-							batches[0]="";
-						if(chckbxMe.isSelected())
-							batches[0]="me"+b.substring(b.length()-2)+"b";
-						else
-							batches[0]="";
-						if(chckbxCh.isSelected())
-							batches[0]="che"+b.substring(b.length()-2)+"b";
-						else
-							batches[0]="";
-						if(chckbxCe.isSelected())
-							batches[0]="ce"+b.substring(b.length()-2)+"b";
-						else
-							batches[0]="";
-					}	
+					char bh=b.charAt(0);
+					if(chckbxCse.isSelected())
+						batches[0]="cse"+b.substring(b.length()-2)+bh;
+					else
+						batches[0]="";
+					if(chckbxEe.isSelected())
+						batches[1]="ee"+b.substring(b.length()-2)+bh;
+					else
+						batches[1]="";
+					if(chckbxMe.isSelected())
+						batches[2]="me"+b.substring(b.length()-2)+bh;
+					else
+						batches[2]="";
+					if(chckbxCh.isSelected())
+						batches[3]="ch"+b.substring(b.length()-2)+bh;
+					else
+						batches[3]="";
+					if(chckbxCe.isSelected())
+						batches[4]="ce"+b.substring(b.length()-2)+bh;
+					else
+						batches[4]="";
 					cmdao.addEntry(course.getCourseId(), professors, batches);
 					AddCourse.this.setVisible(false);
 					AddCourse.this.dispose();
@@ -203,13 +205,17 @@ public class AddCourse extends JFrame {
 		profText = new JTextField();
 		profText.setBounds(141, 133, 126, 20);
 		profText.setColumns(10);
-		
+
+		List<String> pr_user=pfdao.getAllUsernames();
+		JComboBox profCombo = new JComboBox(pr_user.toArray());
+		profCombo.setBounds(141, 133, 127, 20);
+		contentPane.add(profCombo);
 		JButton btnNewButton = new JButton("+");
 		btnNewButton.setBounds(278, 134, 52, 20);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				model.addElement(profText.getText());
-				profText.setText("");
+				model.addElement((String)profCombo.getSelectedItem());
+				profCombo.setSelectedItem(null);
 				list.revalidate();
 				list.repaint();
 			}
@@ -259,7 +265,7 @@ public class AddCourse extends JFrame {
 		
 		
 		comboBox.setBackground(Color.WHITE);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"btech16", "btech15", "btech14", "btech13","mtech13","mtech14","mtech15","mtech16","mtech17"}));
 		comboBox.setBounds(481, 48, 176, 20);
 		contentPane.add(comboBox);
 		

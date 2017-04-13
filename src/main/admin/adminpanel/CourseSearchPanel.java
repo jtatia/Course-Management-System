@@ -24,6 +24,8 @@ import main.admin.adminpanel.coursetablemodel.CourseTableModel;
 import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
+import main.course.coursedao.CourseMappingDAO;
+
 import javax.swing.JToggleButton;
 
 public class CourseSearchPanel extends JPanel {
@@ -35,6 +37,7 @@ public class CourseSearchPanel extends JPanel {
 	private JTable table;
     private CourseTableModel courseTableModel;
     private CourseDAO dao = null;
+    private CourseMappingDAO map_dao=null;
     List<Course> course = null;
 	/**
 	 * Create the panel.
@@ -54,6 +57,7 @@ public class CourseSearchPanel extends JPanel {
 		panel.add(textField);
 		textField.setColumns(10);
 		dao = new CourseDAO();
+		map_dao=new CourseMappingDAO();
 		course=dao.getAllCourses();
 		courseTableModel = new CourseTableModel(course);
 		table.setModel(courseTableModel);
@@ -147,6 +151,16 @@ public class CourseSearchPanel extends JPanel {
 		panel_2.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int []index=table.getSelectedRows();
+				for(int i=0;i<index.length;i++){
+					Course crs=(Course)table.getValueAt(index[i], -1);
+					dao.deleteCourse(crs.getCourseId());
+					map_dao.deleteEntry(crs.getCourseId());
+				}
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_2.add(btnDelete);
 		
