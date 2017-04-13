@@ -21,5 +21,7 @@
 	<classpathentry kind="lib" path="lib/syntheticaBlackMoon.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlueLight.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlackStar.jar"/>
+	<classpathentry kind="lib" path="lib/JTattoo-1.6.11.jar"/>
+	<classpathentry kind="lib" path="lib/weblaf-complete-1.29.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
