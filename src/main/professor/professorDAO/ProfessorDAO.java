@@ -142,6 +142,29 @@ public class ProfessorDAO {
 		return null;
 	}
 	
+	public List<String> getAllUsernames(){
+		PreparedStatement pstmt=null;
+		ArrayList<String> pr_list=new ArrayList<String>();
+		try{
+			pstmt=myCon.prepareStatement("select * from professor");
+			ResultSet rs=pstmt.executeQuery();
+			while(rs.next()){
+				String pr_str=convertRowToProfessor(rs).getUsername();
+				pr_list.add(pr_str);
+			}
+			return pr_list;
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}
+		}
+		return null;
+	}
+	
 	private Professor convertRowToProfessor(ResultSet rs) throws Exception{
 		String courses=rs.getString("course_ids");
 		String course[]=courses.split("_");
