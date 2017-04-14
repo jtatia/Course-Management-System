@@ -85,7 +85,7 @@ public class FacultyUpdateForm extends JDialog {
 				panel.setLayout(null);
 				
 				JLabel lblNewLabel = new JLabel("Username : ");
-				lblNewLabel.setBounds(76, 11, 58, 14);
+				lblNewLabel.setBounds(76, 11, 70, 14);
 				panel.add(lblNewLabel);
 				
 				user_text = new JTextField();
@@ -171,7 +171,7 @@ public class FacultyUpdateForm extends JDialog {
 				panel.add(lblAnswer);
 				
 				JLabel lblCoursesTaken = new JLabel("Courses Taken :");
-				lblCoursesTaken.setBounds(76, 284, 78, 14);
+				lblCoursesTaken.setBounds(76, 284, 89, 14);
 				panel.add(lblCoursesTaken);
 				
 				clist = new JList();

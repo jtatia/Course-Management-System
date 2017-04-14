@@ -11,6 +11,7 @@ import main.professor.professor.Professor;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -108,11 +109,16 @@ public class adminSearchPanel extends JPanel {
 		btnUpdate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int index=table.getSelectedRow();
+				if(index<0){
+					JOptionPane.showMessageDialog(adminSearchPanel.this, "Select an Admin","Error",JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 				Admin admod=(Admin)table.getValueAt(index, -1);
 				try{
 					AdminUpdateForm adform=new AdminUpdateForm(admod);
 					adform.setVisible(true);
 				}catch(Exception exc){
+					
 					exc.printStackTrace();
 				}
 			}

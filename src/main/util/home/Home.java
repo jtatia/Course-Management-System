@@ -25,8 +25,8 @@ import de.javasoft.plaf.synthetica.SyntheticaBlackEyeLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaBlackMoonLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaBlackStarLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
-import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
+//import de.javasoft.plaf.synthetica.SyntheticaLookAndFeel;
+//import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -54,9 +54,7 @@ public class Home extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
-					try { 
-						
+					try { 	
 						//UIManager.setLookAndFeel(new BernsteinLookAndFeel ());
 						//UIManager.setLookAndFeel(new AluminiumLookAndFeel ());
 						//UIManager.setLookAndFeel(new TextureLookAndFeel ());
