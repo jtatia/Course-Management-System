@@ -1,15 +1,21 @@
 package main.util.CSVfiles;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.csvreader.CsvReader;
 import com.csvreader.CsvWriter;
+import com.jcraft.jsch.SftpException;
 
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.UsingJsch;
 
 public class CSVfiles {
 
@@ -32,7 +38,11 @@ public class CSVfiles {
 			//READING MARKS, ERROR FROM CSV FILE
 		}	
 		
-		CsvReader read = new CsvReader("finalmarks.csv");
+		BufferedReader br = null;
+		FileReader fr = null;
+		fr = new FileReader(path+"\\marks.txt");
+		br = new BufferedReader(fr);	
+		CsvReader read = new CsvReader(br);
 		read.readHeaders();
 		int count = 0;
 		while(read.readRecord()){
@@ -56,16 +66,16 @@ public class CSVfiles {
 		}
 		return list;
 	}
-	public static void WriteMarksFile(String path,int marks,String status){
+	public static void WriteMarksFile(String path,int marks,String status) throws Exception{
    String outputFile = "finalmarks.csv";
 		
 		// before we open the file check to see if it already exists
-		boolean alreadyExists = new File(outputFile).exists();
+		
+   boolean alreadyExists = false;
 			
 		try {
 			// use FileWriter constructor that specifies open for appending
 			CsvWriter csvOutput = new CsvWriter(new FileWriter(outputFile, true), ',');
-			
 			// if the file didn't already exist then we need to write out the header line
 			if (!alreadyExists)
 			{
@@ -77,18 +87,13 @@ public class CSVfiles {
 			// else assume that the file already has the correct header line
 			
 			// write out a few records
-			csvOutput.write("1");
-			csvOutput.write("Bruce");
-			csvOutput.endRecord();
-			
-			csvOutput.write("2");
-			csvOutput.write("John");
-			csvOutput.endRecord();
-			
+			UsingJsch.writingFile(path, csvOutput.toString(), "finalmarks.csv");
+			csvOutput.flush();
 			csvOutput.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		
 	}
 	

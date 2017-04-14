@@ -13,6 +13,7 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.util.CSVfiles.CSVfiles;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
@@ -149,8 +150,10 @@ public class UploadedAssignments extends JFrame {
 						temp.setStatus("Successful");
 						temp.setMarks(10);
 						list.add(temp);
+						
 						if(model_mode == 1)
 						{
+							list = CSVfiles.ReadMarksFile(path) ;
 						atmc = new AssignmentTableModelC(list);
 						table.setModel(atmc);
 						}
@@ -365,6 +368,7 @@ public class UploadedAssignments extends JFrame {
 		//	  System.out.println("OUTPUT!@!@@##$$:: "+output);
 			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
 			  marksOfOutput  += fom.CheckOutputs();
+			  fom.DeleteFiles();
 		//	  System.out.println("current stud marks="+marksOfOutput);
 			  }
 			  else if (x == 1)
@@ -377,8 +381,9 @@ public class UploadedAssignments extends JFrame {
 		}
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
+		CSVfiles.WriteMarksFile(path, marksOfOutput, error);
 		//writing marks and status to new file
-		writeMarksAnderror(path,name,marksOfOutput,error);
+		//writeMarksAnderror(path,name,marksOfOutput,error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		return assign;
 	}
