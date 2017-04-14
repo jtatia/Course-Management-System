@@ -37,3 +37,5 @@ UPDATE `cms`.`professor` SET `course_ids`='CS229_CS552_CS110_CS444' WHERE `s.no`
 UPDATE `cms`.`professor` SET `course_ids`='CS202_CS333' WHERE `s.no`='2' and`user_name`='arijit';
 UPDATE `cms`.`professor` SET `course_ids`='CS225_CS226' WHERE `s.no`='3' and`user_name`='jimson';
 UPDATE `cms`.`professor` SET `course_ids`='CS400' WHERE `s.no`='4' and`user_name`='sriparna';
+ALTER TABLE `cms`.`professor` 
+CHANGE COLUMN `course_ids` `course_ids` LONGTEXT NULL ;

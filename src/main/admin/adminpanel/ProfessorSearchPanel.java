@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 
 import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
+import main.admin.adminpanel.addfaculty.AddFacultyForm;
 import main.admin.adminpanel.facultyupdateform.FacultyUpdateForm;
 import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.professor.professor.Professor;
@@ -98,9 +99,11 @@ public class ProfessorSearchPanel extends JPanel {
 		
 		JButton btnAdd = new JButton("Add");
 		btnAdd.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			addAdmin add = new addAdmin();
-			add.setVisible(true);
+			public void actionPerformed(ActionEvent e){
+				try{
+					AddFacultyForm fac_form=new AddFacultyForm();
+					fac_form.setVisible(true);
+				}catch(Exception exc){}
 			}
 		});
 		JButton btnUpdate = new JButton("Update");
