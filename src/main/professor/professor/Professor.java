@@ -225,7 +225,7 @@ public class Professor {
 		this.strcourse=courseids;
 	}
 	
-	public String getCourseString(String courseids){
+	public String getCourseString(){
 		return strcourse;
 	}
 }

@@ -9940,3 +9940,24 @@ input2.txt
 [11:07:03] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/inputFiles/
 [11:07:03] INFO:    Now wait 0 seconds to begin next task ...
 [11:07:03] INFO:    Connection channel disconnect
+
+=============== [2017/04/14 16:13:15, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[16:13:15] INFO:    SSHExec initializing ...
+[16:13:15] INFO:    Session initialized and associated with user credential kshitij#456
+[16:13:15] INFO:    SSHExec initialized successfully
+[16:13:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[16:13:18] INFO:    SSH connection established
+[16:13:18] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[16:13:18] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[16:13:18] INFO:    Connection channel established succesfully
+[16:13:18] INFO:    Start to run command
+[16:13:18] INFO:    input1.txt
+input2.txt
+input3.txt
+
+[16:13:18] INFO:    Connection channel closed
+[16:13:18] INFO:    Check if exec success or not ... 
+[16:13:18] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[16:13:18] INFO:    Now wait 0 seconds to begin next task ...
+[16:13:18] INFO:    Connection channel disconnect
