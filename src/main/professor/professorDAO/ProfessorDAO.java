@@ -210,6 +210,40 @@ public class ProfessorDAO {
 		String encryptedPassword=encryptor.encryptPassword(password);
 		return encryptedPassword;
 	}
+	
+	
+	public void addProfessor(Professor prof)
+	{
+		PreparedStatement pstmt=null;
+		try{
+			String sql = "insert into professor"+
+					" (user_name, first_name, middle_name, last_name, sex, email, password, security_ques, answer )"+
+								" values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			pstmt=myCon.prepareStatement(sql);
+			pstmt.setString(1, prof.getUsername());
+			pstmt.setString(2, prof.getFirstname());
+			pstmt.setString(3, prof.getMiddlename());
+			pstmt.setString(4, prof.getLastname());
+			pstmt.setString(5, ""+prof.getSex());
+			pstmt.setString(6, prof.getEmail());
+			pstmt.setString(7, EncryptPassword(prof.getPassword()));
+		    pstmt.setString(8, prof.getSecurityques());
+			pstmt.setString(9, prof.getAnswer());
+			pstmt.executeUpdate();
+		}catch(Exception exc){
+			exc.printStackTrace();
+		}finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){
+					exc.printStackTrace();
+				}
+			}
+		
+		}
+	}
+	
 	public void modifyProfessor(Professor prof)
 	{
 		System.out.println("inside method");

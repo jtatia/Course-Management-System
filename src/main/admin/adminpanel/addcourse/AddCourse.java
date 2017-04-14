@@ -47,7 +47,6 @@ public class AddCourse extends JFrame {
 	private CourseDAO dao = null;
 	private CourseMappingDAO cmdao=null;
 	private ProfessorDAO pfdao = null;
-	private JTextField profText;
 	private JList list;
 	private DefaultListModel<String> model;
 	/**
@@ -91,19 +90,19 @@ public class AddCourse extends JFrame {
 		lblAddCourseForm.setFont(new Font("Tahoma", Font.BOLD, 15));
 		
 		JLabel lblNewLabel = new JLabel("Course ID : ");
-		lblNewLabel.setBounds(67, 50, 76, 14);
+		lblNewLabel.setBounds(44, 50, 89, 14);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		IdText = new JTextField();
-		IdText.setBounds(141, 48, 247, 20);
+		IdText.setBounds(157, 48, 231, 20);
 		IdText.setColumns(10);
 		
 		JLabel lblCourseName = new JLabel("Course Name : ");
-		lblCourseName.setBounds(46, 88, 97, 14);
+		lblCourseName.setBounds(44, 88, 103, 14);
 		lblCourseName.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		courseText = new JTextField();
-		courseText.setBounds(141, 86, 247, 20);
+		courseText.setBounds(157, 86, 231, 20);
 		courseText.setColumns(10);
 		
 		JLabel lblCourseInfo = new JLabel("Course Info :");
@@ -199,16 +198,12 @@ public class AddCourse extends JFrame {
 		btnCancel.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
 		JLabel lblNameOfProfessor = new JLabel("Professor(s) :");
-		lblNameOfProfessor.setBounds(44, 134, 99, 16);
+		lblNameOfProfessor.setBounds(44, 134, 103, 16);
 		lblNameOfProfessor.setFont(new Font("Tahoma", Font.BOLD, 13));
-		
-		profText = new JTextField();
-		profText.setBounds(141, 133, 126, 20);
-		profText.setColumns(10);
 
 		List<String> pr_user=pfdao.getAllUsernames();
 		JComboBox profCombo = new JComboBox(pr_user.toArray());
-		profCombo.setBounds(141, 133, 127, 20);
+		profCombo.setBounds(157, 133, 111, 20);
 		contentPane.add(profCombo);
 		JButton btnNewButton = new JButton("+");
 		btnNewButton.setBounds(278, 134, 52, 20);
@@ -235,7 +230,6 @@ public class AddCourse extends JFrame {
 		contentPane.add(lblCourseName);
 		contentPane.add(courseText);
 		contentPane.add(lblNameOfProfessor);
-		contentPane.add(profText);
 		contentPane.add(btnNewButton);
 		contentPane.add(lblCourseInfo);
 		contentPane.add(jsp);
@@ -260,7 +254,7 @@ public class AddCourse extends JFrame {
 		
 		JLabel lblBatch = new JLabel("Batch :");
 		lblBatch.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblBatch.setBounds(425, 51, 46, 14);
+		lblBatch.setBounds(425, 51, 52, 14);
 		contentPane.add(lblBatch);
 		
 		

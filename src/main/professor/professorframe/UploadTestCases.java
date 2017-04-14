@@ -2,26 +2,23 @@ package main.professor.professorframe;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.jcraft.jsch.ChannelSftp;
+
 import com.jcraft.jsch.SftpException;
 
-import main.util.login.LoginPortal;
-import main.util.sshcommands.SSHComm;
 import main.util.sshcommands.SSHCommands;
 import main.util.sshcommands.UsingJsch;
-import main.util.upload.Upload;
 import net.neoremind.sshxcute.exception.TaskExecFailException;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.ListModel;
 import javax.swing.ScrollPaneConstants;
 
 import javax.swing.JLabel;
@@ -33,32 +30,26 @@ import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.DirectoryNotEmptyException;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class UploadTestCases extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String assignmentFolder;
 	private String dir;
 	private JPanel contentPane;
 	private JTextField textField;
 	private SSHCommands sshc;
 	
-	private boolean flag=true;
 	private JList list;
 	private DefaultListModel<String> model;
-	private String currentFile="";
-	File f;
 	public static String marksContent="";
 	private JTextField textField_1;
 	/**
@@ -102,7 +93,6 @@ public class UploadTestCases extends JFrame {
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
-		String currentDir = System.getProperty("user.dir");
 		sshc = new SSHCommands();
 		
 		contentPane = new JPanel();
@@ -155,7 +145,7 @@ public class UploadTestCases extends JFrame {
 		String filenames="";
 		model = new DefaultListModel<>();
 		try {
-			filenames=sshc.runSingleCommand("ls "+path+"inputFiles/");
+			filenames=sshc.runSingleCommand("ls "+path+"inputFiles/");  
 		} catch (TaskExecFailException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

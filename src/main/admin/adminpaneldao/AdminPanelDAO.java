@@ -143,7 +143,6 @@ public class AdminPanelDAO {
 	public void deleteAdmin(String user) {
 		// TODO Auto-generated method stub
 		PreparedStatement pstmt=null;
-		 ResultSet rs=null;
 		 try{
 			 //System.out.println("Course"+id);
 			 pstmt=myCon.prepareStatement("delete from admin where username = ?");
@@ -155,11 +154,6 @@ public class AdminPanelDAO {
 			 if(pstmt!=null){
 				 try{
 					 pstmt.close();
-				 }catch(Exception exc){}
-			 }
-			 if(rs!=null){
-				 try{
-					 rs.close();
 				 }catch(Exception exc){}
 			 }
 		 }

@@ -60,7 +60,8 @@ public class addAdmin extends JDialog {
 	 * Create the dialog.
 	 */
 	public addAdmin() {
-		setBounds(0, 0, 430, 400);
+		setTitle("Add Admin");
+		setBounds(400, 100, 430, 460);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
 		contentPanel.setDoubleBuffered(false);
