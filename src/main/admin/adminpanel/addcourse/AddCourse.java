@@ -9,6 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import main.admin.adminpanel.AddStudentForm;
+import main.admin.adminpanel.addfaculty.AddFacultyForm;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
@@ -36,10 +37,11 @@ import javax.swing.DefaultListModel;
 
 import java.awt.Color;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JCheckBox;
 
-public class AddCourse extends JFrame {
+public class AddCourse extends JDialog {
 	static int z=0,i=0;
 	private JPanel contentPane;
 	private JTextField IdText;
@@ -53,16 +55,13 @@ public class AddCourse extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AddCourse frame = new AddCourse();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		try {
+			AddCourse dialog = new AddCourse();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -153,6 +152,7 @@ public class AddCourse extends JFrame {
 					String professors[]=new String [size];
 					for(int k=0;k<size;k++)
 					{
+						pfdao.updateCourseIds((String)lm.getElementAt(k) ,course_id);
 						professors[k]=(String) lm.getElementAt(k);
 					}	
 					String batches[]=new String [5];

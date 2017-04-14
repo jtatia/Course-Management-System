@@ -13,7 +13,10 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 
 import main.admin.admin.Admin;
+import main.admin.adminpanel.addcourse.AddCourse;
 import main.admin.adminpaneldao.AdminPanelDAO;
+import main.course.course.Course;
+import main.course.coursedao.CourseDAO;
 import main.professor.professor.Professor;
 import main.professor.professorDAO.ProfessorDAO;
 
@@ -29,6 +32,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -45,10 +49,17 @@ public class AddFacultyForm extends JDialog {
 	private JTextField lastNameTextField;
 	private JTextField emailTextField;
 	private JComboBox securityComboBox;
+	private JComboBox comboBox;
+	private CourseDAO crsdao= new CourseDAO();
 	private JPasswordField answerTextField;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JPasswordField passwordField;
 	private ProfessorDAO profDAO;
+	private DefaultListModel<String> model;
+	private JList clist;
+	private static Thread t=null;
+	private static Thread t2=null;
+	//private AddCourse addcrs=null;
 	/**
 	 * Launch the application.
 	 */
@@ -67,8 +78,11 @@ public class AddFacultyForm extends JDialog {
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public AddFacultyForm()throws Exception {
+		Thread.currentThread().setName("Dialog thread");
+		t2=Thread.currentThread();
+		System.out.println("The thread"+Thread.currentThread().getName());
 		setTitle("Add Faculty");
-		setBounds(400, 100, 500, 480);
+		setBounds(400, 100, 500, 650);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setFont(new Font("Comic Sans MS", Font.BOLD, 14));
 		contentPanel.setDoubleBuffered(false);
@@ -202,16 +216,63 @@ public class AddFacultyForm extends JDialog {
 			contentPanel.add(answerTextField);
 		}
 		{
-			JLabel lblNewLabel = new JLabel("Newly added professors must register their courses on the course panel by");
+			JLabel lblNewLabel = new JLabel("If your courses are not present in the dropdown please register your course by");
 			lblNewLabel.setFont(new Font("Arial Unicode MS", Font.ITALIC, 12));
-			lblNewLabel.setBounds(20, 336, 443, 21);
+			lblNewLabel.setBounds(12, 488, 443, 21);
 			contentPanel.add(lblNewLabel);
 		}
 		{
-			JLabel lblProvidingTheRelevent = new JLabel(" providing the relevent details.");
+			JLabel lblProvidingTheRelevent = new JLabel(" providing the relevent details on the course side panel.");
 			lblProvidingTheRelevent.setFont(new Font("Arial Unicode MS", Font.ITALIC, 12));
-			lblProvidingTheRelevent.setBounds(20, 368, 293, 14);
+			lblProvidingTheRelevent.setBounds(10, 508, 293, 14);
 			contentPanel.add(lblProvidingTheRelevent);
+		}
+		
+		JLabel lblCourses = new JLabel("Courses : ");
+		lblCourses.setFont(new Font("Century Gothic", Font.BOLD, 14));
+		lblCourses.setBounds(76, 321, 84, 14);
+		contentPanel.add(lblCourses);
+		
+		model = new DefaultListModel<String>();
+		clist = new JList(model);
+		clist.setBackground(new Color(224, 255, 255));
+		clist.setBorder(new MatteBorder(1, 1, 2, 2, (Color) new Color(0, 0, 0)));
+		clist.setBounds(190, 351, 201, 126);
+		contentPanel.add(clist);
+		
+		JButton btnAdd = new JButton("+");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.addElement((String)comboBox.getSelectedItem());
+				comboBox.setSelectedItem(null);
+			}
+		});
+		btnAdd.setBounds(409, 349, 46, 23);
+		contentPanel.add(btnAdd);
+		
+		JButton btnDelete = new JButton("-");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				model.remove(clist.getSelectedIndex());
+			}
+		});
+		btnDelete.setBounds(409, 386, 46, 23);
+		contentPanel.add(btnDelete);
+		
+		String st[]=getCourseArray();
+		comboBox = new JComboBox(st);
+		comboBox.setSelectedItem(null);
+		comboBox.setBounds(190, 320, 153, 20);
+		contentPanel.add(comboBox);
+		{
+			JButton btnNewButton = new JButton("Clear");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					comboBox.setSelectedItem(null);
+				}
+			});
+			btnNewButton.setBounds(366, 319, 89, 23);
+			contentPanel.add(btnNewButton);
 		}
 		{
 			JPanel buttonPane = new JPanel();
@@ -220,8 +281,10 @@ public class AddFacultyForm extends JDialog {
 			{
 				JButton okButton = new JButton("Save");
 				okButton.addActionListener(new ActionListener() {
+					@SuppressWarnings("deprecation")
 					public void actionPerformed(ActionEvent arg0) {
 						//Add code here
+						String course_str="";
 						Professor prf=new Professor();
 						prf.setAnswer(answerTextField.getText());
 						prf.setEmail(emailTextField.getText());
@@ -234,8 +297,14 @@ public class AddFacultyForm extends JDialog {
 						prf.setPassword(new String(passwordField.getPassword()));
 						prf.setSecurityques((String)securityComboBox.getSelectedItem());
 						prf.setUsername(usernameTextField.getText());
+						for(int j=0;j<model.size();j++){
+							if(j==model.size()-1)
+								course_str+=model.get(j);
+							else course_str+=model.get(j)+"_";
+						}	
+						prf.setCourseString(course_str);
 						profDAO.addProfessor(prf);
-						JOptionPane.showMessageDialog(contentPanel, "New Faculty Added Successfully!!!");
+						JOptionPane.showMessageDialog(contentPanel, "Successful!Please Fill Course if not done already.");
 						setVisible(false);
 						dispose();
 					}
@@ -258,5 +327,13 @@ public class AddFacultyForm extends JDialog {
 				buttonPane.add(cancelButton);
 			}
 		}
+	}
+	
+	public String[] getCourseArray(){
+		List<Course> list = crsdao.getAllCourses();
+		String str[]=new String[list.size()];
+		for(int i=0;i<list.size();i++)
+			str[i]=list.get(i).getCourseId();
+		return str;
 	}
 }

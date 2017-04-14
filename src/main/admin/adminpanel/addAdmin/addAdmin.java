@@ -13,10 +13,12 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 
 import main.admin.admin.Admin;
+import main.admin.adminpanel.CourseSearchPanel;
 import main.admin.adminpaneldao.AdminPanelDAO;
 
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JPasswordField;
@@ -240,10 +242,15 @@ public class addAdmin extends JDialog {
 						String answer = new String(ans);
 						admin.setPassword(password);
 						admin.setAnswer(answer);
+						
 						try{
 							AdminPanelDAO adminPanel = new AdminPanelDAO();
 							adminPanel.addAdmin(admin);
 						}catch(Exception e){
+							
+						JOptionPane.showMessageDialog(addAdmin.this, "Unable to add Admin","Error",JOptionPane.ERROR_MESSAGE);
+							
+							//System.out.println("Error here:::::::");
 							e.printStackTrace();
 						}finally{
 							setVisible(false);

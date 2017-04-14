@@ -54,6 +54,7 @@ public class CourseDAO {
 		course.setCourseInfo(rs.getString("course_info"));
 		return course;
 	}
+	
 	public List<Course> getAllCourses()
 	{
 		Statement st=null;
