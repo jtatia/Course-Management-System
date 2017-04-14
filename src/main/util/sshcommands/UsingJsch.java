@@ -136,6 +136,7 @@ public class UsingJsch {
             e.printStackTrace();  
         }
 	  System.out.println("Within writingFiles >>>>>>>>dir,text,file"+dir+",,,,,"+text+",,,,,"+file);
+	  System.out.println(sftpChannel.pwd());
 	  sftpChannel.cd(dir);
       InputStream obj_InputStream = new ByteArrayInputStream(text.getBytes());
       sftpChannel.put(obj_InputStream,file);
