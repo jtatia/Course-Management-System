@@ -16,12 +16,12 @@
 	<classpathentry kind="lib" path="lib/ganymed-ssh2-build210.jar"/>
 	<classpathentry kind="lib" path="lib/seaglasslookandfeel-0.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/liquidlnf.jar"/>
-	<classpathentry kind="lib" path="lib/synthetica.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlackEye.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlackMoon.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlueLight.jar"/>
 	<classpathentry kind="lib" path="lib/syntheticaBlackStar.jar"/>
 	<classpathentry kind="lib" path="lib/JTattoo-1.6.11.jar"/>
 	<classpathentry kind="lib" path="lib/weblaf-complete-1.29.jar"/>
+	<classpathentry kind="lib" path="lib/synthetica.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
