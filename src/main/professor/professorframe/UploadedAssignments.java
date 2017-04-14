@@ -52,6 +52,7 @@ public class UploadedAssignments extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private List<Assignment> list;
+	ArrayList<Assignment> list1;
 	private AssignmentTableModel atm;
 	private AssignmentTableModelC atmc;
 	private String path="";
@@ -142,19 +143,21 @@ public class UploadedAssignments extends JFrame {
 					for(int i=0;i<str.length;i++)
 					{
 						Assignment temp = new Assignment();
+						if(str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")&&!str[i].contains(".csv"))
+						{
 						temp.setName("\""+str[i]+"\"");
 						temp.setPath(path);
 						String s[]=FileDetails.getStats(path,temp.getName());
 						temp.setLastModified(s[1]);
 						temp.setSize(s[0]);
-						temp.setStatus("Successful");
-						temp.setMarks(10);
+						temp.setStatus("Not tested");
+						temp.setMarks(0);
 						list.add(temp);
-						
+						}
 						if(model_mode == 1)
 						{
-							list = CSVfiles.ReadMarksFile(path) ;
-						atmc = new AssignmentTableModelC(list);
+						list1 = CSVfiles.ReadMarksFile(path) ;
+						atmc = new AssignmentTableModelC(list1);
 						table.setModel(atmc);
 						}
 						else
@@ -163,7 +166,6 @@ public class UploadedAssignments extends JFrame {
 							table.setModel(atm);
 						}
 					}
-					
 					}catch(Exception ex){
 						ex.printStackTrace();
 					}
@@ -175,22 +177,22 @@ public class UploadedAssignments extends JFrame {
 		JButton btnTestFiles = new JButton("Test Files");
 		btnTestFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("here");
+//				System.out.println("here");
 			//	if(table.getSelectedRow() > 0){
-					System.out.println("inside");
+	//				System.out.println("inside");
 					int[] rows = table.getSelectedRows();
 					new Thread() {
 						
 						public void run(){
 							for(int r : rows){
 								Assignment a = list.get(r);
-								try {System.out.println("calling");
-									list.add(test(a.getPath(),a.getName()));
+								try {//System.out.println("calling");
+									test(a.getPath(),a.getName());
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
-								atmc = new AssignmentTableModelC(list);
-								table.setModel(atmc);
+						//		atmc = new AssignmentTableModelC(list);
+							//	table.setModel(atmc);
 							}
 						}
 					}.start();
@@ -289,7 +291,7 @@ public class UploadedAssignments extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		
-		list = new ArrayList<Assignment>();
+	//	list = new ArrayList<Assignment>();
 	/*	String str[] = FileDetails.getFileList(path);
 		for(int i=0;i<str.length;i++)
 		{
@@ -302,8 +304,8 @@ public class UploadedAssignments extends JFrame {
 			list.add(temp);
 		}
 		*/
-		atm = new AssignmentTableModel(list);
-		table.setModel(atm);
+	//	atm = new AssignmentTableModel(list);
+	//	table.setModel(atm);
 		table.setRowHeight(30);
 	}
 	
@@ -311,7 +313,7 @@ public class UploadedAssignments extends JFrame {
 	 * It then sends file for compiling. if it compiles then it sends for execution. if executes it sends for checking outputs
 	 * and then deletes all extra files and finally has 2 parameters error and marks */
 	
-	private Assignment test(String path, String name) throws Exception {
+	private void test(String path, String name) throws Exception {
 		//name = name.replace('"', '\u0000');
 		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
@@ -321,7 +323,7 @@ public class UploadedAssignments extends JFrame {
   //      	System.out.println("ERRRORR");
         }
         UploadTestCases utc = new UploadTestCases(path);
-        utc.getMarksContent();
+        utc.getMarksContent(path);
         //String content = utc.marksContent;
         ArrayList<Integer> marks = new ArrayList<Integer>();
 		for(int i=0;i<length;i++){
@@ -363,13 +365,14 @@ public class UploadedAssignments extends JFrame {
 		//	  System.out.println("%%%%%%%%%%%%%%%%EXecute"+inp[i]);
 			  if(x == 0){
 			  String outputFile = path +"out.txt";
-		//	  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
-			  String output = path + "outputFiles/out_"+(i+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
-		//	  System.out.println("OUTPUT!@!@@##$$:: "+output);
+			  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
+			  String output = path + "outputFiles/"+inp[i]; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  System.out.println("OUTPUT!@!@@##$$:: "+output);
+			  System.out.println("MARKS SENT:"+marks.get(i));
 			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
 			  marksOfOutput  += fom.CheckOutputs();
 			  fom.DeleteFiles();
-		//	  System.out.println("current stud marks="+marksOfOutput);
+			  System.out.println("current stud marks="+marksOfOutput);
 			  }
 			  else if (x == 1)
 				  error = "Runtime Error";
@@ -381,42 +384,11 @@ public class UploadedAssignments extends JFrame {
 		}
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
-		CSVfiles.WriteMarksFile(path, marksOfOutput, error);
+		System.out.println("Final\n"+marksOfOutput+"\n"+error);
+		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file
 		//writeMarksAnderror(path,name,marksOfOutput,error);
-		System.out.println("Final\n"+marksOfOutput+"\n"+error);
-		return assign;
+	
 	}
 
-	private void writeMarksAnderror(String path,String name, int marksOfOutput, String error) {
-		Properties prop=new Properties();
-		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-        String ip=prop.getProperty("ip");
- 		String username=prop.getProperty("username"); 
-        String password=prop.getProperty("password");
-        int port =22;
-		Session session = null;
-        Channel channel = null;
-        ChannelSftp channelSftp = null;
-        PrintWriter pw=new PrintWriter(System.out);
-        try{
-        	JSch jsch = new JSch();
-            session = jsch.getSession(username, ip, port);
-            session.setPassword(password);
-            java.util.Properties config = new java.util.Properties();
-            config.put("StrictHostKeyChecking", "no");
-            session.setConfig(config);
-            session.connect();
-            channel = session.openChannel("sftp");
-            channel.connect();
-            channelSftp = (ChannelSftp) channel;
-            channelSftp.cd(path);
-	}catch(Exception e){}
-}
 }

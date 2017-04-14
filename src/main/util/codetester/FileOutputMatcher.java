@@ -18,6 +18,7 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.UsingJsch;
 
 
 /*
@@ -67,15 +68,22 @@ public class FileOutputMatcher {
             channel = session.openChannel("sftp");
             channel.connect();
             channelSftp = (ChannelSftp) channel;
+           /* InputStream stream1=channelSftp.get(path_check);
+   			BufferedReader reader2=new BufferedReader(new InputStreamReader(stream1));
             InputStream stream=channelSftp.get(path_output);
 			BufferedReader reader1=new BufferedReader(new InputStreamReader(stream));
-            stream=channelSftp.get(path_check);
-			BufferedReader reader2=new BufferedReader(new InputStreamReader(stream));
-			String actual_output = reader1.readLine(); //This string reads the actual output file
-			String output = reader2.readLine();//This String reads the output file uploaded by the student
+     		*/
+            //String actual_output = reader1.readLine(); //This string reads the actual output file
+			//String output = reader2.readLine();//This String reads the output file uploaded by the student
+			String actual_output = UsingJsch.readingFile(path_output);
+			String output = UsingJsch.readingFile(path_check);
+            System.out.println("INSIDE FILEOUTPUTMATCHER");
+			System.out.println(actual_output+" :::  next :::  "+output);
 			int lineNum=1;//The line being compared
 			boolean areEqual=false;
-			while(actual_output!=null&&output!=null){
+			if(actual_output.equals(output))
+				areEqual = true;
+	/*		while(actual_output!=null&&output!=null){
 				pw.println(actual_output+" "+output);
 				if(actual_output.equals(output)){
 					//add marks
@@ -87,13 +95,15 @@ public class FileOutputMatcher {
 				actual_output = reader1.readLine();
 				output = reader2.readLine();
 				lineNum++;
-			}
-			reader1.close();
-			reader2.close();
+			}*/
+	//		reader1.close();
+	//		reader2.close();
 			if(areEqual){
+				System.out.println("Test passed::"+m);
 				pw.println("All test cases passed");
 				return m;
 			}else{
+				System.out.println("Test Failed::"+lineNum);
 				pw.println("Wrong Outputs at line = "+lineNum);
 				return 0;//Confusion on what marks to reward for wrong output
 			}
