@@ -58,7 +58,7 @@ public class Home extends JFrame {
 						//UIManager.setLookAndFeel(new BernsteinLookAndFeel ());
 						//UIManager.setLookAndFeel(new AluminiumLookAndFeel ());
 						//UIManager.setLookAndFeel(new TextureLookAndFeel ());
-						//UIManager.setLookAndFeel(new NoireLookAndFeel ());
+						UIManager.setLookAndFeel(new NoireLookAndFeel ());
 						//UIManager.setLookAndFeel(new SyntheticaBlackStarLookAndFeel());
 						//UIManager.setLookAndFeel(new SyntheticaBlueLightLookAndFeel()); 
 						//UIManager.setLookAndFeel(new SyntheticaBlackEyeLookAndFeel());
