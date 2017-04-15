@@ -1,10 +1,10 @@
-CREATE SCHEMA if  not exists `cms` ;
+CREATE SCHEMA if  not exists `sql12168820` ;
 
-use cms;
+use sql12168820;
 
 drop table if exists admin;
 
-CREATE TABLE `cms`.`admin` (
+CREATE TABLE `sql12168820`.`admin` (
   `s.no` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(200) NOT NULL,
@@ -23,7 +23,7 @@ INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`la
 INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`last_name`,`age`,`sex`,`email`,`security_ques`,`answer`) VALUES (3,'jthacker','/rG3Heck62f0GnYgB+BWG0HhLeF0nDOmorshBZppBQq7aKKEJwResAHaq47AcWvN','Jai','Coder','Tatia',19,'M','jtatia@pom.com','Where do you Live','Goa');
 INSERT INTO `admin` (`s.no`,`username`,`password`,`first_name`,`middle_name`,`last_name`,`age`,`sex`,`email`,`security_ques`,`answer`) VALUES (4,'sasyboy','RaHyf59CuPa52j/9bCF6ERluRV6ZjSwGc4HyiPedaurGziWeCKnK/pKD+1BK/udV','Shashwat','Laudiwala','Tiwari',19,'M','sasy@pom.com','Where do you Live','Kanpur');
 
-UPDATE `cms`.`admin` SET `middle_name`='Susheel', `email`='brisingr@gmail.com' WHERE `s.no`='2' and`username`='brisingr';
-UPDATE `cms`.`admin` SET `middle_name`='', `email`='jtatia@gmail.com' WHERE `s.no`='3' and`username`='jthacker';
-UPDATE `cms`.`admin` SET `middle_name`='', `email`='sasy@gmail.com' WHERE `s.no`='4' and`username`='sasyboy';
-UPDATE `cms`.`admin` SET `email`='emberroy@gmail.com' WHERE `s.no`='1' and`username`='warlord';
+UPDATE `sql12168820`.`admin` SET `middle_name`='Susheel', `email`='brisingr@gmail.com' WHERE `s.no`='2' and`username`='brisingr';
+UPDATE `sql12168820`.`admin` SET `middle_name`='', `email`='jtatia@gmail.com' WHERE `s.no`='3' and`username`='jthacker';
+UPDATE `sql12168820`.`admin` SET `middle_name`='', `email`='sasy@gmail.com' WHERE `s.no`='4' and`username`='sasyboy';
+UPDATE `sql12168820`.`admin` SET `email`='emberroy@gmail.com' WHERE `s.no`='1' and`username`='warlord';

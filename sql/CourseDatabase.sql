@@ -1,16 +1,16 @@
 /*
--- Query: SELECT * FROM cms.course
+-- Query: SELECT * FROM sql12168820.course
 LIMIT 0, 200
 
 -- Date: 2017-03-19 03:18
 */
-CREATE SCHEMA if  not exists `cms` ;
+CREATE SCHEMA if  not exists `sql12168820` ;
 
-use cms;
+use sql12168820;
 
 drop table if exists course;
 
-CREATE TABLE `cms`.`course` (
+CREATE TABLE `sql12168820`.`course` (
   `s.no` INT NOT NULL AUTO_INCREMENT,
   `course_id` VARCHAR(45) NOT NULL,
   `course_name` VARCHAR(45) NOT NULL,

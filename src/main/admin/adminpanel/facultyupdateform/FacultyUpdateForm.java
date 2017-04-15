@@ -46,6 +46,8 @@ public class FacultyUpdateForm extends JDialog {
 	private JComboBox comboBox;
 	private JList clist;
 	private DefaultListModel<String> model=null;
+	private String old_name="";
+	private String foldername="";
 	/**
 	 * Launch the application.
 	 */

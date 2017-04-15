@@ -89,7 +89,7 @@ public class UploadTestCases extends JFrame {
 		System.out.println("#########"+assignmentFolder);
 
 		setTitle("Upload Test Cases ");
-		setVisible(true);
+		setVisible(false);
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
@@ -269,43 +269,14 @@ public class UploadTestCases extends JFrame {
         });	
 }
 
-public static void getMarksContent()
+public static void getMarksContent(String path)
 {
-	BufferedReader br = null;
-	FileReader fr = null;
-	String currentDir=System.getProperty("user.dir");;
-	try {
-
-		fr = new FileReader(currentDir+"\\marks.txt");
-		br = new BufferedReader(fr);
-		String sCurrentLine;
-		br = new BufferedReader(fr);
-
-		while ((sCurrentLine = br.readLine()) != null) {
-			marksContent=marksContent+sCurrentLine;
-		}
-
-	} catch (IOException e) {
-
-		e.printStackTrace();
-
-	} finally {
-
-		try {
-
-			if (br != null)
-				br.close();
-
-			if (fr != null)
-				fr.close();
-
-		} catch (IOException ex) {
-
-			ex.printStackTrace();
-
-		}
-
-	}
+	String fileContent="";
+	System.out.println("window open "+path);
+	fileContent=UsingJsch.readingFile(path+"marks.txt");
+	UsingJsch.close();
+	System.out.println("window open "+fileContent);
+	marksContent=fileContent;	
 }
 
 public static String getMarksFromName(String file)

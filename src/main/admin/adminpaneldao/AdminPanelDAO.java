@@ -47,6 +47,7 @@ public class AdminPanelDAO {
 			exc.printStackTrace();
 		}
 	}
+	
 	public void addAdmin(Admin admin)throws Exception
 	{
 	PreparedStatement stmt = null;

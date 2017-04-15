@@ -217,8 +217,8 @@ public class ProfessorDAO {
 		PreparedStatement pstmt=null;
 		try{
 			String sql = "insert into professor"+
-					" (user_name, first_name, middle_name, last_name, sex, email, password, security_ques, answer )"+
-								" values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+					" (user_name, first_name, middle_name, last_name, sex, email, password, security_ques, answer,course_ids )"+
+								" values(?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 			pstmt=myCon.prepareStatement(sql);
 			pstmt.setString(1, prof.getUsername());
 			pstmt.setString(2, prof.getFirstname());
@@ -229,6 +229,7 @@ public class ProfessorDAO {
 			pstmt.setString(7, EncryptPassword(prof.getPassword()));
 		    pstmt.setString(8, prof.getSecurityques());
 			pstmt.setString(9, prof.getAnswer());
+			pstmt.setString(10, prof.getCourseString());
 			pstmt.executeUpdate();
 		}catch(Exception exc){
 			exc.printStackTrace();
@@ -336,4 +337,67 @@ public class ProfessorDAO {
 		System.out.println(course_taken.size());
 		return course_taken;
 	}
+	
+	public void updateCourseIds(String user,String course_id){
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try{
+			pstmt=myCon.prepareStatement("select course_ids from professor where user_name = ?");
+			pstmt.setString(1, user);
+			rs=pstmt.executeQuery();
+			String cid="";
+			while(rs.next())
+				cid=rs.getString("course_ids");
+			//System.out.println("cid id ##### Hre = "+cid);
+			if(cid==null||cid=="")
+				cid+=course_id;
+			else cid+="_"+course_id;
+			
+			//System.out.println("cid id ##### Hre After= "+cid);
+			pstmt=myCon.prepareStatement("update professor set course_ids= ? where user_name = ?");
+			pstmt.setString(1, cid);
+			pstmt.setString(2, user);
+			pstmt.executeUpdate();
+		}catch(Exception exc){exc.printStackTrace();}
+		finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}		
+		}
+	}
+	
+	
+	/*public void daleteCourseIds(String user,String course_id){
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try{
+			pstmt=myCon.prepareStatement("select course_ids from professor where user_name = ?");
+			pstmt.setString(1, user);
+			rs=pstmt.executeQuery();
+			String cid="";
+			while(rs.next())
+				cid=rs.getString("course_ids");
+			//System.out.println("cid id ##### Hre = "+cid);
+			int index=cid.indexOf(course_id);
+			if(course_id.length()==cid.length()){
+					cid="";
+			}else cid=cid.substring(0, index-1)+cid.substring(index+course_id.length());
+			System.out.println("cid id ##### Hre After= "+cid);
+			pstmt=myCon.prepareStatement("update professor set course_ids= ? where user_name = ?");
+			pstmt.setString(1, cid);
+			pstmt.setString(2, user);
+			pstmt.executeUpdate();
+		}catch(Exception exc){exc.printStackTrace();}
+		finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}		
+		}
+	}*/
+	
+	
 }

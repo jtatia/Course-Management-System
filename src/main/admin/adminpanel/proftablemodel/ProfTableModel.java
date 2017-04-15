@@ -80,6 +80,7 @@ public class ProfTableModel extends AbstractTableModel{
 			case COURSE_ID3:return prof.getCourseids().length>=3?(prof.getCourseids())[2]:"";
 			case COURSE_ID4:return prof.getCourseids().length>=4?(prof.getCourseids())[3]:"";
 			case COURSE_ID5:return prof.getCourseids().length>=5?(prof.getCourseids())[4]:"";
+			case USER_NAME:return prof.getUsername();
 			default:return prof.getFirstname();
 		}
 	}
