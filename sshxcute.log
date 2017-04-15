@@ -9961,3 +9961,245 @@ input3.txt
 [16:13:18] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
 [16:13:18] INFO:    Now wait 0 seconds to begin next task ...
 [16:13:18] INFO:    Connection channel disconnect
+
+=============== [2017/04/16 02:24:15, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[02:24:15] INFO:    SSHExec initializing ...
+[02:24:15] INFO:    Session initialized and associated with user credential kshitij#456
+[02:24:15] INFO:    SSHExec initialized successfully
+[02:24:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[02:24:17] INFO:    SSH connection established
+[02:24:17] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[02:24:17] INFO:    Command is ls;cd testdir;ls
+[02:24:17] INFO:    Connection channel established succesfully
+[02:24:17] INFO:    Start to run command
+[02:24:17] INFO:    cms
+cs225_L1.pdf
+cs225_L2.pdf
+cs225_L3.ppt
+CS225_L4.ppt
+CS225_L5 (2).ppt
+CS225_L7.ppt
+firstcopy.avi
+hello
+L6_CS225_verilog.ppt
+miniProject.pdf
+test
+testdir
+
+[02:24:17] INFO:    aodfpj
+BAKCHODI.txt
+g
+inputqwerty.txt
+ji
+oer
+test1
+test1.txt
+test2
+Test.txt
+z
+
+[02:24:17] INFO:    Connection channel closed
+[02:24:17] INFO:    Check if exec success or not ... 
+[02:24:17] INFO:    Execute successfully for command: ls;cd testdir;ls
+[02:24:17] INFO:    Now wait 0 seconds to begin next task ...
+[02:24:17] INFO:    Connection channel disconnect
+[02:24:17] INFO:    SSH connection shutdown
+
+=============== [2017/04/16 03:05:22, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[03:05:22] INFO:    SSHExec initializing ...
+[03:05:22] INFO:    Session initialized and associated with user credential kshitij#456
+[03:05:22] INFO:    SSHExec initialized successfully
+[03:05:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[03:05:23] INFO:    SSH connection established
+[03:05:23] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[03:05:23] INFO:    Command is cd cms/
+[03:05:23] INFO:    Connection channel established succesfully
+[03:05:23] INFO:    Start to run command
+[03:05:23] INFO:    Connection channel closed
+[03:05:23] INFO:    Check if exec success or not ... 
+[03:05:23] INFO:    Execute successfully for command: cd cms/
+[03:05:23] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:23] INFO:    Connection channel disconnect
+[03:05:23] INFO:    Command is mkdir CS103_sriparna
+[03:05:23] INFO:    Connection channel established succesfully
+[03:05:23] INFO:    Start to run command
+[03:05:23] INFO:    Connection channel closed
+[03:05:23] INFO:    Check if exec success or not ... 
+[03:05:23] INFO:    Execute successfully for command: mkdir CS103_sriparna
+[03:05:23] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:23] INFO:    Connection channel disconnect
+[03:05:23] INFO:    Command is cd CS103_sriparna
+[03:05:23] INFO:    Connection channel established succesfully
+[03:05:23] INFO:    Start to run command
+[03:05:23] INFO:    Connection channel closed
+[03:05:23] INFO:    Check if exec success or not ... 
+[03:05:23] INFO:    Execute successfully for command: cd CS103_sriparna
+[03:05:23] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:23] INFO:    Connection channel disconnect
+[03:05:23] INFO:    Command is mkdir assignments
+[03:05:23] INFO:    Connection channel established succesfully
+[03:05:23] INFO:    Start to run command
+[03:05:24] INFO:    Connection channel closed
+[03:05:24] INFO:    Check if exec success or not ... 
+[03:05:24] INFO:    Execute successfully for command: mkdir assignments
+[03:05:24] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:24] INFO:    Connection channel disconnect
+[03:05:24] INFO:    Command is mkdir materials
+[03:05:24] INFO:    Connection channel established succesfully
+[03:05:24] INFO:    Start to run command
+[03:05:24] INFO:    Connection channel closed
+[03:05:24] INFO:    Check if exec success or not ... 
+[03:05:24] INFO:    Execute successfully for command: mkdir materials
+[03:05:24] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:24] INFO:    Connection channel disconnect
+[03:05:24] INFO:    Command is mkdir uploads
+[03:05:24] INFO:    Connection channel established succesfully
+[03:05:24] INFO:    Start to run command
+[03:05:24] INFO:    Connection channel closed
+[03:05:24] INFO:    Check if exec success or not ... 
+[03:05:24] INFO:    Execute successfully for command: mkdir uploads
+[03:05:24] INFO:    Now wait 0 seconds to begin next task ...
+[03:05:24] INFO:    Connection channel disconnect
+[03:05:24] INFO:    SSH connection shutdown
+
+=============== [2017/04/16 03:21:55, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[03:21:55] INFO:    SSHExec initializing ...
+[03:21:55] INFO:    Session initialized and associated with user credential kshitij#456
+[03:21:55] INFO:    SSHExec initialized successfully
+[03:21:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[03:21:59] INFO:    SSH connection established
+[03:21:59] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[03:21:59] INFO:    Command is cd cms/
+[03:21:59] INFO:    Connection channel established succesfully
+[03:21:59] INFO:    Start to run command
+[03:21:59] INFO:    Connection channel closed
+[03:21:59] INFO:    Check if exec success or not ... 
+[03:21:59] INFO:    Execute successfully for command: cd cms/
+[03:21:59] INFO:    Now wait 0 seconds to begin next task ...
+[03:21:59] INFO:    Connection channel disconnect
+[03:21:59] INFO:    Command is mkdir CS103_sriparna
+[03:21:59] INFO:    Connection channel established succesfully
+[03:21:59] INFO:    Start to run command
+[03:21:59] INFO:    Connection channel closed
+[03:21:59] INFO:    Check if exec success or not ... 
+[03:21:59] INFO:    Execute successfully for command: mkdir CS103_sriparna
+[03:21:59] INFO:    Now wait 0 seconds to begin next task ...
+[03:21:59] INFO:    Connection channel disconnect
+[03:21:59] INFO:    Command is cd CS103_sriparna
+[03:21:59] INFO:    Connection channel established succesfully
+[03:21:59] INFO:    Start to run command
+[03:21:59] INFO:    Connection channel closed
+[03:21:59] INFO:    Check if exec success or not ... 
+[03:22:00] INFO:    Execute successfully for command: cd CS103_sriparna
+[03:22:00] INFO:    Now wait 0 seconds to begin next task ...
+[03:22:00] INFO:    Connection channel disconnect
+[03:22:00] INFO:    Command is mkdir assignments
+[03:22:00] INFO:    Connection channel established succesfully
+[03:22:00] INFO:    Start to run command
+[03:22:00] INFO:    Connection channel closed
+[03:22:00] INFO:    Check if exec success or not ... 
+[03:22:00] INFO:    Execution failed while executing command: mkdir assignments
+[03:22:00] INFO:    Error message: mkdir: cannot create directory ‘assignments’: File exists
+[03:22:00] INFO:    Now wait 0 seconds to begin next task ...
+[03:22:00] INFO:    Connection channel disconnect
+[03:22:00] INFO:    Command is mkdir materials
+[03:22:00] INFO:    Connection channel established succesfully
+[03:22:00] INFO:    Start to run command
+[03:22:00] INFO:    Connection channel closed
+[03:22:00] INFO:    Check if exec success or not ... 
+[03:22:00] INFO:    Execution failed while executing command: mkdir materials
+[03:22:00] INFO:    Error message: mkdir: cannot create directory ‘materials’: File exists
+[03:22:00] INFO:    Now wait 0 seconds to begin next task ...
+[03:22:00] INFO:    Connection channel disconnect
+[03:22:00] INFO:    Command is mkdir uploads
+[03:22:00] INFO:    Connection channel established succesfully
+[03:22:00] INFO:    Start to run command
+[03:22:00] INFO:    Connection channel closed
+[03:22:00] INFO:    Check if exec success or not ... 
+[03:22:00] INFO:    Execution failed while executing command: mkdir uploads
+[03:22:00] INFO:    Error message: mkdir: cannot create directory ‘uploads’: File exists
+[03:22:00] INFO:    Now wait 0 seconds to begin next task ...
+[03:22:00] INFO:    Connection channel disconnect
+[03:22:00] INFO:    SSH connection shutdown
+
+=============== [2017/04/16 03:32:41, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[03:32:41] INFO:    SSHExec initializing ...
+[03:32:41] INFO:    Session initialized and associated with user credential kshitij#456
+[03:32:41] INFO:    SSHExec initialized successfully
+[03:32:41] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[03:32:42] INFO:    SSH connection established
+[03:32:42] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[03:32:42] INFO:    Command is cd cms/
+[03:32:42] INFO:    Connection channel established succesfully
+[03:32:42] INFO:    Start to run command
+[03:32:42] INFO:    Connection channel closed
+[03:32:42] INFO:    Check if exec success or not ... 
+[03:32:42] INFO:    Execute successfully for command: cd cms/
+[03:32:42] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:42] INFO:    Connection channel disconnect
+[03:32:42] INFO:    Command is mkdir CS103_sriparna
+[03:32:42] INFO:    Connection channel established succesfully
+[03:32:42] INFO:    Start to run command
+[03:32:42] INFO:    Connection channel closed
+[03:32:42] INFO:    Check if exec success or not ... 
+[03:32:42] INFO:    Execute successfully for command: mkdir CS103_sriparna
+[03:32:42] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:42] INFO:    Connection channel disconnect
+[03:32:42] INFO:    Command is cd CS103_sriparna
+[03:32:42] INFO:    Connection channel established succesfully
+[03:32:42] INFO:    Start to run command
+[03:32:42] INFO:    Connection channel closed
+[03:32:42] INFO:    Check if exec success or not ... 
+[03:32:42] INFO:    Execute successfully for command: cd CS103_sriparna
+[03:32:42] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:42] INFO:    Connection channel disconnect
+[03:32:42] INFO:    Command is mkdir assignments
+[03:32:42] INFO:    Connection channel established succesfully
+[03:32:42] INFO:    Start to run command
+[03:32:42] INFO:    Connection channel closed
+[03:32:42] INFO:    Check if exec success or not ... 
+[03:32:42] INFO:    Execution failed while executing command: mkdir assignments
+[03:32:42] INFO:    Error message: mkdir: cannot create directory ‘assignments’: File exists
+[03:32:42] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:42] INFO:    Connection channel disconnect
+[03:32:42] INFO:    Command is mkdir materials
+[03:32:42] INFO:    Connection channel established succesfully
+[03:32:42] INFO:    Start to run command
+[03:32:43] INFO:    Connection channel closed
+[03:32:43] INFO:    Check if exec success or not ... 
+[03:32:43] INFO:    Execution failed while executing command: mkdir materials
+[03:32:43] INFO:    Error message: mkdir: cannot create directory ‘materials’: File exists
+[03:32:43] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:43] INFO:    Connection channel disconnect
+[03:32:43] INFO:    Command is mkdir uploads
+[03:32:43] INFO:    Connection channel established succesfully
+[03:32:43] INFO:    Start to run command
+[03:32:43] INFO:    Connection channel closed
+[03:32:43] INFO:    Check if exec success or not ... 
+[03:32:43] INFO:    Execution failed while executing command: mkdir uploads
+[03:32:43] INFO:    Error message: mkdir: cannot create directory ‘uploads’: File exists
+[03:32:43] INFO:    Now wait 0 seconds to begin next task ...
+[03:32:43] INFO:    Connection channel disconnect
+[03:32:43] INFO:    SSH connection shutdown
+
+=============== [2017/04/16 04:04:24, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[04:04:24] INFO:    SSHExec initializing ...
+[04:04:24] INFO:    Session initialized and associated with user credential kshitij#456
+[04:04:24] INFO:    SSHExec initialized successfully
+[04:04:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[04:04:25] INFO:    SSH connection established
+[04:04:25] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[04:04:25] INFO:    Command is cd cms/;mkdir CS103_sriparna;cd CS103_sriparna;mkdir assignments;mkdir uploads;mkdir materials
+[04:04:25] INFO:    Connection channel established succesfully
+[04:04:25] INFO:    Start to run command
+[04:04:26] INFO:    Connection channel closed
+[04:04:26] INFO:    Check if exec success or not ... 
+[04:04:26] INFO:    Execute successfully for command: cd cms/;mkdir CS103_sriparna;cd CS103_sriparna;mkdir assignments;mkdir uploads;mkdir materials
+[04:04:26] INFO:    Now wait 0 seconds to begin next task ...
+[04:04:26] INFO:    Connection channel disconnect
+[04:04:26] INFO:    SSH connection shutdown

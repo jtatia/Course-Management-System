@@ -25,6 +25,7 @@ import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
+import main.professor.professorDAO.ProfessorDAO;
 
 import javax.swing.JToggleButton;
 
@@ -38,6 +39,7 @@ public class CourseSearchPanel extends JPanel {
     private CourseTableModel courseTableModel;
     private CourseDAO dao = null;
     private CourseMappingDAO map_dao=null;
+    private ProfessorDAO pfdao=null;
     List<Course> course = null;
 	/**
 	 * Create the panel.
@@ -56,6 +58,7 @@ public class CourseSearchPanel extends JPanel {
 		textField.setPrompt("Course search panel. Please enter the string to search");
 		panel.add(textField);
 		textField.setColumns(10);
+		pfdao=new ProfessorDAO();
 		dao = new CourseDAO();
 		map_dao=new CourseMappingDAO();
 		course=dao.getAllCourses();
