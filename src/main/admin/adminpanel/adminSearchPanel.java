@@ -1,14 +1,12 @@
 package main.admin.adminpanel;
 
+
 import javax.swing.JPanel;
 import main.admin.admin.Admin;
 import main.admin.adminpanel.addAdmin.addAdmin;
 import main.admin.adminpanel.admintablemodel.AdminTableModel;
 import main.admin.adminpanel.adminupdateform.AdminUpdateForm;
-import main.admin.adminpanel.proftablemodel.ProfTableModel;
 import main.admin.adminpaneldao.AdminPanelDAO;
-import main.professor.professor.Professor;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
