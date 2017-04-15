@@ -8,6 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.jcraft.jsch.Channel;
+import com.jcraft.jsch.ChannelSftp;
+import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.Session;
+
+import main.util.CSVfiles.CSVfiles;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
@@ -24,6 +30,7 @@ import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -32,6 +39,10 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 
@@ -41,6 +52,7 @@ public class UploadedAssignments extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private List<Assignment> list;
+	ArrayList<Assignment> list1;
 	private AssignmentTableModel atm;
 	private AssignmentTableModelC atmc;
 	private String path="";
@@ -131,16 +143,29 @@ public class UploadedAssignments extends JFrame {
 					for(int i=0;i<str.length;i++)
 					{
 						Assignment temp = new Assignment();
+						if(str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")&&!str[i].contains(".csv"))
+						{
 						temp.setName("\""+str[i]+"\"");
 						temp.setPath(path);
 						String s[]=FileDetails.getStats(path,temp.getName());
 						temp.setLastModified(s[1]);
 						temp.setSize(s[0]);
+						temp.setStatus("Not tested");
+						temp.setMarks(0);
 						list.add(temp);
-						atm = new AssignmentTableModel(list);
-						table.setModel(atm);
+						}
+						if(model_mode == 1)
+						{
+						list1 = CSVfiles.ReadMarksFile(path) ;
+						atmc = new AssignmentTableModelC(list1);
+						table.setModel(atmc);
+						}
+						else
+						{
+							atm = new AssignmentTableModel(list);
+							table.setModel(atm);
+						}
 					}
-					
 					}catch(Exception ex){
 						ex.printStackTrace();
 					}
@@ -152,22 +177,22 @@ public class UploadedAssignments extends JFrame {
 		JButton btnTestFiles = new JButton("Test Files");
 		btnTestFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("here");
+//				System.out.println("here");
 			//	if(table.getSelectedRow() > 0){
-					System.out.println("inside");
+	//				System.out.println("inside");
 					int[] rows = table.getSelectedRows();
 					new Thread() {
 						
 						public void run(){
 							for(int r : rows){
 								Assignment a = list.get(r);
-								try {System.out.println("calling");
-									list.add(test(a.getPath(),a.getName()));
+								try {//System.out.println("calling");
+									test(a.getPath(),a.getName());
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
-								atmc = new AssignmentTableModelC(list);
-								table.setModel(atmc);
+						//		atmc = new AssignmentTableModelC(list);
+							//	table.setModel(atmc);
 							}
 						}
 					}.start();
@@ -221,10 +246,10 @@ public class UploadedAssignments extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				// TODO Auto-generated method stub
-				System.out.println("!!!!!!!!!!!!!!!!!!"+path);
+				
 				if(chckbxEnableCompiler.isSelected())
 				{
+					model_mode = 1;
 					btnLogFiles.setEnabled(true);
 					btnTestFiles.setEnabled(true);
 					btnUploadTestCases.setEnabled(true);
@@ -233,6 +258,7 @@ public class UploadedAssignments extends JFrame {
 				}
 				else
 				{
+					model_mode = 0;
 					btnLogFiles.setEnabled(false);
 					btnTestFiles.setEnabled(false);
 					btnUploadTestCases.setEnabled(false);
@@ -265,7 +291,7 @@ public class UploadedAssignments extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		
-		list = new ArrayList<Assignment>();
+	//	list = new ArrayList<Assignment>();
 	/*	String str[] = FileDetails.getFileList(path);
 		for(int i=0;i<str.length;i++)
 		{
@@ -278,28 +304,32 @@ public class UploadedAssignments extends JFrame {
 			list.add(temp);
 		}
 		*/
-		atm = new AssignmentTableModel(list);
-		table.setModel(atm);
+	//	atm = new AssignmentTableModel(list);
+	//	table.setModel(atm);
 		table.setRowHeight(30);
 	}
 	
-	private Assignment test(String path, String name) throws Exception {
+	/**FUnction takes path and name of file. path is till 'assigname/'. it first generates an array containing all the marks
+	 * It then sends file for compiling. if it compiles then it sends for execution. if executes it sends for checking outputs
+	 * and then deletes all extra files and finally has 2 parameters error and marks */
+	
+	private void test(String path, String name) throws Exception {
 		//name = name.replace('"', '\u0000');
 		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
         if(length ==0){
         	//error log
-        	System.out.println("ERRRORR");
+  //      	System.out.println("ERRRORR");
         }
         UploadTestCases utc = new UploadTestCases(path);
-        utc.getMarksContent();
+        utc.getMarksContent(path);
         //String content = utc.marksContent;
         ArrayList<Integer> marks = new ArrayList<Integer>();
 		for(int i=0;i<length;i++){
 			String contain = utc.getMarksFromName(inp[i]);
 			marks.add(Integer.parseInt(contain));
-			System.out.println("MMMMMMAAAAAAAAAARRRRRRRRRRRRRRRKKKKKKKKKSSSSSSSS="+marks);
+//			System.out.println("MMMMMMAAAAAAAAAARRRRRRRRRRRRRRRKKKKKKKKKSSSSSSSS="+marks);
 		}
 		
         Assignment assign = new Assignment();
@@ -326,31 +356,39 @@ public class UploadedAssignments extends JFrame {
 		String error = "Successful";
 		for(int i =0; i<length; i++)
 			{
-			System.out.println("@@@@@@@@@@@!!!!!!!!!!!Compiling\n"+path+"===="+name);
+		//	System.out.println("@@@@@@@@@@@!!!!!!!!!!!Compiling\n"+path+"===="+name);
 			int status = jc.compile(path,name);            //compiling
 			  if(status == 0){                        //-->if compiles
 			  
-				  System.out.println("THS IS THE PROBLEM\npath = "+path+"\nname ="+name+"\ninputfilename"+inp[i]);
+		//		  System.out.println("THS IS THE PROBLEM\npath = "+path+"\nname ="+name+"\ninputfilename"+inp[i]);
 				 int x = jc.execute(path,name,inp[i]);                             //  -->execute
-			  System.out.println("%%%%%%%%%%%%%%%%EXecute"+inp[i]);
+		//	  System.out.println("%%%%%%%%%%%%%%%%EXecute"+inp[i]);
 			  if(x == 0){
 			  String outputFile = path +"out.txt";
 			  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
-			  String output = path + "outputFiles/out_"+(i+1)+".txt"; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+			  String output = path + "outputFiles/"+inp[i]; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
 			  System.out.println("OUTPUT!@!@@##$$:: "+output);
+			  System.out.println("MARKS SENT:"+marks.get(i));
 			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
 			  marksOfOutput  += fom.CheckOutputs();
+			  fom.DeleteFiles();
 			  System.out.println("current stud marks="+marksOfOutput);
 			  }
+			  else if (x == 1)
+				  error = "Runtime Error";
 			  else
-				  error = jc.getErrormessage();
+				  error = "Timed out";
 			  }
 			  else
-				  error = jc.getErrormessage();
+				  error = "Compile time error";
 		}
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
-		return assign;
+		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
+		//writing marks and status to new file
+		//writeMarksAnderror(path,name,marksOfOutput,error);
+	
 	}
+
 }

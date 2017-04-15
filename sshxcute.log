@@ -9940,6 +9940,155 @@ input2.txt
 [11:07:03] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW1/inputFiles/
 [11:07:03] INFO:    Now wait 0 seconds to begin next task ...
 [11:07:03] INFO:    Connection channel disconnect
+<<<<<<< HEAD
+
+=============== [2017/04/14 18:54:01, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[18:54:01] INFO:    SSHExec initializing ...
+[18:54:01] INFO:    Session initialized and associated with user credential kshitij#456
+[18:54:01] INFO:    SSHExec initialized successfully
+[18:54:01] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:54:03] INFO:    SSH connection established
+[18:54:03] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:54:03] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[18:54:03] INFO:    Connection channel established succesfully
+[18:54:03] INFO:    Start to run command
+[18:54:03] INFO:    input1.txt
+input2.txt
+input3.txt
+
+[18:54:03] INFO:    Connection channel closed
+[18:54:03] INFO:    Check if exec success or not ... 
+[18:54:03] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[18:54:03] INFO:    Now wait 0 seconds to begin next task ...
+[18:54:03] INFO:    Connection channel disconnect
+[18:54:08] INFO:    Command is rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input3.txt
+[18:54:08] INFO:    Connection channel established succesfully
+[18:54:08] INFO:    Start to run command
+[18:54:08] INFO:    Connection channel closed
+[18:54:08] INFO:    Check if exec success or not ... 
+[18:54:08] INFO:    Execute successfully for command: rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input3.txt
+[18:54:08] INFO:    Now wait 0 seconds to begin next task ...
+[18:54:08] INFO:    Connection channel disconnect
+[18:54:11] INFO:    Command is rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input2.txt
+[18:54:11] INFO:    Connection channel established succesfully
+[18:54:11] INFO:    Start to run command
+[18:54:11] INFO:    Connection channel closed
+[18:54:11] INFO:    Check if exec success or not ... 
+[18:54:11] INFO:    Execute successfully for command: rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input2.txt
+[18:54:11] INFO:    Now wait 0 seconds to begin next task ...
+[18:54:11] INFO:    Connection channel disconnect
+[18:54:14] INFO:    Command is rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input1.txt
+[18:54:14] INFO:    Connection channel established succesfully
+[18:54:14] INFO:    Start to run command
+[18:54:14] INFO:    Connection channel closed
+[18:54:14] INFO:    Check if exec success or not ... 
+[18:54:14] INFO:    Execute successfully for command: rm /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/input1.txt
+[18:54:14] INFO:    Now wait 0 seconds to begin next task ...
+[18:54:14] INFO:    Connection channel disconnect
+[18:55:21] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:21] INFO:    SSHExec initialized successfully
+[18:55:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:22] INFO:    SSH connection established
+[18:55:22] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:22] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[18:55:22] INFO:    Connection channel established succesfully
+[18:55:22] INFO:    Start to run command
+[18:55:23] INFO:    input1.txt
+input2.txt
+input3.txt
+
+[18:55:23] INFO:    Connection channel closed
+[18:55:23] INFO:    Check if exec success or not ... 
+[18:55:23] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
+[18:55:23] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:23] INFO:    Connection channel disconnect
+[18:55:24] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:24] INFO:    SSHExec initialized successfully
+[18:55:24] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:24] INFO:    SSH connection established
+[18:55:24] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:24] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:24] INFO:    Connection channel established succesfully
+[18:55:24] INFO:    Start to run command
+[18:55:25] INFO:    Connection channel closed
+[18:55:25] INFO:    Check if exec success or not ... 
+[18:55:25] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:25] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:25] INFO:    Connection channel disconnect
+[18:55:25] INFO:    SSH connection shutdown
+[18:55:25] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:25] INFO:    SSHExec initialized successfully
+[18:55:25] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:26] INFO:    SSH connection established
+[18:55:26] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:26] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input1.txt > out.txt
+[18:55:26] INFO:    Connection channel established succesfully
+[18:55:26] INFO:    Start to run command
+[18:55:26] INFO:    Connection channel closed
+[18:55:26] INFO:    Check if exec success or not ... 
+[18:55:26] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input1.txt > out.txt
+[18:55:26] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:26] INFO:    Connection channel disconnect
+[18:55:26] INFO:    SSH connection shutdown
+[18:55:32] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:32] INFO:    SSHExec initialized successfully
+[18:55:32] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:32] INFO:    SSH connection established
+[18:55:32] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:32] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:32] INFO:    Connection channel established succesfully
+[18:55:32] INFO:    Start to run command
+[18:55:33] INFO:    Connection channel closed
+[18:55:33] INFO:    Check if exec success or not ... 
+[18:55:33] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:33] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:33] INFO:    Connection channel disconnect
+[18:55:33] INFO:    SSH connection shutdown
+[18:55:34] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:34] INFO:    SSHExec initialized successfully
+[18:55:34] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:34] INFO:    SSH connection established
+[18:55:34] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:34] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input2.txt > out.txt
+[18:55:34] INFO:    Connection channel established succesfully
+[18:55:35] INFO:    Start to run command
+[18:55:35] INFO:    Connection channel closed
+[18:55:35] INFO:    Check if exec success or not ... 
+[18:55:35] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input2.txt > out.txt
+[18:55:35] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:35] INFO:    Connection channel disconnect
+[18:55:35] INFO:    SSH connection shutdown
+[18:55:40] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:40] INFO:    SSHExec initialized successfully
+[18:55:40] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:40] INFO:    SSH connection established
+[18:55:40] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:40] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:40] INFO:    Connection channel established succesfully
+[18:55:40] INFO:    Start to run command
+[18:55:41] INFO:    Connection channel closed
+[18:55:41] INFO:    Check if exec success or not ... 
+[18:55:41] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;javac "HW1_1501CS26.java"
+[18:55:41] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:41] INFO:    Connection channel disconnect
+[18:55:41] INFO:    SSH connection shutdown
+[18:55:41] INFO:    Session initialized and associated with user credential kshitij#456
+[18:55:41] INFO:    SSHExec initialized successfully
+[18:55:41] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[18:55:42] INFO:    SSH connection established
+[18:55:42] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[18:55:42] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input3.txt > out.txt
+[18:55:42] INFO:    Connection channel established succesfully
+[18:55:42] INFO:    Start to run command
+[18:55:42] INFO:    Connection channel closed
+[18:55:42] INFO:    Check if exec success or not ... 
+[18:55:42] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/;java "HW1_1501CS26" < inputFiles/input3.txt > out.txt
+[18:55:42] INFO:    Now wait 0 seconds to begin next task ...
+[18:55:42] INFO:    Connection channel disconnect
+[18:55:42] INFO:    SSH connection shutdown
+||||||| merged common ancestors
+=======
 
 =============== [2017/04/14 16:13:15, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
 
@@ -9961,6 +10110,7 @@ input3.txt
 [16:13:18] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
 [16:13:18] INFO:    Now wait 0 seconds to begin next task ...
 [16:13:18] INFO:    Connection channel disconnect
+<<<<<<< HEAD
 
 =============== [2017/04/16 02:24:15, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
 
@@ -10203,3 +10353,6 @@ z
 [04:04:26] INFO:    Now wait 0 seconds to begin next task ...
 [04:04:26] INFO:    Connection channel disconnect
 [04:04:26] INFO:    SSH connection shutdown
+=======
+>>>>>>> 7fd8f8dace20a587f5b311ae3738cd7f881ebffc
+>>>>>>> 7fed4788eb1a2273a216496e399a84e2a0e8d462
