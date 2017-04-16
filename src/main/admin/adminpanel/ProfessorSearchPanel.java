@@ -2,8 +2,7 @@ package main.admin.adminpanel;
 
 import javax.swing.JPanel;
 
-import main.admin.admin.Admin;
-import main.admin.adminpanel.addAdmin.addAdmin;
+
 import main.admin.adminpanel.addfaculty.AddFacultyForm;
 import main.admin.adminpanel.facultyupdateform.FacultyUpdateForm;
 import main.admin.adminpanel.proftablemodel.ProfTableModel;

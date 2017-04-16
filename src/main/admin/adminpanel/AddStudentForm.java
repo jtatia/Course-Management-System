@@ -2,6 +2,7 @@ package main.admin.adminpanel;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -51,7 +52,7 @@ public class AddStudentForm extends JFrame {
 	private JTextField sub9TextField;
 	private JTextField sub10TextField;
 	private JTextField sexTextField;
-
+	private JScrollPane jsp=null;
 	/**
 	 * Launch the application.
 	 */
@@ -81,7 +82,6 @@ public class AddStudentForm extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		
 		JButton submit = new JButton("Submit");
 		contentPane.add(submit, BorderLayout.SOUTH);
 		JScrollPane scrollPane = new JScrollPane();

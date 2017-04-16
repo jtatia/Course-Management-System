@@ -3,6 +3,7 @@ package main.student.coursepanel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -27,6 +28,7 @@ import main.student.student.Student;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.SSHComm;
 import main.util.upload.Upload;
 
 import javax.swing.JToggleButton;
@@ -35,30 +37,45 @@ public class CourseAssignmentUploadPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JXTextField textField;
-	private JXTextField assignField;
+//	private JXTextField assignField;
+	private JComboBox assignField;
 	private JTable table;
     private CourseAssignmentUploadTableModel model;
     private List<UploadInfo> uploadInfo;
+    private SSHComm sshc;
 	/**
 	 * Create the panel.
 	 */
 	public CourseAssignmentUploadPanel(Student student, String path)throws Exception {
+		System.out.println("CourseAssignmentUploadPanel : "+path);
 		setLayout(null);
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 11, 1320, 38);
 		add(panel);
 		panel.setLayout(null);
+		sshc=new SSHComm();
 		table=new JTable();
 		textField = new JXTextField();
 		textField.setBounds(10, 11, 800, 20);
 		textField.setPrompt("Enter path of file to upload");
 		panel.add(textField);
 		textField.setColumns(9);
-		assignField = new JXTextField();
+	/*	assignField = new JXTextField();
 		assignField.setBounds(850,11,100,20);
 		assignField.setColumns(2);
 		assignField.setPrompt("Enter assign no. or name");
+		panel.add(assignField);*/
+		System.out.println("ls "+path+"uploads/");
+		String str=sshc.SSHClient("ls "+path+"uploads/", sshc);
+		str=str.substring(0,str.indexOf("null"));
+		sshc.close();
+		System.out.println("###"+str+"###");
+		String assign[]=str.split("\n");
+		assignField=new JComboBox(assign);
+		assignField.setBounds(850,11,150,20);
+		assignField.setToolTipText("Enter assign no. or name");
 		panel.add(assignField);
+		assignField.setSelectedItem(null);
 		/* adding files into list which then is added into model which is added to table*/
 		
         System.out.println(path);
@@ -71,17 +88,16 @@ public class CourseAssignmentUploadPanel extends JPanel {
 					FileChooser chooser = new FileChooser();
 					textField.setText(chooser.getFilePath());
 				}
-				else
-				{
+
 					new Thread(){
 					
 						public void run(){					
 					Upload upload = new Upload();
-					upload.studentUploadAssignment(textField.getText(), path, assignField.getText(), student.getRollno());
+					upload.studentUploadAssignment(textField.getText(), path, (String)assignField.getSelectedItem(), student.getRollno());
 					textField.setText("");
-					assignField.setText("");
+					assignField.setSelectedItem(null);
 				}}.start();
-				}}catch(Exception e1){
+				}catch(Exception e1){
 					e1.printStackTrace();
 				
 			}}
@@ -97,7 +113,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 					public void run(){
 				uploadInfo = new ArrayList<UploadInfo>();
 				textField.setText("");
-				assignField.setText("");
+				assignField.setSelectedItem(null);
 				try {
 					String str[] = FileDetails.getFileList(path+"uploads");
 					

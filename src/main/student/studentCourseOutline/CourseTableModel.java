@@ -82,7 +82,7 @@ public class CourseTableModel extends AbstractTableModel{
 										//System.out.println("   on button press");
 										String path=cmdao.getDirectoryPath(course_name, student.getBatch());
 										pc.co.c_panel.curr_subject=course_name;
-			                    		System.out.println(path);
+			                    		System.out.println("Button Renderer Listener : "+path+course_name);
 			                    		try {
 			            					pc.co.c_panel.resetPanes(student, path);
 			            				} catch (Exception e) {

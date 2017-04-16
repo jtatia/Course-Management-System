@@ -165,7 +165,6 @@ public class StudentCourseOutline extends JFrame {
 				//cp.setVisible(true);
 			}
 		});
-
 		scrollPane.setViewportView(list);
 	}
 

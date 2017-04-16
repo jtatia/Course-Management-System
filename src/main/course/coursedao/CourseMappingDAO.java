@@ -167,7 +167,7 @@ public class CourseMappingDAO {
 				}
 				else
 				{
-					if(batch1.equals(batch) || batch2.equals(batch) && batch3.equals(batch) && batch4.equals(batch) && batch5.equals(batch))
+					if((batch1!=null && batch1.equals(batch)) || (batch2!=null && batch2.equals(batch)) || (batch3!=null && batch3.equals(batch)) || (batch4!=null && batch4.equals(batch)) || (batch5!=null && batch5.equals(batch)))
 					{
 						dir_name=courseId+"_"+professor;
 						break;

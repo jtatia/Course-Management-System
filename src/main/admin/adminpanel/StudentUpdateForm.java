@@ -6,6 +6,7 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -51,6 +52,7 @@ public class StudentUpdateForm extends JDialog {
 	private Student tempStu=null;
 	private String prev;
 	private int flag=0;
+	private JScrollPane jsp=null;
 	/**
 	 * Launch the application.
 	 */
@@ -75,11 +77,15 @@ public class StudentUpdateForm extends JDialog {
 		populateForm();
 	}
 	public StudentUpdateForm() {
+		setTitle("Update Student Form");
 		setBounds(400,50,600, 640);
 		getContentPane().setLayout(new BorderLayout());
 		form_panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		getContentPane().add(form_panel, BorderLayout.CENTER);
-		
+		jsp=new JScrollPane();
+		jsp.setViewportView(form_panel);
+		jsp.setBounds(400, 50, 600, 620);
+		this.add(jsp);
 		JLabel lblNewLabel = new JLabel("Indetification Number :");
 		
 		id_text = new JTextField();
