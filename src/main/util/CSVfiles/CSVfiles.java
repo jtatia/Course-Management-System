@@ -112,7 +112,7 @@ try{
 		System.out.println("outside");
 		read.close();
 		for(int i=0;i<list.size();i++){
-			for(int j=0;j<count;j++){
+			for(int j=count-1;j>=0;j--){
 				System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
 				if(("\""+list.get(i).getName()+"\"").equals(csvlist.get(j).getFilename()))
 						{
