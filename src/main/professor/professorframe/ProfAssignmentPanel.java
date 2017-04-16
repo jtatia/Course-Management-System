@@ -12,6 +12,7 @@ import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -168,15 +169,17 @@ public class ProfAssignmentPanel extends JPanel {
 						FileChooser chooser = new FileChooser();
 						textField.setText(chooser.getFilePath());
 					}
-					else
-					{
+					
 						new Thread(){
 							public void run(){					
 						Upload upload = new Upload();
 						upload.professorUploadFile(textField.getText(),p,"");
 						textField.setText("");
-					}}.start();
-					}}catch(Exception e1){
+						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
+							}}.start();
+					
+					}catch(Exception e1){
+						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload failed.","Erro",JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
 				}
 			}
