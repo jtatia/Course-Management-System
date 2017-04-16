@@ -85,6 +85,7 @@ public class StudentUpdateForm extends JDialog {
 		jsp=new JScrollPane();
 		jsp.setViewportView(form_panel);
 		jsp.setBounds(400, 50, 600, 620);
+		this.add(jsp);
 		JLabel lblNewLabel = new JLabel("Indetification Number :");
 		
 		id_text = new JTextField();
