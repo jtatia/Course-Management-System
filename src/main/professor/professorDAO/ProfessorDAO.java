@@ -348,12 +348,16 @@ public class ProfessorDAO {
 			String cid="";
 			while(rs.next())
 				cid=rs.getString("course_ids");
+			//System.out.println("cid id ##### Hre = "+cid);
 			if(cid==null||cid=="")
 				cid+=course_id;
 			else cid+="_"+course_id;
+			
+			//System.out.println("cid id ##### Hre After= "+cid);
 			pstmt=myCon.prepareStatement("update professor set course_ids= ? where user_name = ?");
 			pstmt.setString(1, cid);
 			pstmt.setString(2, user);
+			pstmt.executeUpdate();
 		}catch(Exception exc){exc.printStackTrace();}
 		finally{
 			if(pstmt!=null){
@@ -363,4 +367,37 @@ public class ProfessorDAO {
 			}		
 		}
 	}
+	
+	
+	/*public void daleteCourseIds(String user,String course_id){
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try{
+			pstmt=myCon.prepareStatement("select course_ids from professor where user_name = ?");
+			pstmt.setString(1, user);
+			rs=pstmt.executeQuery();
+			String cid="";
+			while(rs.next())
+				cid=rs.getString("course_ids");
+			//System.out.println("cid id ##### Hre = "+cid);
+			int index=cid.indexOf(course_id);
+			if(course_id.length()==cid.length()){
+					cid="";
+			}else cid=cid.substring(0, index-1)+cid.substring(index+course_id.length());
+			System.out.println("cid id ##### Hre After= "+cid);
+			pstmt=myCon.prepareStatement("update professor set course_ids= ? where user_name = ?");
+			pstmt.setString(1, cid);
+			pstmt.setString(2, user);
+			pstmt.executeUpdate();
+		}catch(Exception exc){exc.printStackTrace();}
+		finally{
+			if(pstmt!=null){
+				try{
+					pstmt.close();
+				}catch(Exception exc){}
+			}		
+		}
+	}*/
+	
+	
 }

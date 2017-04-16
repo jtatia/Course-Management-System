@@ -15,6 +15,7 @@ import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
 import main.professor.professorDAO.ProfessorDAO;
 import main.student.student.Student;
+import main.util.foldermaker.FolderMaker;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -124,6 +125,7 @@ public class AddCourse extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 			Course course=new Course();
 			int f=0;
+			String folderName="";
 			String course_id=IdText.getText();
 			if(course_id.equals(""))
 			{
@@ -142,18 +144,19 @@ public class AddCourse extends JDialog {
 				if(f==0)
 				{	
 					course.setCourseId(IdText.getText());
+					folderName+=IdText.getText()+"_";
 					course.setCourseName(courseText.getText());
 					course.setCourseInfo(textArea.getText());
 					dao.addCourse(course);
-					JOptionPane.showMessageDialog(AddCourse.this,"New Course has been added","Info : ",JOptionPane.INFORMATION_MESSAGE);
 					// once the student has been added set the visibility to false and dispose off the JFrame
 					ListModel lm=list.getModel();
 					int size=lm.getSize();
 					String professors[]=new String [size];
 					for(int k=0;k<size;k++)
 					{
-						pfdao.updateCourseIds((String)lm.getElementAt(k) ,course_id);
+						pfdao.updateCourseIds((String)model.get(k),course_id);
 						professors[k]=(String) lm.getElementAt(k);
+						folderName+=(k==size-1)?professors[k]:professors[k]+"_";
 					}	
 					String batches[]=new String [5];
 					String b=(String) comboBox.getSelectedItem();
@@ -178,8 +181,14 @@ public class AddCourse extends JDialog {
 						batches[4]="ce"+b.substring(b.length()-2)+bh;
 					else
 						batches[4]="";
+					FolderMaker fm=new FolderMaker();
+					try {
+						fm.createDirectoryStructure(folderName);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 					cmdao.addEntry(course.getCourseId(), professors, batches);
-					AddCourse.this.setVisible(false);
+					JOptionPane.showMessageDialog(AddCourse.this,"New Course has been added","Info : ",JOptionPane.INFORMATION_MESSAGE);AddCourse.this.setVisible(false);
 					AddCourse.this.dispose();
 				}
 			}
