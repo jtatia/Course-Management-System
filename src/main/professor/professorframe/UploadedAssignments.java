@@ -20,7 +20,10 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.SSHCommands;
+import main.util.sshcommands.UsingJsch;
 import main.util.upload.Upload;
+import net.neoremind.sshxcute.exception.TaskExecFailException;
 import main.util.codetester.*;
 
 import javax.swing.JScrollPane;
@@ -33,6 +36,7 @@ import java.util.List;
 import java.util.Properties;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -53,13 +57,15 @@ public class UploadedAssignments extends JFrame {
 	private JTable table;
 	private List<Assignment> list;
 	ArrayList<Assignment> list1;
+	private SSHCommands sshc;
 	private AssignmentTableModel atm;
 	private AssignmentTableModelC atmc;
 	private String path="";
 	private JavaCompiler jc = new JavaCompiler();
 	private int model_mode = 0;
+	public static String Logpath;
 	/**
-	 * Launch the application.
+	 * sLaunch the application.
 	 */
 	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -81,6 +87,7 @@ public class UploadedAssignments extends JFrame {
 	public UploadedAssignments(String p,String assignmentFolderName) throws Exception {
 		setTitle("UPLOADS -  <dynamic>");
 		setVisible(true);
+		String call = p;
 		p=p+assignmentFolderName.substring(1,assignmentFolderName.length()-1)+"/";
 		path=p;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -182,11 +189,25 @@ public class UploadedAssignments extends JFrame {
 	//				System.out.println("inside");
 					int[] rows = table.getSelectedRows();
 					new Thread() {
-						
 						public void run(){
+							try {
+								System.out.println("!!!!!!!!!!!!!!!!!!!!!!\n"+path+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+								String str[] = FileDetails.getFileList(path);
+								int c=0;
+								for(int i=0;i<str.length;i++){
+								if(!str[i].equals("logFiles1"))
+								c++;
+								}
+								if(c==str.length){
+								System.out.println("SHOULD BE RUNNING");
+									sshc.runSingleCommand("mkdir "+path+"logFiles1/");
+								}
+							} catch (Exception e1) {
+								e1.printStackTrace();
+							}						
 							for(int r : rows){
 								Assignment a = list.get(r);
-								try {//System.out.println("calling");
+								try {System.out.println("calling");
 									test(a.getPath(),a.getName());
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -203,6 +224,41 @@ public class UploadedAssignments extends JFrame {
 		btnTestFiles.setEnabled(false);
 		
 		JButton btnLogFiles = new JButton("Log Files");
+		btnLogFiles.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+					if(table.getSelectedRow() < 1)
+						JOptionPane.showMessageDialog(UploadedAssignments.this,"Please Select atleast Single person","Error",JOptionPane.ERROR_MESSAGE);
+				//	SavePathForFiles obj = new SavePathForFiles(call,assignmentFolderName);
+				//	obj.setVisible(true);
+					int[] rows = table.getSelectedRows();
+					FileChooser fc = new FileChooser();
+					try{
+					new Thread() {
+									
+									public void run(){
+						           for(int r : rows){
+										Assignment a = list.get(r);
+										String x =a.getName();
+										String file = a.getPath()+"logFiles/"+x.substring(0,x.lastIndexOf('.'))+".txt\"";
+										/*try {
+											String list = sshc.runSingleCommand("ls"+path+"logFiles/");
+											if(list.equals(""))
+							JOptionPane.showMessageDialog(UploadedAssignments.this,"No files exist","Error",JOptionPane.ERROR_MESSAGE);
+											if(!list.contains(a.getName()))
+													continue;
+										} catch (TaskExecFailException e) {
+											e.printStackTrace();
+										}
+									*/	Download dwn = new Download();
+										dwn.downloadFile(file, fc.getDirectoryPath(),a);								
+									}}
+								}.start();
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+			}
+		});
 		bottomPanel.add(btnLogFiles);
 		btnLogFiles.setEnabled(false);
 		
@@ -314,7 +370,7 @@ public class UploadedAssignments extends JFrame {
 	 * and then deletes all extra files and finally has 2 parameters error and marks */
 	
 	private void test(String path, String name) throws Exception {
-		//name = name.replace('"', '\u0000');
+		System.out.println("WWWWWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
@@ -338,6 +394,7 @@ public class UploadedAssignments extends JFrame {
 		String s[]=FileDetails.getStats(path,name);
 		assign.setLastModified(s[1]);
 		assign.setSize(s[0]);
+		String log = "";
 		/*String marks_file = path + "marks.txt";  //all marks per question stored in a txt file in same directory
 		System.out.println("INSIDE          TEST               METHOD");
 		System.out.println("Marks path="+marks_file);
@@ -381,10 +438,13 @@ public class UploadedAssignments extends JFrame {
 			  }
 			  else
 				  error = "Compile time error";
-		}
+			  log+=jc.errormessage;
+			}
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
+		System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
+		UsingJsch.writingFile(path+"logFiles/", log, name.substring(1,name.lastIndexOf('.'))+".txt");
 		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file
 		//writeMarksAnderror(path,name,marksOfOutput,error);
