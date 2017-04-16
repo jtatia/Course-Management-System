@@ -285,7 +285,13 @@ public class UploadedAssignments extends JFrame {
 				String directory=fd.getDirectory();
 				if(filename!=null && directory!=null)
 				{
-					upload.uploadFile(directory+filename, path+"outputFiles/"+filename, filename);
+					String file_type=filename.substring(filename.lastIndexOf(".")+1);
+					if(file_type.equals("java")||file_type.equals("py")||file_type.equals("c")||file_type.equals("cpp")){
+						upload.uploadFile(directory+filename, path+"outputFiles/"+filename, filename);
+					}
+					else{
+						JOptionPane.showMessageDialog(UploadedAssignments.this, "Please upload only .java,.py,.cpp,.c files");
+					}
 				}	
 			}
 		});
@@ -448,7 +454,5 @@ public class UploadedAssignments extends JFrame {
 		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file
 		//writeMarksAnderror(path,name,marksOfOutput,error);
-	
 	}
-
 }
