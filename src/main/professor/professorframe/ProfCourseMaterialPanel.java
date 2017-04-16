@@ -1,17 +1,15 @@
 package main.professor.professorframe;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -168,16 +166,18 @@ public class ProfCourseMaterialPanel extends JPanel {
 						FileChooser chooser = new FileChooser();
 						textField.setText(chooser.getFilePath());
 					}
-					else
-					{
+					
 						new Thread(){
 							public void run(){					
 						Upload upload = new Upload();
 						upload.professorUploadFile(textField.getText(),p,"");
 						textField.setText("");
-					}}.start();
-					}}catch(Exception e1){
-						e1.printStackTrace();
+						JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
+							}}.start();
+					
+					}catch(Exception e1){
+					JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload failed.","Error",JOptionPane.ERROR_MESSAGE);
+					e1.printStackTrace();
 				}
 			}
 		});
