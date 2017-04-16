@@ -154,6 +154,7 @@ public class LoginPortal extends JFrame {
 								currentObject.dispose();
 								// obtaining student by roll no
 								Student stud=dao.getStudentByRollno(student.getRollno());
+								System.out.println("{{{{{{{{{{{{{"+stud.getBatch()+"}}}}}}}}}}}}}");
 								/*StudentCourseOutline studentCourseOutline=new StudentCourseOutline(stud);
 								studentCourseOutline.setVisible(true);*/
 								CourseOutline studentCourseOutline=new CourseOutline(stud);

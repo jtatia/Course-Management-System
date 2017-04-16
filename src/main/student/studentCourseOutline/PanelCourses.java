@@ -97,6 +97,7 @@ public class PanelCourses extends JPanel {
 		tcm.getColumn(0).setPreferredWidth(800);    
 		tcm.getColumn(1).setPreferredWidth(200);    
 		
+		
 		scrollPane.setBounds(10, 57, 1320, 450);
 		scrollPane.setColumnHeaderView(lblCoursesTaken);
 		add(scrollPane, BorderLayout.CENTER);
