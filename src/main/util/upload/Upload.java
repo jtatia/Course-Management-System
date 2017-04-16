@@ -12,6 +12,9 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.util.sshcommands.SSHCommands;
+import net.neoremind.sshxcute.exception.TaskExecFailException;
+
 public class Upload {
 	
 	static final String path="/home/Btech15/kshitij.cs15/cms" ;
@@ -93,8 +96,16 @@ public class Upload {
 	{
 		String filename = from.substring(from.lastIndexOf('\\')+1);
 		System.out.println("The filename is :: "+filename+" from="+from);
-		String to = courseid+filename;
+		String to = courseid+folder+"/"+filename;
 		System.out.println(to);
 		uploadFile(from, to,filename);
+		if(folder.equals("assignmnets")){
+			String cmd[]={"cd uploads","mkdir "+filename,"cd "+filename,"mkdir inputFiles","mkdir outputFiles"};
+			try {
+				SSHCommands.runMultipleCommand(cmd);
+			} catch (TaskExecFailException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

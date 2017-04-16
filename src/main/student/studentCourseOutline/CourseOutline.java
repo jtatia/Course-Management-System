@@ -17,6 +17,8 @@ import javax.swing.JOptionPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 import main.student.student.*;
+import main.util.login.LoginPortal;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -177,7 +179,9 @@ public class CourseOutline extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int response = JOptionPane.showConfirmDialog(CourseOutline.this, "Are U Sure U Want to Logout?","Confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
 				if(response == JOptionPane.YES_OPTION){
-					System.exit(0);
+					LoginPortal login=new LoginPortal("Student");
+					login.setVisible(true);
+					dispose();
 				}
 			}
 		});

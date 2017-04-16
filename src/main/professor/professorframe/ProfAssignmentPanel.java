@@ -172,11 +172,13 @@ public class ProfAssignmentPanel extends JPanel {
 					{
 						new Thread(){
 							public void run(){					
-						Upload upload = new Upload();
-						upload.professorUploadFile(textField.getText(),p,"");
-						textField.setText("");
-					}}.start();
-					}}catch(Exception e1){
+								Upload upload = new Upload();
+								upload.professorUploadFile(textField.getText(),p,"assignments");
+								textField.setText("");
+							}
+						}.start();
+					}
+				}catch(Exception e1){
 						e1.printStackTrace();
 				}
 			}
