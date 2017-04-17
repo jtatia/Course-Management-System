@@ -26,7 +26,9 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.SSHCommands;
 import main.util.upload.Upload;
+import net.neoremind.sshxcute.exception.TaskExecFailException;
 
 public class ProfAssignmentPanel extends JPanel {
 
@@ -177,12 +179,30 @@ public class ProfAssignmentPanel extends JPanel {
 					new Thread(){
 					public void run(){					
 					Upload upload = new Upload();
-					upload.professorUploadFile(filepath, p, "");
+					upload.professorUploadFile(filepath, p, "assignments");
+					String filename = filepath.substring(filepath.lastIndexOf('\\')+1);
+					String nav=p.substring(p.indexOf("cms"),p.indexOf("assignments"));
+					filename = filename.replaceAll("\\s+","");
+					String cmd[]={"cd "+nav,"cd uploads","mkdir "+ filename,"cd "+ filename,"mkdir inputFiles","mkdir outputFiles","mkdir logFiles"};
+					SSHCommands ssh=new SSHCommands();
+					try {
+						ssh.runMultipleCommand(cmd);
+					} catch (TaskExecFailException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
 						}}.start();
 					}
 						/*new Thread(){
 							public void run(){					
+								Upload upload = new Upload();
+								upload.professorUploadFile(textField.getText(),p,"assignments");
+								textField.setText("");
+							}
+						}.start();
+					}
+				}catch(Exception e1){
 						Upload upload = new Upload();
 						upload.professorUploadFile(textField.getText(),p,"");
 						textField.setText("");
@@ -190,7 +210,7 @@ public class ProfAssignmentPanel extends JPanel {
 							}}.start();*/
 					
 					}catch(Exception e1){
-						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload failed.","Erro",JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload failed.","Error",JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
 				}
 			}

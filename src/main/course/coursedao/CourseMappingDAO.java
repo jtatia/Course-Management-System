@@ -131,7 +131,7 @@ public class CourseMappingDAO {
 				dir_name=dir_name+courseId+"_"+professor;	
 			}
 			if(dir_name!="")
-			path=path+dir_name+"/";
+				path=path+dir_name+"/";
 		}catch(Exception exc){
 			exc.printStackTrace();
 		}finally{
@@ -143,6 +143,7 @@ public class CourseMappingDAO {
 		}
 		return path;
 	}
+	
 	public String getDirectoryPath(String courseId,String batch)
 	{
 		String path="/home/Btech15/kshitij.cs15/cms/";

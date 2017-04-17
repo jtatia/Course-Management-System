@@ -374,7 +374,7 @@ public class UploadedAssignments extends JFrame {
 	 * and then deletes all extra files and finally has 2 parameters error and marks */
 	
 	private void test(String path, String name) throws Exception {
-		System.out.println("WWWWWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+		//System.out.println("WWWWWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
@@ -447,7 +447,7 @@ public class UploadedAssignments extends JFrame {
 		assign.setMarks(marksOfOutput);
 		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
-		System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
+		//System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
 		UsingJsch.writingFile(path+"logFiles/", log, name.substring(1,name.lastIndexOf('.'))+".txt");
 		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file

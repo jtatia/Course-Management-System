@@ -135,7 +135,7 @@ public class ProfAssignmentViewPanel extends JPanel {
 				for(int i=0;i<str.length;i++)
 				{
 					Assignment temp = new Assignment();
-					temp.setName("\""+str[i]+"\"");
+					temp.setName(str[i]);
 					temp.setPath(p);
 					String s[]=FileDetails.getStats(p,temp.getName() );
 					temp.setLastModified(s[1]);
