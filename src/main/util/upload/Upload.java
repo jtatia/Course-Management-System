@@ -94,20 +94,14 @@ public class Upload {
 	 * courseid - specific course id including prof name +cours name
 	 * folder - either "assignments" or "material"
 	 */
+	
+	
 	public void professorUploadFile(String from, String courseid, String folder )
 	{
 		String filename = from.substring(from.lastIndexOf('\\')+1);
-		System.out.println("The filename is :: "+filename+" from="+from);
-		String to = courseid+folder+"/"+filename;
-		System.out.println(to);
+		//System.out.println("############The filename is :: "+filename+" from="+from+"folder = "+folder);
+		String to = courseid+filename;
+		//System.out.println("After this"+to);
 		uploadFile(from, to,filename);
-		if(folder.equals("assignmnets")){
-			String cmd[]={"cd uploads","mkdir "+filename,"cd "+filename,"mkdir inputFiles","mkdir outputFiles"};
-			try {
-				SSHCommands.runMultipleCommand(cmd);
-			} catch (TaskExecFailException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 }

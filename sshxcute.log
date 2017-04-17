@@ -10149,3 +10149,54 @@ input3.txt
 [16:13:18] INFO:    Now wait 0 seconds to begin next task ...
 [16:13:18] INFO:    Connection channel disconnect
 
+
+=============== [2017/04/18 04:12:39, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[04:12:39] INFO:    SSHExec initializing ...
+[04:12:39] INFO:    Session initialized and associated with user credential kshitij#456
+[04:12:39] INFO:    SSHExec initialized successfully
+[04:12:39] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[04:12:39] INFO:    SSH connection established
+[04:12:39] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[04:12:39] INFO:    Command is cd cms/CS103_sriparna/;cd uploads;mkdir Structures assignment.pdf;cd Structures assignment.pdf;mkdir inputFiles;mkdir outputFiles
+[04:12:39] INFO:    Connection channel established succesfully
+[04:12:39] INFO:    Start to run command
+[04:12:39] INFO:    Connection channel closed
+[04:12:39] INFO:    Check if exec success or not ... 
+[04:12:39] INFO:    Execute successfully for command: cd cms/CS103_sriparna/;cd uploads;mkdir Structures assignment.pdf;cd Structures assignment.pdf;mkdir inputFiles;mkdir outputFiles
+[04:12:39] INFO:    Now wait 0 seconds to begin next task ...
+[04:12:39] INFO:    Connection channel disconnect
+
+=============== [2017/04/18 04:28:59, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[04:28:59] INFO:    SSHExec initializing ...
+[04:28:59] INFO:    Session initialized and associated with user credential kshitij#456
+[04:28:59] INFO:    SSHExec initialized successfully
+[04:28:59] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[04:28:59] INFO:    SSH connection established
+[04:28:59] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[04:28:59] INFO:    Command is cd cms/CS103_sriparna/;cd uploads;mkdir Assignment_10.pdf;cd Assignment_10.pdf;mkdir inputFiles;mkdir outputFiles
+[04:28:59] INFO:    Connection channel established succesfully
+[04:28:59] INFO:    Start to run command
+[04:29:00] INFO:    Connection channel closed
+[04:29:00] INFO:    Check if exec success or not ... 
+[04:29:00] INFO:    Execute successfully for command: cd cms/CS103_sriparna/;cd uploads;mkdir Assignment_10.pdf;cd Assignment_10.pdf;mkdir inputFiles;mkdir outputFiles
+[04:29:00] INFO:    Now wait 0 seconds to begin next task ...
+[04:29:00] INFO:    Connection channel disconnect
+
+=============== [2017/04/18 04:31:49, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[04:31:49] INFO:    SSHExec initializing ...
+[04:31:49] INFO:    Session initialized and associated with user credential kshitij#456
+[04:31:49] INFO:    SSHExec initialized successfully
+[04:31:49] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[04:31:49] INFO:    SSH connection established
+[04:31:49] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[04:31:49] INFO:    Command is cd cms/CS103_sriparna/;cd uploads;mkdir Structuresassignment.pdf;cd Structuresassignment.pdf;mkdir inputFiles;mkdir outputFiles;mkdir logFiles
+[04:31:49] INFO:    Connection channel established succesfully
+[04:31:49] INFO:    Start to run command
+[04:31:49] INFO:    Connection channel closed
+[04:31:49] INFO:    Check if exec success or not ... 
+[04:31:49] INFO:    Execute successfully for command: cd cms/CS103_sriparna/;cd uploads;mkdir Structuresassignment.pdf;cd Structuresassignment.pdf;mkdir inputFiles;mkdir outputFiles;mkdir logFiles
+[04:31:49] INFO:    Now wait 0 seconds to begin next task ...
+[04:31:49] INFO:    Connection channel disconnect
