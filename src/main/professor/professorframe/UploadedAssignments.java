@@ -150,7 +150,7 @@ public class UploadedAssignments extends JFrame {
 					for(int i=0;i<str.length;i++)
 					{
 						Assignment temp = new Assignment();
-						if(str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")&&!str[i].contains(".csv"))
+						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0))
 						{
 						temp.setName("\""+str[i]+"\"");
 						temp.setPath(path);
@@ -199,8 +199,6 @@ public class UploadedAssignments extends JFrame {
 								c++;
 								}
 								if(c==str.length){
-								System.out.println("SHOULD BE RUNNING");
-									sshc.runSingleCommand("mkdir "+path+"logFiles1/");
 								}
 							} catch (Exception e1) {
 								e1.printStackTrace();
