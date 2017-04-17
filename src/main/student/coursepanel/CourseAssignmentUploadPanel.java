@@ -5,6 +5,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import java.awt.FlowLayout;
@@ -22,6 +23,7 @@ import main.admin.adminpanel.updatecourse.UpdateCourse;
 import main.course.course.Course;
 import main.course.coursedao.CourseDAO;
 import main.course.coursedao.CourseMappingDAO;
+import main.professor.professorframe.ProfCourseMaterialPanel;
 import main.student.coursepanel.model.CourseAssignmentUploadTableModel;
 import main.student.coursepanel.objects.UploadInfo;
 import main.student.student.Student;
@@ -36,14 +38,15 @@ import javax.swing.JToggleButton;
 public class CourseAssignmentUploadPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JXTextField textField;
+	private JLabel jlabel;
 //	private JXTextField assignField;
 	private JComboBox assignField;
 	private JTable table;
     private CourseAssignmentUploadTableModel model;
     private List<UploadInfo> uploadInfo;
     private SSHComm sshc;
-	/**
+	private String filepath="";
+    /**
 	 * Create the panel.
 	 */
 	public CourseAssignmentUploadPanel(Student student, String path)throws Exception {
@@ -55,11 +58,11 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		panel.setLayout(null);
 		sshc=new SSHComm();
 		table=new JTable();
-		textField = new JXTextField();
-		textField.setBounds(10, 11, 800, 20);
-		textField.setPrompt("Enter path of file to upload");
-		panel.add(textField);
-		textField.setColumns(9);
+		jlabel = new JLabel();
+		jlabel.setBounds(10, 11, 800, 20);
+		jlabel.setText("Assignments Uploaded");
+		panel.add(jlabel);
+		
 	/*	assignField = new JXTextField();
 		assignField.setBounds(850,11,100,20);
 		assignField.setColumns(2);
@@ -82,22 +85,35 @@ public class CourseAssignmentUploadPanel extends JPanel {
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				filepath="";
 				try{
-				String toUpload = textField.getText();
-				if(toUpload.equals("")){
+				if(assignField.getSelectedItem()!=null)
+				{
 					FileChooser chooser = new FileChooser();
-					textField.setText(chooser.getFilePath());
-				}
-
+					filepath=chooser.getFilePath();
+					if(!filepath.equals(""))
+					{
+						System.out.println(filepath+" ********************* "+path);
+					}
+					if(!filepath.equals(""))
+					{
 					new Thread(){
-					
-						public void run(){					
+					public void run(){					
 					Upload upload = new Upload();
-					upload.studentUploadAssignment(textField.getText(), path, (String)assignField.getSelectedItem(), student.getRollno());
-					textField.setText("");
+					upload.studentUploadAssignment(filepath, path, (String)assignField.getSelectedItem(), student.getRollno());
 					assignField.setSelectedItem(null);
-				}}.start();
-				}catch(Exception e1){
+					JOptionPane.showMessageDialog(CourseAssignmentUploadPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
+						}}.start();
+					}
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(CourseAssignmentUploadPanel.this,"First Select an assignment folder where to upload your file.","Info",JOptionPane.INFORMATION_MESSAGE);	
+				}	
+				
+				}
+				catch(Exception e1){
+					JOptionPane.showMessageDialog(CourseAssignmentUploadPanel.this,"Upload failed.","Error",JOptionPane.ERROR_MESSAGE);	
 					e1.printStackTrace();
 				
 			}}
@@ -112,7 +128,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 				new Thread(){
 					public void run(){
 				uploadInfo = new ArrayList<UploadInfo>();
-				textField.setText("");
+			
 				assignField.setSelectedItem(null);
 				try {
 					String str[] = FileDetails.getFileList(path+"uploads");
@@ -134,7 +150,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 						try{
 						for(int i=0;i<str.length;i++)
 						{
-							System.out.println(str[i]);
+							System.out.println("@@@@@@@@@@@@@@@"+str[i]);
 							String str1[] = FileDetails.getFileList(path+"uploads/"+str[i]);			
 							for(int j=0;j<str1.length;j++){
 								System.out.println(str1[j]);
@@ -144,10 +160,10 @@ public class CourseAssignmentUploadPanel extends JPanel {
 							String s[]=FileDetails.getStats(path+"uploads/"+str[i]+"/", temp.getName());
 							temp.setLastModified(s[1]);
 							temp.setSize(s[0]);
+							temp.setParentDir(str[i]);
 							uploadInfo.add(temp);
 							model = new CourseAssignmentUploadTableModel(uploadInfo);
 							table.setModel(model);
-			
 						}
 	
 						}

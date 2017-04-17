@@ -74,16 +74,18 @@ public class Upload {
 	
 	/*
 	 * from - path on local system including file name
-	 * courseid - path till courseid eg. /cms/MA201_prashnt/
+	 * courseid - path till courseid eg. /cms/MA201_prashant/
 	 * assignment - assignment no.
 	 * roll - roll no. of the student
 	 */
 	public void studentUploadAssignment(String from, String courseid, String assignment, String roll)
 	{
-		String extension = from.substring(from.lastIndexOf('.'));
-		String to = courseid+"uploads/"+assignment+"/"+roll+extension;
+		System.out.println("@@@@@@@\n"+from+"\n");
+	//	String extension = from.substring(from.lastIndexOf('.'));
+		String filename=from.substring(from.lastIndexOf('\\')+1);
+		filename=roll+"_"+filename;
+		String to = courseid+"uploads/"+assignment+"/"+filename;
 		System.out.println("@@@@@@@\n"+from+"\n"+to);
-		String filename = roll+extension;
 		uploadFile(from,to,filename);
 	}
 	

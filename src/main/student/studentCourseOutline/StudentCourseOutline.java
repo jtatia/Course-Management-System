@@ -41,6 +41,7 @@ public class StudentCourseOutline extends JFrame {
 
 	/**
 	 * 
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;

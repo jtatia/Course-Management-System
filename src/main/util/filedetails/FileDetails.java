@@ -21,7 +21,8 @@ public class FileDetails {
 		 * SSHCommands sh = new SSHCommands();
 		 * String result = sh.runSingleCommand("stat "+path+filename);
 		*/
-		String result = sshc.SSHClient("stat "+path+filename, sshc); 
+		System.out.println("stat "+path+"\""+filename+"\"");
+		String result = sshc.SSHClient("stat "+path+"\""+filename+"\"", sshc); 
 		int size_index=result.indexOf("Size: ");
 		size_index+=6;
 		System.out.println(path+filename);
@@ -42,7 +43,7 @@ public class FileDetails {
 		mod_index+=8;
 		//System.out.println("asdfadf"+result.lastIndexOf(':', mod_index));
 		//System.out.println("cxvascxx"+mod_index);
-		String mod= result.substring(mod_index, result.lastIndexOf(':'));
+		String mod= result.substring(mod_index, result.lastIndexOf("Birth"));
 		
 		mod.trim();
 		ans[1]=mod;
