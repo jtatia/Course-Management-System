@@ -21,6 +21,7 @@ public class FileDetails {
 		 * SSHCommands sh = new SSHCommands();
 		 * String result = sh.runSingleCommand("stat "+path+filename);
 		*/
+		System.out.println("stat "+path+"\""+filename+"\"");
 		String result = sshc.SSHClient("stat "+path+"\""+filename+"\"", sshc); 
 		int size_index=result.indexOf("Size: ");
 		size_index+=6;

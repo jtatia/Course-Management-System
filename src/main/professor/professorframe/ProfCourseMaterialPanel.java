@@ -33,6 +33,7 @@ public class ProfCourseMaterialPanel extends JPanel {
 	JTable table;
 	private AssignmentTableModel atm;
 	private String p;
+	private String filepath="";
 	
 	public ProfCourseMaterialPanel()
 	{
@@ -95,9 +96,9 @@ public class ProfCourseMaterialPanel extends JPanel {
 				for(int i=0;i<str.length;i++)
 				{
 					Assignment temp = new Assignment();
-					temp.setName("\""+str[i]+"\"");
+					temp.setName(str[i]);
 					temp.setPath(p);
-					String s[]=FileDetails.getStats(p,temp.getName() );
+					String s[]=FileDetails.getStats(p,temp.getName());
 					temp.setLastModified(s[1]);
 					temp.setSize(s[0]);
 					list.add(temp);
@@ -155,36 +156,44 @@ public class ProfCourseMaterialPanel extends JPanel {
 		panel_2.add(tglbtnSelectMultiple);
 		panel_2.add(downloadbtn);
 		
-		JTextField textField=new JTextField();
+		
 		JButton btnUpload = new JButton("Upload");
 		btnUpload.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			// add functionality here
+				filepath="";
 				try{
-					String toUpload = textField.getText();
-					if(toUpload.equals("")){
 						FileChooser chooser = new FileChooser();
-						textField.setText(chooser.getFilePath());
-					}
+						filepath=chooser.getFilePath();
 					
-						new Thread(){
+					if(!filepath.equals(""))
+					{
+					System.out.println(filepath+" ********************* "+p);
+					new Thread(){
+					public void run(){					
+					Upload upload = new Upload();
+					upload.professorUploadFile(filepath, p, "");
+					JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
+						}}.start();
+					}
+						/*new Thread(){
 							public void run(){					
 						Upload upload = new Upload();
 						upload.professorUploadFile(textField.getText(),p,"");
 						textField.setText("");
-						JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
-							}}.start();
+						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload done successfully.","Info",JOptionPane.INFORMATION_MESSAGE);
+							}}.start();*/
 					
 					}catch(Exception e1){
-					JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload failed.","Error",JOptionPane.ERROR_MESSAGE);
-					e1.printStackTrace();
+						JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Upload failed.","Erro",JOptionPane.ERROR_MESSAGE);
+						e1.printStackTrace();
 				}
+				
 			}
 		});
 		panel_2.add(refresh);
 		panel_2.add(btnUpload);
-		textField.setColumns(30);
-		panel_2.add(textField);
+		
 	//	table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		JScrollPane scrollPane = new JScrollPane(table,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		scrollPane.setBounds(10, 57, 1320, 450);

@@ -160,6 +160,7 @@ public class CourseAssignmentUploadPanel extends JPanel {
 							String s[]=FileDetails.getStats(path+"uploads/"+str[i]+"/", temp.getName());
 							temp.setLastModified(s[1]);
 							temp.setSize(s[0]);
+							temp.setParentDir(str[i]);
 							uploadInfo.add(temp);
 							model = new CourseAssignmentUploadTableModel(uploadInfo);
 							table.setModel(model);

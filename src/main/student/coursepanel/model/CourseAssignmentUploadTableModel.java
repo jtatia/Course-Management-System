@@ -12,8 +12,9 @@ public class CourseAssignmentUploadTableModel extends AbstractTableModel {
 	private static final int FILE_NAME=0;
 	private static final int DATE_MODIFIED=1;
 	private static final int FILE_SIZE=2;
+	private static final int ASSIGNMENT_NAME=3;
 	
-	private String[] columnNames = {"File Name","Date Modified", "File Size"};
+	private String[] columnNames = {"File Name","Date Modified", "File Size","Assignment Name"};
 	private List<UploadInfo> list;
 	public CourseAssignmentUploadTableModel(List<UploadInfo> uploadInfo) {
 		super();
@@ -50,6 +51,8 @@ public class CourseAssignmentUploadTableModel extends AbstractTableModel {
 			return temp.getLastModified();
 		case FILE_SIZE:
 			return temp.getSize();
+		case ASSIGNMENT_NAME:
+			return temp.getParentDir();
 		case -1:
 			return temp;
 		default:
