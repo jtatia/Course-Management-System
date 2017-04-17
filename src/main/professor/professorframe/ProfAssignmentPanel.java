@@ -190,7 +190,7 @@ public class ProfAssignmentPanel extends JPanel {
 							}}.start();*/
 					
 					}catch(Exception e1){
-						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload failed.","Erro",JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Upload failed.","Error",JOptionPane.ERROR_MESSAGE);
 						e1.printStackTrace();
 				}
 			}
