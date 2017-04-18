@@ -112,7 +112,7 @@ try{
 		System.out.println("outside");
 		read.close();
 		for(int i=0;i<list.size();i++){
-			for(int j=count-1;j>=0;j--){
+			for(int j=0;j<count;j++){
 				System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
 				if((list.get(i).getName()).equals(csvlist.get(j).getFilename()))
 						{
@@ -126,7 +126,9 @@ try{
 	}
 	
 	public static void WriteMarksFile(String path,String file,int marks,String status) throws Exception{
-   String outputFile = "finalmarks.csv";
+   System.out.println("@@@@@@@@@@@@@@@@@@@@@@@\n!!!!!!!!!!!!!!!!!!\n###################");
+   System.out.println("PATH="+path+"\nFILENAME="+file+"\nMARKS="+marks+"\nSTATUS="+status);
+	String outputFile = "finalmarks.csv";
    boolean alreadyExists = false;
 
 		// before we open the file check to see if it already exists
@@ -143,7 +145,19 @@ try{
 			System.out.println(alreadyExists + "THIS IS WRITTEN:"+c);
 			// use FileWriter constructor that specifies open for appending
 			StringWriter s = new StringWriter();
-			s.write(c);
+			int x =-1;
+			x = c.indexOf(file);
+			System.out.println("\nVALUE OF X=="+x);
+			String f = "";
+			if(x!=-1){
+			String r = c.substring(0, x);
+			f = c.substring(x+1,c.length());
+			f = f.substring(f.indexOf("\n")+1,f.length());
+			System.out.println("R::::"+r+"\nF:::"+f);
+			s.write(r);
+			}
+			else
+				s.write(c);
 			CsvWriter csvOutput = new CsvWriter(s, ',');
 			// if the file didn't already exist then we need to write out the header line
 			if (!alreadyExists)
@@ -161,7 +175,10 @@ try{
 			csvOutput.write(status);
 			csvOutput.endRecord();
 			// write out a few records
+			if(x!=-1)
+				s.write(f);
 			System.out.println(s.toString());
+			System.out.println("!!!!!!!!!!!!!!!\n@@@@@@@@@@@@@@@@\n################\n");
 			UsingJsch.writingFile(path, s.toString(), "finalmarks.csv");
 			csvOutput.flush();
 			csvOutput.close();
