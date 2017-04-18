@@ -49,3 +49,4 @@ UPDATE `sql12168820`.`course_mapping` SET `professor`='arijit_asif_jimson_samrat
 UPDATE `sql12168820`.`course_mapping` SET `batch_id1`='cse15b', `batch_id2`='ee15b' WHERE `s.no`='19';
 UPDATE `sql12168820`.`course_mapping` SET `batch_id1`='cse15b', `batch_id2`='ee15b' WHERE `s.no`='20';
 INSERT INTO `sql12168820`.`course_mapping` (`s.no`, `course_id`, `professor`, `batch_id1`) VALUES ('21', 'CS103', 'sriparna', 'cse15b');
+UPDATE `sql12168820`.`course_mapping` SET `professor`='pratibhamoy' WHERE `s.no`='1';

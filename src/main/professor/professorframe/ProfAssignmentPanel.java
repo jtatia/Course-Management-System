@@ -93,28 +93,29 @@ public class ProfAssignmentPanel extends JPanel {
 		JButton refresh = new JButton("Refresh");
 		refresh.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e){
+				table.clearSelection();
+				list.clear();
 				new Thread(){
+					public void run(){
+					try{
+					String str[] = FileDetails.getFileList(p);
+					list = new ArrayList<Assignment>();
+					for(int i=0;i<str.length;i++)
+					{
+						Assignment temp = new Assignment();
+						temp.setName(str[i]);
+						temp.setPath(p);
+						String s[]=FileDetails.getStats(p,temp.getName() );
+						temp.setLastModified(s[1]);
+						temp.setSize(s[0]);
+						list.add(temp);
+						atm = new AssignmentTableModel(list);
+						table.setModel(atm);
+					}
 					
-				public void run(){
-				try{
-				String str[] = FileDetails.getFileList(p);
-				list = new ArrayList<Assignment>();
-				for(int i=0;i<str.length;i++)
-				{
-					Assignment temp = new Assignment();
-					temp.setName(str[i]);
-					temp.setPath(p);
-					String s[]=FileDetails.getStats(p,temp.getName() );
-					temp.setLastModified(s[1]);
-					temp.setSize(s[0]);
-					list.add(temp);
-					atm = new AssignmentTableModel(list);
-					table.setModel(atm);
-				}
-				
-				}catch(Exception ex){
-					ex.printStackTrace();
-				}
+					}catch(Exception ex){
+						ex.printStackTrace();
+					}
 				}}.start();
 			}
 		});
@@ -183,12 +184,14 @@ public class ProfAssignmentPanel extends JPanel {
 					upload.professorUploadFile(filepath, p, "assignments");
 					String filename = filepath.substring(filepath.lastIndexOf('\\')+1);
 					String nav=p.substring(p.indexOf("cms"),p.indexOf("assignments"));
-					filename = filename.replaceAll("\\s+","");
+					//filename = filename.replaceAll("\\s+","");
+					filename=filename.replaceAll("[()\\s]", "_");
 					filename=filename.substring(0,filename.lastIndexOf("."));
 					String cmd[]={"cd "+nav,"cd uploads","mkdir "+ filename,"cd "+ filename,"mkdir inputFiles","mkdir outputFiles","mkdir logFiles"};
 					SSHCommands ssh=new SSHCommands();
 					try {
 						ssh.runMultipleCommand(cmd);
+						System.out.println("---------------------Done_------------------");
 					} catch (TaskExecFailException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
