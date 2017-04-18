@@ -183,6 +183,7 @@ public class ProfAssignmentPanel extends JPanel {
 					String filename = filepath.substring(filepath.lastIndexOf('\\')+1);
 					String nav=p.substring(p.indexOf("cms"),p.indexOf("assignments"));
 					filename = filename.replaceAll("\\s+","");
+					filename=filename.substring(0,filename.lastIndexOf("."));
 					String cmd[]={"cd "+nav,"cd uploads","mkdir "+ filename,"cd "+ filename,"mkdir inputFiles","mkdir outputFiles","mkdir logFiles"};
 					SSHCommands ssh=new SSHCommands();
 					try {
