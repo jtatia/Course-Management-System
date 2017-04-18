@@ -90,7 +90,7 @@ public class UploadedAssignments extends JFrame {
 	 * @throws Exception 
 	 */
 	public UploadedAssignments(String p,String assignmentFolderName) throws Exception {
-		setTitle("UPLOADS -  <dynamic>");
+		setTitle("UPLOADS - "+assignmentFolderName);
 		setVisible(true);
 		String call = p;
 		System.out.println("PART 1:-"+p+"Assignment folder name:- "+assignmentFolderName);
@@ -163,7 +163,7 @@ public class UploadedAssignments extends JFrame {
 						System.out.println("modelmode= "+model_mode);
 						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0 && str[i].contains(".")))
 						{
-						temp.setName("\""+str[i]+"\"");
+						temp.setName(str[i]);
 						temp.setPath(path);
 						String s[]=FileDetails.getStats(path,temp.getName());
 						temp.setLastModified(s[1]);

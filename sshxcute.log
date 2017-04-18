@@ -10150,3 +10150,306 @@ input3.txt
 [16:13:18] INFO:    Connection channel disconnect
 
 
+
+=============== [2017/04/18 23:15:06, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:15:06] INFO:    SSHExec initializing ...
+[23:15:06] INFO:    Session initialized and associated with user credential kshitij#456
+[23:15:06] INFO:    SSHExec initialized successfully
+[23:15:06] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:15:09] INFO:    SSH connection established
+[23:15:09] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:15:09] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:15:09] INFO:    Connection channel established succesfully
+[23:15:09] INFO:    Start to run command
+[23:15:09] INFO:    Connection channel closed
+[23:15:09] INFO:    Check if exec success or not ... 
+[23:15:09] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:15:09] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:15:09] INFO:    Now wait 0 seconds to begin next task ...
+[23:15:09] INFO:    Connection channel disconnect
+[23:15:09] INFO:    SSH connection shutdown
+[23:15:09] INFO:    Session initialized and associated with user credential kshitij#456
+[23:15:09] INFO:    SSHExec initialized successfully
+[23:15:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:15:10] INFO:    SSH connection established
+[23:15:10] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:15:10] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:15:10] INFO:    Connection channel established succesfully
+[23:15:11] INFO:    Start to run command
+[23:15:11] INFO:    Connection channel closed
+[23:15:11] INFO:    Check if exec success or not ... 
+[23:15:11] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:15:11] INFO:    Error message: bash: line 0: cd: /home/stud/btech/cse/2015/kshitij.cs15/test/: No such file or directoryjavac: file not found: testing.javaUsage: javac <options> <source files>use -help for a list of possible options
+[23:15:11] INFO:    Now wait 0 seconds to begin next task ...
+[23:15:11] INFO:    Connection channel disconnect
+[23:15:11] INFO:    SSH connection shutdown
+[23:15:11] INFO:    Session initialized and associated with user credential kshitij#456
+[23:15:11] INFO:    SSHExec initialized successfully
+[23:15:11] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:15:12] INFO:    SSH connection established
+[23:15:12] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:15:12] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:15:12] INFO:    Connection channel established succesfully
+[23:15:12] INFO:    Start to run command
+[23:15:12] INFO:    Connection channel closed
+[23:15:12] INFO:    Check if exec success or not ... 
+[23:15:12] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:15:12] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:15:12] INFO:    Now wait 0 seconds to begin next task ...
+[23:15:12] INFO:    Connection channel disconnect
+[23:15:12] INFO:    SSH connection shutdown
+
+=============== [2017/04/18 23:16:58, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:16:58] INFO:    SSHExec initializing ...
+[23:16:58] INFO:    Session initialized and associated with user credential kshitij#456
+[23:16:58] INFO:    SSHExec initialized successfully
+[23:16:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:16:59] INFO:    SSH connection established
+[23:17:00] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:17:00] INFO:    Command is cd cms/CS204_arijit/;cd uploads;mkdir assg01.pdf;cd assg01.pdf;mkdir inputFiles;mkdir outputFiles;mkdir logFiles
+[23:17:00] INFO:    Connection channel established succesfully
+[23:17:00] INFO:    Start to run command
+[23:17:00] INFO:    Connection channel closed
+[23:17:00] INFO:    Check if exec success or not ... 
+[23:17:00] INFO:    Execute successfully for command: cd cms/CS204_arijit/;cd uploads;mkdir assg01.pdf;cd assg01.pdf;mkdir inputFiles;mkdir outputFiles;mkdir logFiles
+[23:17:00] INFO:    Now wait 0 seconds to begin next task ...
+[23:17:00] INFO:    Connection channel disconnect
+[23:19:17] INFO:    Session initialized and associated with user credential kshitij#456
+[23:19:17] INFO:    SSHExec initialized successfully
+[23:19:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:19:17] INFO:    SSH connection established
+[23:19:17] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:19:17] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/inputFiles/
+[23:19:17] INFO:    Connection channel established succesfully
+[23:19:18] INFO:    Start to run command
+[23:19:18] INFO:    Connection channel closed
+[23:19:18] INFO:    Check if exec success or not ... 
+[23:19:18] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/inputFiles/
+[23:19:18] INFO:    Now wait 0 seconds to begin next task ...
+[23:19:18] INFO:    Connection channel disconnect
+[23:24:03] INFO:    Session initialized and associated with user credential kshitij#456
+[23:24:03] INFO:    SSHExec initialized successfully
+[23:24:03] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:24:04] INFO:    SSH connection established
+[23:24:04] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:24:04] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/outputFiles/
+[23:24:05] INFO:    Connection channel established succesfully
+[23:24:05] INFO:    Start to run command
+[23:24:05] INFO:    Connection channel closed
+[23:24:05] INFO:    Check if exec success or not ... 
+[23:24:05] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/outputFiles/
+[23:24:05] INFO:    Now wait 0 seconds to begin next task ...
+[23:24:05] INFO:    Connection channel disconnect
+
+=============== [2017/04/18 23:25:52, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:25:52] INFO:    SSHExec initializing ...
+[23:25:52] INFO:    Session initialized and associated with user credential kshitij#456
+[23:25:52] INFO:    SSHExec initialized successfully
+[23:25:52] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:25:56] INFO:    SSH connection established
+[23:25:56] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:25:56] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:25:57] INFO:    Connection channel established succesfully
+[23:25:57] INFO:    Start to run command
+[23:25:58] INFO:    Connection channel closed
+[23:25:58] INFO:    Check if exec success or not ... 
+[23:25:58] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:25:58] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:25:58] INFO:    Now wait 0 seconds to begin next task ...
+[23:25:58] INFO:    Connection channel disconnect
+[23:25:58] INFO:    SSH connection shutdown
+[23:25:58] INFO:    Session initialized and associated with user credential kshitij#456
+[23:25:58] INFO:    SSHExec initialized successfully
+[23:25:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:26:00] INFO:    SSH connection established
+[23:26:00] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:26:00] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:26:00] INFO:    Connection channel established succesfully
+[23:26:00] INFO:    Start to run command
+[23:26:00] INFO:    Connection channel closed
+[23:26:00] INFO:    Check if exec success or not ... 
+[23:26:00] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:26:00] INFO:    Error message: bash: line 0: cd: /home/stud/btech/cse/2015/kshitij.cs15/test/: No such file or directoryjavac: file not found: testing.javaUsage: javac <options> <source files>use -help for a list of possible options
+[23:26:00] INFO:    Now wait 0 seconds to begin next task ...
+[23:26:00] INFO:    Connection channel disconnect
+[23:26:00] INFO:    SSH connection shutdown
+[23:26:00] INFO:    Session initialized and associated with user credential kshitij#456
+[23:26:00] INFO:    SSHExec initialized successfully
+[23:26:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:26:03] INFO:    SSH connection established
+[23:26:03] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:26:03] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:26:03] INFO:    Connection channel established succesfully
+[23:26:03] INFO:    Start to run command
+[23:26:04] INFO:    Connection channel closed
+[23:26:04] INFO:    Check if exec success or not ... 
+[23:26:04] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:26:04] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:26:04] INFO:    Now wait 0 seconds to begin next task ...
+[23:26:04] INFO:    Connection channel disconnect
+[23:26:04] INFO:    SSH connection shutdown
+
+=============== [2017/04/18 23:29:58, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:29:58] INFO:    SSHExec initializing ...
+[23:29:58] INFO:    Session initialized and associated with user credential kshitij#456
+[23:29:58] INFO:    SSHExec initialized successfully
+[23:29:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:30:01] INFO:    SSH connection established
+[23:30:01] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:30:01] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:30:01] INFO:    Connection channel established succesfully
+[23:30:02] INFO:    Start to run command
+[23:30:02] INFO:    Connection channel closed
+[23:30:02] INFO:    Check if exec success or not ... 
+[23:30:02] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:30:02] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:30:02] INFO:    Now wait 0 seconds to begin next task ...
+[23:30:02] INFO:    Connection channel disconnect
+[23:30:02] INFO:    SSH connection shutdown
+[23:30:02] INFO:    Session initialized and associated with user credential kshitij#456
+[23:30:02] INFO:    SSHExec initialized successfully
+[23:30:02] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:30:03] INFO:    SSH connection established
+[23:30:03] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:30:03] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:30:03] INFO:    Connection channel established succesfully
+[23:30:03] INFO:    Start to run command
+[23:30:04] INFO:    Connection channel closed
+[23:30:04] INFO:    Check if exec success or not ... 
+[23:30:04] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:30:04] INFO:    Error message: bash: line 0: cd: /home/stud/btech/cse/2015/kshitij.cs15/test/: No such file or directoryjavac: file not found: testing.javaUsage: javac <options> <source files>use -help for a list of possible options
+[23:30:04] INFO:    Now wait 0 seconds to begin next task ...
+[23:30:04] INFO:    Connection channel disconnect
+[23:30:04] INFO:    SSH connection shutdown
+[23:30:04] INFO:    Session initialized and associated with user credential kshitij#456
+[23:30:04] INFO:    SSHExec initialized successfully
+[23:30:04] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:30:06] INFO:    SSH connection established
+[23:30:06] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:30:06] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:30:06] INFO:    Connection channel established succesfully
+[23:30:06] INFO:    Start to run command
+[23:30:06] INFO:    Connection channel closed
+[23:30:06] INFO:    Check if exec success or not ... 
+[23:30:06] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:30:06] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:30:06] INFO:    Now wait 0 seconds to begin next task ...
+[23:30:06] INFO:    Connection channel disconnect
+[23:30:06] INFO:    SSH connection shutdown
+
+=============== [2017/04/18 23:35:12, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:35:12] INFO:    SSHExec initializing ...
+[23:35:12] INFO:    Session initialized and associated with user credential kshitij#456
+[23:35:12] INFO:    SSHExec initialized successfully
+[23:35:12] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:35:17] INFO:    SSH connection established
+[23:35:17] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:35:17] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:35:17] INFO:    Connection channel established succesfully
+[23:35:17] INFO:    Start to run command
+[23:35:17] INFO:    Connection channel closed
+[23:35:17] INFO:    Check if exec success or not ... 
+[23:35:18] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:35:18] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:35:18] INFO:    Now wait 0 seconds to begin next task ...
+[23:35:18] INFO:    Connection channel disconnect
+[23:35:18] INFO:    SSH connection shutdown
+[23:35:18] INFO:    Session initialized and associated with user credential kshitij#456
+[23:35:18] INFO:    SSHExec initialized successfully
+[23:35:18] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:35:21] INFO:    SSH connection established
+[23:35:21] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:35:21] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:35:21] INFO:    Connection channel established succesfully
+[23:35:21] INFO:    Start to run command
+[23:35:21] INFO:    Connection channel closed
+[23:35:21] INFO:    Check if exec success or not ... 
+[23:35:21] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
+[23:35:21] INFO:    Error message: bash: line 0: cd: /home/stud/btech/cse/2015/kshitij.cs15/test/: No such file or directoryjavac: file not found: testing.javaUsage: javac <options> <source files>use -help for a list of possible options
+[23:35:21] INFO:    Now wait 0 seconds to begin next task ...
+[23:35:21] INFO:    Connection channel disconnect
+[23:35:21] INFO:    SSH connection shutdown
+[23:35:21] INFO:    Session initialized and associated with user credential kshitij#456
+[23:35:21] INFO:    SSHExec initialized successfully
+[23:35:21] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:35:22] INFO:    SSH connection established
+[23:35:22] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:35:22] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:35:22] INFO:    Connection channel established succesfully
+[23:35:22] INFO:    Start to run command
+[23:35:23] INFO:    Connection channel closed
+[23:35:23] INFO:    Check if exec success or not ... 
+[23:35:23] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
+[23:35:23] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
+[23:35:23] INFO:    Now wait 0 seconds to begin next task ...
+[23:35:23] INFO:    Connection channel disconnect
+[23:35:23] INFO:    SSH connection shutdown
+
+=============== [2017/04/18 23:58:55, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[23:58:55] INFO:    SSHExec initializing ...
+[23:58:55] INFO:    Session initialized and associated with user credential kshitij#456
+[23:58:55] INFO:    SSHExec initialized successfully
+[23:58:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:58:55] INFO:    SSH connection established
+[23:58:55] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:58:55] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/inputFiles/
+[23:58:55] INFO:    Connection channel established succesfully
+[23:58:55] INFO:    Start to run command
+[23:58:55] INFO:    input1.txt
+
+[23:58:55] INFO:    Connection channel closed
+[23:58:55] INFO:    Check if exec success or not ... 
+[23:58:55] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/inputFiles/
+[23:58:55] INFO:    Now wait 0 seconds to begin next task ...
+[23:58:55] INFO:    Connection channel disconnect
+[23:58:56] INFO:    Session initialized and associated with user credential kshitij#456
+[23:58:56] INFO:    SSHExec initialized successfully
+[23:58:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:58:56] INFO:    SSH connection established
+[23:58:56] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:58:56] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/"1501CS23_Solution.java" /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/Solution.java"
+[23:58:56] INFO:    Connection channel established succesfully
+[23:58:56] INFO:    Start to run command
+[23:58:56] INFO:    Connection channel closed
+[23:58:57] INFO:    Check if exec success or not ... 
+[23:58:57] INFO:    Execution failed while executing command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/"1501CS23_Solution.java" /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/Solution.java"
+[23:58:57] INFO:    Error message: bash: -c: line 0: unexpected EOF while looking for matching `"'bash: -c: line 1: syntax error: unexpected end of file
+[23:58:57] INFO:    Now wait 0 seconds to begin next task ...
+[23:58:57] INFO:    Connection channel disconnect
+[23:58:57] INFO:    SSH connection shutdown
+[23:58:57] INFO:    Session initialized and associated with user credential kshitij#456
+[23:58:57] INFO:    SSHExec initialized successfully
+[23:58:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:58:57] INFO:    SSH connection established
+[23:58:57] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:58:57] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/;javac "1501CS23_Solution.java"
+[23:58:57] INFO:    Connection channel established succesfully
+[23:58:57] INFO:    Start to run command
+[23:58:58] INFO:    Connection channel closed
+[23:58:58] INFO:    Check if exec success or not ... 
+[23:58:58] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/;javac "1501CS23_Solution.java"
+[23:58:58] INFO:    Error message: 1501CS23_Solution.java:7: error: class Solution is public, should be declared in a file named Solution.javapublic class Solution {       ^1 error
+[23:58:58] INFO:    Now wait 0 seconds to begin next task ...
+[23:58:58] INFO:    Connection channel disconnect
+[23:58:58] INFO:    SSH connection shutdown
+[23:58:58] INFO:    Session initialized and associated with user credential kshitij#456
+[23:58:58] INFO:    SSHExec initialized successfully
+[23:58:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[23:58:58] INFO:    SSH connection established
+[23:58:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[23:58:58] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/Solution.java" /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/"1501CS23_Solution.java"
+[23:58:58] INFO:    Connection channel established succesfully
+[23:58:58] INFO:    Start to run command
+[23:58:58] INFO:    Connection channel closed
+[23:58:58] INFO:    Check if exec success or not ... 
+[23:58:58] INFO:    Execution failed while executing command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/Solution.java" /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/assg01.pdf/"1501CS23_Solution.java"
+[23:58:58] INFO:    Error message: bash: -c: line 0: unexpected EOF while looking for matching `"'bash: -c: line 1: syntax error: unexpected end of file
+[23:58:58] INFO:    Now wait 0 seconds to begin next task ...
+[23:58:58] INFO:    Connection channel disconnect
+[23:58:58] INFO:    SSH connection shutdown
