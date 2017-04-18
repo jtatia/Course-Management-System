@@ -20,6 +20,7 @@ import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModelC;
 import main.util.download.Download;
 import main.util.filechooser.FileChooser;
 import main.util.filedetails.FileDetails;
+import main.util.sshcommands.SSHComm;
 import main.util.sshcommands.SSHCommands;
 import main.util.sshcommands.UsingJsch;
 import main.util.upload.Upload;
@@ -61,8 +62,12 @@ public class UploadedAssignments extends JFrame {
 	private AssignmentTableModel atm;
 	private AssignmentTableModelC atmc;
 	private String path="";
-	private JavaCompiler jc = new JavaCompiler();
-	private int model_mode = 0;
+//	private JavaCompiler jc = new JavaCompiler();
+    private JavaCompiler jc = new JavaCompiler();
+    private PythonCompiler pc =new PythonCompiler();
+    private CCompiler cc = new CCompiler();
+    private CppCompiler cp = new CppCompiler();
+	public int model_mode = 0;
 	public static String Logpath;
 	/**
 	 * sLaunch the application.
@@ -88,7 +93,9 @@ public class UploadedAssignments extends JFrame {
 		setTitle("UPLOADS -  <dynamic>");
 		setVisible(true);
 		String call = p;
-		p=p+assignmentFolderName.substring(1,assignmentFolderName.length()-1)+"/";
+		System.out.println("PART 1:-"+p+"Assignment folder name:- "+assignmentFolderName);
+		p=p+assignmentFolderName+"/";
+		System.out.println("PART 2:-"+p);
 		path=p;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1200, 700);
@@ -141,16 +148,20 @@ public class UploadedAssignments extends JFrame {
 		JButton btnNewButton = new JButton("Refresh");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("HERRRRRRE");
 				table.clearSelection();
 				new Thread(){				
 					public void run(){
 					try{
+						System.out.println("PATH"+path);
 					String str[] = FileDetails.getFileList(path);
 					list = new ArrayList<Assignment>();
 					for(int i=0;i<str.length;i++)
 					{
 						Assignment temp = new Assignment();
-						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0))
+						System.out.println("Problem happens after this");
+						System.out.println("modelmode= "+model_mode);
+						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0 && str[i].contains(".")))
 						{
 						temp.setName("\""+str[i]+"\"");
 						temp.setPath(path);
@@ -285,12 +296,66 @@ public class UploadedAssignments extends JFrame {
 				{
 					String file_type=filename.substring(filename.lastIndexOf(".")+1);
 					if(file_type.equals("java")||file_type.equals("py")||file_type.equals("c")||file_type.equals("cpp")){
-						upload.uploadFile(directory+filename, path+"outputFiles/"+filename, filename);
+						upload.uploadFile(directory+filename, path+filename, filename);
+						String inp[] = null;
+						try {
+							inp = FileDetails.getFileList(path+"inputFiles/");
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+				        int length = inp.length;
+				    	String error = "Not tested";
+				        if(length ==0){
+				        	error = "No input Files present";
+				        }						
+						int status;
+						try{
+						if(file_type.equals("java"))
+						status = jc.compile(path,filename);            
+						else if(file_type.equals("py"))
+						status = 0; //needs to be replaced for python           
+						else if(file_type.equals("cpp"))
+						status = cp.compile(path,filename);
+						else
+						status = cc.compile(path,filename);            
+						for(int i =0; i<length; i++)
+						{
+						  if(status == 0){						
+						  int x = 1;
+						  if(file_type.equals("java"))
+								x = jc.execute1(path,filename,inp[i]);               
+								else if(file_type.equals("py"))
+								x = pc.execute1(path,filename,inp[i]);               
+								else if(file_type.equals("cpp"))
+								x = cp.execute1(path,filename,inp[i]);               
+								else
+								x = cc.execute1(path,filename,inp[i]);
+						  if(x == 0){
+							  error = "Successful";
+						  }
+						  else if (x == 1)
+							  error = "Runtime Error";
+						  else
+							  error = "Timed out";
+						  }
+						  else{
+							  error = "Compile time error";
+							  break;
+						  }
+						}
+						SSHCommands.runSingleCommand("rm "+filename);
+						if(file_type.contains("java"))
+							SSHCommands.runSingleCommand("rm "+filename.substring(0, filename.lastIndexOf("."))+"class");
+						JOptionPane.showMessageDialog(UploadedAssignments.this, error);
+					}catch(Exception e){
+						error = "Exception occurred";
 					}
+						}
 					else{
 						JOptionPane.showMessageDialog(UploadedAssignments.this, "Please upload only .java,.py,.cpp,.c files");
 					}
-				}	
+				}
 			}
 		});
 		JButton btnUploadTestCases = new JButton("Upload Test Cases");
@@ -374,7 +439,7 @@ public class UploadedAssignments extends JFrame {
 	 * and then deletes all extra files and finally has 2 parameters error and marks */
 	
 	private void test(String path, String name) throws Exception {
-		//System.out.println("WWWWWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
+		//System.out.println("WWWWWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");        
 		System.out.println("PATH="+path+"\n"+"NAME="+name);
 		String inp[] = FileDetails.getFileList(path+"inputFiles/");
         int length = inp.length;
@@ -399,31 +464,32 @@ public class UploadedAssignments extends JFrame {
 		assign.setLastModified(s[1]);
 		assign.setSize(s[0]);
 		String log = "";
-		/*String marks_file = path + "marks.txt";  //all marks per question stored in a txt file in same directory
-		System.out.println("INSIDE          TEST               METHOD");
-		System.out.println("Marks path="+marks_file);
-		BufferedReader br = new BufferedReader(new FileReader(marks_file));
-		String mark = br.readLine();
-		System.out.println("MARKS");
-		while(mark!=null){                         //Storing marks in an array -> transfer method to global
-			int conversion = Integer.parseInt(mark);
-			System.out.println(conversion);
-			marks.add(conversion);
-			mark=br.readLine();
-		}
-		br.close();
-		*/
-        int marksOfOutput = 0;
+	    int marksOfOutput = 0;
 		String error = "Successful";
+		String file_type=name.substring(name.lastIndexOf(".")+1,name.length()-1);
+		int status;
+		System.out.println("file type"+file_type);
 		for(int i =0; i<length; i++)
 			{
-		//	System.out.println("@@@@@@@@@@@!!!!!!!!!!!Compiling\n"+path+"===="+name);
-			int status = jc.compile(path,name);            //compiling
-			  if(status == 0){                        //-->if compiles
-			  
-		//		  System.out.println("THS IS THE PROBLEM\npath = "+path+"\nname ="+name+"\ninputfilename"+inp[i]);
-				 int x = jc.execute(path,name,inp[i]);                             //  -->execute
-		//	  System.out.println("%%%%%%%%%%%%%%%%EXecute"+inp[i]);
+			if(file_type.equals("java"))
+				status = jc.compile(path,name);            
+				else if(file_type.equals("py"))
+				status = 0; //needs to be replaced for python           
+				else if(file_type.equals("cpp"))
+				status = cp.compile(path,name);
+				else
+				status = cc.compile(path,name);            
+				
+			  if(status == 0){
+				  int x = 1;
+					if(file_type.equals("java"))
+					x = jc.execute(path,name,inp[i]);               
+					else if(file_type.equals("py"))
+					x = pc.execute(path,name,inp[i]);               
+					else if(file_type.equals("cpp"))
+					x = cp.execute(path,name,inp[i]);               
+					else
+					x = cc.execute(path,name,inp[i]);               
 			  if(x == 0){
 			  String outputFile = path +"out.txt";
 			  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
@@ -440,12 +506,29 @@ public class UploadedAssignments extends JFrame {
 			  else
 				  error = "Timed out";
 			  }
-			  else
+			  else{
 				  error = "Compile time error";
-			  log+=jc.errormessage;
-			}
-		assign.setMarks(marksOfOutput);
-		assign.setStatus(error);
+					if(file_type.equals("java"))
+						log += jc.errormessage;
+					else if(file_type.equals("py"))
+					log += pc.errormessage;               
+					else if(file_type.equals("cpp"))
+					log += cp.errormessage;               
+					else
+					log += cc.errormessage;               
+			  break;
+			  }
+				if(file_type.equals("java"))
+					log += jc.errormessage;
+				else if(file_type.equals("py"))
+				log += pc.errormessage;               
+				else if(file_type.equals("cpp"))
+				log += cp.errormessage;               
+				else
+				log += cc.errormessage;               
+		  }
+//		assign.setMarks(marksOfOutput);
+//		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		//System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
 		UsingJsch.writingFile(path+"logFiles/", log, name.substring(1,name.lastIndexOf('.'))+".txt");

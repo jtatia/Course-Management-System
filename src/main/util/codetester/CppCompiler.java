@@ -53,6 +53,29 @@ public class CppCompiler extends Languages{
 			return 0;
 		}
 		
+		public int execute1(String path, String filename, String inputfile)throws Exception
+		{
+			SSHCommands sh=new SSHCommands();
+			filename.trim();
+			inputfile.trim();
+			String command1 = "cd "+path;
+			String command2 = "./a.out <inputFiles/"+inputfile+">"+" outputFiles/"+inputfile;
+			String com[]={command1,command2};
+			ExecuteProgram ep = new ExecuteProgram(sh,com,this);
+			Thread.sleep(2000);
+			
+			if(!ep.t.getState().equals(Thread.State.TERMINATED))
+			{
+				ep.t.stop();
+				return 2;
+			}
+			if(s.startsWith("error")){
+				errormessage=s.substring(6);
+				return 1;
+			}
+			return 0;
+		}
+		
 		public static void main(String arg[])throws Exception
 		{
 			CppCompiler obj = new CppCompiler();
