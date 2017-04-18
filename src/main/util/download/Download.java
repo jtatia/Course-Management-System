@@ -72,8 +72,8 @@ public class Download {
             System.out.println("from dir  =  "+directory);
             System.out.println("filename = "+filename);
             System.out.println("to dir =  "+to);
-            BufferedInputStream bis = new BufferedInputStream(channelSftp.get(filename.substring(1,filename.length()-1)));
-            to+=("/"+filename.substring(1,filename.length()-1));
+            BufferedInputStream bis = new BufferedInputStream(channelSftp.get(filename.substring(0,filename.length())));
+            to+=("/"+filename.substring(0,filename.length()));
             File newFile = new File(to);
             OutputStream os = new FileOutputStream(newFile);
             BufferedOutputStream bos = new BufferedOutputStream(os);

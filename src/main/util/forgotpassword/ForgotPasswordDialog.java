@@ -189,9 +189,8 @@ public class ForgotPasswordDialog extends JDialog {
 		JTextArea answerTextArea = new JTextArea();
 		answerTextArea.setBounds(10, 61, 394, 57);
 		securityPanel.add(answerTextArea);
-	
-			submitButton2 = new JButton("Submit");
-			submitButton2.addActionListener(new ActionListener() {
+		submitButton2 = new JButton("Submit");
+		submitButton2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 				String answer=(answerTextArea.getText()).trim();      // obtaining the user answer
 				if(user.equals("Student"))
@@ -212,9 +211,10 @@ public class ForgotPasswordDialog extends JDialog {
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
+							dispose();
 							// entering the student course outline using the security answer  
-							CourseOutline courseOutline=new CourseOutline(student);
-							courseOutline.setVisible(true);
+							//CourseOutline courseOutline=new CourseOutline(student);
+							//courseOutline.setVisible(true);
 						}
 						catch(Exception ex)
 						{
@@ -236,9 +236,10 @@ public class ForgotPasswordDialog extends JDialog {
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
+							dispose();
 							// entering the student course outline using the security answer  
-							MainAdminPanel mainAdminPanel=new MainAdminPanel(admin);
-							mainAdminPanel.setVisible(true);
+							//MainAdminPanel mainAdminPanel=new MainAdminPanel(admin);
+							//mainAdminPanel.setVisible(true);
 						}
 						catch(Exception ex)
 						{
@@ -261,9 +262,10 @@ public class ForgotPasswordDialog extends JDialog {
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
+							dispose();
 							// entering the student course outline using the security answer  
-							ProfessorFrame profframe=new ProfessorFrame(prof);
-							profframe.setVisible(true);
+							//ProfessorFrame profframe=new ProfessorFrame(prof);
+							//profframe.setVisible(true);
 						}
 						catch(Exception ex)
 						{
