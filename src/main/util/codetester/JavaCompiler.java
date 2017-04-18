@@ -58,7 +58,6 @@ public class JavaCompiler extends Languages{
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
 		
 		Thread.sleep(4000);
-		sh.close();
 		sh=new SSHCommands();
 		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
 		sh.close();
