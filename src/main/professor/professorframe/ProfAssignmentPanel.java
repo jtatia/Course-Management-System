@@ -135,6 +135,7 @@ public class ProfAssignmentPanel extends JPanel {
 								Download dwn = new Download();
 								dwn.downloadFile(file, path,a);	
 							}
+							JOptionPane.showMessageDialog(ProfAssignmentPanel.this,"Download Complete!!!!");
 						}
 					}.start();
 					

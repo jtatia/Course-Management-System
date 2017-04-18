@@ -129,6 +129,7 @@ public class ProfCourseMaterialPanel extends JPanel {
 								Download dwn = new Download();
 								dwn.downloadFile(file, path,a);	
 							}
+							JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this,"Download Complete!!!!");
 						}
 					}.start();
 					

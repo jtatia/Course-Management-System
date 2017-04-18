@@ -21,6 +21,7 @@ import javax.swing.JTable;
 import javax.swing.JToggleButton;
 import javax.swing.ListSelectionModel;
 
+import main.professor.professorframe.ProfCourseMaterialPanel;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.assignmentutils.assignmenttablemodel.AssignmentTableModel;
 import main.util.download.Download;
@@ -157,6 +158,7 @@ public class CourseAssignmentPanel extends JPanel {
 								Download dwn = new Download();
 								dwn.downloadFile(file, path,a);	
 							}
+							JOptionPane.showMessageDialog(CourseAssignmentPanel.this,"Download Complete!!!!");
 						}
 					}.start();
 					
