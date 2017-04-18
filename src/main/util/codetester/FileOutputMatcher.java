@@ -78,9 +78,32 @@ public class FileOutputMatcher {
 			String actual_output = UsingJsch.readingFile(path_output);
 			String output = UsingJsch.readingFile(path_check);
             System.out.println("INSIDE FILEOUTPUTMATCHER");
-			System.out.println(actual_output+" :::  next :::  "+output);
+			System.out.println("Actual Output::::\n"+actual_output+"Ends\n"+"Our output::::::\n"+output+"Ends");
 			int lineNum=1;//The line being compared
-			boolean areEqual=false;
+			boolean areEqual=true;
+			String actual_array[]=actual_output.split("\n");
+			String output_array[]=output.split("\n");
+			if(actual_array.length==output_array.length)
+			{
+				for(int i=0;i<actual_array.length;i++)
+				{
+					String actual_line=actual_array[i].trim();
+					String output_line=output_array[i].trim();
+					if(actual_line.equals(output_line))
+					{
+						continue;
+					}
+					else
+					{
+						areEqual=false;
+						break;
+					}	
+				}
+			}
+			else
+			{
+				areEqual=false;
+			}	
 			if(actual_output.equals(output))
 				areEqual = true;
 	/*		while(actual_output!=null&&output!=null){

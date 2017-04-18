@@ -114,7 +114,7 @@ try{
 		for(int i=0;i<list.size();i++){
 			for(int j=count-1;j>=0;j--){
 				System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
-				if(("\""+list.get(i).getName()+"\"").equals(csvlist.get(j).getFilename()))
+				if((list.get(i).getName()).equals(csvlist.get(j).getFilename()))
 						{
 					list.get(i).setMarks(Integer.parseInt(csvlist.get(j).getMarks()));
 					list.get(i).setStatus(csvlist.get(j).getStatus());

@@ -466,7 +466,7 @@ public class UploadedAssignments extends JFrame {
 		String log = "";
 	    int marksOfOutput = 0;
 		String error = "Successful";
-		String file_type=name.substring(name.lastIndexOf(".")+1,name.length()-1);
+		String file_type=name.substring(name.lastIndexOf(".")+1);
 		int status;
 		System.out.println("file type"+file_type);
 		for(int i =0; i<length; i++)
@@ -531,7 +531,7 @@ public class UploadedAssignments extends JFrame {
 //		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		//System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
-		UsingJsch.writingFile(path+"logFiles/", log, name.substring(1,name.lastIndexOf('.'))+".txt");
+		UsingJsch.writingFile(path+"logFiles/", log, name.substring(0,name.lastIndexOf('.'))+".txt");
 		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file
 		//writeMarksAnderror(path,name,marksOfOutput,error);
