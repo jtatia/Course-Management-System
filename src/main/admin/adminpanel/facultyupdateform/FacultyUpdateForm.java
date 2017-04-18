@@ -47,6 +47,7 @@ public class FacultyUpdateForm extends JDialog {
 	private JList clist;
 	private DefaultListModel<String> model=null;
 	private String old_name="";
+	private String old_password="";
 	private String foldername="";
 	/**
 	 * Launch the application.
@@ -238,13 +239,19 @@ public class FacultyUpdateForm extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 						String course_id[]=new String[model.getSize()];
 						String unscore="";
+						String password2=password_text.getText();
+						boolean encrypt=false;
+						if(password2.equals(old_password))
+							encrypt=false;
+						else 
+							encrypt=true;
 						Professor modifiedprof=new Professor();
 						modifiedprof.setAnswer(answer_text.getText());
 						modifiedprof.setEmail(email_text.getText());
 						modifiedprof.setFirstname(firstname_text.getText());
 						modifiedprof.setLastname(lastname_text.getText());
 						modifiedprof.setMiddlename(middlename_text.getText());
-						modifiedprof.setPassword(password_text.getText());
+						modifiedprof.setPassword(password2);
 						modifiedprof.setSecurityques((String)comboBox.getSelectedItem());
 						modifiedprof.setSex(sex_text.getText().charAt(0));
 						modifiedprof.setUsername(user_text.getText());
@@ -256,7 +263,7 @@ public class FacultyUpdateForm extends JDialog {
 						}
 						modifiedprof.setCourseids(course_id);
 						modifiedprof.setCourseString(unscore);
-						prdao.modifyProfessor(modifiedprof);
+						prdao.modifyProfessor(modifiedprof,encrypt);
 						JOptionPane.showMessageDialog(contentPanel, "Information has been updated Succesfully");
 						dispose();
 					}
@@ -289,6 +296,7 @@ public class FacultyUpdateForm extends JDialog {
 		sex_text.setText(sex);
 		email_text.setText(prof.getEmail());
 		password_text.setText(prof.getPassword());
+		old_password=prof.getPassword();
 		password_text.setEnabled(false);
 		answer_text.setText(prof.getAnswer());
 		comboBox.setSelectedItem(prof.getSecurityques());

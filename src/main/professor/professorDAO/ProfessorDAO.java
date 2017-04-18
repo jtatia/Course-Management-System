@@ -245,7 +245,7 @@ public class ProfessorDAO {
 		}
 	}
 	
-	public void modifyProfessor(Professor prof)
+	public void modifyProfessor(Professor prof,boolean encrypt)
 	{
 		System.out.println("inside method");
 		PreparedStatement pstmt=null;
@@ -258,8 +258,11 @@ public class ProfessorDAO {
 			pstmt.setString(4, prof.getLastname());
 			pstmt.setString(5, ""+prof.getSex());
 			pstmt.setString(6, prof.getEmail());
+			if(encrypt)
 			pstmt.setString(7, EncryptPassword(prof.getPassword()));
-		    pstmt.setString(8, prof.getSecurityques());
+			else
+			pstmt.setString(7, prof.getPassword());	
+			pstmt.setString(8, prof.getSecurityques());
 			pstmt.setString(9, prof.getAnswer());
 			//##############################################################################
 			String courseIds[]=prof.getCourseids();

@@ -49,10 +49,12 @@ public class StudentUpdateForm extends JDialog {
 	private JTextField s6_text;
 	private JTextField s8_text;
 	private JTextField s10_text;
+	private String oldPassword="";
 	private Student tempStu=null;
 	private String prev;
 	private int flag=0;
 	private JScrollPane jsp=null;
+	private boolean encrypt=true;
 	/**
 	 * Launch the application.
 	 */
@@ -372,11 +374,15 @@ public class StudentUpdateForm extends JDialog {
 							}
 							else flag=0;*/
 							StudentDbHandler stdb=new StudentDbHandler();
+							if(password_text.getText().equals(oldPassword))
+								encrypt=false;
+							else
+								encrypt=true;
 							stdb.modifyStudent(roll_text.getText(),first_text.getText(),
 									middle_text.getText(),last_text.getText(),sex_text.getText(),new Integer(age_text.getText()),
 									email_text.getText(),batch_text.getText(),password_text.getText(),(String)comboBox.getSelectedItem(),ans_text.getText(),
 									s1_text.getText(),s2_text.getText(),s3_text.getText(),s4_text.getText(),s5_text.getText(),s6_text.getText(),
-									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText());
+									s7_text.getText(),s8_text.getText(),s9_text.getText(),s10_text.getText(),encrypt);
 							dispose();
 						}catch(Exception exc){
 							exc.printStackTrace();
@@ -408,7 +414,8 @@ public class StudentUpdateForm extends JDialog {
 		sex_text.setText(""+tempStu.getSex());
 		age_text.setText(new Integer(tempStu.getAge()).toString());;
 		email_text.setText(tempStu.getEmail());;
-		password_text.setText(tempStu.getPassword());;
+		password_text.setText(tempStu.getPassword());
+		oldPassword=tempStu.getPassword();
 		//security_text.setText(tempStu.getSecurityques());;
 		comboBox.setSelectedItem(tempStu.getSecurityques());
 		ans_text.setText(tempStu.getAnswer());

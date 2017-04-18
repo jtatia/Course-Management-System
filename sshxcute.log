@@ -78,7 +78,7 @@ z
 [01:38:08] INFO:    Command is ls;cd testdir;ls
 [01:38:08] INFO:    Connection channel established succesfully
 [01:38:08] INFO:    Start to run command
-[01:38:08] INFO:    testdir
+[01:38:08] INFO:    testdir0
 
 [01:38:08] INFO:    aodfpj
 g
@@ -10150,6 +10150,7 @@ input3.txt
 [16:13:18] INFO:    Connection channel disconnect
 
 
+<<<<<<< HEAD
 =============== [2017/04/18 04:12:39, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
 
 [04:12:39] INFO:    SSHExec initializing ...
@@ -10218,3 +10219,5 @@ input3.txt
 [00:26:56] INFO:    Now wait 0 seconds to begin next task ...
 [00:26:56] INFO:    Connection channel disconnect
 [00:26:56] INFO:    SSH connection shutdown
+=======
+>>>>>>> 9310377003a5c938ac268ba49a9172b6322d1276
