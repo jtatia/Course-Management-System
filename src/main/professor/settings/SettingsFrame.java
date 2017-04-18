@@ -187,7 +187,7 @@ public class SettingsFrame extends JFrame {
 				sex='F';
 			Professor p=new Professor(textField_3.getText(),textField.getText(), textField_1.getText(),textField_2.getText(), textField_4.getText(), sex,
 					passwordField.getText(), (String)comboBox.getSelectedItem(), textField_5.getText(), prof.getCourseids());
-			pdao.modifyProfessor(p);
+			pdao.modifyProfessor(p,true);
 			
 			// showing a message of success in case of successful submission 
 			

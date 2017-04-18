@@ -10,16 +10,24 @@ public class JavaCompiler extends Languages{
 	public JavaCompiler(){
 		super("");
 	}
-	/* Provide the path upto the directory in which the assignment is*/
+	/* Provide the path upto the directory in which the assignment is e.g  cms/MA201_ashish_prashant/uploads/assignment1/*/
 	/* Provide the complete filename */
 	public int compile(String path, String filename)throws Exception
 	{
+		System.out.println("In compile path : "+filename);
 		SSHCommands sh=new SSHCommands();
 		filename.trim();
 		String command1 = "cd "+path;
+		String temp=filename.substring(filename.indexOf('_')+1);
+		sh.runSingleCommand("mv "+path+filename+" "+path+temp);
+		sh.close();
 		String command2 = "javac "+filename;
 		String com[]={command1,command2};
+		sh=new SSHCommands();
 		s = sh.runMultipleCommand(com);
+		sh.close();
+		sh=new SSHCommands();
+		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
 		sh.close();
 		if(s.startsWith("error")){
 			errormessage=s.substring(6);
@@ -36,15 +44,22 @@ public class JavaCompiler extends Languages{
 		SSHCommands sh=new SSHCommands();
 		filename.trim();
 		inputfile.trim();
+		String temp=filename.substring(filename.indexOf('_')+1);
+		sh.runSingleCommand("mv "+path+filename+" "+path+temp);
+		sh.close();
 		String command1 = "cd "+path;
 		String fn = filename.substring(0, filename.length()-6)+"\"";
 		System.out.println("FILE"+fn);
 		String command2 = "java "+fn+" < inputFiles/"+inputfile+" > "+"out.txt";
 		System.out.println("COOOOOOOOOOOMMMMMMMMMAAAAAAAANNNNNNNNNDDDDDDDDDDD"+command2);
 		String com[]={command1,command2};
+		sh=new SSHCommands();
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
+		sh.close();
 		Thread.sleep(4000);
-		
+		sh=new SSHCommands();
+		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
+		sh.close();
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
 		{
 			errormessage = "terminated";

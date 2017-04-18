@@ -208,7 +208,7 @@ public class ForgotPasswordDialog extends JDialog {
 						sdbh.modifyStudent(student.getRollno(), student.getFirstname(),student.getMiddlename(), student.getLastname(), ""+student.getSex(), student.getAge(),
 								student.getEmail(), student.getBatch(),student.getPassword(), student.getSecurityques(), student.getAnswer(), student.getSubject1(), student.getSubject2(),
 								student.getSubject3(),student.getSubject4(), student.getSubject5(), student.getSubject6(), student.getSubject7(), student.getSubject8(),
-								student.getSubject9(), student.getSubject10());
+								student.getSubject9(), student.getSubject10(),true);
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
@@ -257,7 +257,7 @@ public class ForgotPasswordDialog extends JDialog {
 					if(answer.equalsIgnoreCase(prof.getAnswer())){
 						String str=prof.getFirstname()+(int)(Math.random()*100);    // generating a new password
 						prof.setPassword(str);		// setting the new password
-						professordao.modifyProfessor(prof);
+						professordao.modifyProfessor(prof,true);
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{

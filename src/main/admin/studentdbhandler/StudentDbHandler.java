@@ -223,7 +223,7 @@ public class StudentDbHandler {
 	public void modifyStudent(String rollno, String firstname, String middlename, String lastname, String sex, int age,
 			String email, String batch,String password, String securityques, String answer, String subject1, String subject2,
 			String subject3, String subject4, String subject5, String subject6, String subject7, String subject8,
-			String subject9, String subject10){
+			String subject9, String subject10,boolean encrypt){
 			PreparedStatement pstmt=null;
 			try{
 				pstmt=myCon.prepareStatement("update student set first_name = ?,middle_name=?,last_name =?,sex = ?,age = ?,email = ?,batch_code = ?,password = ? ,security_ques = ?,answer = ?,subject1 = ?,subject2 = ?,subject3 = ?,subject4 = ?,subject5 = ?,subject6 = ?,subject7 = ?,subject8 = ?,subject9 = ?,subject10 = ? where roll_no = ?");
@@ -234,7 +234,10 @@ public class StudentDbHandler {
 				pstmt.setInt(5, age);
 				pstmt.setString(6, email);
 				pstmt.setString(7,batch);
+				if(encrypt)
 			    pstmt.setString(8, EncryptPassword(password));
+				else
+				pstmt.setString(8, password);	
 				pstmt.setString(9, securityques);
 				pstmt.setString(10, answer);
 				pstmt.setString(11, subject1);
