@@ -32,6 +32,31 @@ public class PythonCompiler extends Languages {
 		}
 		return 0;
 	}
+	
+	public int execute1(String path,String filename,String inputFile)throws Exception{
+		SSHCommands sh=new SSHCommands();
+		path.trim();
+		filename.trim();
+		inputFile.trim();
+		String command1="cd "+path;
+		String command2="python "+filename+" <inputFiles/"+inputFile+">"+" outputFiles/"+inputFile;//If you need to change name of output file please change from here
+		String cmd[]={command1,command2};
+		ExecuteProgram ep=new ExecuteProgram(sh,cmd,this);
+		Thread.sleep(10000);
+		
+		if(!ep.t.getState().equals(Thread.State.TERMINATED))
+		{
+			ep.t.stop();
+			return 2;
+		}
+		if(s.startsWith("error")){
+			errormessage=s.substring(6);
+			return 1;
+		}
+		return 0;
+	}
+
+	
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		PythonCompiler obj = new PythonCompiler();

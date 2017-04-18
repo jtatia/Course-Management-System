@@ -14,6 +14,8 @@ import javax.swing.border.EmptyBorder;
 
 import main.professor.professor.Professor;
 import main.professor.settings.SettingsFrame;
+import main.util.login.LoginPortal;
+
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.GroupLayout.Alignment;
@@ -148,7 +150,9 @@ public class ProfessorFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 			int response = JOptionPane.showConfirmDialog(ProfessorFrame.this, "Are U Sure U Want to Logout?","Confirm",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
 				if(response == JOptionPane.YES_OPTION){
-					System.exit(0);
+					LoginPortal login=new LoginPortal("Professor");
+					login.setVisible(true);
+					dispose();
 				}
 			}
 		});

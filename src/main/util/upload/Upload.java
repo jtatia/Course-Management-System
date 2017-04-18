@@ -12,6 +12,9 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.util.sshcommands.SSHCommands;
+import net.neoremind.sshxcute.exception.TaskExecFailException;
+
 public class Upload {
 	
 	static final String path="/home/Btech15/kshitij.cs15/cms" ;
@@ -91,12 +94,14 @@ public class Upload {
 	 * courseid - specific course id including prof name +cours name
 	 * folder - either "assignments" or "material"
 	 */
+	
+	
 	public void professorUploadFile(String from, String courseid, String folder )
 	{
 		String filename = from.substring(from.lastIndexOf('\\')+1);
-		System.out.println("The filename is :: "+filename+" from="+from);
+		//System.out.println("############The filename is :: "+filename+" from="+from+"folder = "+folder);
 		String to = courseid+filename;
-		System.out.println(to);
+		//System.out.println("After this"+to);
 		uploadFile(from, to,filename);
 	}
 }

@@ -78,7 +78,7 @@ z
 [01:38:08] INFO:    Command is ls;cd testdir;ls
 [01:38:08] INFO:    Connection channel established succesfully
 [01:38:08] INFO:    Start to run command
-[01:38:08] INFO:    testdir
+[01:38:08] INFO:    testdir0
 
 [01:38:08] INFO:    aodfpj
 g
@@ -10150,51 +10150,3 @@ input3.txt
 [16:13:18] INFO:    Connection channel disconnect
 
 
-=============== [2017/04/18 03:56:23, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
-
-[03:56:23] INFO:    SSHExec initializing ...
-[03:56:23] INFO:    Session initialized and associated with user credential kshitij#456
-[03:56:23] INFO:    SSHExec initialized successfully
-[03:56:23] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
-[03:56:25] INFO:    SSH connection established
-[03:56:25] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
-[03:56:25] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
-[03:56:25] INFO:    Connection channel established succesfully
-[03:56:25] INFO:    Start to run command
-[03:56:26] INFO:    Connection channel closed
-[03:56:26] INFO:    Check if exec success or not ... 
-[03:56:26] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
-[03:56:26] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
-[03:56:26] INFO:    Now wait 0 seconds to begin next task ...
-[03:56:26] INFO:    Connection channel disconnect
-[03:56:26] INFO:    SSH connection shutdown
-[03:56:26] INFO:    Session initialized and associated with user credential kshitij#456
-[03:56:26] INFO:    SSHExec initialized successfully
-[03:56:26] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
-[03:56:26] INFO:    SSH connection established
-[03:56:26] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
-[03:56:26] INFO:    Command is cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
-[03:56:26] INFO:    Connection channel established succesfully
-[03:56:26] INFO:    Start to run command
-[03:56:28] INFO:    Connection channel closed
-[03:56:28] INFO:    Check if exec success or not ... 
-[03:56:28] INFO:    Execution failed while executing command: cd /home/stud/btech/cse/2015/kshitij.cs15/test/;javac testing.java
-[03:56:28] INFO:    Error message: bash: line 0: cd: /home/stud/btech/cse/2015/kshitij.cs15/test/: No such file or directoryjavac: file not found: testing.javaUsage: javac <options> <source files>use -help for a list of possible options
-[03:56:28] INFO:    Now wait 0 seconds to begin next task ...
-[03:56:28] INFO:    Connection channel disconnect
-[03:56:28] INFO:    SSH connection shutdown
-[03:56:28] INFO:    Session initialized and associated with user credential kshitij#456
-[03:56:28] INFO:    SSHExec initialized successfully
-[03:56:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
-[03:56:28] INFO:    SSH connection established
-[03:56:28] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
-[03:56:28] INFO:    Command is mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
-[03:56:28] INFO:    Connection channel established succesfully
-[03:56:28] INFO:    Start to run command
-[03:56:28] INFO:    Connection channel closed
-[03:56:28] INFO:    Check if exec success or not ... 
-[03:56:28] INFO:    Execution failed while executing command: mv /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java /home/stud/btech/cse/2015/kshitij.cs15/test/testing.java
-[03:56:28] INFO:    Error message: mv: cannot stat ‘/home/stud/btech/cse/2015/kshitij.cs15/test/testing.java’: No such file or directory
-[03:56:28] INFO:    Now wait 0 seconds to begin next task ...
-[03:56:28] INFO:    Connection channel disconnect
-[03:56:28] INFO:    SSH connection shutdown
