@@ -10200,3 +10200,21 @@ input3.txt
 [04:31:49] INFO:    Execute successfully for command: cd cms/CS103_sriparna/;cd uploads;mkdir Structuresassignment.pdf;cd Structuresassignment.pdf;mkdir inputFiles;mkdir outputFiles;mkdir logFiles
 [04:31:49] INFO:    Now wait 0 seconds to begin next task ...
 [04:31:49] INFO:    Connection channel disconnect
+
+=============== [2017/04/19 00:26:55, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[00:26:55] INFO:    SSHExec initializing ...
+[00:26:55] INFO:    Session initialized and associated with user credential kshitij#456
+[00:26:55] INFO:    SSHExec initialized successfully
+[00:26:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[00:26:56] INFO:    SSH connection established
+[00:26:56] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[00:26:56] INFO:    Command is cd cms/;mkdir MA301_ashish_omprakash;cd MA301_ashish_omprakash;mkdir assignments;mkdir uploads;mkdir materials
+[00:26:56] INFO:    Connection channel established succesfully
+[00:26:56] INFO:    Start to run command
+[00:26:56] INFO:    Connection channel closed
+[00:26:56] INFO:    Check if exec success or not ... 
+[00:26:56] INFO:    Execute successfully for command: cd cms/;mkdir MA301_ashish_omprakash;cd MA301_ashish_omprakash;mkdir assignments;mkdir uploads;mkdir materials
+[00:26:56] INFO:    Now wait 0 seconds to begin next task ...
+[00:26:56] INFO:    Connection channel disconnect
+[00:26:56] INFO:    SSH connection shutdown
