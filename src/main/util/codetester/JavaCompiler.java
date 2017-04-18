@@ -21,7 +21,7 @@ public class JavaCompiler extends Languages{
 		String temp=filename.substring(filename.indexOf('_')+1);
 		sh.runSingleCommand("mv "+path+filename+" "+path+temp);
 		sh.close();
-		String command2 = "javac "+filename;
+		String command2 = "javac "+temp;
 		System.out.println("FILENAME::"+command2);
 		String com[]={command1,command2};
 		sh=new SSHCommands();
@@ -49,14 +49,14 @@ public class JavaCompiler extends Languages{
 		sh.runSingleCommand("mv "+path+filename+" "+path+temp);
 		sh.close();
 		String command1 = "cd "+path;
-		String fn = filename.substring(0, filename.length()-6)+"\"";
+		String fn = temp.substring(0, temp.length()-5);
 		System.out.println("FILE"+fn);
 		String command2 = "java "+fn+" < inputFiles/"+inputfile+" > "+"out.txt";
 		System.out.println("COOOOOOOOOOOMMMMMMMMMAAAAAAAANNNNNNNNNDDDDDDDDDDD"+command2);
 		String com[]={command1,command2};
 		sh=new SSHCommands();
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
-		sh.close();
+		
 		Thread.sleep(4000);
 		sh=new SSHCommands();
 		sh.runSingleCommand("mv "+path+temp+" "+path+filename);

@@ -10148,6 +10148,7 @@ input3.txt
 [16:13:18] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS225_jimson/uploads/HW2/inputFiles/
 [16:13:18] INFO:    Now wait 0 seconds to begin next task ...
 [16:13:18] INFO:    Connection channel disconnect
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -10267,3 +10268,5 @@ input3.txt
 [00:47:01] INFO:    Now wait 0 seconds to begin next task ...
 [00:47:01] INFO:    Connection channel disconnect
 >>>>>>> ab0e04693cc6b55259466c63e517e2cef7b70958
+=======
+>>>>>>> 4ae328c73f292e19650de3d90291760146ef0df8

@@ -90,7 +90,7 @@ public class UploadedAssignments extends JFrame {
 	 * @throws Exception 
 	 */
 	public UploadedAssignments(String p,String assignmentFolderName) throws Exception {
-		setTitle("UPLOADS -  <dynamic>");
+		setTitle("UPLOADS - "+assignmentFolderName);
 		setVisible(true);
 		String call = p;
 		System.out.println("PART 1:-"+p+"Assignment folder name:- "+assignmentFolderName);
@@ -163,7 +163,7 @@ public class UploadedAssignments extends JFrame {
 						System.out.println("modelmode= "+model_mode);
 						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0 && str[i].contains(".")))
 						{
-						temp.setName("\""+str[i]+"\"");
+						temp.setName(str[i]);
 						temp.setPath(path);
 						String s[]=FileDetails.getStats(path,temp.getName());
 						temp.setLastModified(s[1]);
@@ -466,7 +466,7 @@ public class UploadedAssignments extends JFrame {
 		String log = "";
 	    int marksOfOutput = 0;
 		String error = "Successful";
-		String file_type=name.substring(name.lastIndexOf(".")+1,name.length()-1);
+		String file_type=name.substring(name.lastIndexOf(".")+1);
 		int status;
 		System.out.println("file type"+file_type);
 		for(int i =0; i<length; i++)
@@ -531,7 +531,7 @@ public class UploadedAssignments extends JFrame {
 //		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
 		//System.out.println("SHouldWORKSSSJSJKJSDKSKADKSJDJLKSADLKSAD");
-		UsingJsch.writingFile(path+"logFiles/", log, name.substring(1,name.lastIndexOf('.'))+".txt");
+		UsingJsch.writingFile(path+"logFiles/", log, name.substring(0,name.lastIndexOf('.'))+".txt");
 		CSVfiles.WriteMarksFile(path,name, marksOfOutput, error);
 		//writing marks and status to new file
 		//writeMarksAnderror(path,name,marksOfOutput,error);
