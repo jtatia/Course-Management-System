@@ -36,7 +36,39 @@ public class JavaCompiler extends Languages{
 		}
 		return 0;
 	}
-	
+	public int compile(String path, String filename,boolean rename)throws Exception
+	{	
+		System.out.println("In compile path : "+filename);
+		SSHCommands sh=new SSHCommands();
+		filename.trim();
+		String command1 = "cd "+path;
+		String temp=filename;
+		if(rename)
+		{
+			temp=filename.substring(filename.indexOf('_')+1);
+			sh.runSingleCommand("mv "+path+filename+" "+path+temp);
+			
+		}
+		sh.close();
+		String command2 = "javac "+temp;
+		System.out.println("FILENAME::"+command2);
+		String com[]={command1,command2};
+		sh=new SSHCommands();
+		s = sh.runMultipleCommand(com);
+		sh.close();
+		if(rename)
+		{	
+			sh=new SSHCommands();
+			sh.runSingleCommand("mv "+path+temp+" "+path+filename);
+			sh.close();
+		}
+		if(s.startsWith("error")){
+			errormessage=s.substring(6);
+			return 1;
+		}
+			
+		return 0;
+	}
 	/* Provide the path upto the directory in which the assignment is*/
 	/* Provide the complete filename */
 	/* Provide the name of the input file */
