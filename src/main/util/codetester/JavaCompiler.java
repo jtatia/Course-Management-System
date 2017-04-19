@@ -88,7 +88,6 @@ public class JavaCompiler extends Languages{
 		String com[]={command1,command2};
 		sh=new SSHCommands();
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
-		
 		Thread.sleep(4000);
 		sh=new SSHCommands();
 		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
@@ -97,10 +96,12 @@ public class JavaCompiler extends Languages{
 		{
 			errormessage = "terminated";
 			ep.t.stop();
+			
 			return 2;
 		}
 		if(s.startsWith("error")){
 			errormessage=s.substring(6);
+			
 			return 1;
 		}
 		
