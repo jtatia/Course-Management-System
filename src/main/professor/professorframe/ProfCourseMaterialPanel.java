@@ -118,7 +118,7 @@ public class ProfCourseMaterialPanel extends JPanel {
 			public void actionPerformed(ActionEvent e){
 				FileChooser fc = new FileChooser();
 				String path = fc.getDirectoryPath();
-				if(table.getSelectedRowCount()>0){
+				if(table.getSelectedRowCount()>0 && !path.equals("")){
 					int[] row = table.getSelectedRows();
 					 new Thread(){
 						
@@ -133,6 +133,8 @@ public class ProfCourseMaterialPanel extends JPanel {
 						}
 					}.start();
 					
+				}else{
+					JOptionPane.showMessageDialog(ProfCourseMaterialPanel.this, "Download Cancelled!!");
 				}
 				
 			}
