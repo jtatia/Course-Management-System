@@ -568,7 +568,9 @@ public class UploadedAssignments extends JFrame {
 				else if(file_type.equals("cpp"))
 					log += cp.errormessage;               
 				else
-					log += cc.errormessage;               
+					log += cc.errormessage;     
+				if(log.equals(""))
+					error="Timed out";
 		  }
 		if(!isCorrect)
 			error = "Wrong Answer";

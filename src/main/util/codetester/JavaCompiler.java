@@ -88,19 +88,21 @@ public class JavaCompiler extends Languages{
 		String com[]={command1,command2};
 		sh=new SSHCommands();
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
-		
 		Thread.sleep(4000);
+		sh.close();
 		sh=new SSHCommands();
 		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
 		sh.close();
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
-		{
+		{System.out.println("ksjtimeout");
 			errormessage = "terminated";
 			ep.t.stop();
+			
 			return 2;
 		}
 		if(s.startsWith("error")){
 			errormessage=s.substring(6);
+			System.out.println("ksj:"+errormessage);
 			return 1;
 		}
 		
