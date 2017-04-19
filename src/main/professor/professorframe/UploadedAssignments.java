@@ -179,7 +179,6 @@ public class UploadedAssignments extends JFrame {
 					}
 					else if(model_mode == 1)
 						{
-						//list1 = CSVfiles.ReadMarksFile(path) ;
 						list = CSVfiles.ReadMarksFile(path) ;
 						atmc = new AssignmentTableModelC(list);
 						table.setModel(atmc);
@@ -207,7 +206,7 @@ public class UploadedAssignments extends JFrame {
 								int c=0;
 								for(int i=0;i<str.length;i++){
 								if(!str[i].equals("logFiles1"))
-									c++;
+								c++;
 								}
 								if(c==str.length){
 								}
@@ -219,7 +218,7 @@ public class UploadedAssignments extends JFrame {
 							
 							JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
 
-							JDialog dialog = new JDialog();
+							 JDialog dialog = new JDialog();
 							dialog.setTitle("Message");
 							dialog.setModal(true);
 							dialog.setContentPane(optionPane);
@@ -227,15 +226,15 @@ public class UploadedAssignments extends JFrame {
 							dialog.pack();
 							//System.out.println("what about here:::::::");
 							dialog.setBounds(500, 300, 350, 150);;
+							
 							//added
+							
 							new Thread(){
 								public void run()
 								{try{
 							for(int r : rows){
 								Assignment a = list.get(r);
-								System.out.println("calling = "+a.getName());
-								try {
-									System.out.println("calling = "+a.getName());
+								try {System.out.println("calling");
 									test(a.getPath(),a.getName());
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -253,6 +252,8 @@ public class UploadedAssignments extends JFrame {
 							}.start();
 							dialog.setVisible(true);
 							//System.out.println("I am hereeeeee:::::");
+							
+							
 						}
 					}.start();
 				
@@ -347,7 +348,7 @@ public class UploadedAssignments extends JFrame {
 						status = jc.compile(path,filename,false);            
 
 						else if(file_type.equals("py"))
-							status = 0; //needs to be replaced for python           
+							status = 0;            
 						else if(file_type.equals("cpp"))
 							status = cp.compile(path,filename);
 						else
@@ -381,8 +382,6 @@ public class UploadedAssignments extends JFrame {
 						SSHCommands.runSingleCommand("rm "+filename);
 						if(file_type.contains("java"))
 							SSHCommands.runSingleCommand("rm "+filename.substring(0, filename.lastIndexOf("."))+"class");
-						if(file_type.contains("cpp"))
-							SSHCommands.runSingleCommand("rm a.out");
 						JOptionPane.showMessageDialog(UploadedAssignments.this, error);
 					}catch(Exception e){
 						error = "Exception occurred";
@@ -568,9 +567,7 @@ public class UploadedAssignments extends JFrame {
 				else if(file_type.equals("cpp"))
 					log += cp.errormessage;               
 				else
-					log += cc.errormessage;     
-				if(log.equals(""))
-					error="Timed out";
+					log += cc.errormessage;               
 		  }
 		if(!isCorrect)
 			error = "Wrong Answer";
