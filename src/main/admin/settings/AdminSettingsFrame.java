@@ -181,6 +181,18 @@ public class AdminSettingsFrame extends JFrame {
 			if(rdbtnFemale.isSelected())
 				sex='F';
 			Admin modifiedAdmin=new Admin();
+			boolean encrypt=true;
+			String password=adao.getAdminByUserName(username).getPassword(); 
+			String enteredPassword=new String(passwordField.getPassword());
+			if(enteredPassword.equals(""))
+			{
+				encrypt=false;
+			}
+			else
+			{
+				password=enteredPassword;
+				encrypt=true;
+			}	
 			modifiedAdmin.setUsername(admin.getUsername());
 			modifiedAdmin.setFirstname(textField.getText());
 			modifiedAdmin.setMiddlename(textField_1.getText());
@@ -190,8 +202,8 @@ public class AdminSettingsFrame extends JFrame {
 			modifiedAdmin.setSex(sex);
 			modifiedAdmin.setSecurityques((String)comboBox.getSelectedItem());
 			modifiedAdmin.setAnswer(textField_5.getText());
-			modifiedAdmin.setPassword(passwordField.getText());
-			adao.modifyAdmin(modifiedAdmin);
+			modifiedAdmin.setPassword(password);
+			adao.modifyAdmin(modifiedAdmin,encrypt);
 			// showing a message of success in case of successful submission 
 			
 			JOptionPane.showMessageDialog(AdminSettingsFrame.this,"Successfully updated records","Error",JOptionPane.INFORMATION_MESSAGE);

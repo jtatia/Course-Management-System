@@ -232,7 +232,7 @@ public class ForgotPasswordDialog extends JDialog {
 					if(answer.equalsIgnoreCase(admin.getAnswer())){
 						String str=admin.getFirstname()+(int)(Math.random()*100);    // generating a new password
 						admin.setPassword(str);		// setting the new password
-						admindao.modifyAdmin(admin);
+						admindao.modifyAdmin(admin,true);
 						JOptionPane.showMessageDialog(ForgotPasswordDialog.this,"Message : Your Password has been reset to - "+str+". Go to your account settings to change your password" ,"Alert :"  ,JOptionPane.INFORMATION_MESSAGE );
 						try
 						{
