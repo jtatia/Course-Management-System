@@ -25,6 +25,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.GroupLayout;
@@ -156,8 +157,13 @@ public class AddCourse extends JDialog {
 					{
 						pfdao.updateCourseIds((String)model.get(k),course_id);
 						professors[k]=(String) lm.getElementAt(k);
+						//folderName+=(k==size-1)?professors[k]:professors[k]+"_";
+					}
+					Arrays.sort(professors);
+					for(int k=0;k<size;k++)
+					{
 						folderName+=(k==size-1)?professors[k]:professors[k]+"_";
-					}	
+					}
 					String batches[]=new String [5];
 					String b=(String) comboBox.getSelectedItem();
 					char bh=b.charAt(0);

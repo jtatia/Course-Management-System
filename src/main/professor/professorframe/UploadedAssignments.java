@@ -236,10 +236,11 @@ public class UploadedAssignments extends JFrame {
 		btnLogFiles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-					if(table.getSelectedRow() < 1)
+					if(table.getSelectedRowCount() < 1)
 						JOptionPane.showMessageDialog(UploadedAssignments.this,"Please Select atleast Single person","Error",JOptionPane.ERROR_MESSAGE);
 				//	SavePathForFiles obj = new SavePathForFiles(call,assignmentFolderName);
 				//	obj.setVisible(true);
+					else {
 					int[] rows = table.getSelectedRows();
 					FileChooser fc = new FileChooser();
 					try{
@@ -249,7 +250,7 @@ public class UploadedAssignments extends JFrame {
 						           for(int r : rows){
 										Assignment a = list.get(r);
 										String x =a.getName();
-										String file = a.getPath()+"logFiles/"+x.substring(0,x.lastIndexOf('.'))+".txt\"";
+										String file = a.getPath()+"logFiles/"+x.substring(0,x.lastIndexOf('.'))+".txt";
 										/*try {
 											String list = sshc.runSingleCommand("ls"+path+"logFiles/");
 											if(list.equals(""))
@@ -266,7 +267,7 @@ public class UploadedAssignments extends JFrame {
 					}catch(Exception e){
 						e.printStackTrace();
 					}
-			}
+			}}
 		});
 		bottomPanel.add(btnLogFiles);
 		btnLogFiles.setEnabled(false);
