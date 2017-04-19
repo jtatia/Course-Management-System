@@ -179,8 +179,9 @@ public class UploadedAssignments extends JFrame {
 					}
 					else if(model_mode == 1)
 						{
-						list1 = CSVfiles.ReadMarksFile(path) ;
-						atmc = new AssignmentTableModelC(list1);
+						//list1 = CSVfiles.ReadMarksFile(path) ;
+						list = CSVfiles.ReadMarksFile(path) ;
+						atmc = new AssignmentTableModelC(list);
 						table.setModel(atmc);
 						}
 					}catch(Exception ex){
@@ -206,7 +207,7 @@ public class UploadedAssignments extends JFrame {
 								int c=0;
 								for(int i=0;i<str.length;i++){
 								if(!str[i].equals("logFiles1"))
-								c++;
+									c++;
 								}
 								if(c==str.length){
 								}
@@ -218,7 +219,7 @@ public class UploadedAssignments extends JFrame {
 							
 							JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
 
-							 JDialog dialog = new JDialog();
+							JDialog dialog = new JDialog();
 							dialog.setTitle("Message");
 							dialog.setModal(true);
 							dialog.setContentPane(optionPane);
@@ -226,15 +227,15 @@ public class UploadedAssignments extends JFrame {
 							dialog.pack();
 							//System.out.println("what about here:::::::");
 							dialog.setBounds(500, 300, 350, 150);;
-							
 							//added
-							
 							new Thread(){
 								public void run()
 								{try{
 							for(int r : rows){
 								Assignment a = list.get(r);
-								try {System.out.println("calling");
+								System.out.println("calling = "+a.getName());
+								try {
+									System.out.println("calling = "+a.getName());
 									test(a.getPath(),a.getName());
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -252,8 +253,6 @@ public class UploadedAssignments extends JFrame {
 							}.start();
 							dialog.setVisible(true);
 							//System.out.println("I am hereeeeee:::::");
-							
-							
 						}
 					}.start();
 				

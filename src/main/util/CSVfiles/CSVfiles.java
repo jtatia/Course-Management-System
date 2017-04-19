@@ -117,7 +117,7 @@ public class CSVfiles {
 		System.out.println("outside");
 		read.close();
 		for(int i=0;i<count;i++){
-			for(int j=0;j<list.size()-1;j++){
+			for(int j=0;j<list.size();j++){
 	//			System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
 				if((list.get(j).getName()).equals(csvlist.get(i).getFilename()))
 						{
