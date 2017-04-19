@@ -18,7 +18,7 @@ public class SplashScreen extends JWindow {
     private static Timer timer1;
 
     public SplashScreen() {
-
+    	execute =this;
         Container container = getContentPane();
         container.setLayout(null);
         container.setBackground(new Color(0,51,102));

@@ -61,8 +61,8 @@ public class Home extends JFrame {
 	 */
 	public static void main(String[] args) {
 		
-		
-		
+		SplashScreen sc=new SplashScreen();
+		/*
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -88,6 +88,7 @@ public class Home extends JFrame {
 				}
 			}
 		});
+		*/
 	}
 
 	/**
