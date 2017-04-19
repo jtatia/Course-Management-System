@@ -34,14 +34,16 @@ public class CSVfiles {
 	static int port=22;
 
 	public static ArrayList<Assignment> ReadMarksFile(String path) throws Exception{
-		
+		int x =0;
 		String str[] = FileDetails.getFileList(path);
 		ArrayList<Assignment> list = new ArrayList<Assignment>();
 		ArrayList<CSVMarks> csvlist = new ArrayList<CSVMarks>();
 		for(int i=0;i<str.length;i++)
 		{
+			if(str[i].equals("finalmarks.csv"))
+				x=1;
 			Assignment temp = new Assignment();
-			if(!str[i].contains(".csv")&&(str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))
+			if((str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))
 			{
 				System.out.println("GETTING FILES LIST BEING ADDED");
 				System.out.println(str[i]);
@@ -56,6 +58,9 @@ public class CSVfiles {
 			}
 			//READING MARKS, ERROR FROM CSV FILE
 		}	
+		
+		if(x==0)
+		return list;
 		
 		Properties prop=new Properties();
 		try {
@@ -111,17 +116,19 @@ public class CSVfiles {
 	}
 		System.out.println("outside");
 		read.close();
-		for(int i=0;i<list.size();i++){
-			for(int j=0;j<count;j++){
-				System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
-				if((list.get(i).getName()).equals(csvlist.get(j).getFilename()))
+		for(int i=0;i<count;i++){
+			for(int j=0;j<list.size()-1;j++){
+	//			System.out.println("L:"+list.get(i).getName()+"\nC:"+csvlist.get(j).getFilename());
+				if((list.get(j).getName()).equals(csvlist.get(i).getFilename()))
 						{
-					list.get(i).setMarks(Integer.parseInt(csvlist.get(j).getMarks()));
-					list.get(i).setStatus(csvlist.get(j).getStatus());
+					list.get(j).setMarks(Integer.parseInt(csvlist.get(i).getMarks()));
+					list.get(j).setStatus(csvlist.get(i).getStatus());
 					break;
 				}
 			}
+			System.out.println("I=="+i);
 		}
+		System.out.println("EXITTTTTTTTTTTTTTTTTTTTTTTTT");
 		return list;
 	}
 	

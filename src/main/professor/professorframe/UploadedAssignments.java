@@ -151,19 +151,19 @@ public class UploadedAssignments extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("HERRRRRRE");
 				table.clearSelection();
-				new Thread(){				
+				new Thread(){									
 					public void run(){
 					try{
 						System.out.println("PATH"+path);
 					String str[] = FileDetails.getFileList(path);
 					list = new ArrayList<Assignment>();
+					if(model_mode == 0){
 					for(int i=0;i<str.length;i++)
 					{
+						System.out.println("@!@!@:::::"+str[i]);
+						if(str[i].contains(".")){
 						Assignment temp = new Assignment();
-						System.out.println("Problem happens after this");
-						System.out.println("modelmode= "+model_mode);
-						if((model_mode ==1 && (str[i].contains(".java")||str[i].contains(".py")||str[i].contains(".c")||str[i].contains(".cpp")))||(model_mode ==0 && str[i].contains(".")))
-						{
+//						System.out.println("Problem happens after this");
 						temp.setName(str[i]);
 						temp.setPath(path);
 						String s[]=FileDetails.getStats(path,temp.getName());
@@ -172,19 +172,17 @@ public class UploadedAssignments extends JFrame {
 						temp.setStatus("Not tested");
 						temp.setMarks(0);
 						list.add(temp);
+						atm = new AssignmentTableModel(list);
+						table.setModel(atm);
 						}
-						if(model_mode == 1)
+					}
+					}
+					else if(model_mode == 1)
 						{
 						list1 = CSVfiles.ReadMarksFile(path) ;
 						atmc = new AssignmentTableModelC(list1);
 						table.setModel(atmc);
 						}
-						else
-						{
-							atm = new AssignmentTableModel(list);
-							table.setModel(atm);
-						}
-					}
 					}catch(Exception ex){
 						ex.printStackTrace();
 					}

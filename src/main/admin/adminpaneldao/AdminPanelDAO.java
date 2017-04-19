@@ -107,13 +107,13 @@ public class AdminPanelDAO {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try{
-			String sql = "select * from admin where username like ? or first_name like ? or middle_name like ? or last_name like ? or email like ?";
+			String sql = "select * from admin where (username like ?) or (first_name like ?) or (middle_name like ?) or (last_name like ?) or (email like ?)";
 			stmt = myCon.prepareStatement(sql);
-			stmt.setString(1, toSearch);
-			stmt.setString(2, toSearch);
-			stmt.setString(3, toSearch);
-			stmt.setString(4, toSearch);
-			stmt.setString(5, toSearch);
+			stmt.setString(1,"%"+toSearch+"%");
+			stmt.setString(2,"%"+toSearch+"%");
+			stmt.setString(3,"%"+toSearch+"%");
+			stmt.setString(4,"%"+toSearch+"%");
+			stmt.setString(5,"%"+toSearch+"%");
 			rs = stmt.executeQuery();
 			while(rs.next()){
 				Admin temp = convertRowToAdmin(rs);

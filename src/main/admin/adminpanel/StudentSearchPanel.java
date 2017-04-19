@@ -15,6 +15,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
@@ -192,6 +193,23 @@ public class StudentSearchPanel extends JPanel {
 		panel_1.add(btnUpdate);
 		
 		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				int row=table.getSelectedRow();
+				if(row<0){
+					JOptionPane.showMessageDialog(StudentSearchPanel.this, "Select a Student","Error",JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				Student tempStud=(Student)table.getValueAt(row,-1);
+				try {
+					sdbh = new StudentDbHandler();
+					sdbh.removeStudent(tempStud.getRollno());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		btnDelete.setFont(new Font("Tahoma", Font.BOLD, 13));
 		panel_1.add(btnDelete);
 

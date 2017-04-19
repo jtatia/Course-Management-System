@@ -145,7 +145,7 @@ public class StudentDbHandler {
 		stud.setAge(rs.getInt("age"));
 		stud.setId(rs.getInt("s.no"));
 		stud.setFirstname(rs.getString("first_name"));
-		stud.setMiddlename(rs.getString("last_name"));
+		stud.setMiddlename(rs.getString("middle_name"));
 		stud.setLastname(rs.getString("last_name"));
 		stud.setSex(rs.getString("sex").charAt(0));
 		stud.setRollno(rs.getString("roll_no"));
