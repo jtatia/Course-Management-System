@@ -313,7 +313,7 @@ public class UploadedAssignments extends JFrame {
 						int status;
 						try{
 						if(file_type.equals("java"))
-						status = jc.compile(path,filename);            
+						status = jc.compile(path,filename,false);            
 						else if(file_type.equals("py"))
 						status = 0; //needs to be replaced for python           
 						else if(file_type.equals("cpp"))
