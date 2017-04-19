@@ -78,6 +78,7 @@ public class FileDetails {
 		sshc=new SSHComm();
 		sshc.SSHClient("rm "+path+"out.txt", sshc);
 		sshc.SSHClient("rm "+path+"*.class", sshc);
+		sshc.SSHClient("rm a.out",sshc);
 		sshc.close();
 	}
 }

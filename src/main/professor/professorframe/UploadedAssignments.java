@@ -384,6 +384,8 @@ public class UploadedAssignments extends JFrame {
 						SSHCommands.runSingleCommand("rm "+filename);
 						if(file_type.contains("java"))
 							SSHCommands.runSingleCommand("rm "+filename.substring(0, filename.lastIndexOf("."))+"class");
+						if(file_type.contains("cpp"))
+							SSHCommands.runSingleCommand("rm a.out");
 						JOptionPane.showMessageDialog(UploadedAssignments.this, error);
 					}catch(Exception e){
 						error = "Exception occurred";

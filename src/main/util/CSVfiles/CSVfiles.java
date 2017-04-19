@@ -45,14 +45,14 @@ public class CSVfiles {
 			{
 				System.out.println("GETTING FILES LIST BEING ADDED");
 				System.out.println(str[i]);
-			temp.setName(str[i]);
-			temp.setPath(path);
-			String s[]=FileDetails.getStats(path,temp.getName());
-			temp.setLastModified(s[1]);
-			temp.setSize(s[0]);
-			temp.setMarks(0);
-			temp.setStatus("Not tested");
-			list.add(temp);
+				temp.setName(str[i]);
+				temp.setPath(path);
+				String s[]=FileDetails.getStats(path,temp.getName());
+				temp.setLastModified(s[1]);
+				temp.setSize(s[0]);
+				temp.setMarks(0);
+				temp.setStatus("Not tested");
+				list.add(temp);
 			}
 			//READING MARKS, ERROR FROM CSV FILE
 		}	
@@ -71,17 +71,17 @@ public class CSVfiles {
 		Session session = null;
         Channel channel = null;
         ChannelSftp channelSftp = null;
-try{
-		JSch jsch = new JSch();
-        session = jsch.getSession(username, ip, port);
-        session.setPassword(password);
-        java.util.Properties config = new java.util.Properties();
-        config.put("StrictHostKeyChecking", "no");
-        session.setConfig(config);
-        session.connect();
-        channel = session.openChannel("sftp");
-        channel.connect();
-        channelSftp = (ChannelSftp) channel;
+        try{
+	        JSch jsch = new JSch();
+	        session = jsch.getSession(username, ip, port);
+	        session.setPassword(password);
+	        java.util.Properties config = new java.util.Properties();
+	        config.put("StrictHostKeyChecking", "no");
+	        session.setConfig(config);
+	        session.connect();
+	        channel = session.openChannel("sftp");
+	        channel.connect();
+	        channelSftp = (ChannelSftp) channel;
         }catch(Exception e){
         	e.printStackTrace();
         }

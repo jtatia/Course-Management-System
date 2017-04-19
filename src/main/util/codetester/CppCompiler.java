@@ -16,7 +16,7 @@ public class CppCompiler extends Languages{
 			SSHCommands sh=new SSHCommands();
 			filename.trim();
 			String command1 = "cd "+path;
-			String command2 = "g++ "+filename;
+			String command2 = "g++ -std=c++11 "+filename;
 			String com[]={command1,command2};
 			s = sh.runMultipleCommand(com);
 			sh.close();
