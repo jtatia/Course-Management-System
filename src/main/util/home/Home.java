@@ -61,22 +61,7 @@ public class Home extends JFrame {
 	 */
 	public static void main(String[] args) {
 		
-		JWindow window = new JWindow();
-		window.getContentPane().setBackground(Color.gray);
-		JLabel lb=new JLabel("COURSE MANAGEMENT SYSTEM", SwingConstants.CENTER);
-		lb.setFont(new Font("Comic Sans MS",Font.BOLD,19));
 		
-		window.getContentPane().add(lb);
-		window.setBounds(550, 270, 400, 200);
-		window.setVisible(true);
-		try {
-		    Thread.sleep(3000);
-		} catch (InterruptedException e) {
-		    e.printStackTrace();
-		}
-		window.setVisible(false);
-		
-		window.dispose();
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
