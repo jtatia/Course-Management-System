@@ -102,8 +102,8 @@ public class CourseDAO {
 		{
 			String text="%"+field+"%";
 			pstmt=myCon.prepareStatement("select * from course where (course_id like ?) or (course_name like ?)");
-			pstmt.setString(1, text);
-			pstmt.setString(2, text);
+			pstmt.setString(1,"%"+text+"%");
+			pstmt.setString(2,"%"+text+"%");
 			rs=pstmt.executeQuery();
 			while(rs.next())
 			{
