@@ -50,6 +50,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
+import javax.swing.JDialog;
 
 public class UploadedAssignments extends JFrame {
 
@@ -213,7 +214,26 @@ public class UploadedAssignments extends JFrame {
 								}
 							} catch (Exception e1) {
 								e1.printStackTrace();
-							}						
+							}			
+							
+							//added
+							
+							JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+
+							 JDialog dialog = new JDialog();
+							dialog.setTitle("Message");
+							dialog.setModal(true);
+							dialog.setContentPane(optionPane);
+							dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+							dialog.pack();
+							//System.out.println("what about here:::::::");
+							dialog.setBounds(500, 300, 350, 150);;
+							
+							//added
+							
+							new Thread(){
+								public void run()
+								{try{
 							for(int r : rows){
 								Assignment a = list.get(r);
 								try {System.out.println("calling");
@@ -224,6 +244,18 @@ public class UploadedAssignments extends JFrame {
 						//		atmc = new AssignmentTableModelC(list);
 							//	table.setModel(atmc);
 							}
+							
+							dialog.dispose();
+								}catch(Exception e)
+								{
+									e.printStackTrace();
+								}
+								}
+							}.start();
+							dialog.setVisible(true);
+							//System.out.println("I am hereeeeee:::::");
+							
+							
 						}
 					}.start();
 				
