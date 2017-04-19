@@ -193,8 +193,21 @@ public class SettingsFrame extends JFrame {
 				sex="M";
 			if(rdbtnFemale.isSelected())
 				sex="F";
-			
-			sdbh.modifyStudent(rollno, textField.getText(), textField_1.getText(), textField_2.getText(), sex, Integer.parseInt(textField_3.getText()), textField_4.getText(), stud.getBatch(), new String(passwordField.getPassword()), (String)comboBox.getSelectedItem(), textField_5.getText(), stud.getSubject1(), stud.getSubject2(), stud.getSubject3(), stud.getSubject4(), stud.getSubject5(), stud.getSubject6(), stud.getSubject7(), stud.getSubject8(), stud.getSubject9(), stud.getSubject10(),true);
+			String password=sdao.getStudentByRollno(rollno).getPassword();
+		//	System.out.println("actual : "+password);
+			String passwordEntered=new String(passwordField.getPassword());
+		//	System.out.println("entered : "+passwordEntered);
+			boolean encrypt=true;
+			if(passwordEntered.equals(""))
+			{
+				encrypt=false;
+			}
+			else
+			{
+				password=passwordEntered;
+				encrypt=true;
+			}	
+			sdbh.modifyStudent(rollno, textField.getText(), textField_1.getText(), textField_2.getText(), sex, Integer.parseInt(textField_3.getText()), textField_4.getText(), stud.getBatch(), password, (String)comboBox.getSelectedItem(), textField_5.getText(), stud.getSubject1(), stud.getSubject2(), stud.getSubject3(), stud.getSubject4(), stud.getSubject5(), stud.getSubject6(), stud.getSubject7(), stud.getSubject8(), stud.getSubject9(), stud.getSubject10(),encrypt);
 			
 			// showing a message of success in case of successful submission 
 			

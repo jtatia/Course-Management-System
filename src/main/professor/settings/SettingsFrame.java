@@ -185,9 +185,22 @@ public class SettingsFrame extends JFrame {
 				sex='M';
 			if(rdbtnFemale.isSelected())
 				sex='F';
+			Professor prof=pdao.getProfByUsername(username);
+			boolean encrypt=true;
+			String password=prof.getPassword();
+			if(passwordField.getText().equals(""))
+			{
+				encrypt=false;
+			}
+			else
+			{
+				password=passwordField.getText();
+				encrypt=true;
+			}	
 			Professor p=new Professor(textField_3.getText(),textField.getText(), textField_1.getText(),textField_2.getText(), textField_4.getText(), sex,
-					passwordField.getText(), (String)comboBox.getSelectedItem(), textField_5.getText(), prof.getCourseids());
-			pdao.modifyProfessor(p,true);
+					password, (String)comboBox.getSelectedItem(), textField_5.getText(), prof.getCourseids());
+			
+			pdao.modifyProfessor(p,encrypt);
 			
 			// showing a message of success in case of successful submission 
 			

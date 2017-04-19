@@ -50,7 +50,7 @@ public class AdminDAO {
 		return encryptedPassword;
 	}
 	
-	public void modifyAdmin(Admin admin){
+	public void modifyAdmin(Admin admin,boolean encrypt){
 			PreparedStatement pstmt=null;
 			try{
 				pstmt=myCon.prepareStatement("update admin set first_name = ?,middle_name=?,last_name =?,sex = ?,age = ?,email = ?,password = ? ,security_ques = ?,answer = ? where username = ?");
@@ -60,7 +60,10 @@ public class AdminDAO {
 				pstmt.setString(4, ""+admin.getSex());
 				pstmt.setInt(5, admin.getAge());
 				pstmt.setString(6, admin.getEmail());
+				if(encrypt)
 			    pstmt.setString(7, EncryptPassword(admin.getPassword()));
+				else
+				pstmt.setString(7,	admin.getPassword());	
 				pstmt.setString(8, admin.getSecurityques());
 				pstmt.setString(9, admin.getAnswer());
 				pstmt.setString(10, admin.getUsername());

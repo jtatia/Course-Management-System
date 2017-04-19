@@ -35,6 +35,7 @@ public class AdminUpdateForm extends JDialog {
 	private AdminDAO ad_dao=null;
 	private JComboBox comboBox;
 	Admin ad=null;
+	private String oldPassword="";
 
 	/**
 	 * Launch the application.
@@ -196,6 +197,12 @@ public class AdminUpdateForm extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						//Add button action
+						String password2=password_text.getText();
+						boolean encrypt=false;
+						if(password2.equals(oldPassword))
+							encrypt=false;
+						else 
+							encrypt=true;
 						Admin modifiedAdmin=new Admin();
 						modifiedAdmin.setUsername(user_text.getText());
 						modifiedAdmin.setFirstname(firstname_text.getText());
@@ -204,10 +211,10 @@ public class AdminUpdateForm extends JDialog {
 						modifiedAdmin.setAge(Integer.parseInt(age_text.getText()));
 						modifiedAdmin.setSex(sex_text.getText().charAt(0));
 						modifiedAdmin.setEmail(email_text.getText());
-						modifiedAdmin.setPassword(password_text.getText());
+						modifiedAdmin.setPassword(password2);
 						modifiedAdmin.setSecurityques((String)comboBox.getSelectedItem());
 						modifiedAdmin.setAnswer(answer_text.getText());
-						ad_dao.modifyAdmin(modifiedAdmin);
+						ad_dao.modifyAdmin(modifiedAdmin,encrypt);
 						System.out.println("Done");
 						JOptionPane.showMessageDialog(contentPanel, "Your information has been updated");
 						dispose();
@@ -241,6 +248,7 @@ public class AdminUpdateForm extends JDialog {
 		age_text.setText(new Integer(ad.getAge()).toString());
 		sex_text.setText(sex);
 		email_text.setText(ad.getEmail());
+		oldPassword=ad.getPassword();
 		password_text.setText(ad.getPassword());
 		password_text.setEnabled(false);
 		answer_text.setText(ad.getAnswer());
