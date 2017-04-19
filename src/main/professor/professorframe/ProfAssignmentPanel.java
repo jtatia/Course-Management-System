@@ -35,6 +35,7 @@ public class ProfAssignmentPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
+	
 	private List<Assignment> list;
 	JTable table;
 	private AssignmentTableModel atm;
@@ -194,7 +195,7 @@ public class ProfAssignmentPanel extends JPanel {
 					SSHCommands ssh=new SSHCommands();
 					try {
 						ssh.runMultipleCommand(cmd);
-						System.out.println("---------------------Done_------------------");
+						//System.out.println("---------------------Done_------------------");
 					} catch (TaskExecFailException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
