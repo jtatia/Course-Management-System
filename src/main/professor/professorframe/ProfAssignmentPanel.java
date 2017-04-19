@@ -125,7 +125,8 @@ public class ProfAssignmentPanel extends JPanel {
 			public void actionPerformed(ActionEvent e){
 				FileChooser fc = new FileChooser();
 				String path = fc.getDirectoryPath();
-				if(table.getSelectedRowCount()>0){
+				System.out.println("path :: "+path);
+				if(table.getSelectedRowCount()>0&&!path.equals("")){
 					int[] row = table.getSelectedRows();
 					 new Thread(){
 						
@@ -141,7 +142,9 @@ public class ProfAssignmentPanel extends JPanel {
 					}.start();
 					
 				}
-				
+				else{
+					JOptionPane.showMessageDialog(ProfAssignmentPanel.this, "Download Cancelled!!! Please select/check file path");
+				}
 			}
 		});
 		
