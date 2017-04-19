@@ -21,7 +21,7 @@ public class CourseSpecificPanel extends JPanel {
 	 * @throws Exception 
 	 */
 	private static JTabbedPane jtp;
-	private static ProfDiscussionForumPanel pdf;
+	//private static ProfDiscussionForumPanel pdf;
 	private static ProfCourseMaterialPanel pcm;
 	private static ProfCourseInfoPanel pci;
 	private static ProfAssignmentViewPanel pav;
@@ -31,7 +31,7 @@ public class CourseSpecificPanel extends JPanel {
 	{	
 		jtp.removeAll();
 		System.out.println("Before Initialisation");
-		pdf=new ProfDiscussionForumPanel();
+		//pdf=new ProfDiscussionForumPanel();
 		System.out.println("Initialisation Done");
 		pcm=new ProfCourseMaterialPanel(path);
 		pav=new ProfAssignmentViewPanel(path);		
@@ -47,19 +47,19 @@ public class CourseSpecificPanel extends JPanel {
 		jtp.add("Upload Assignments", pav);
 		jtp.setForegroundAt(2, Color.WHITE);
 		jtp.setBackgroundAt(2, Color.DARK_GRAY);
-		jtp.add("Discussion Forum", pdf);
+		//jtp.add("Discussion Forum", pdf);
+		//jtp.setForegroundAt(3, Color.WHITE);
+		//jtp.setBackgroundAt(3, Color.DARK_GRAY);
+		jtp.add("Info", pci);
 		jtp.setForegroundAt(3, Color.WHITE);
 		jtp.setBackgroundAt(3, Color.DARK_GRAY);
-		jtp.add("Info", pci);
-		jtp.setForegroundAt(4, Color.WHITE);
-		jtp.setBackgroundAt(4, Color.DARK_GRAY);
 		pci.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 	}
 	
 	public CourseSpecificPanel() throws Exception {
 		jtp = new JTabbedPane(JTabbedPane.TOP);
 		
-		pdf=new ProfDiscussionForumPanel();
+		//pdf=new ProfDiscussionForumPanel();
 		
 		pcm=new ProfCourseMaterialPanel();
 		
@@ -78,12 +78,12 @@ public class CourseSpecificPanel extends JPanel {
 		jtp.add("Upload Assignments", pav);
 		jtp.setForegroundAt(2, Color.WHITE);
 		jtp.setBackgroundAt(2, Color.DARK_GRAY);
-		jtp.add("Discussion Forum", pdf);
+		//jtp.add("Discussion Forum", pdf);
+		//jtp.setForegroundAt(3, Color.WHITE);
+		//jtp.setBackgroundAt(3, Color.DARK_GRAY);
+		jtp.add("Info", pci);
 		jtp.setForegroundAt(3, Color.WHITE);
 		jtp.setBackgroundAt(3, Color.DARK_GRAY);
-		jtp.add("Info", pci);
-		jtp.setForegroundAt(4, Color.WHITE);
-		jtp.setBackgroundAt(4, Color.DARK_GRAY);
 		pci.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		add(jtp);
 	}

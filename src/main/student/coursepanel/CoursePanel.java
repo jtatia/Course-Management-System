@@ -25,7 +25,7 @@ public class CoursePanel extends JPanel {
 	private static CourseAssignmentPanel cap;
 	private static CourseMaterialPanel cmp;
 	private static CourseAssignmentUploadPanel caup;
-	private static CourseDiscussionForumPanel cdfp;
+	//private static CourseDiscussionForumPanel cdfp;
 	private static CourseInfoPanel cip;
 	public static String curr_subject;
 	public void resetPanes(Student student, String path) throws Exception
@@ -39,7 +39,7 @@ public class CoursePanel extends JPanel {
 		
 		caup=new CourseAssignmentUploadPanel(student,path);
 		
-		cdfp=new CourseDiscussionForumPanel(path);
+		//cdfp=new CourseDiscussionForumPanel(path);
 		
 		cip=new CourseInfoPanel(curr_subject);
 		
@@ -54,12 +54,12 @@ public class CoursePanel extends JPanel {
 		jtp.add("Upload Assignments", caup);
 		jtp.setForegroundAt(2, Color.WHITE);
 		jtp.setBackgroundAt(2, Color.DARK_GRAY);
-		jtp.add("Discussion Forum", cdfp);
-		jtp.setForegroundAt(3, Color.WHITE);
-		jtp.setBackgroundAt(3, Color.DARK_GRAY);
+		//jtp.add("Discussion Forum", cdfp);
+		//jtp.setForegroundAt(3, Color.WHITE);
+		//jtp.setBackgroundAt(3, Color.DARK_GRAY);
 		jtp.add("Info", cip);
-		jtp.setForegroundAt(4, Color.WHITE);
-		jtp.setBackgroundAt(4, Color.BLACK);
+		jtp.setForegroundAt(3, Color.WHITE);
+		jtp.setBackgroundAt(3, Color.BLACK);
 		cip.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		//jtp.revalidate();
 		//jtp.repaint();
@@ -83,7 +83,7 @@ public class CoursePanel extends JPanel {
 			
 			caup=new CourseAssignmentUploadPanel(null, "");
 			
-			cdfp=new CourseDiscussionForumPanel();
+			//cdfp=new CourseDiscussionForumPanel();
 			
 			cip=new CourseInfoPanel();
 			
@@ -96,12 +96,12 @@ public class CoursePanel extends JPanel {
 			jtp.add("Upload Assignments", caup);
 			jtp.setForegroundAt(2, Color.WHITE);
 			jtp.setBackgroundAt(2, Color.DARK_GRAY);
-			jtp.add("Discussion Forum", cdfp);
-			jtp.setForegroundAt(3, Color.WHITE);
-			jtp.setBackgroundAt(3, Color.DARK_GRAY);
+			//jtp.add("Discussion Forum", cdfp);
+			//jtp.setForegroundAt(3, Color.WHITE);
+			//jtp.setBackgroundAt(3, Color.DARK_GRAY);
 			jtp.add("Info", cip);
-			jtp.setForegroundAt(4, Color.WHITE);
-			jtp.setBackgroundAt(4, Color.BLACK);
+			jtp.setForegroundAt(3, Color.WHITE);
+			jtp.setBackgroundAt(3, Color.BLACK);
 			cip.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			add(jtp);
 	}
