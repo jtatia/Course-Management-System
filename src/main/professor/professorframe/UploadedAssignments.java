@@ -282,7 +282,7 @@ public class UploadedAssignments extends JFrame {
 		JButton btnUploadOutputFile = new JButton("Upload Output Files");
 		btnUploadOutputFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			new UploadOutputFiles(path);
+				new UploadOutputFiles(path);
 			}
 		});
 		JButton btnUploadOutputProgram = new JButton("Upload Output Program");
@@ -313,24 +313,24 @@ public class UploadedAssignments extends JFrame {
 						int status;
 						try{
 						if(file_type.equals("java"))
-						status = jc.compile(path,filename);            
+							status = jc.compile(path,filename);            
 						else if(file_type.equals("py"))
-						status = 0; //needs to be replaced for python           
+							status = 0; //needs to be replaced for python           
 						else if(file_type.equals("cpp"))
-						status = cp.compile(path,filename);
+							status = cp.compile(path,filename);
 						else
-						status = cc.compile(path,filename);            
+							status = cc.compile(path,filename);            
 						for(int i =0; i<length; i++)
 						{
 						  if(status == 0){						
 						  int x = 1;
 						  if(file_type.equals("java"))
 								x = jc.execute1(path,filename,inp[i]);               
-								else if(file_type.equals("py"))
+						  else if(file_type.equals("py"))
 								x = pc.execute1(path,filename,inp[i]);               
-								else if(file_type.equals("cpp"))
+						  else if(file_type.equals("cpp"))
 								x = cp.execute1(path,filename,inp[i]);               
-								else
+						  else
 								x = cc.execute1(path,filename,inp[i]);
 						  if(x == 0){
 							  error = "Successful";
