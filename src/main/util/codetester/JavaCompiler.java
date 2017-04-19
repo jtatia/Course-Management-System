@@ -89,11 +89,12 @@ public class JavaCompiler extends Languages{
 		sh=new SSHCommands();
 		ExecuteProgram ep = new ExecuteProgram(sh,com,this);
 		Thread.sleep(4000);
+		sh.close();
 		sh=new SSHCommands();
 		sh.runSingleCommand("mv "+path+temp+" "+path+filename);
 		sh.close();
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
-		{
+		{System.out.println("ksjtimeout");
 			errormessage = "terminated";
 			ep.t.stop();
 			
@@ -101,7 +102,7 @@ public class JavaCompiler extends Languages{
 		}
 		if(s.startsWith("error")){
 			errormessage=s.substring(6);
-			
+			System.out.println("ksj:"+errormessage);
 			return 1;
 		}
 		

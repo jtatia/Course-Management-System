@@ -40,7 +40,7 @@ public class CCompiler extends Languages{
 			String com[]={command1,command2};
 			ExecuteProgram ep = new ExecuteProgram(sh,com,this);
 			Thread.sleep(2000);
-			
+			sh.close();
 			if(!ep.t.getState().equals(Thread.State.TERMINATED))
 			{
 				ep.t.stop();

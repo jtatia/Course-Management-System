@@ -20,7 +20,7 @@ public class PythonCompiler extends Languages {
 		String cmd[]={command1,command2};
 		ExecuteProgram ep=new ExecuteProgram(sh,cmd,this);
 		Thread.sleep(10000);
-		
+		sh.close();
 		if(!ep.t.getState().equals(Thread.State.TERMINATED))
 		{
 			ep.t.stop();
