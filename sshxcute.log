@@ -10271,6 +10271,281 @@ input3.txt
 =======
 >>>>>>> 4ae328c73f292e19650de3d90291760146ef0df8
 
+<<<<<<< HEAD
+=============== [2017/04/19 20:29:42, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:29:42] INFO:    SSHExec initializing ...
+[20:29:42] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:42] INFO:    SSHExec initialized successfully
+[20:29:42] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:42] INFO:    SSH connection established
+[20:29:42] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:42] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/inputFiles/
+[20:29:42] INFO:    Connection channel established succesfully
+[20:29:42] INFO:    Start to run command
+[20:29:43] INFO:    input_1.txt
+input_2.txt
+
+[20:29:43] INFO:    Connection channel closed
+[20:29:43] INFO:    Check if exec success or not ... 
+[20:29:43] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/inputFiles/
+[20:29:43] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:43] INFO:    Connection channel disconnect
+[20:29:44] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:44] INFO:    SSHExec initialized successfully
+[20:29:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:44] INFO:    SSH connection established
+[20:29:44] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:44] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:44] INFO:    Connection channel established succesfully
+[20:29:44] INFO:    Start to run command
+[20:29:44] INFO:    Connection channel closed
+[20:29:44] INFO:    Check if exec success or not ... 
+[20:29:44] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:44] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:44] INFO:    Connection channel disconnect
+[20:29:44] INFO:    SSH connection shutdown
+[20:29:44] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:44] INFO:    SSHExec initialized successfully
+[20:29:44] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:44] INFO:    SSH connection established
+[20:29:44] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:45] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac Valid_String.java
+[20:29:45] INFO:    Connection channel established succesfully
+[20:29:45] INFO:    Start to run command
+[20:29:46] INFO:    Connection channel closed
+[20:29:46] INFO:    Check if exec success or not ... 
+[20:29:46] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac Valid_String.java
+[20:29:46] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:46] INFO:    Connection channel disconnect
+[20:29:46] INFO:    SSH connection shutdown
+[20:29:46] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:46] INFO:    SSHExec initialized successfully
+[20:29:46] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:46] INFO:    SSH connection established
+[20:29:46] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:46] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:46] INFO:    Connection channel established succesfully
+[20:29:46] INFO:    Start to run command
+[20:29:46] INFO:    Connection channel closed
+[20:29:46] INFO:    Check if exec success or not ... 
+[20:29:46] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:46] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:46] INFO:    Connection channel disconnect
+[20:29:46] INFO:    SSH connection shutdown
+[20:29:46] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:46] INFO:    SSHExec initialized successfully
+[20:29:46] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:46] INFO:    SSH connection established
+[20:29:46] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:46] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:46] INFO:    Connection channel established succesfully
+[20:29:46] INFO:    Start to run command
+[20:29:47] INFO:    Connection channel closed
+[20:29:47] INFO:    Check if exec success or not ... 
+[20:29:47] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:47] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:47] INFO:    Connection channel disconnect
+[20:29:47] INFO:    SSH connection shutdown
+[20:29:47] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:47] INFO:    SSHExec initialized successfully
+[20:29:47] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:47] INFO:    SSH connection established
+[20:29:47] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:47] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;java Valid_String < inputFiles/input_1.txt > out.txt
+[20:29:47] INFO:    Connection channel established succesfully
+[20:29:47] INFO:    Start to run command
+[20:29:47] INFO:    Connection channel closed
+[20:29:47] INFO:    Check if exec success or not ... 
+[20:29:47] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;java Valid_String < inputFiles/input_1.txt > out.txt
+[20:29:47] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:47] INFO:    Connection channel disconnect
+[20:29:47] INFO:    SSH connection shutdown
+[20:29:51] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:51] INFO:    SSHExec initialized successfully
+[20:29:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:51] INFO:    SSH connection established
+[20:29:51] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:51] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:51] INFO:    Connection channel established succesfully
+[20:29:51] INFO:    Start to run command
+[20:29:51] INFO:    Connection channel closed
+[20:29:51] INFO:    Check if exec success or not ... 
+[20:29:51] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:51] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:51] INFO:    Connection channel disconnect
+[20:29:51] INFO:    SSH connection shutdown
+[20:29:54] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:54] INFO:    SSHExec initialized successfully
+[20:29:54] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:55] INFO:    SSH connection established
+[20:29:55] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:55] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:55] INFO:    Connection channel established succesfully
+[20:29:55] INFO:    Start to run command
+[20:29:55] INFO:    Connection channel closed
+[20:29:55] INFO:    Check if exec success or not ... 
+[20:29:55] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:55] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:55] INFO:    Connection channel disconnect
+[20:29:55] INFO:    SSH connection shutdown
+[20:29:55] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:55] INFO:    SSHExec initialized successfully
+[20:29:55] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:55] INFO:    SSH connection established
+[20:29:55] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:55] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac Valid_String.java
+[20:29:55] INFO:    Connection channel established succesfully
+[20:29:55] INFO:    Start to run command
+[20:29:56] INFO:    Connection channel closed
+[20:29:56] INFO:    Check if exec success or not ... 
+[20:29:56] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac Valid_String.java
+[20:29:56] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:56] INFO:    Connection channel disconnect
+[20:29:56] INFO:    SSH connection shutdown
+[20:29:56] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:56] INFO:    SSHExec initialized successfully
+[20:29:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:57] INFO:    SSH connection established
+[20:29:57] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:57] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:57] INFO:    Connection channel established succesfully
+[20:29:57] INFO:    Start to run command
+[20:29:57] INFO:    Connection channel closed
+[20:29:57] INFO:    Check if exec success or not ... 
+[20:29:57] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:29:57] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:57] INFO:    Connection channel disconnect
+[20:29:57] INFO:    SSH connection shutdown
+[20:29:57] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:57] INFO:    SSHExec initialized successfully
+[20:29:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:57] INFO:    SSH connection established
+[20:29:57] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:57] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:57] INFO:    Connection channel established succesfully
+[20:29:57] INFO:    Start to run command
+[20:29:57] INFO:    Connection channel closed
+[20:29:57] INFO:    Check if exec success or not ... 
+[20:29:57] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:29:57] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:57] INFO:    Connection channel disconnect
+[20:29:57] INFO:    SSH connection shutdown
+[20:29:57] INFO:    Session initialized and associated with user credential kshitij#456
+[20:29:57] INFO:    SSHExec initialized successfully
+[20:29:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:29:58] INFO:    SSH connection established
+[20:29:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:29:58] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;java Valid_String < inputFiles/input_2.txt > out.txt
+[20:29:58] INFO:    Connection channel established succesfully
+[20:29:58] INFO:    Start to run command
+[20:29:58] INFO:    Connection channel closed
+[20:29:58] INFO:    Check if exec success or not ... 
+[20:29:58] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;java Valid_String < inputFiles/input_2.txt > out.txt
+[20:29:58] INFO:    Now wait 0 seconds to begin next task ...
+[20:29:58] INFO:    Connection channel disconnect
+[20:29:58] INFO:    SSH connection shutdown
+[20:30:02] INFO:    Session initialized and associated with user credential kshitij#456
+[20:30:02] INFO:    SSHExec initialized successfully
+[20:30:02] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:30:02] INFO:    SSH connection established
+[20:30:02] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:30:02] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:30:02] INFO:    Connection channel established succesfully
+[20:30:02] INFO:    Start to run command
+[20:30:02] INFO:    Connection channel closed
+[20:30:02] INFO:    Check if exec success or not ... 
+[20:30:02] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/1501CS56_Valid_String.java
+[20:30:02] INFO:    Now wait 0 seconds to begin next task ...
+[20:30:02] INFO:    Connection channel disconnect
+[20:30:02] INFO:    SSH connection shutdown
+[20:38:06] INFO:    Session initialized and associated with user credential kshitij#456
+[20:38:06] INFO:    SSHExec initialized successfully
+[20:38:06] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:38:06] INFO:    SSH connection established
+[20:38:06] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:38:06] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java
+[20:38:06] INFO:    Connection channel established succesfully
+[20:38:06] INFO:    Start to run command
+[20:38:07] INFO:    Connection channel closed
+[20:38:07] INFO:    Check if exec success or not ... 
+[20:38:07] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java
+[20:38:07] INFO:    Now wait 0 seconds to begin next task ...
+[20:38:07] INFO:    Connection channel disconnect
+[20:38:07] INFO:    SSH connection shutdown
+[20:38:07] INFO:    Session initialized and associated with user credential kshitij#456
+[20:38:07] INFO:    SSHExec initialized successfully
+[20:38:07] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:38:07] INFO:    SSH connection established
+[20:38:07] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:38:07] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac String.java
+[20:38:07] INFO:    Connection channel established succesfully
+[20:38:07] INFO:    Start to run command
+[20:38:09] INFO:    Connection channel closed
+[20:38:09] INFO:    Check if exec success or not ... 
+[20:38:09] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac String.java
+[20:38:09] INFO:    Error message: String.java:7: error: class Valid_String is public, should be declared in a file named Valid_String.javapublic class Valid_String{       ^./String.java:7: error: class Valid_String is public, should be declared in a file named Valid_String.javapublic class Valid_String{       ^String.java:9: error: cannot access String    public static void main(String[] args) {                            ^  bad source file: ./String.java    file does not contain class String    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[20:38:09] INFO:    Now wait 0 seconds to begin next task ...
+[20:38:09] INFO:    Connection channel disconnect
+[20:38:09] INFO:    SSH connection shutdown
+[20:38:09] INFO:    Session initialized and associated with user credential kshitij#456
+[20:38:09] INFO:    SSHExec initialized successfully
+[20:38:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:38:09] INFO:    SSH connection established
+[20:38:09] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:38:09] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:38:09] INFO:    Connection channel established succesfully
+[20:38:09] INFO:    Start to run command
+[20:38:09] INFO:    Connection channel closed
+[20:38:09] INFO:    Check if exec success or not ... 
+[20:38:09] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:38:09] INFO:    Now wait 0 seconds to begin next task ...
+[20:38:09] INFO:    Connection channel disconnect
+[20:38:09] INFO:    SSH connection shutdown
+[20:39:56] INFO:    Session initialized and associated with user credential kshitij#456
+[20:39:56] INFO:    SSHExec initialized successfully
+[20:39:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:39:56] INFO:    SSH connection established
+[20:39:56] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:39:56] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java
+[20:39:56] INFO:    Connection channel established succesfully
+[20:39:56] INFO:    Start to run command
+[20:39:56] INFO:    Connection channel closed
+[20:39:57] INFO:    Check if exec success or not ... 
+[20:39:57] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java
+[20:39:57] INFO:    Now wait 0 seconds to begin next task ...
+[20:39:57] INFO:    Connection channel disconnect
+[20:39:57] INFO:    SSH connection shutdown
+[20:39:57] INFO:    Session initialized and associated with user credential kshitij#456
+[20:39:57] INFO:    SSHExec initialized successfully
+[20:39:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:39:57] INFO:    SSH connection established
+[20:39:57] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:39:57] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac String.java
+[20:39:57] INFO:    Connection channel established succesfully
+[20:39:57] INFO:    Start to run command
+[20:39:58] INFO:    Connection channel closed
+[20:39:58] INFO:    Check if exec success or not ... 
+[20:39:58] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/;javac String.java
+[20:39:58] INFO:    Error message: ./String.java:7: error: duplicate class: Valid_Stringclass Valid_String{^String.java:9: error: cannot access String    public static void main(String[] args) {                            ^  bad source file: ./String.java    file does not contain class String    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[20:39:58] INFO:    Now wait 0 seconds to begin next task ...
+[20:39:58] INFO:    Connection channel disconnect
+[20:39:58] INFO:    SSH connection shutdown
+[20:39:58] INFO:    Session initialized and associated with user credential kshitij#456
+[20:39:58] INFO:    SSHExec initialized successfully
+[20:39:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:39:59] INFO:    SSH connection established
+[20:39:59] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:39:59] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:39:59] INFO:    Connection channel established succesfully
+[20:39:59] INFO:    Start to run command
+[20:39:59] INFO:    Connection channel closed
+[20:39:59] INFO:    Check if exec success or not ... 
+[20:39:59] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/String.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Valid_String/Valid_String.java
+[20:39:59] INFO:    Now wait 0 seconds to begin next task ...
+[20:39:59] INFO:    Connection channel disconnect
+[20:39:59] INFO:    SSH connection shutdown
+=======
 =============== [2017/04/19 18:59:04, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
 
 [18:59:04] INFO:    SSHExec initializing ...
@@ -10817,3 +11092,631 @@ input_2.txt
 [19:51:46] INFO:    Now wait 0 seconds to begin next task ...
 [19:51:46] INFO:    Connection channel disconnect
 [19:51:46] INFO:    SSH connection shutdown
+
+=============== [2017/04/19 20:33:56, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[20:33:56] INFO:    SSHExec initializing ...
+[20:33:56] INFO:    Session initialized and associated with user credential kshitij#456
+[20:33:56] INFO:    SSHExec initialized successfully
+[20:33:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:33:57] INFO:    SSH connection established
+[20:33:57] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:33:57] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:33:57] INFO:    Connection channel established succesfully
+[20:33:57] INFO:    Start to run command
+[20:33:57] INFO:    input_1.txt
+input_2.txt
+
+[20:33:57] INFO:    Connection channel closed
+[20:33:57] INFO:    Check if exec success or not ... 
+[20:33:57] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:33:57] INFO:    Now wait 0 seconds to begin next task ...
+[20:33:57] INFO:    Connection channel disconnect
+[20:33:58] INFO:    Session initialized and associated with user credential kshitij#456
+[20:33:58] INFO:    SSHExec initialized successfully
+[20:33:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:33:58] INFO:    SSH connection established
+[20:33:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:33:58] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:33:58] INFO:    Connection channel established succesfully
+[20:33:58] INFO:    Start to run command
+[20:33:58] INFO:    Connection channel closed
+[20:33:58] INFO:    Check if exec success or not ... 
+[20:33:58] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:33:58] INFO:    Now wait 0 seconds to begin next task ...
+[20:33:58] INFO:    Connection channel disconnect
+[20:33:58] INFO:    SSH connection shutdown
+[20:33:58] INFO:    Session initialized and associated with user credential kshitij#456
+[20:33:58] INFO:    SSHExec initialized successfully
+[20:33:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:33:58] INFO:    SSH connection established
+[20:33:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:33:58] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[20:33:58] INFO:    Connection channel established succesfully
+[20:33:58] INFO:    Start to run command
+[20:34:00] INFO:    Connection channel closed
+[20:34:00] INFO:    Check if exec success or not ... 
+[20:34:00] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[20:34:00] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:00] INFO:    Connection channel disconnect
+[20:34:00] INFO:    SSH connection shutdown
+[20:34:00] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:00] INFO:    SSHExec initialized successfully
+[20:34:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:00] INFO:    SSH connection established
+[20:34:00] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:00] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:00] INFO:    Connection channel established succesfully
+[20:34:00] INFO:    Start to run command
+[20:34:00] INFO:    Connection channel closed
+[20:34:00] INFO:    Check if exec success or not ... 
+[20:34:00] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:00] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:00] INFO:    Connection channel disconnect
+[20:34:00] INFO:    SSH connection shutdown
+[20:34:00] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:00] INFO:    SSHExec initialized successfully
+[20:34:00] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:01] INFO:    SSH connection established
+[20:34:01] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:01] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:01] INFO:    Connection channel established succesfully
+[20:34:01] INFO:    Start to run command
+[20:34:01] INFO:    Connection channel closed
+[20:34:01] INFO:    Check if exec success or not ... 
+[20:34:01] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:01] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:01] INFO:    Connection channel disconnect
+[20:34:01] INFO:    SSH connection shutdown
+[20:34:01] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:01] INFO:    SSHExec initialized successfully
+[20:34:01] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:01] INFO:    SSH connection established
+[20:34:01] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:01] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_1.txt > out.txt
+[20:34:01] INFO:    Connection channel established succesfully
+[20:34:01] INFO:    Start to run command
+[20:34:01] INFO:    Connection channel closed
+[20:34:01] INFO:    Check if exec success or not ... 
+[20:34:01] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_1.txt > out.txt
+[20:34:01] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:01] INFO:    Connection channel disconnect
+[20:34:01] INFO:    SSH connection shutdown
+[20:34:05] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:05] INFO:    SSHExec initialized successfully
+[20:34:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:05] INFO:    SSH connection established
+[20:34:05] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:05] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:05] INFO:    Connection channel established succesfully
+[20:34:05] INFO:    Start to run command
+[20:34:06] INFO:    Connection channel closed
+[20:34:06] INFO:    Check if exec success or not ... 
+[20:34:06] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:06] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:06] INFO:    Connection channel disconnect
+[20:34:06] INFO:    SSH connection shutdown
+[20:34:07] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:07] INFO:    SSHExec initialized successfully
+[20:34:07] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:08] INFO:    SSH connection established
+[20:34:08] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:08] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:08] INFO:    Connection channel established succesfully
+[20:34:08] INFO:    Start to run command
+[20:34:08] INFO:    Connection channel closed
+[20:34:08] INFO:    Check if exec success or not ... 
+[20:34:08] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:08] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:08] INFO:    Connection channel disconnect
+[20:34:08] INFO:    SSH connection shutdown
+[20:34:08] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:08] INFO:    SSHExec initialized successfully
+[20:34:08] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:08] INFO:    SSH connection established
+[20:34:08] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:08] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[20:34:08] INFO:    Connection channel established succesfully
+[20:34:08] INFO:    Start to run command
+[20:34:09] INFO:    Connection channel closed
+[20:34:09] INFO:    Check if exec success or not ... 
+[20:34:09] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[20:34:09] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:09] INFO:    Connection channel disconnect
+[20:34:09] INFO:    SSH connection shutdown
+[20:34:09] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:09] INFO:    SSHExec initialized successfully
+[20:34:09] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:09] INFO:    SSH connection established
+[20:34:09] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:09] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:09] INFO:    Connection channel established succesfully
+[20:34:09] INFO:    Start to run command
+[20:34:10] INFO:    Connection channel closed
+[20:34:10] INFO:    Check if exec success or not ... 
+[20:34:10] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:10] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:10] INFO:    Connection channel disconnect
+[20:34:10] INFO:    SSH connection shutdown
+[20:34:10] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:10] INFO:    SSHExec initialized successfully
+[20:34:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:10] INFO:    SSH connection established
+[20:34:10] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:10] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:10] INFO:    Connection channel established succesfully
+[20:34:10] INFO:    Start to run command
+[20:34:10] INFO:    Connection channel closed
+[20:34:10] INFO:    Check if exec success or not ... 
+[20:34:10] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[20:34:10] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:10] INFO:    Connection channel disconnect
+[20:34:10] INFO:    SSH connection shutdown
+[20:34:10] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:10] INFO:    SSHExec initialized successfully
+[20:34:10] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:10] INFO:    SSH connection established
+[20:34:10] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:10] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_2.txt > out.txt
+[20:34:10] INFO:    Connection channel established succesfully
+[20:34:10] INFO:    Start to run command
+[20:34:11] INFO:    Connection channel closed
+[20:34:11] INFO:    Check if exec success or not ... 
+[20:34:11] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_2.txt > out.txt
+[20:34:11] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:11] INFO:    Connection channel disconnect
+[20:34:11] INFO:    SSH connection shutdown
+[20:34:14] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:14] INFO:    SSHExec initialized successfully
+[20:34:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:15] INFO:    SSH connection established
+[20:34:15] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:15] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:15] INFO:    Connection channel established succesfully
+[20:34:15] INFO:    Start to run command
+[20:34:15] INFO:    Connection channel closed
+[20:34:15] INFO:    Check if exec success or not ... 
+[20:34:15] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[20:34:15] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:15] INFO:    Connection channel disconnect
+[20:34:15] INFO:    SSH connection shutdown
+[20:34:50] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:50] INFO:    SSHExec initialized successfully
+[20:34:50] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:50] INFO:    SSH connection established
+[20:34:50] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:50] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:34:50] INFO:    Connection channel established succesfully
+[20:34:50] INFO:    Start to run command
+[20:34:50] INFO:    input_1.txt
+input_2.txt
+
+[20:34:50] INFO:    Connection channel closed
+[20:34:50] INFO:    Check if exec success or not ... 
+[20:34:50] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:34:50] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:50] INFO:    Connection channel disconnect
+[20:34:51] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:51] INFO:    SSHExec initialized successfully
+[20:34:51] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:51] INFO:    SSH connection established
+[20:34:51] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:51] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;gcc finalmarks.csv -lm
+[20:34:51] INFO:    Connection channel established succesfully
+[20:34:51] INFO:    Start to run command
+[20:34:51] INFO:    Connection channel closed
+[20:34:51] INFO:    Check if exec success or not ... 
+[20:34:51] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;gcc finalmarks.csv -lm
+[20:34:51] INFO:    Error message: /usr/bin/ld:finalmarks.csv: file format not recognized; treating as linker script/usr/bin/ld:finalmarks.csv:2: syntax errorcollect2: error: ld returned 1 exit status
+[20:34:51] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:51] INFO:    Connection channel disconnect
+[20:34:51] INFO:    SSH connection shutdown
+[20:34:56] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:56] INFO:    SSHExec initialized successfully
+[20:34:56] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:56] INFO:    SSH connection established
+[20:34:56] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:56] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:34:56] INFO:    Connection channel established succesfully
+[20:34:56] INFO:    Start to run command
+[20:34:56] INFO:    input_1.txt
+input_2.txt
+
+[20:34:56] INFO:    Connection channel closed
+[20:34:56] INFO:    Check if exec success or not ... 
+[20:34:56] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[20:34:56] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:56] INFO:    Connection channel disconnect
+[20:34:57] INFO:    Session initialized and associated with user credential kshitij#456
+[20:34:57] INFO:    SSHExec initialized successfully
+[20:34:57] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[20:34:58] INFO:    SSH connection established
+[20:34:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[20:34:58] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;gcc finalmarks.csv -lm
+[20:34:58] INFO:    Connection channel established succesfully
+[20:34:58] INFO:    Start to run command
+[20:34:58] INFO:    Connection channel closed
+[20:34:58] INFO:    Check if exec success or not ... 
+[20:34:58] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;gcc finalmarks.csv -lm
+[20:34:58] INFO:    Error message: /usr/bin/ld:finalmarks.csv: file format not recognized; treating as linker script/usr/bin/ld:finalmarks.csv:2: syntax errorcollect2: error: ld returned 1 exit status
+[20:34:58] INFO:    Now wait 0 seconds to begin next task ...
+[20:34:58] INFO:    Connection channel disconnect
+[20:34:58] INFO:    SSH connection shutdown
+<<<<<<< HEAD
+
+=============== [2017/04/19 21:12:42, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:12:42] INFO:    SSHExec initializing ...
+[21:12:42] INFO:    Session initialized and associated with user credential kshitij#456
+[21:12:42] INFO:    SSHExec initialized successfully
+[21:12:42] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:12:42] INFO:    SSH connection established
+[21:12:42] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:12:42] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:12:42] INFO:    Connection channel established succesfully
+[21:12:42] INFO:    Start to run command
+[21:12:43] INFO:    input_1.txt
+input_2.txt
+
+[21:12:43] INFO:    Connection channel closed
+[21:12:43] INFO:    Check if exec success or not ... 
+[21:12:43] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:12:43] INFO:    Now wait 0 seconds to begin next task ...
+[21:12:43] INFO:    Connection channel disconnect
+[21:12:45] INFO:    Session initialized and associated with user credential kshitij#456
+[21:12:45] INFO:    SSHExec initialized successfully
+[21:12:45] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:12:45] INFO:    SSH connection established
+[21:12:45] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:12:45] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;python 1501CS12_Solution.py <inputFiles/input_1.txt> out.txt
+[21:12:45] INFO:    Connection channel established succesfully
+[21:12:45] INFO:    Start to run command
+[21:12:45] INFO:    Connection channel closed
+[21:12:45] INFO:    Check if exec success or not ... 
+[21:12:45] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;python 1501CS12_Solution.py <inputFiles/input_1.txt> out.txt
+[21:12:45] INFO:    Now wait 0 seconds to begin next task ...
+[21:12:45] INFO:    Connection channel disconnect
+[21:12:45] INFO:    SSH connection shutdown
+[21:12:58] INFO:    Session initialized and associated with user credential kshitij#456
+[21:12:58] INFO:    SSHExec initialized successfully
+[21:12:58] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:12:58] INFO:    SSH connection established
+[21:12:58] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:12:58] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;python 1501CS12_Solution.py <inputFiles/input_2.txt> out.txt
+[21:12:58] INFO:    Connection channel established succesfully
+[21:12:58] INFO:    Start to run command
+[21:12:59] INFO:    Connection channel closed
+[21:12:59] INFO:    Check if exec success or not ... 
+[21:12:59] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;python 1501CS12_Solution.py <inputFiles/input_2.txt> out.txt
+[21:12:59] INFO:    Now wait 0 seconds to begin next task ...
+[21:12:59] INFO:    Connection channel disconnect
+[21:12:59] INFO:    SSH connection shutdown
+[21:13:13] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:13] INFO:    SSHExec initialized successfully
+[21:13:13] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:14] INFO:    SSH connection established
+[21:13:14] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:14] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:13:14] INFO:    Connection channel established succesfully
+[21:13:14] INFO:    Start to run command
+[21:13:14] INFO:    input_1.txt
+input_2.txt
+
+[21:13:14] INFO:    Connection channel closed
+[21:13:14] INFO:    Check if exec success or not ... 
+[21:13:14] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:13:14] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:14] INFO:    Connection channel disconnect
+[21:13:15] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:15] INFO:    SSHExec initialized successfully
+[21:13:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:15] INFO:    SSH connection established
+[21:13:15] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:15] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:15] INFO:    Connection channel established succesfully
+[21:13:15] INFO:    Start to run command
+[21:13:15] INFO:    Connection channel closed
+[21:13:15] INFO:    Check if exec success or not ... 
+[21:13:15] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:15] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:15] INFO:    Connection channel disconnect
+[21:13:15] INFO:    SSH connection shutdown
+[21:13:15] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:15] INFO:    SSHExec initialized successfully
+[21:13:15] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:16] INFO:    SSH connection established
+[21:13:16] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:16] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[21:13:16] INFO:    Connection channel established succesfully
+[21:13:16] INFO:    Start to run command
+[21:13:17] INFO:    Connection channel closed
+[21:13:17] INFO:    Check if exec success or not ... 
+[21:13:17] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[21:13:17] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:17] INFO:    Connection channel disconnect
+[21:13:17] INFO:    SSH connection shutdown
+[21:13:17] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:17] INFO:    SSHExec initialized successfully
+[21:13:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:17] INFO:    SSH connection established
+[21:13:17] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:17] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:17] INFO:    Connection channel established succesfully
+[21:13:17] INFO:    Start to run command
+[21:13:17] INFO:    Connection channel closed
+[21:13:17] INFO:    Check if exec success or not ... 
+[21:13:17] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:17] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:17] INFO:    Connection channel disconnect
+[21:13:17] INFO:    SSH connection shutdown
+[21:13:17] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:17] INFO:    SSHExec initialized successfully
+[21:13:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:17] INFO:    SSH connection established
+[21:13:17] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:17] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:17] INFO:    Connection channel established succesfully
+[21:13:17] INFO:    Start to run command
+[21:13:17] INFO:    Connection channel closed
+[21:13:17] INFO:    Check if exec success or not ... 
+[21:13:17] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:17] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:17] INFO:    Connection channel disconnect
+[21:13:17] INFO:    SSH connection shutdown
+[21:13:17] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:17] INFO:    SSHExec initialized successfully
+[21:13:17] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:18] INFO:    SSH connection established
+[21:13:18] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:18] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_1.txt > out.txt
+[21:13:18] INFO:    Connection channel established succesfully
+[21:13:18] INFO:    Start to run command
+[21:13:19] INFO:    Connection channel closed
+[21:13:19] INFO:    Check if exec success or not ... 
+[21:13:19] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_1.txt > out.txt
+[21:13:19] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:19] INFO:    Connection channel disconnect
+[21:13:19] INFO:    SSH connection shutdown
+[21:13:22] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:22] INFO:    SSHExec initialized successfully
+[21:13:22] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:22] INFO:    SSH connection established
+[21:13:22] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:22] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:22] INFO:    Connection channel established succesfully
+[21:13:22] INFO:    Start to run command
+[21:13:22] INFO:    Connection channel closed
+[21:13:22] INFO:    Check if exec success or not ... 
+[21:13:22] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:22] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:22] INFO:    Connection channel disconnect
+[21:13:22] INFO:    SSH connection shutdown
+[21:13:25] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:25] INFO:    SSHExec initialized successfully
+[21:13:25] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:25] INFO:    SSH connection established
+[21:13:25] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:25] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:25] INFO:    Connection channel established succesfully
+[21:13:25] INFO:    Start to run command
+[21:13:26] INFO:    Connection channel closed
+[21:13:26] INFO:    Check if exec success or not ... 
+[21:13:26] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:26] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:26] INFO:    Connection channel disconnect
+[21:13:26] INFO:    SSH connection shutdown
+[21:13:26] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:26] INFO:    SSHExec initialized successfully
+[21:13:26] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:26] INFO:    SSH connection established
+[21:13:26] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:26] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[21:13:26] INFO:    Connection channel established succesfully
+[21:13:26] INFO:    Start to run command
+[21:13:27] INFO:    Connection channel closed
+[21:13:27] INFO:    Check if exec success or not ... 
+[21:13:27] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;javac pairs.java
+[21:13:27] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:27] INFO:    Connection channel disconnect
+[21:13:27] INFO:    SSH connection shutdown
+[21:13:27] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:27] INFO:    SSHExec initialized successfully
+[21:13:27] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:28] INFO:    SSH connection established
+[21:13:28] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:28] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:28] INFO:    Connection channel established succesfully
+[21:13:28] INFO:    Start to run command
+[21:13:28] INFO:    Connection channel closed
+[21:13:28] INFO:    Check if exec success or not ... 
+[21:13:28] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:28] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:28] INFO:    Connection channel disconnect
+[21:13:28] INFO:    SSH connection shutdown
+[21:13:28] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:28] INFO:    SSHExec initialized successfully
+[21:13:28] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:28] INFO:    SSH connection established
+[21:13:28] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:28] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:29] INFO:    Connection channel established succesfully
+[21:13:29] INFO:    Start to run command
+[21:13:29] INFO:    Connection channel closed
+[21:13:29] INFO:    Check if exec success or not ... 
+[21:13:29] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java
+[21:13:29] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:29] INFO:    Connection channel disconnect
+[21:13:29] INFO:    SSH connection shutdown
+[21:13:29] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:29] INFO:    SSHExec initialized successfully
+[21:13:29] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:29] INFO:    SSH connection established
+[21:13:29] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:29] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_2.txt > out.txt
+[21:13:29] INFO:    Connection channel established succesfully
+[21:13:29] INFO:    Start to run command
+[21:13:30] INFO:    Connection channel closed
+[21:13:30] INFO:    Check if exec success or not ... 
+[21:13:30] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;java pairs < inputFiles/input_2.txt > out.txt
+[21:13:30] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:30] INFO:    Connection channel disconnect
+[21:13:30] INFO:    SSH connection shutdown
+[21:13:33] INFO:    Session initialized and associated with user credential kshitij#456
+[21:13:33] INFO:    SSHExec initialized successfully
+[21:13:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:13:33] INFO:    SSH connection established
+[21:13:33] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:13:33] INFO:    Command is mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:33] INFO:    Connection channel established succesfully
+[21:13:33] INFO:    Start to run command
+[21:13:33] INFO:    Connection channel closed
+[21:13:33] INFO:    Check if exec success or not ... 
+[21:13:33] INFO:    Execute successfully for command: mv /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/pairs.java /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/1501CS52_pairs.java
+[21:13:33] INFO:    Now wait 0 seconds to begin next task ...
+[21:13:33] INFO:    Connection channel disconnect
+[21:13:33] INFO:    SSH connection shutdown
+
+=============== [2017/04/19 21:26:32, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:26:32] INFO:    SSHExec initializing ...
+[21:26:32] INFO:    Session initialized and associated with user credential kshitij#456
+[21:26:32] INFO:    SSHExec initialized successfully
+[21:26:32] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:26:32] INFO:    SSH connection established
+[21:26:32] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:26:32] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:26:32] INFO:    Connection channel established succesfully
+[21:26:32] INFO:    Start to run command
+[21:26:32] INFO:    input_1.txt
+input_2.txt
+
+[21:26:32] INFO:    Connection channel closed
+[21:26:32] INFO:    Check if exec success or not ... 
+[21:26:32] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:26:32] INFO:    Now wait 0 seconds to begin next task ...
+[21:26:32] INFO:    Connection channel disconnect
+[21:26:33] INFO:    Session initialized and associated with user credential kshitij#456
+[21:26:33] INFO:    SSHExec initialized successfully
+[21:26:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:26:33] INFO:    SSH connection established
+[21:26:33] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:26:33] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS53_Solution.cpp
+[21:26:33] INFO:    Connection channel established succesfully
+[21:26:33] INFO:    Start to run command
+[21:26:33] INFO:    Connection channel closed
+[21:26:33] INFO:    Check if exec success or not ... 
+[21:26:33] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS53_Solution.cpp
+[21:26:33] INFO:    Now wait 0 seconds to begin next task ...
+[21:26:33] INFO:    Connection channel disconnect
+[21:26:33] INFO:    SSH connection shutdown
+[21:26:33] INFO:    Session initialized and associated with user credential kshitij#456
+[21:26:33] INFO:    SSHExec initialized successfully
+[21:26:33] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:26:33] INFO:    SSH connection established
+[21:26:33] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:26:33] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;./a.out <inputFiles/input_1.txt>out.txt
+[21:26:33] INFO:    Connection channel established succesfully
+[21:26:33] INFO:    Start to run command
+[21:26:34] INFO:    Connection channel closed
+[21:26:34] INFO:    Check if exec success or not ... 
+[21:26:34] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;./a.out <inputFiles/input_1.txt>out.txt
+[21:26:34] INFO:    Now wait 0 seconds to begin next task ...
+[21:26:34] INFO:    Connection channel disconnect
+[21:26:34] INFO:    SSH connection shutdown
+[21:26:37] INFO:    Session initialized and associated with user credential kshitij#456
+[21:26:37] INFO:    SSHExec initialized successfully
+[21:26:37] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:26:38] INFO:    SSH connection established
+[21:26:38] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:26:38] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS53_Solution.cpp
+[21:26:38] INFO:    Connection channel established succesfully
+[21:26:38] INFO:    Start to run command
+[21:26:38] INFO:    Connection channel closed
+[21:26:38] INFO:    Check if exec success or not ... 
+[21:26:38] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS53_Solution.cpp
+[21:26:38] INFO:    Now wait 0 seconds to begin next task ...
+[21:26:38] INFO:    Connection channel disconnect
+[21:26:38] INFO:    SSH connection shutdown
+[21:26:38] INFO:    Session initialized and associated with user credential kshitij#456
+[21:26:38] INFO:    SSHExec initialized successfully
+[21:26:38] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:26:38] INFO:    SSH connection established
+[21:26:38] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:26:38] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;./a.out <inputFiles/input_2.txt>out.txt
+[21:26:38] INFO:    Connection channel established succesfully
+[21:26:38] INFO:    Start to run command
+[21:26:38] INFO:    Connection channel closed
+[21:26:38] INFO:    Check if exec success or not ... 
+[21:26:38] INFO:    Execute successfully for command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;./a.out <inputFiles/input_2.txt>out.txt
+[21:26:38] INFO:    Now wait 0 seconds to begin next task ...
+[21:26:38] INFO:    Connection channel disconnect
+[21:26:38] INFO:    SSH connection shutdown
+
+=============== [2017/04/19 21:36:05, net.neoremind.sshxcute.core.SSHExec.<clinit>:80] ====================
+
+[21:36:05] INFO:    SSHExec initializing ...
+[21:36:05] INFO:    Session initialized and associated with user credential kshitij#456
+[21:36:05] INFO:    SSHExec initialized successfully
+[21:36:05] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:36:05] INFO:    SSH connection established
+[21:36:05] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:36:05] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:36:05] INFO:    Connection channel established succesfully
+[21:36:05] INFO:    Start to run command
+[21:36:05] INFO:    input_1.txt
+input_2.txt
+
+[21:36:05] INFO:    Connection channel closed
+[21:36:05] INFO:    Check if exec success or not ... 
+[21:36:05] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:36:05] INFO:    Now wait 0 seconds to begin next task ...
+[21:36:05] INFO:    Connection channel disconnect
+[21:36:06] INFO:    Session initialized and associated with user credential kshitij#456
+[21:36:06] INFO:    SSHExec initialized successfully
+[21:36:06] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:36:06] INFO:    SSH connection established
+[21:36:06] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:36:06] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS55_Pairs_Code.cpp
+[21:36:07] INFO:    Connection channel established succesfully
+[21:36:07] INFO:    Start to run command
+[21:36:07] INFO:    Connection channel closed
+[21:36:07] INFO:    Check if exec success or not ... 
+[21:36:07] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS55_Pairs_Code.cpp
+[21:36:07] INFO:    Error message: In file included from /usr/include/c++/4.8.2/unordered_set:35:0,                 from 1501CS55_Pairs_Code.cpp:8:/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options. #error This file requires compiler and library support for the \  ^1501CS55_Pairs_Code.cpp:11:1: error: ‘unordered_set’ does not name a type unordered_set<int> s; ^1501CS55_Pairs_Code.cpp: In function ‘int main()’:1501CS55_Pairs_Code.cpp:20:9: error: ‘s’ was not declared in this scope         s.insert(val);         ^1501CS55_Pairs_Code.cpp:23:10: error: ‘unordered_set’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)          ^1501CS55_Pairs_Code.cpp:23:24: error: expected primary-expression before ‘int’     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                        ^1501CS55_Pairs_Code.cpp:23:24: error: expected ‘;’ before ‘int’1501CS55_Pairs_Code.cpp:23:55: error: ‘it’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                                                       ^1501CS55_Pairs_Code.cpp:23:61: error: ‘s’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                                                             ^
+[21:36:07] INFO:    Now wait 0 seconds to begin next task ...
+[21:36:07] INFO:    Connection channel disconnect
+[21:36:07] INFO:    SSH connection shutdown
+[21:41:12] INFO:    Session initialized and associated with user credential kshitij#456
+[21:41:12] INFO:    SSHExec initialized successfully
+[21:41:12] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:41:13] INFO:    SSH connection established
+[21:41:13] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:41:13] INFO:    Command is ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:41:13] INFO:    Connection channel established succesfully
+[21:41:13] INFO:    Start to run command
+[21:41:13] INFO:    input_1.txt
+input_2.txt
+
+[21:41:13] INFO:    Connection channel closed
+[21:41:13] INFO:    Check if exec success or not ... 
+[21:41:13] INFO:    Execute successfully for command: ls /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/inputFiles/
+[21:41:13] INFO:    Now wait 0 seconds to begin next task ...
+[21:41:13] INFO:    Connection channel disconnect
+[21:41:14] INFO:    Session initialized and associated with user credential kshitij#456
+[21:41:14] INFO:    SSHExec initialized successfully
+[21:41:14] INFO:    SSHExec trying to connect kshitij.cs15@172.16.26.9
+[21:41:15] INFO:    SSH connection established
+[21:41:15] INFO:    Set system configuration parameter 'INTEVAL_TIME_BETWEEN_TASKS' to new value '0'
+[21:41:15] INFO:    Command is cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS55_Pairs_Code.cpp
+[21:41:15] INFO:    Connection channel established succesfully
+[21:41:15] INFO:    Start to run command
+[21:41:15] INFO:    Connection channel closed
+[21:41:15] INFO:    Check if exec success or not ... 
+[21:41:15] INFO:    Execution failed while executing command: cd /home/Btech15/kshitij.cs15/cms/CS204_arijit/uploads/Pairs/;g++ 1501CS55_Pairs_Code.cpp
+[21:41:15] INFO:    Error message: In file included from /usr/include/c++/4.8.2/unordered_set:35:0,                 from 1501CS55_Pairs_Code.cpp:8:/usr/include/c++/4.8.2/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options. #error This file requires compiler and library support for the \  ^1501CS55_Pairs_Code.cpp:11:1: error: ‘unordered_set’ does not name a type unordered_set<int> s; ^1501CS55_Pairs_Code.cpp: In function ‘int main()’:1501CS55_Pairs_Code.cpp:20:9: error: ‘s’ was not declared in this scope         s.insert(val);         ^1501CS55_Pairs_Code.cpp:23:10: error: ‘unordered_set’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)          ^1501CS55_Pairs_Code.cpp:23:24: error: expected primary-expression before ‘int’     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                        ^1501CS55_Pairs_Code.cpp:23:24: error: expected ‘;’ before ‘int’1501CS55_Pairs_Code.cpp:23:55: error: ‘it’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                                                       ^1501CS55_Pairs_Code.cpp:23:61: error: ‘s’ was not declared in this scope     for (unordered_set<int>::iterator it = s.begin(); it != s.end(); ++it)                                                             ^
+[21:41:15] INFO:    Now wait 0 seconds to begin next task ...
+[21:41:15] INFO:    Connection channel disconnect
+[21:41:15] INFO:    SSH connection shutdown
+=======
+>>>>>>> 7b3ebdd257b8d7cbc2a871c3457c70a51b964a37
+>>>>>>> c63f59d135d1563f5f8df4d3a307fc73fdc71dab

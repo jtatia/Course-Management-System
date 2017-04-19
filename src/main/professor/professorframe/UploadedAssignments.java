@@ -50,6 +50,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
+import javax.swing.JDialog;
 
 public class UploadedAssignments extends JFrame {
 
@@ -213,7 +214,26 @@ public class UploadedAssignments extends JFrame {
 								}
 							} catch (Exception e1) {
 								e1.printStackTrace();
-							}						
+							}			
+							
+							//added
+							
+							JOptionPane optionPane = new JOptionPane("Please Wait...", JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{}, null);
+
+							 JDialog dialog = new JDialog();
+							dialog.setTitle("Message");
+							dialog.setModal(true);
+							dialog.setContentPane(optionPane);
+							dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+							dialog.pack();
+							//System.out.println("what about here:::::::");
+							dialog.setBounds(500, 300, 350, 150);;
+							
+							//added
+							
+							new Thread(){
+								public void run()
+								{try{
 							for(int r : rows){
 								Assignment a = list.get(r);
 								try {System.out.println("calling");
@@ -224,6 +244,18 @@ public class UploadedAssignments extends JFrame {
 						//		atmc = new AssignmentTableModelC(list);
 							//	table.setModel(atmc);
 							}
+							
+							dialog.dispose();
+								}catch(Exception e)
+								{
+									e.printStackTrace();
+								}
+								}
+							}.start();
+							dialog.setVisible(true);
+							//System.out.println("I am hereeeeee:::::");
+							
+							
 						}
 					}.start();
 				
@@ -285,6 +317,7 @@ public class UploadedAssignments extends JFrame {
 				new UploadOutputFiles(path);
 			}
 		});
+		
 		JButton btnUploadOutputProgram = new JButton("Upload Output Program");
 		btnUploadOutputProgram.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -334,6 +367,7 @@ public class UploadedAssignments extends JFrame {
 								x = cp.execute1(path,filename,inp[i]);               
 						  else
 								x = cc.execute1(path,filename,inp[i]);
+						  
 						  if(x == 0){
 							  error = "Successful";
 						  }
@@ -353,14 +387,15 @@ public class UploadedAssignments extends JFrame {
 						JOptionPane.showMessageDialog(UploadedAssignments.this, error);
 					}catch(Exception e){
 						error = "Exception occurred";
-					}
 						}
+					}
 					else{
 						JOptionPane.showMessageDialog(UploadedAssignments.this, "Please upload only .java,.py,.cpp,.c files");
 					}
 				}
 			}
 		});
+		
 		JButton btnUploadTestCases = new JButton("Upload Test Cases");
 		btnUploadTestCases.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -368,6 +403,7 @@ public class UploadedAssignments extends JFrame {
 				utc.setVisible(true);
 			}
 		});
+		
 		JCheckBox chckbxEnableCompiler = new JCheckBox("Enable Compiler");
 		topPanel.add(chckbxEnableCompiler);
 		chckbxEnableCompiler.addActionListener(new ActionListener(){
@@ -468,23 +504,24 @@ public class UploadedAssignments extends JFrame {
 		assign.setSize(s[0]);
 		String log = "";
 	    int marksOfOutput = 0;
+	    boolean isCorrect=true;
 		String error = "Successful";
 		String file_type=name.substring(name.lastIndexOf(".")+1);
 		int status;
-		System.out.println("file type"+file_type);
+		//System.out.println("file type"+file_type);
 		for(int i =0; i<length; i++)
-			{
+		{
 			if(file_type.equals("java"))
 				status = jc.compile(path,name);            
-				else if(file_type.equals("py"))
+			else if(file_type.equals("py"))
 				status = 0; //needs to be replaced for python           
-				else if(file_type.equals("cpp"))
+			else if(file_type.equals("cpp"))
 				status = cp.compile(path,name);
-				else
+			else
 				status = cc.compile(path,name);            
 				
 			  if(status == 0){
-				  int x = 1;
+				  	int x = 1;
 					if(file_type.equals("java"))
 					x = jc.execute(path,name,inp[i]);               
 					else if(file_type.equals("py"))
@@ -493,43 +530,49 @@ public class UploadedAssignments extends JFrame {
 					x = cp.execute(path,name,inp[i]);               
 					else
 					x = cc.execute(path,name,inp[i]);               
-			  if(x == 0){
-			  String outputFile = path +"out.txt";
-			  System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
-			  String output = path + "outputFiles/"+inp[i]; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
-			  System.out.println("OUTPUT!@!@@##$$:: "+output);
-			  System.out.println("MARKS SENT:"+marks.get(i));
-			  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
-			  marksOfOutput  += fom.CheckOutputs();
-			  fom.DeleteFiles();
-			  System.out.println("current stud marks="+marksOfOutput);
-			  }
-			  else if (x == 1)
-				  error = "Runtime Error";
-			  else
-				  error = "Timed out";
+					if(x == 0){
+						  String outputFile = path +"out.txt";
+						  //System.out.println("$$$$$$$$$$$outputPAth=="+outputFile);
+						  String output = path + "outputFiles/"+inp[i]; //all output files submitted by prof stored in outputFiles dir with naming:- out_i.txt
+						  //System.out.println("OUTPUT!@!@@##$$:: "+output);
+						  //System.out.println("MARKS SENT:"+marks.get(i));
+						  FileOutputMatcher fom = new FileOutputMatcher(outputFile,output,marks.get(i));
+						  int out_marks=fom.CheckOutputs();
+						  marksOfOutput  += out_marks;
+						  if(out_marks==0){
+							  isCorrect = false;
+						  }
+						  fom.DeleteFiles();
+						  System.out.println("current stud marks="+marksOfOutput);
+					}
+					else if (x == 1)
+						  error = "Runtime Error";
+					else
+						  error = "Timed out";
 			  }
 			  else{
 				  error = "Compile time error";
-					if(file_type.equals("java"))
+				  if(file_type.equals("java"))
 						log += jc.errormessage;
-					else if(file_type.equals("py"))
-					log += pc.errormessage;               
-					else if(file_type.equals("cpp"))
-					log += cp.errormessage;               
-					else
-					log += cc.errormessage;               
+				  else if(file_type.equals("py"))
+					  	log += pc.errormessage;               
+				  else if(file_type.equals("cpp"))
+					  	log += cp.errormessage;               
+				  else
+					  	log += cc.errormessage;               
 			  break;
 			  }
 				if(file_type.equals("java"))
 					log += jc.errormessage;
 				else if(file_type.equals("py"))
-				log += pc.errormessage;               
+					log += pc.errormessage;               
 				else if(file_type.equals("cpp"))
-				log += cp.errormessage;               
+					log += cp.errormessage;               
 				else
-				log += cc.errormessage;               
+					log += cc.errormessage;               
 		  }
+		if(!isCorrect)
+			error = "Wrong Answer";
 //		assign.setMarks(marksOfOutput);
 //		assign.setStatus(error);
 		System.out.println("Final\n"+marksOfOutput+"\n"+error);
