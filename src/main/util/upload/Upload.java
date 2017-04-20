@@ -12,6 +12,7 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.student.studentdao.StudentDAO;
 import main.util.sshcommands.SSHCommands;
 import net.neoremind.sshxcute.exception.TaskExecFailException;
 
@@ -27,7 +28,7 @@ public class Upload {
 	{
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(Upload.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

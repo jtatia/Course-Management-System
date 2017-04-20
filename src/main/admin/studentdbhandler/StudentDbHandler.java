@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import main.student.student.*;
+import main.student.studentdao.StudentDAO;
+
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 public class StudentDbHandler {
@@ -28,7 +30,7 @@ public class StudentDbHandler {
 	
 	public StudentDbHandler() throws IOException {
 		Properties prop=new Properties();
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(StudentDbHandler.class.getResourceAsStream("/details.properties"));
 		dbName=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

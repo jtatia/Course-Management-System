@@ -15,6 +15,7 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
 import main.student.coursepanel.CourseAssignmentPanel;
+import main.student.studentdao.StudentDAO;
 import main.util.assignmentutils.assignment.Assignment;
 
 public class Download {
@@ -28,7 +29,7 @@ public class Download {
 	{
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(Download.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

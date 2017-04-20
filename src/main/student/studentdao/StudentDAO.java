@@ -23,7 +23,7 @@ public class StudentDAO{
 		/*
 		 * Change File Location in the Properties File. This is only a test/temp.location
 		 */
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(StudentDAO.class.getResourceAsStream("/details.properties"));
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

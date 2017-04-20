@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.StreamGobbler;
+import main.student.studentdao.StudentDAO;
 
 public class SSHComm {
 	private static Connection conn=null;
@@ -18,7 +19,7 @@ public class SSHComm {
 	{
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(SSHComm.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

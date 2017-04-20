@@ -16,6 +16,8 @@ import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 import com.jcraft.jsch.UserInfo;
 
+import main.student.studentdao.StudentDAO;
+
 
 public class UsingJsch {
 
@@ -64,7 +66,7 @@ public class UsingJsch {
         session = null;
         Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(UsingJsch.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -114,7 +116,7 @@ public class UsingJsch {
         session = null;
         Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(UsingJsch.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -155,7 +157,7 @@ public class UsingJsch {
         session = null;
         Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(UsingJsch.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

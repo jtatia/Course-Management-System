@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import main.student.studentdao.StudentDAO;
 import net.neoremind.sshxcute.core.ConnBean;
 import net.neoremind.sshxcute.core.IOptionName;
 import net.neoremind.sshxcute.core.Result;
@@ -30,7 +31,7 @@ public class SSHCommands {
 		
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(SSHCommands.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -17,6 +17,7 @@ import java.util.Properties;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import main.professor.professor.Professor;
+import main.student.studentdao.StudentDAO;
 
 public class ProfessorDAO {
 	
@@ -31,7 +32,7 @@ public class ProfessorDAO {
 	public ProfessorDAO()throws Exception{
 		
 		Properties prop=new Properties();
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(ProfessorDAO.class.getResourceAsStream("/details.properties"));
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

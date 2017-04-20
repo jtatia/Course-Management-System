@@ -16,6 +16,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import main.admin.admin.Admin;
+import main.student.studentdao.StudentDAO;
 
 public class AdminPanelDAO {
 
@@ -32,7 +33,7 @@ public class AdminPanelDAO {
 		/*
 		 * Change File Location in the Properties File. This is only a test/temp.location
 		 */
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(AdminPanelDAO.class.getResourceAsStream("/details.properties"));
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

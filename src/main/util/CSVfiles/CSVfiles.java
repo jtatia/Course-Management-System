@@ -21,6 +21,7 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 
+import main.student.studentdao.StudentDAO;
 import main.util.assignmentutils.assignment.Assignment;
 import main.util.filedetails.FileDetails;
 import main.util.sshcommands.UsingJsch;
@@ -64,7 +65,7 @@ public class CSVfiles {
 		
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(CSVfiles.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

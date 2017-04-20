@@ -17,6 +17,7 @@ import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.Session;
 
+import main.student.studentdao.StudentDAO;
 import main.util.filedetails.FileDetails;
 import main.util.sshcommands.UsingJsch;
 
@@ -40,7 +41,7 @@ public class FileOutputMatcher {
 		this.m = m;
 		Properties prop=new Properties();
 		try {
-			prop.load(new FileInputStream("Files//SSHinfo.properties"));
+			prop.load(FileOutputMatcher.class.getResourceAsStream("/SSHinfo.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

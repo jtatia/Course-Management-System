@@ -12,6 +12,8 @@ import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import main.admin.admin.Admin;
 import main.student.student.Student;
+import main.student.studentdao.StudentDAO;
+
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 public class AdminDAO {
@@ -29,7 +31,7 @@ public class AdminDAO {
 		/*
 		 * Change File Location in the Properties File. This is only a test/temp.location
 		 */
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(AdminDAO.class.getResourceAsStream("/details.properties"));
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

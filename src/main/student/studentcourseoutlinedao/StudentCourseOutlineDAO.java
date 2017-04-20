@@ -11,6 +11,7 @@ import java.util.Properties;
 import com.mysql.jdbc.PreparedStatement;
 
 import main.student.student.Student;
+import main.student.studentdao.StudentDAO;
 
 public class StudentCourseOutlineDAO {
 	
@@ -20,7 +21,7 @@ public class StudentCourseOutlineDAO {
 	
 	public StudentCourseOutlineDAO(Student student)throws Exception{
 		Properties properties = new Properties();
-		properties.load(new FileInputStream("Files//details.properties"));
+		properties.load(StudentCourseOutlineDAO.class.getResourceAsStream("/details.properties"));
 		String dbname=properties.getProperty("dbName");
 		String user=properties.getProperty("user");
 		String password=properties.getProperty("password");

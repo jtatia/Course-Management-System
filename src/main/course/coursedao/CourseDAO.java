@@ -14,6 +14,7 @@ import java.util.Properties;
 
 import main.course.course.Course;
 import main.student.student.Student;
+import main.student.studentdao.StudentDAO;
 
 public class CourseDAO {
 	
@@ -30,7 +31,7 @@ public class CourseDAO {
 		/*
 		 * Change File Location in the Properties File. This is only a test/temp.location
 		 */
-		prop.load(new FileInputStream("Files//details.properties"));
+		prop.load(CourseDAO.class.getResourceAsStream("/details.properties"));
 		dbname=prop.getProperty("dbName");
 		user=prop.getProperty("user");
 		password=prop.getProperty("password");

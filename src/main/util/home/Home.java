@@ -39,6 +39,7 @@ import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
@@ -58,8 +59,9 @@ public class Home extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		SplashScreen sc=new SplashScreen();
 		/*
@@ -97,7 +99,7 @@ public class Home extends JFrame {
 	 */
 	public Home() throws Exception {
 		setTitle("Course Management System");
-		setIconImage(ImageIO.read(new File("iitp.png")));
+		//setIconImage(ImageIO.read(new File("iitp.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 200, 530, 377);
 		contentPane = new JPanel();

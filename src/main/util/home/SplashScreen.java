@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import de.javasoft.plaf.synthetica.SyntheticaBlueLightLookAndFeel;
@@ -17,7 +21,7 @@ public class SplashScreen extends JWindow {
     private static int count;
     private static Timer timer1;
 
-    public SplashScreen() {
+    public SplashScreen() throws IOException {
     	execute =this;
         Container container = getContentPane();
         container.setLayout(null);
@@ -29,8 +33,9 @@ public class SplashScreen extends JWindow {
         panel.setLayout(null);
         panel.setBackground(new Color(156,213,242));
        // container.add(panel);
-        
-        JLabel label = new JLabel("",new ImageIcon("splash.jpg"),SwingConstants.CENTER);
+        BufferedImage image = ImageIO.read(getClass().getResource("/splash.jpg"));
+        ImageIcon icon = new ImageIcon(image);
+        JLabel label = new JLabel("",icon,SwingConstants.CENTER);
         label.setFont(new Font("Comic Sans MS",Font.BOLD,19));
         
         label.setBounds(0, 0, 640, 400);
@@ -99,7 +104,7 @@ public class SplashScreen extends JWindow {
         timer1.start();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws Exception {
         execute = new SplashScreen();
     }
 };
